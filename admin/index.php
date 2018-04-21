@@ -13,7 +13,18 @@
   <link rel="stylesheet" type="text/css" href="../layout.css">
   <script src="../bootstrap/jquery-3.2.1.min.js"></script>
   <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+  <script src="../assets/js/jquery.min.js"></script>
+  <script src="../assets/js/bootstrap.min.js"></script>
+  <script src="../assets/js/script.js"></script>
 </head>
+
+<style type="text/css">
+      footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+</style>
 
 <script>
   $(document).ready(function() 
@@ -40,9 +51,9 @@
           <img src="../gambar/login.png" alt="Nature" height="100" width="100">
           <div class="caption">
             <h4><b>LOGIN</b></h4>
-            <p><font size="2"><i>Sistem Informasi Pendaftaran Siswa dan Transaksi Pembayaran Awal Siswa-Siswi Baru <br> SMK Mandalahayu II Bekasi</i></font></p>
+            <p><font size="2"><i>Sistem Informasi Pendaftaran Murid Baru <br> SMK Mandalahayu II Bekasi</i></font></p>
             <br>
-            <form>
+            <form action="../config/proseslogin.php" method="POST">
               <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                 <input type="text" class="form-control" name="username" placeholder="Masukkan username anda" required>
@@ -53,7 +64,7 @@
                 <input type="password" class="form-control" name="password" placeholder="Masukkan password anda" required>
               </div>
               <br>
-              <button type="button" class="btn btn-primary btn-block"">Login</button>
+              <button class="btn btn-primary btn-block" type="submit" value="Login">Login</button>
             </form>
           </div>
       </div>
@@ -69,7 +80,6 @@
 <br>
 <br>
 <br>
-
 
 <footer class="container-fluid text-center">
   <div class="container-fluid text-center">

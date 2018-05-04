@@ -9,6 +9,5 @@
     </ol>
     	<h3><b>&nbsp;&nbsp;Alur</b> Pendaftaran</h3>
       	<hr>
-      	<p>Tes</p>
 </div>
   

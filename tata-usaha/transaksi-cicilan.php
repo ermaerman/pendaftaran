@@ -15,6 +15,7 @@
   th {
       background-color: #3bacd6;
       color: white;
+      font-size: 11px;
   }
 
   td {
@@ -39,10 +40,15 @@
           <tr>
             <th>No</th>
             <th>Kode Daftar</th>
-            <th>Pembayaran</th>
-            <th>Bukti Pembayaran</th>
-            <th>Tanggal Konfirmasi Pembayaran</th>
-            <th>Validasi</th>
+            <th>Cicilan 1</th>
+            <th>Bukti Cicilan 1</th>
+            <th>Validasi Cicilan 1</th>
+            <th>Cicilan 2</th>
+            <th>Bukti Cicilan 2</th>
+            <th>Validasi Cicilan 2</th>
+            <th>Cicilan 3</th>
+            <th>Bukti Cicilan 3</th>
+            <th>Validasi Cicilan 3</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -51,9 +57,9 @@
 
             include '../config/koneksi.php';
 
-            $query = mysqli_query($konek, "SELECT id_pembayaran, kode_daftar, pembayaran, bukti_pembayaran, tgl_konfirmasi_bayar, validasi FROM tbl_pembayaran WHERE pembayaran='Uang Pangkal Cicilan Pertama/Kedua'")or die(mysqli_error());
+            $query = mysqli_query($konek, "SELECT id_pembayaran, kode_daftar, b_pangkal_cicil1, bukti_pangkal_cicil1, validasi_pangkal_cicil1, b_pangkal_cicil2, bukti_pangkal_cicil2, validasi_pangkal_cicil2, b_pangkal_cicil3, bukti_pangkal_cicil3, validasi_pangkal_cicil3 FROM tbl_pembayaran WHERE b_pangkal_cicil1='1'")or die(mysqli_error());
                     if(mysqli_num_rows($query) == 0){ 
-                      echo '<tr><td colspan="8" align="center"><i>Tidak ada data!</i></td></tr>';    
+                      echo '<tr><td colspan="12" align="center"><i>Tidak ada data!</i></td></tr>';    
                     }
                       else
                     { 
@@ -63,10 +69,15 @@
                         <tr>
                         <td><?php echo $no ?></td>
                         <td><?php echo $data['kode_daftar'] ?></td>
-                        <td><?php echo $data['pembayaran'] ?></td>
-                        <td><?php echo($data['bukti_pembayaran']);?></td>
-                        <td><?php echo $data['tgl_konfirmasi_bayar'] ?></td>
-                        <td><?php if ($data['validasi']==0) echo "Belum Dikonfirmasi"; else echo "Dikonfirmasi"; ?></td>
+                        <td><?php echo $data['b_pangkal_cicil1'] ?></td>
+                        <td><?php echo $data['bukti_pangkal_cicil1'] ?></td>
+                        <td><?php echo $data['validasi_pangkal_cicil1'] ?></td>
+                        <td><?php echo $data['b_pangkal_cicil2'] ?></td>
+                        <td><?php echo $data['bukti_pangkal_cicil2'] ?></td>
+                        <td><?php echo $data['validasi_pangkal_cicil2'] ?></td>
+                        <td><?php echo $data['b_pangkal_cicil3'] ?></td>
+                        <td><?php echo $data['bukti_pangkal_cicil3'] ?></td>
+                        <td><?php echo $data['validasi_pangkal_cicil3'] ?></td>
                         <td><a data-toggle="tooltip" data-placement="left" title="Edit" href=tu.php?content=edit-konfirmasi-bayar-cicilan&&id_pembayaran=<?php echo $data['id_pembayaran']?>><i class='fa fa-edit fa-fw'></i></a></td></tr>
                       <?php
                         $no++;  

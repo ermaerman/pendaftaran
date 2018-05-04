@@ -17,7 +17,7 @@
 
 	<ul class="list-group">
   		<li class="list-group-item active">Saya sudah transfer pembayaran, apa yang harus saya lakukan selanjutnya?</li>
-  		<li class="list-group-item">Silahkan pergi ke halaman <a data-toggle="tooltip" data-placement="bottom" title="Konfirmasi Pembayaran" href=index.php?content="konfirmasi-pembayaran">konfirmasi pembayaran</a>, jika belum jelas silahkan baca kembali <a data-toggle="tooltip" data-placement="right" title="Alur Pendaftaran Murid Baru" href="index.php?content=alur-pendaftaran">alur pendaftaran</a>.</li>
+  		<li class="list-group-item">Silahkan pergi ke halaman <a data-toggle="tooltip" data-placement="bottom" title="Konfirmasi Pembayaran" href=index.php?content=konfirmasi-pembayaran>konfirmasi pembayaran</a>, jika belum jelas silahkan baca kembali <a data-toggle="tooltip" data-placement="right" title="Alur Pendaftaran Murid Baru" href="index.php?content=alur-pendaftaran">alur pendaftaran</a>.</li>
 	</ul>
 
   <br>

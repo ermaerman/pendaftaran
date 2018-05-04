@@ -21,9 +21,9 @@
   </ol>
   <h3><b>&nbsp;&nbsp;Konfirmasi</b> Pembayaran</h3>
   <hr>
-
-      <p><i>&nbsp;&nbsp;&nbsp;&nbsp;Bagi anda yang telah melakukan konfirmasi pembayaran silahkan tunggu sampai pembayaran dikonfirmasi oleh tata usaha. <br>&nbsp;&nbsp;&nbsp;&nbsp;Klik <a data-toggle="tooltip" data-placement="bottom" title="Cek proses!" href="index.php?content=cek-proses">disini</a> untuk mengecek.</i></p>
-      
+      <div class="alert alert-info">
+      <strong>Info!</strong><i> Bagi anda yang telah melakukan konfirmasi pembayaran silahkan tunggu sampai pembayaran dikonfirmasi oleh tata usaha. Klik <a data-toggle="tooltip" data-placement="top" title="Cek proses!" href="index.php?content=cek-proses">disini</a> untuk mengecek.</i>
+      </div>
   <br>
   <br>
   <br>
@@ -72,7 +72,5 @@
         </div>
 </div>
   
-<br>
-<br>
 <br>
 <br>

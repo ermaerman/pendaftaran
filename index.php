@@ -79,6 +79,7 @@
             <li><a href="index.php?content=cek-proses">Cek Proses</a></li>
             <li><a href="index.php?content=konfirmasi-pembayaran">Konfirmasi Pembayaran</a></li>
             <li><a href="index.php?content=biaya">Informasi Biaya</a></li>
+            <li><a href="index.php?content=upload-file">Upload Kekurangan File</a></li>
           </ul>
         </li>
       </ul>
@@ -128,6 +129,10 @@
                 include 'fasilitas.php';
               else if ($content=='lihat-berita')
                 include 'lihat-berita.php';
+              else if ($content=='upload-file')
+                include 'upload-file.php';
+              else if ($content=='tgl-ujian')
+                include 'tgl-ujian.php';
            ?>
         </div>
 </div>

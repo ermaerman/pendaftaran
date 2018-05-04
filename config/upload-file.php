@@ -4,79 +4,6 @@
 	
 	include 'koneksi.php';
 
-	$tahun_pelajaran					= $_POST["tahun_pelajaran"];
-	$prodi								= $_POST["prodi"];
-	$nisn								= $_POST["nisn"];
-	$nama								= $_POST["nama"];
-	$nama_panggilan						= $_POST["nama_panggilan"];
-	$jenis_kelamin						= $_POST["jenis_kelamin"];
-	$tempat_lahir						= $_POST["tempat_lahir"];
-	$tgl_lahir							= $_POST["tgl_lahir"];
-	$agama								= $_POST["agama"];
-	$kewarganegaraan					= $_POST["kewarganegaraan"];
-	$anak_ke							= $_POST["anak_ke"];
-	$status_perwalian					= $_POST["status_perwalian"];
-	$perwalian_oleh						= $_POST["perwalian_oleh"];
-	$jml_saudara_kandung				= $_POST["jml_saudara_kandung"];
-	$jml_saudara_tiri					= $_POST["jml_saudara_tiri"];
-	$jml_saudara_angkat					= $_POST["jml_saudara_angkat"];
-	$status_keluarga					= $_POST["status_keluarga"];
-	$bahasa								= $_POST["bahasa"];
-	$alamat								= $_POST["alamat"];
-	$telepon_rumah						= $_POST["telepon_rumah"];
-	$status_tinggal						= $_POST["status_tinggal"];
-	$jarak								= $_POST["jarak"];
-	$transportasi						= $_POST["transportasi"];
-	$asal_sekolah						= $_POST["asal_sekolah"];
-	$nomor_ijazah						= $_POST["nomor_ijazah"];
-	$tgl_ijazah							= $_POST["tgl_ijazah"];
-	$lama_belajar						= $_POST["lama_belajar"];
-	$jml_un								= $_POST["jml_un"];
-	$berat_badan						= $_POST["berat_badan"];
-	$tinggi_badan						= $_POST["tinggi_badan"];
-	$goldar								= $_POST["goldar"];
-	$penyakit							= $_POST["penyakit"];
-	$kelainan							= $_POST["kelainan"];
-	$nama_ayah							= $_POST["nama_ayah"];
-	$tempat_lahir_ayah					= $_POST["tempat_lahir_ayah"];
-	$tgl_lahir_ayah						= $_POST["tgl_lahir_ayah"];
-	$pekerjaan_ayah						= $_POST["pekerjaan_ayah"];
-	$penghasilan_ayah					= $_POST["penghasilan_ayah"];
-	$pendidikan_ayah					= $_POST["pendidikan_ayah"];
-	$kewarganegaraan_ayah				= $_POST["kewarganegaraan_ayah"];
-	$nama_ibu							= $_POST["nama_ibu"];
-	$tempat_lahir_ibu					= $_POST["tempat_lahir_ibu"];
-	$tgl_lahir_ibu						= $_POST["tgl_lahir_ibu"];
-	$pekerjaan_ibu						= $_POST["pekerjaan_ibu"];
-	$penghasilan_ibu					= $_POST["penghasilan_ibu"];
-	$pendidikan_ibu						= $_POST["pendidikan_ibu"];
-	$kewarganegaraan_ibu				= $_POST["kewarganegaraan_ibu"];
-	$alamat_orangtua					= $_POST["alamat_orangtua"];
-	$nomor_hp							= $_POST["nomor_hp"];
-	$pengeluaran						= $_POST["pengeluaran"];
-	$jml_keluarga_kerja 				= $_POST["jml_keluarga_kerja"];
-	$jml_keluarga_menikah 				= $_POST["jml_keluarga_menikah"];
-	$nama_wali 							= $_POST["nama_wali"];
-	$tempat_lahir_wali 					= $_POST["tempat_lahir_wali"];
-	$tgl_lahir_wali 					= $_POST["tgl_lahir_wali"];
-	$pekerjaan_wali 					= $_POST["pekerjaan_wali"];
-	$penghasilan_wali 					= $_POST["penghasilan_wali"];
-	$pendidikan_wali 					= $_POST["pendidikan_wali"];
-	$kewarganegaraan_wali 				= $_POST["kewarganegaraan_wali"];
-	$alamat_wali 						= $_POST["alamat_wali"];
-	$nomor_hp_wali 						= $_POST["nomor_hp_wali"];
-	$pengeluaran_wali 					= $_POST["pengeluaran_wali"];
-	$jml_wali_kerja 					= $_POST["jml_wali_kerja"];
-	$jml_wali_menikah 					= $_POST["jml_wali_menikah"];
-	$kesenian		 					= $_POST["kesenian"];
-	$olahraga		 					= $_POST["olahraga"];
-	$organisasi		 					= $_POST["organisasi"];
-	$hasta_karya						= $_POST["hasta_karya"];
-	$bakat_lulus						= $_POST["bakat_lulus"];
-	$cita_cita							= $_POST["cita_cita"];
-	$tgl_daftar							= $_POST["tgl_daftar"];
-	$kode_daftar						= mt_rand(1000,9999);
-
 	//UPLOADS NISN
 	$target_dirnisn = "../nisn/";
 	$target_nisn 	= $target_dirnisn . basename($_FILES["fileToUploadNisn"]["name"]);
@@ -296,20 +223,4 @@
 	    }
 	}
 
-
-
-
-	$simpan	= "INSERT INTO tbl_data_calon_murid VALUES ('','$tahun_pelajaran', '$prodi', '$nisn', '$nama', '$nama_panggilan', '$jenis_kelamin', '$tempat_lahir', '$tgl_lahir', '$agama', '$kewarganegaraan', '$anak_ke', '$status_perwalian', '$perwalian_oleh', '$jml_saudara_kandung', '$jml_saudara_tiri', '$jml_saudara_angkat', '$status_keluarga', '$bahasa', '$alamat', '$telepon_rumah', '$status_tinggal', '$jarak', '$transportasi', '$asal_sekolah', '$nomor_ijazah', '$tgl_ijazah', '$lama_belajar', '$jml_un', '$berat_badan', '$tinggi_badan', '$goldar', '$penyakit', '$kelainan', '$nama_ayah', '$tempat_lahir_ayah', '$tgl_lahir_ayah', '$pekerjaan_ayah', '$penghasilan_ayah', '$pendidikan_ayah', '$kewarganegaraan_ayah', '$nama_ibu', '$tempat_lahir_ibu', '$tgl_lahir_ibu', '$pekerjaan_ibu', '$penghasilan_ibu', '$pendidikan_ibu', '$kewarganegaraan_ibu', '$alamat_orangtua', '$nomor_hp', '$pengeluaran', '$jml_keluarga_kerja', '$jml_keluarga_menikah', '$nama_wali', '$tempat_lahir_wali', '$tgl_lahir_wali', '$pekerjaan_wali', '$penghasilan_wali', '$pendidikan_wali', '$kewarganegaraan_wali', '$alamat_wali', '$nomor_hp_wali', '$pengeluaran_wali', '$jml_wali_kerja', '$jml_wali_menikah', '$kesenian', '$olahraga', '$organisasi', '$hasta_karya', '$bakat_lulus', '$cita_cita', '$tgl_daftar', '$target_nisn', '$target_ijazah', '$target_kk', '$target_akte' , '$target_foto', '$kode_daftar','0')";
-
-	$masuk	= mysqli_query($konek,$simpan)or die(mysqli_error($konek));
-
-	
-	//query untuk memanggil data yang tersimpan di tabel data calon murid mengambil dr id yang terakhir yang tersimpan.
-		$querykode 				= "SELECT * FROM tbl_data_calon_murid WHERE nama='$nama' ORDER BY id_calon_murid DESC LIMIT 1";
-		$cekquery				= mysqli_query($konek, $querykode)or die(mysqli_error($konek));
-		$data 					= mysqli_fetch_array($cekquery);
-
-
-	echo "<META HTTP-EQUIV='REFRESH' CONTENT ='0; URL=../index.php?content=kode_daftar&&id_calon_murid=$data[id_calon_murid]'>"; 
-
-?>
+$simpan	= "INSERT INTO tbl_data_calon_murid VALUES ('','$target_nisn', '$target_ijazah', '$target_kk', '$target_akte' , '$target_foto', '$kode_daftar')";

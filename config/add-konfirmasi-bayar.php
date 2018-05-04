@@ -4,10 +4,9 @@
 	
 	include 'koneksi.php';
 
-	$id_pemabayaran				= $_POST["id_pembayaran"];
+	$id_pembayaran				= $_POST["id_pembayaran"];
 	$kode_daftar				= $_POST["kode_daftar"];
 	$b_daftar  					= $_POST["b_daftar"];
-	//$tgl_konfirmasi_bayar		= $_POST["tgl_konfirmasi_bayar"];
 	$validasi_daftar			= $_POST["validasi_daftar"];
 
 	$target_dir = "../uploads/";
@@ -51,22 +50,6 @@
 	        echo "Sorry, there was an error uploading your file.";
 	    }
 	}
-
-	/*$update 	= "UPDATE tbl_pembayaran SET kode_daftar='$kode_daftar', b_daftar='1', bukti_daftar='$target_file', validasi_daftar='0' WHERE kode_daftar='$kode_daftar'";
-	$updatebayar	= mysqli_query($konek, $update)or die(mysqli_error());*/
-
-	/*if ($updatebayar)
-    	{
-    		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran!";
-	echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=konfirmasi-pembayaran">'; 
-    	}
-	else {
-    		print"
-    			<script>
-    				alert(\"Balasan gagal ditambah!\");
-    				history.back(-1);
-    			</script>";
-    	}*/
 
 	 if($b_daftar=='pendaftaran')
 	{

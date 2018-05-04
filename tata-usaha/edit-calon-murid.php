@@ -46,6 +46,10 @@
         <td width="800"><i><font size="2px"><?php echo $data['prodi'];?></font></i></td>
       </tr>
       <tr>
+        <th><font size="2px">Kode Daftar</font></th>
+        <td width="800"><i><font size="2px"><?php echo $data['kode_daftar'];?></font></i></td>
+      </tr>
+      <tr>
         <th><font size="2px">NISN</font></th>
         <td width="800"><i><font size="2px"><?php echo $data['nisn'];?></font></i></td>
       </tr>
@@ -314,12 +318,28 @@
         <td width="800"><i><font size="2px"><?php echo $data['cita_cita'];?></font></i></td>
       </tr>
       <tr>
-        <th><font size="2px">Tanggal Daftar</font></th>
-        <td width="800"><i><font size="2px"><?php echo $data['tgl_daftar'];?></font></i></td>
+        <th><font size="2px">Syarat NISN</font></th>
+        <td width="800"><i><font size="2px"><a data-toggle="tooltip" data-placement="right" title="Lihat Gambar" href="<?php echo $data['syarat_nisn'] ?>" target="_blank"><?php echo $data['syarat_nisn'] ?></a></font></i></td>
       </tr>
       <tr>
-        <th><font size="2px">Kode Daftar</font></th>
-        <td width="800"><i><font size="2px"><?php echo $data['kode_daftar'];?></font></i></td>
+        <th><font size="2px">Syarat Ijazah</font></th>
+        <td width="800"><i><font size="2px"><a data-toggle="tooltip" data-placement="right" title="Lihat Gambar" href="<?php echo $data['syarat_ijazah'] ?>" target="_blank"><?php echo $data['syarat_ijazah'] ?></a></font></i></td>
+      </tr>
+      <tr>
+        <th><font size="2px">Syarat KK</font></th>
+        <td width="800"><i><font size="2px"><a data-toggle="tooltip" data-placement="right" title="Lihat Gambar" href="<?php echo $data['syarat_kk'] ?>" target="_blank"><?php echo $data['syarat_kk'] ?></a></font></i></td>
+      </tr>
+      <tr>
+        <th><font size="2px">Syarat Akte</font></th>
+        <td width="800"><i><font size="2px"><a data-toggle="tooltip" data-placement="right" title="Lihat Gambar" href="<?php echo $data['syarat_akte'] ?>" target="_blank"><?php echo $data['syarat_akte'] ?></a></font></i></td>
+      </tr>
+      <tr>
+        <th><font size="2px">Syarat Foto</font></th>
+        <td width="800"><i><font size="2px"><a data-toggle="tooltip" data-placement="right" title="Lihat Gambar" href="<?php echo $data['syarat_foto'] ?>" target="_blank"><?php echo $data['syarat_foto'] ?></a></font></i></td>
+      </tr>
+      <tr>
+        <th><font size="2px">Tanggal Daftar</font></th>
+        <td width="800"><i><font size="2px"><?php echo $data['tgl_daftar'];?></font></i></td>
       </tr>
   </table>
   <p align="right">&nbsp;&nbsp;<a href="tu.php?content=data-calon-murid"><button type="button" class="btn btn-primary">Kembali</button></a></p>

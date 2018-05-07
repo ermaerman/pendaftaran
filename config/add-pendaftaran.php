@@ -79,7 +79,7 @@
 
 	//UPLOADS NISN
 	$target_dirnisn = "../nisn/";
-	$target_nisn 	= $target_dirnisn . basename($_FILES["fileToUploadNisn"]["name"]);
+	//$target_nisn 	= $target_dirnisn . basename($_FILES["fileToUploadNisn"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_nisn,PATHINFO_EXTENSION);
 	
@@ -121,9 +121,16 @@
 	    }
 	}
 
+	if ($uploadOk == 1){
+		$target_nisn 	  = $target_dirnisn . basename($_FILES["fileToUploadNisn"]["name"]);
+	}
+	else {
+		$target_nisn 	  = 0;
+	}
+
 	//UPLOADS IJAZAH
 	$target_dirijazah = "../ijazah/";
-	$target_ijazah 	= $target_dirijazah . basename($_FILES["fileToUploadIjazah"]["name"]);
+	//$target_ijazah 	= $target_dirijazah . basename($_FILES["fileToUploadIjazah"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_ijazah,PATHINFO_EXTENSION);
 	
@@ -165,9 +172,16 @@
 	    }
 	}
 
+	if ($uploadOk == 1){
+		$target_ijazah 	  = $target_dirijazah . basename($_FILES["fileToUploadIjazah"]["name"]);
+	}
+	else {
+		$target_ijazah 	  = 0;
+	}
+
 	//UPLOADS KK
 	$target_dirkk = "../kartu-keluarga/";
-	$target_kk 	  = $target_dirkk . basename($_FILES["fileToUploadKk"]["name"]);
+	//$target_kk 	  = $target_dirkk . basename($_FILES["fileToUploadKk"]["name"]);
 	$uploadOk     = 1;
 	$imageFileType = pathinfo($target_kk,PATHINFO_EXTENSION);
 	
@@ -208,9 +222,17 @@
 	        echo "Sorry, there was an error uploading your file.";
 	    }
 	}
+
+	if ($uploadOk == 1){
+		$target_kk 	  = $target_dirkk . basename($_FILES["fileToUploadKk"]["name"]);
+	}
+	else {
+		$target_kk 	  = 0;
+	}
+
 	//UPLOADS AKTE
 	$target_dirakte = "../akte/";
-	$target_akte 	= $target_dirakte . basename($_FILES["fileToUploadAkte"]["name"]);
+	//$target_akte 	= $target_dirakte . basename($_FILES["fileToUploadAkte"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_akte,PATHINFO_EXTENSION);
 	
@@ -251,10 +273,16 @@
 	        echo "Sorry, there was an error uploading your file.";
 	    }
 	}
+	if ($uploadOk == 1){
+		$target_akte 	  = $target_dirakte . basename($_FILES["fileToUploadAkte"]["name"]);
+	}
+	else {
+		$target_akte 	  = 0;
+	}
 
 	//UPLOADS FOTO
 	$target_dirfoto   = "../foto/";
-	$target_foto 	  = $target_dirfoto . basename($_FILES["fileToUploadFoto"]["name"]);
+	//$target_foto 	  = $target_dirfoto . basename($_FILES["fileToUploadFoto"]["name"]);
 	$uploadOk         = 1;
 	$imageFileType    = pathinfo($target_foto,PATHINFO_EXTENSION);
 	
@@ -296,8 +324,12 @@
 	    }
 	}
 
-
-
+	if ($uploadOk == 1){
+		$target_foto 	  = $target_dirfoto . basename($_FILES["fileToUploadFoto"]["name"]);
+	}
+	else {
+		$target_foto 	  = 0;
+	} 
 
 	$simpan	= "INSERT INTO tbl_data_calon_murid VALUES ('','$tahun_pelajaran', '$prodi', '$nisn', '$nama', '$nama_panggilan', '$jenis_kelamin', '$tempat_lahir', '$tgl_lahir', '$agama', '$kewarganegaraan', '$anak_ke', '$status_perwalian', '$perwalian_oleh', '$jml_saudara_kandung', '$jml_saudara_tiri', '$jml_saudara_angkat', '$status_keluarga', '$bahasa', '$alamat', '$telepon_rumah', '$status_tinggal', '$jarak', '$transportasi', '$asal_sekolah', '$nomor_ijazah', '$tgl_ijazah', '$lama_belajar', '$jml_un', '$berat_badan', '$tinggi_badan', '$goldar', '$penyakit', '$kelainan', '$nama_ayah', '$tempat_lahir_ayah', '$tgl_lahir_ayah', '$pekerjaan_ayah', '$penghasilan_ayah', '$pendidikan_ayah', '$kewarganegaraan_ayah', '$nama_ibu', '$tempat_lahir_ibu', '$tgl_lahir_ibu', '$pekerjaan_ibu', '$penghasilan_ibu', '$pendidikan_ibu', '$kewarganegaraan_ibu', '$alamat_orangtua', '$nomor_hp', '$pengeluaran', '$jml_keluarga_kerja', '$jml_keluarga_menikah', '$nama_wali', '$tempat_lahir_wali', '$tgl_lahir_wali', '$pekerjaan_wali', '$penghasilan_wali', '$pendidikan_wali', '$kewarganegaraan_wali', '$alamat_wali', '$nomor_hp_wali', '$pengeluaran_wali', '$jml_wali_kerja', '$jml_wali_menikah', '$kesenian', '$olahraga', '$organisasi', '$hasta_karya', '$bakat_lulus', '$cita_cita', '$tgl_daftar', '$target_nisn', '$target_ijazah', '$target_kk', '$target_akte' , '$target_foto', '$kode_daftar','0')";
 

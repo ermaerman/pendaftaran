@@ -39,9 +39,6 @@
                     }
               
                 ?>
-                    
-        </tbody>
-      </table>
     </form>
    
   </div>

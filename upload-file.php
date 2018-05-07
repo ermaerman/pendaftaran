@@ -61,13 +61,13 @@
               echo "<i><b>Anda belum mengupload semua syarat</b></i><br>";
               echo "<i><b>Silahkan mengupload scan semua syarat.</b></i>";
           }
-          /*elseif ($data['syarat_nisn']==0 AND $data['syarat_ijazah']==0 AND $data['syarat_kk']==0 AND $data['syarat_akte']==0 AND $data['syarat_foto']==0) {
+          elseif ($data['syarat_nisn'] AND is_null($data['syarat_ijazah']) AND is_null($data['syarat_kk']) AND is_null($data['syarat_akte']) AND is_null($data['syarat_foto'])) {
               echo "<br>";
               echo "<h2>Cek Kekurangan File</h2><hr>";
-              echo "<i><b>blm semua</b></i><br>";
-              echo "<i><b>Silahkan mengupload scan Ijazah anda</b></i>";
+              echo "<i><b>Anda belum mengupload ijazah, kartu keluarga, akte kelahiran, dan foto 3x4</b></i><br>";
+              echo "<i><b>Silahkan mengupload scan perihal tersebut anda</b></i>";
           } 
-          elseif ($data['syarat_kk']=='') {
+          /*elseif ($data['syarat_kk']=='') {
               echo "<br>";
               echo "<h2>Cek Kekurangan File</h2><hr>";
               echo "<i><b>Anda belum mengupload syarat Kartu Keluarga</b></i><br>";

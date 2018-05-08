@@ -17,7 +17,7 @@
       </li>
       <li class='active has-sub'><a href='#'><i class="fa fa-bars fa-fw"></i>&nbsp; Update</a>
          <ul>
-            <li><a href='tu.php?content=update-nilai'><span>Update Nilai Ujian Masuk</span></a></li>
+            <li><a href='tu.php?content=update-nilai'><span>Update Hasil Ujian Masuk</span></a></li>
             <li><a href='tu.php?content=update-pengumuman'><span>Update Pengumuman</span></a></li>
             <li><a href='tu.php?content=update-biaya'><span>Update Informasi Biaya</span></a></li>
          </ul>

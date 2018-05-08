@@ -54,45 +54,18 @@
         echo "<center>";
         $data = mysqli_fetch_array($query);
           
-          //belum dikonfirmasi admin
-          if ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']=='0')   {
+          //1 1 1 1 1
+          if ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']!='0')   {
               echo "<br>";
               echo "<h2>Cek Kekurangan File</h2><hr>";
-              echo "<i><b>Anda belum mengupload semua syarat</b></i><br>";
-              echo "<i><b>Silahkan mengupload scan semua syarat.</b></i>";
+              echo "<i><b>Anda sudah mengupload semua syarat</b></i><br>";
           }
-          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']!='0') {
+          //1
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']!='0')   {
               echo "<br>";
               echo "<h2>Cek Kekurangan File</h2><hr>";
-              echo "<i><b>Anda sudah mengupload:</b></i><br>"; 
-              echo "<i><b>1. NISN</b></i><br>";
-              echo "<hr>";
-              echo "<i><b>Anda belum mengupload:</b></i><br>"; 
-              echo "<i><b>1. ijazah</b></i><br>";
-              echo "<i><b>2. Kartu Keluarga</b></i><br>";
-              echo "<i><b>3. Akte Kelahiran</b></i><br>";
-              echo "<i><b>4. Foto</b></i><br>";
-              echo "<i><b>Silahkan mengupload scan perihal tersebut anda</b></i>";
-          }      
-            /*elseif ($data['syarat_kk']=='') {
-              echo "<br>";
-              echo "<h2>Cek Kekurangan File</h2><hr>";
-              echo "<i><b>Anda belum mengupload syarat Kartu Keluarga</b></i><br>";
-              echo "<i><b>Silahkan mengupload scan Kartu Keluarga anda</b></i>";
-          } 
-          elseif ($data['syarat_akte']=='') {
-              echo "<br>";
-              echo "<h2>Cek Kekurangan File</h2><hr>";
-              echo "<i><b>Anda belum mengupload syarat Akte Kelahiran</b></i><br>";
-              echo "<i><b>Silahkan mengupload scan Akte Kelahiran anda</b></i>";
-          } 
-          elseif ($data['syarat_foto']=='') {
-              echo "<br>";
-              echo "<h2>Cek Kekurangan File</h2><hr>";
-              echo "<i><b>Anda belum mengupload syarat Foto 3 x 4</b></i><br>";
-              echo "<i><b>Silahkan mengupload scan Foto 3 x 4 anda</b></i>";
-          } 
-          */
+              echo "<i><b>Anda sudah mengupload semua syarat</b></i><br>";
+          }
       }
 ?>
         <hr>

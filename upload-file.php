@@ -58,13 +58,193 @@
           if ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']!='0')   {
               echo "<br>";
               echo "<h2>Cek Kekurangan File</h2><hr>";
-              echo "<i><b>Anda sudah mengupload semua syarat</b></i><br>";
+              echo "<i><b>Anda sudah mengupload semua syarat, terimakasih.</b></i><br>";
           }
-          //1
-          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']!='0')   {
+          //1 1 1 1 0
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']=='0')   {
               echo "<br>";
               echo "<h2>Cek Kekurangan File</h2><hr>";
-              echo "<i><b>Anda sudah mengupload semua syarat</b></i><br>";
+              echo "<i><b>Anda belum mengupload syarat foto.</b></i><br>";
+          }
+          //1 1 1 0 1
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']!='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload syarat akte kelahiran.</b></i><br>";
+          }
+          //1 1 1 0 0
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']=='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload syarat akte kelahiran dan foto.</b></i><br>";
+          }
+          //1 1 0 1 1
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']!='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload syarat kartu keluarga.</b></i><br>";
+          }
+          //1 1 0 1 0
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']=='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload syarat kartu keluarga dan foto.</b></i><br>";
+          }
+          //1 1 0 0 1
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']!='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload syarat kartu keluarga dan akte kelahiran.</b></i><br>";
+          }
+          //1 1 0 0 0
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']=='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload syarat kartu keluarga, akte kelahiran dan foto.</b></i><br>";
+          }
+           //1 0 1 1 1
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']!='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload ijazah.</b></i><br>";
+          }
+          //1 0 1 1 0
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']=='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload ijazah dan foto.</b></i><br>";
+          }
+          //1 0 1 0 1
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']!='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload ijazah dan akte kelahiran.</b></i><br>";
+          }
+          //1 0 1 0 0
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']=='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload ijazah, akte kelahiran dan foto.</b></i><br>";
+          }
+          //1 0 0 1 1
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']!='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload ijazah dan kartu keluarga.</b></i><br>";
+          }
+          //1 0 0 1 0
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']=='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload ijazah, kartu keluarga dan foto.</b></i><br>";
+          }
+          //1 0 0 0 1
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']!='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload ijazah, kartu keluarga dan akte.</b></i><br>";
+          }
+          //1 0 0 0 0
+          elseif ($data['syarat_nisn']!='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']=='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload ijazah, kartu keluarga, akte dan foto.</b></i><br>";
+          }
+          //0 1 1 1 1
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']!='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload NISN.</b></i><br>";
+          }
+          //0 1 1 1 0
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']=='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload NISN dan foto.</b></i><br>";
+          }
+          //0 1 1 0 1
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']!='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload NISN dan akte.</b></i><br>";
+          }
+          //0 1 1 0 0
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']=='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload NISN, akte dan foto.</b></i><br>";
+          }
+          //0 1 0 1 1
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']!='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload NISN dan kartu keluarga.</b></i><br>";
+          }
+          //0 1 0 1 0
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']=='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload NISN, kartu keluarga dan foto.</b></i><br>";
+          }
+          //0 1 0 0 1
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']!='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload NISN, kartu keluarga dan akte.</b></i><br>";
+          }
+          //0 1 0 0 0
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']!='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']=='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload NISN, kartu keluarga, akte dan foto.</b></i><br>";
+          }
+          //0 0 1 1 1 
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']!='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload NISN dan ijazah.</b></i><br>";
+          }
+           //0 0 1 1 0
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']=='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload NISN, ijazah dan foto.</b></i><br>";
+          }
+          //0 0 1 0 1
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']!='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload NISN, ijazah dan akte kelahiran.</b></i><br>";
+          }
+          //0 0 1 0 0
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']!='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']=='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload NISN, ijazah, akte kelahiran dan foto.</b></i><br>";
+          }
+          //0 0 0 1 1
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']!='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload NISN, ijazah dan kartu keluarga.</b></i><br>";
+          }
+          //0 0 0 1 0
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']!='0' AND $data['syarat_foto']=='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload NISN, ijazah, kartu keluarga dan foto.</b></i><br>";
+          }
+           //0 0 0 0 1
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']!='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload NISN, ijazah, kartu keluarga dan akte.</b></i><br>";
+          }
+          //0 0 0 0 0
+          elseif ($data['syarat_nisn']=='0' AND $data['syarat_ijazah']=='0' AND $data['syarat_kk']=='0' AND $data['syarat_akte']=='0' AND $data['syarat_foto']=='0')   {
+              echo "<br>";
+              echo "<h2>Cek Kekurangan File</h2><hr>";
+              echo "<i><b>Anda belum mengupload semua syarat.</b></i><br>";
           }
       }
 ?>

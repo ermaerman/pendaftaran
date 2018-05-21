@@ -4,7 +4,6 @@
     
     include 'koneksi.php';
 
-    $id_data_calon_murid = $_POST['id_data_calon_murid'];
 	$kode_daftar    = $_POST['kode_daftar'];
 
     $target_dir = "../nisn/";
@@ -50,8 +49,8 @@
     }
 
 
-	$update 	= "UPDATE tbl_calon_data_murid SET syarat_nisn='$target_file' WHERE kode_daftar='$kode_daftar'";
-	$updatenisn	= mysqli_query($konek, $update)or die(mysqli_error());
+	$update 	= "UPDATE tbl_data_calon_murid SET syarat_nisn='$target_file' WHERE kode_daftar='$kode_daftar'";
+	$updatenisn	= mysqli_query($konek, $update)or die(mysqli_error($konek));
 
 	if ($updatenisn)
     	{

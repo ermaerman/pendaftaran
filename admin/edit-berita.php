@@ -46,7 +46,7 @@
             <label class="col-sm-2">Gambar</label>
             <label class="col-sm-1">:</label>
             <div class="col-sm-7">
-                <a data-toggle="tooltip" data-placement="right" title="Lihat Gambar" href="<?php echo $data['gambar'] ?>" target="_blank"><img width="70" height="70" src="<?php echo $data['gambar'] ?>"></a>
+                <a data-toggle="tooltip" data-placement="right" title="Lihat Gambar" href="../berita/<?php echo $data['gambar'] ?>" target="_blank"><img width="70" height="70" src="../berita/<?php echo $data['gambar'] ?>"></a>
             </div>
         </div>
         <div class="form-group">

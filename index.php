@@ -73,7 +73,7 @@
         <li><a href="index.php?content=alur-pendaftaran">Alur Pendaftaran</a></li>
         <li><a href="index.php?content=pendaftaran"><span class="glyphicon glyphicon-log-in"></span> Pendaftaran</a></li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown">Lainnya
+          <a class="dropdown-toggle" href="" data-toggle="dropdown">Lainnya
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="index.php?content=cek-proses">Cek Proses</a></li>

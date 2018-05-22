@@ -15,6 +15,7 @@
   th {
       background-color: #3bacd6;
       color: white;
+      font-size: 12px;
   }
 
   td {
@@ -45,8 +46,8 @@
             <th>Nilai Matematika</th>
             <th>Nilai Bahasa Inggris</th>
             <th>Nilai Kejuruan</th>
-            <th>Tes Urin</th>
             <th>Tes Buta Warna</th>
+            <th>Tes Urine / Bebas Narkoba</th>
             <th>Tes Fisik</th>
             <th>Hasil</th>
             <th colspan="2">Action</th>
@@ -59,7 +60,7 @@
 
             $query = mysqli_query($konek, "SELECT * FROM tbl_pengumuman")or die(mysqli_error());
                     if(mysqli_num_rows($query) == 0){ 
-                      echo '<tr><td colspan="7" align="center"><i>Tidak ada pengumuman kelulusan!</i></td></tr>';    
+                      echo '<tr><td colspan="11" align="center"><i>Belum ada pengumuman kelulusan!</i></td></tr>';    
                     }
                       else
                     { 
@@ -67,9 +68,15 @@
                       while($data = mysqli_fetch_array($query)){  
                         echo '<tr>';
                         echo '<td>'.$no.'</td>';
-                        echo '<td>'.$data['nama'].'</td>';
                         echo '<td>'.$data['kode_daftar'].'</td>';
-                        echo '<td>'.$data['pengumuman'].'</td>';
+                        echo '<td>'.$data['bahasa_indonesia'].'</td>';
+                        echo '<td>'.$data['matematika'].'</td>';
+                        echo '<td>'.$data['bahasa_inggris'].'</td>';
+                        echo '<td>'.$data['kejuruan'].'</td>';
+                        echo '<td>'.$data['buta_warna'].'</td>';
+                        echo '<td>'.$data['urine'].'</td>';
+                        echo '<td>'.$data['fisik'].'</td>';
+                        echo '<td>'.$data['hasil'].'</td>';
                         echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Edit" href=tu.php?content=edit-pengumuman&&id_pengumuman='.$data['id_pengumuman'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
                          echo '<td  width="20"><a data-toggle="tooltip" data-placement="left" title="Delete" href=../config/delete-pengumuman.php?id_pengumuman='.$data['id_pengumuman'].'><i class="fa fa-trash fa-fw"></i></a></td>';
                         echo '</tr>';

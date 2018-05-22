@@ -78,7 +78,7 @@
           elseif ($data['b_daftar']==1 AND $data['validasi_daftar']==1) {
               echo "<h2>Cek Proses</h2><hr>";
               echo "<i>Anda sudah membayar biaya pendaftaran dan pembayaran telah dikonfirmasi oleh tata usaha kami.</i><br>";
-              echo "<i>Selanjutnya, silahkan lihat <a data-toggle='tooltip' data-placement='bottom' title='Lihat Tanggal Ujian' href='index.php?content=tgl-ujian'>disini</a> untuk informasi selanjutnya.</i>";
+              echo "<i>Selanjutnya, silahkan lihat <a data-toggle='tooltip' data-placement='bottom' title='Lihat Tanggal Ujian' href='index.php?content=tgl-ujian&&kode_daftar=$kode_daftar'>disini</a> untuk informasi selanjutnya.</i>";
           }
           elseif ($data['b_daftar']==1 AND $data['validasi_daftar']==1 AND $data['b_pangkal_lunas']==1 AND $data['validasi_pangkal_lunas']==0 AND $data['b_pangkal_cicil']==0 AND $data['validasi_pangkal_cicil']==0) {
               echo "<h2>Cek Proses</h2><hr>";

@@ -72,7 +72,64 @@
 	elseif ($b_daftar=='pangkallunas')
 	{
 		$update 		= "UPDATE tbl_pembayaran SET kode_daftar='$kode_daftar', b_pangkal_lunas='1', 
-						   bukti_pangkal_lunas='$target_file', validasi_pangkal_lunas='0' WHERE kode_daftar='$kode_daftar'";
+						   bukti_pangkal_lunas='$target_file', validasi_pangkal_lunas='0', status_pembayaran='1', jenis_pembayaran='1' WHERE kode_daftar='$kode_daftar'";
+		$updatebayar	= mysqli_query($konek, $update)or die(mysqli_error($konek));
+
+		if ($updatebayar)
+    	{
+    		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran pangkal lunas!";
+			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=konfirmasi-pembayaran">'; 
+    	}
+	else {
+    		print"
+    			<script>
+    				alert(\"Balasan gagal ditambah!\");
+    				history.back(-1);
+    			</script>";
+    	}
+	}
+	elseif ($b_daftar=='cicilpertama')
+	{
+		$update 		= "UPDATE tbl_pembayaran SET kode_daftar='$kode_daftar', b_pangkal_cicil1='1', 
+						   bukti_pangkal_cicil1='$target_file', validasi_pangkal_cicil1='0', status_pembayaran='0', jenis_pembayaran='0' WHERE kode_daftar='$kode_daftar'";
+		$updatebayar	= mysqli_query($konek, $update)or die(mysqli_error($konek));
+
+		if ($updatebayar)
+    	{
+    		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran pangkal lunas!";
+			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=konfirmasi-pembayaran">'; 
+    	}
+	else {
+    		print"
+    			<script>
+    				alert(\"Balasan gagal ditambah!\");
+    				history.back(-1);
+    			</script>";
+    	}
+	}
+	elseif ($b_daftar=='cicilkedua')
+	{
+		$update 		= "UPDATE tbl_pembayaran SET kode_daftar='$kode_daftar', b_pangkal_cicil2='1', 
+						   bukti_pangkal_cicil2='$target_file', validasi_pangkal_cicil2='0', status_pembayaran='0', jenis_pembayaran='0' WHERE kode_daftar='$kode_daftar'";
+		$updatebayar	= mysqli_query($konek, $update)or die(mysqli_error($konek));
+
+		if ($updatebayar)
+    	{
+    		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran pangkal lunas!";
+			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=konfirmasi-pembayaran">'; 
+    	}
+	else {
+    		print"
+    			<script>
+    				alert(\"Balasan gagal ditambah!\");
+    				history.back(-1);
+    			</script>";
+    	}
+	}
+	elseif ($b_daftar=='cicilketiga')
+	{
+		$update 		= "UPDATE tbl_pembayaran SET kode_daftar='$kode_daftar', b_pangkal_cicil3='1', 
+						   bukti_pangkal_cicil3='$target_file', validasi_pangkal_cicil3='0', status_pembayaran='0', jenis_pembayaran='0' WHERE kode_daftar='$kode_daftar'";
 		$updatebayar	= mysqli_query($konek, $update)or die(mysqli_error($konek));
 
 		if ($updatebayar)

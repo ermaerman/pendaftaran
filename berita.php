@@ -26,9 +26,10 @@
                       while($data = mysqli_fetch_array($query)){  
                         echo '<div class="col-md-12">';
                         echo '<div class="thumbnail">';
+                        echo '<br>';
                         echo '<p><b>'.$data['judul'].'</b></p>';
                         echo '<hr>';
-                        echo '<p align="justify">'.substr($data['berita'], 0,300)  .'&nbsp;<a data-toggle="tooltip" data-placement="left" title="Baca selanjutnya" href=index.php?content=lihat-berita&&id_berita='.$data['id_berita'].'>baca selanjutnya ..</a></p>';
+                        echo '<p align="justify">'.substr($data['berita'], 0,300).'&nbsp;<a data-toggle="tooltip" data-placement="bottom" title="Baca selanjutnya" href=index.php?content=lihat-berita&&id_berita='.$data['id_berita'].'>baca selanjutnya ..</a></p>';
                         echo '<p align="right"><i><font size="1px">'.$data['tgl_berita'].'&nbsp;&nbsp;&nbsp;</font></i></p>';
                         echo '</div>';
                         echo '</div>';

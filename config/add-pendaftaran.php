@@ -94,7 +94,6 @@
 	        $uploadOk = 0;
 	    }
 	}
-	
 	// Check file size
 	if ($_FILES["fileToUploadNisn"]["size"] > 500000) {
 	    echo "Sorry, your file is too large.";

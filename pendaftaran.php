@@ -117,7 +117,7 @@
                     <input class="form-control input-md" class="input-group date" name="tgl_lahir" type="date" placeholder="Masukkan tanggal lahir anda" required>
                   </div>
                 </div>
-                 <div class="form-group">
+                 <!-- <div class="form-group">
                   <label class="col-sm-1"></label>
                   <label class="col-sm-3">Agama</label>
                   <label class="col-sm-1">:</label>
@@ -674,7 +674,7 @@
                 </div>
                 <input type="hidden" name="tgl_daftar" value="<?php $tgl=date('d-m-Y'); echo $tgl; ?>">
 
-                 <br>
+                 <br> -->
 
                 <ol class="breadcrumb">
                     <li class="active"><b>G. UPLOAD PERSYARATAN</b></li>

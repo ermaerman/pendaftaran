@@ -79,7 +79,7 @@
 
 	//UPLOADS NISN
 	$target_dirnisn = "../nisn/";
-	//$target_nisn 	= $target_dirnisn . basename($_FILES["fileToUploadNisn"]["name"]);
+	$target_nisn 	= $target_dirnisn . basename($_FILES["fileToUploadNisn"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_nisn,PATHINFO_EXTENSION);
 	
@@ -121,16 +121,11 @@
 	    }
 	}
 
-	if ($uploadOk == 1){
-		$target_nisn 	  = $target_dirnisn . basename($_FILES["fileToUploadNisn"]["name"]);
-	}
-	else {
-		$target_nisn 	  = 0;
-	}
+	
 
 	//UPLOADS IJAZAH
 	$target_dirijazah = "../ijazah/";
-	//$target_ijazah 	= $target_dirijazah . basename($_FILES["fileToUploadIjazah"]["name"]);
+	$target_ijazah 	= $target_dirijazah . basename($_FILES["fileToUploadIjazah"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_ijazah,PATHINFO_EXTENSION);
 	
@@ -181,7 +176,7 @@
 
 	//UPLOADS KK
 	$target_dirkk = "../kartu-keluarga/";
-	//$target_kk 	  = $target_dirkk . basename($_FILES["fileToUploadKk"]["name"]);
+	$target_kk 	  = $target_dirkk . basename($_FILES["fileToUploadKk"]["name"]);
 	$uploadOk     = 1;
 	$imageFileType = pathinfo($target_kk,PATHINFO_EXTENSION);
 	
@@ -232,7 +227,7 @@
 
 	//UPLOADS AKTE
 	$target_dirakte = "../akte/";
-	//$target_akte 	= $target_dirakte . basename($_FILES["fileToUploadAkte"]["name"]);
+	$target_akte 	= $target_dirakte . basename($_FILES["fileToUploadAkte"]["name"]);
 	$uploadOk = 1;
 	$imageFileType = pathinfo($target_akte,PATHINFO_EXTENSION);
 	
@@ -282,7 +277,7 @@
 
 	//UPLOADS FOTO
 	$target_dirfoto   = "../foto/";
-	//$target_foto 	  = $target_dirfoto . basename($_FILES["fileToUploadFoto"]["name"]);
+	$target_foto 	  = $target_dirfoto . basename($_FILES["fileToUploadFoto"]["name"]);
 	$uploadOk         = 1;
 	$imageFileType    = pathinfo($target_foto,PATHINFO_EXTENSION);
 	

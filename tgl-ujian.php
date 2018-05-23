@@ -14,9 +14,6 @@
 ?>
 <br>
 <br>
-<br>
-<br>
-
 
 <body>
 	<div class="container">
@@ -26,7 +23,49 @@
 	    	<h3><b>&nbsp;&nbsp;Perihal</b> Ujian Masuk</h3>
 	      	<hr>
 	      	<div class="alert alert-info">
-		  <strong>Info!</strong> <i>Hallo, terimakasih karena anda telah melunasi biaya administrasi pendaftaran<br>Berikut ini adalah informasi yang harus kamu ketahui:</i>
+		  <strong>Info!</strong><hr> <i>Hallo, terimakasih karena anda telah melunasi biaya administrasi pendaftaran<br>Berikut ini adalah informasi yang harus kamu ketahui:</i>
+		  <br>
+		  <br>
+		  <p align="justify">
+		  	- Peserta ujian adalah calon murid yang telah mendaftar di SMK Mandalahayu II Bekasi.<br>
+		  	- Peserta ujian adalah calon murid yang telah membayar biaya administrasi yang telah dikonfirmasi oleh tata usaha SMK Mandalahayu II Bekasi.<br>
+		  	- Peserta diharuskan mengikuti tes ujian masuk di SMK Mandalahayu II Bekasi pada:<br><br>
+		  		<table>
+		  			<tr>
+		  				<td width="50"></td>
+		  				<td width="100"><b>Tanggal</b></td>
+		  				<td>:</td>
+		  			</tr>
+		  			<tr>
+		  				<td width="50"></td>
+		  				<td><b>Pukul</b></td>
+		  				<td>:</td>
+		  			</tr>
+		  			<tr>
+		  				<td width="50"></td>
+		  				<td><b>Tempat</b></td>
+		  				<td>:</td>
+		  			</tr>
+		  			<tr>
+		  				<td width="50"></td>
+		  				<td><b>Pakaian</b></td>
+		  				<td>:</td>
+		  			</tr>
+		  	</table>
+		  	<br>
+		  	- Silahkan print kartu ujian dibawah ini dengan meng-klik tombol print kartu ujian.<br>
+		  	- Perhatian! Harap membawa kartu ujian tersebut saat ujian tes masuk.
+		  	<hr>
+		  	<b>Tes yang akan diujikan:</b> 
+		  	<br>
+		  	<br>
+		  	- Tes tulis: Bahasa Indonesia, Matematika, Bahasa Inggris dan Kejuruan.<br>
+		  	- Tes lain: Tes Buta Warna, Tes Urine / Bebas Narkoba dan Tes Fisik.  
+		  </p>
+		  <br>
+		  <p align="right">
+		  	<i>Perihal Ujian Masuk SMK Mandalahayu II Bekasi</i>
+		  </p>
 	</div>
 		<form class="form-horizontal" action="#" method="POST">
 	    <div class="panel-group">
@@ -64,6 +103,10 @@
 	      <tr>
 	        <th>Program Studi</th>
 	        <td width="500"><i><?php echo $data['prodi'] ?></i></td>
+	      </tr>
+	      <tr>
+	        <th>Tanggal Ujian</th>
+	        <td width="500"><i></i></td>
 	      </tr> 
 	      <tr>
 	        <th>Tes Buta Warna</th>

@@ -23,6 +23,8 @@
   <br>
   <br>
   <br>  
+  <br>  
+  <br>  
   <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
     
         <input type="hidden" name="id_pembayaran">
@@ -465,7 +467,7 @@
           </div>
           <br>
           <div class="modal-body">
-            <form action="config/add-ijazah.php" class="form-horizontal" method="POST">
+            <form action="config/add-ijazah.php" class="form-horizontal" method="POST" enctype="multipart/form-data">
               <div class="form-group">
                 <label class="col-sm-2"></label>
                 <label class="col-sm-3">Kode Daftar</label>
@@ -485,7 +487,7 @@
               <div class="form-group">
                   <label class="control-label col-sm-4"></label>
                   <div class="col-sm-6" align="right">
-                      <button class="btn btn-danger">Upload</button>
+                      <button type="submit" class="btn btn-danger">Upload</button>
                   </div>
               </div>
             </form>

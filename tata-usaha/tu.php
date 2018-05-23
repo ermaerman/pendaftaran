@@ -81,6 +81,8 @@
               include 'edit-biaya.php';
             else if ($content=='update-nilai')
               include 'update-nilai.php';
+            else if ($content=='edit-pengumuman')
+              include 'edit-pengumuman.php';
            
            ?>
   

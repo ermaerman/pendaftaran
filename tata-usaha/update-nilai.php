@@ -33,9 +33,6 @@
 <div class="col-md-10" style="min-height:500px">
   <h3><b>Update</b> Hasil Ujian Masuk</h3>
   <hr>
-  <br>
-   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle fa-fw"></i>Tambah Nilai</button>
-    <br><br>
     <form class="form-horizontal" method="POST">
       <table class="table table-striped">
         <thead>
@@ -50,7 +47,7 @@
             <th>Tes Urine / Bebas Narkoba</th>
             <th>Tes Fisik</th>
             <th>Hasil</th>
-            <th colspan="2">Action</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -58,7 +55,7 @@
 
             include '../config/koneksi.php';
 
-            $query = mysqli_query($konek, "SELECT * FROM tbl_pengumuman")or die(mysqli_error());
+            $query = mysqli_query($konek, "SELECT * FROM tbl_pengumuman ")or die(mysqli_error());
                     if(mysqli_num_rows($query) == 0){ 
                       echo '<tr><td colspan="11" align="center"><i>Belum ada pengumuman kelulusan!</i></td></tr>';    
                     }
@@ -77,8 +74,7 @@
                         echo '<td>'.$data['urine'].'</td>';
                         echo '<td>'.$data['fisik'].'</td>';
                         echo '<td>'.$data['hasil'].'</td>';
-                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Edit" href=tu.php?content=edit-pengumuman&&id_pengumuman='.$data['id_pengumuman'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
-                         echo '<td  width="20"><a data-toggle="tooltip" data-placement="left" title="Delete" href=../config/delete-pengumuman.php?id_pengumuman='.$data['id_pengumuman'].'><i class="fa fa-trash fa-fw"></i></a></td>';
+                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Update" href=tu.php?content=edit-pengumuman&&id_pengumuman='.$data['id_pengumuman'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
                         echo '</tr>';
                         $no++;  
                       }

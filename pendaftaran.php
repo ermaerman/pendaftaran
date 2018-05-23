@@ -65,7 +65,7 @@
                <ol class="breadcrumb">
                     <li class="active"><b>A. KETERANGAN PRIBADI CALON MURID</b></li>
                 </ol>
-                <div class="form-group">
+             <div class="form-group">
                   <label class="col-sm-1"></label>
                   <label class="col-sm-3">NISN (Nomor Induk Siswa Nasional)</label>
                   <label class="col-sm-1">:</label>

@@ -78,12 +78,17 @@ body {
 </video>
 
 <div class="content">
-  <h1>SMK Mandalahayu II Bekasi</h1>
+  <table>
+    <tr><td><img height="120" width="160" src="gambar/manda.png"></td>
+      <td>
+  <h1>SMK MANDALAHAYU II BEKASI</h1><hr>
   <p>Jl. Pengasinan Tengah No.99, Pengasinan, Rawalumbu, Kota Bks, Jawa Barat 17115</p>
   <p>Telp.(021)8241 5236-8241 1828 Fax.(021)8241 5236</p>
-  <br>
+  <br></td></tr>
+</table>
+<div align="right">
   <button id="myBtn" onclick="myFunction()"><span class="glyphicon glyphicon-pause"></span> Pause</button>
-</div>
+</div></div>
 
 <script>
 var video = document.getElementById("myVideo");

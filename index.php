@@ -50,7 +50,7 @@
         <li><a href="index.php?content=berita">Berita</a></li>
         <li><a href="index.php?content=pengumuman">Pengumuman</a></li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown">Jurusan
+          <a href="" class="dropdown-toggle" data-toggle="dropdown">Jurusan
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="index.php?content=multimedia">Multimedia</a></li>
@@ -58,7 +58,7 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown">Tentang Kami
+          <a href="" class="dropdown-toggle" data-toggle="dropdown">Tentang Kami
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="index.php?content=visi-misi">Visi & Misi</a></li>

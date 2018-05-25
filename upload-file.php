@@ -513,7 +513,7 @@
           </div>
           <br>
           <div class="modal-body">
-            <form action="../config/add-kk.php" class="form-horizontal" method="POST">
+            <form action="config/add-kk.php" class="form-horizontal" method="POST" enctype="multipart/form-data">
               <div class="form-group">
                 <label class="col-sm-2"></label>
                 <label class="col-sm-3">Kode Daftar</label>
@@ -533,7 +533,7 @@
               <div class="form-group">
                   <label class="control-label col-sm-4"></label>
                   <div class="col-sm-6" align="right">
-                      <button class="btn btn-danger">Upload</button>
+                      <button type="submit" class="btn btn-danger">Upload</button>
                   </div>
               </div>
             </form>
@@ -560,7 +560,7 @@
           </div>
           <br>
           <div class="modal-body">
-            <form action="../config/add-akte.php" class="form-horizontal" method="POST">
+            <form action="config/add-akte.php" class="form-horizontal" method="POST" enctype="multipart/form-data">
               <div class="form-group">
                 <label class="col-sm-2"></label>
                 <label class="col-sm-3">Kode Daftar</label>
@@ -580,7 +580,7 @@
               <div class="form-group">
                   <label class="control-label col-sm-4"></label>
                   <div class="col-sm-6" align="right">
-                      <button class="btn btn-danger">Upload</button>
+                      <button type="submit" class="btn btn-danger">Upload</button>
                   </div>
               </div>
             </form>
@@ -605,7 +605,7 @@
           </div>
           <br>
           <div class="modal-body">
-            <form action="../config/add-foto.php" class="form-horizontal" method="POST">
+            <form action="config/add-foto.php" class="form-horizontal" method="POST" enctype="multipart/form-data">
               <div class="form-group">
                 <label class="col-sm-2"></label>
                 <label class="col-sm-3">Kode Daftar</label>
@@ -625,7 +625,7 @@
               <div class="form-group">
                   <label class="control-label col-sm-4"></label>
                   <div class="col-sm-6" align="right">
-                      <button class="btn btn-danger">Upload</button>
+                      <button type="submit" class="btn btn-danger">Upload</button>
                   </div>
               </div>
             </form>

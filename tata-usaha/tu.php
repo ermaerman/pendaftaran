@@ -55,8 +55,6 @@
               include 'transaksi-cicilan.php';
             else if ($content=='transaksi-lunas')
               include 'transaksi-lunas.php';
-            else if ($content=='update-pengumuman')
-              include 'update-pengumuman.php';
             else if ($content=='pembagian-kelas')
               include 'pembagian-kelas.php';
             else if ($content=='request-kelas')

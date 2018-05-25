@@ -133,6 +133,8 @@
                 include 'upload-file.php';
               else if ($content=='tgl-ujian')
                 include 'tgl-ujian.php';
+              else if ($content=='alur-dua')
+                include 'alur-dua.php';
            ?>
         </div>
 </div>

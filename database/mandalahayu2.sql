@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 08, 2018 at 07:58 PM
+-- Generation Time: May 25, 2018 at 06:29 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -32,7 +32,7 @@ CREATE TABLE `tbl_berita` (
   `id_berita` int(10) NOT NULL,
   `judul` varchar(200) NOT NULL,
   `tgl_berita` varchar(20) NOT NULL,
-  `gambar` varchar(20) NOT NULL,
+  `gambar` varchar(200) NOT NULL,
   `berita` varchar(5000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -41,7 +41,8 @@ CREATE TABLE `tbl_berita` (
 --
 
 INSERT INTO `tbl_berita` (`id_berita`, `judul`, `tgl_berita`, `gambar`, `berita`) VALUES
-(1, 'Contoh', '01-05-2018', '../berita/resi2.jpg', '<p><strong>Now you can browse privately</strong>, and other people who use this device won&rsquo;t see your activity. However, downloads and bookmarks will be saved. Learn more Chrome won&rsquo;t save the following information: Your browsing history Cookies and site data Information entered in forms Your activity might still be visible to: Websites you visit Your employer or school Your internet service provider</p>');
+(2, 'Sambutan Ketua Yayasan Mandalahayu', '25-05-2018', '../berita/ketua.jpg', '<p style=\"text-align: justify;\"><strong>Assalamu&rsquo;alaikum Warahmatullahi Wabarakatuh, </strong></p>\r\n<p style=\"text-align: justify;\"><strong>Salam Sejahtera, </strong></p>\r\n<p style=\"text-align: justify;\">Segala puja dan puji kita panjatkan kehadirat Tuhan Yang Maha Kuasa, DIA lah Tuhan yang pantas kita sembah, dan kepada-Nya kita berharap dan memohon perlindungan. Melihat perkembangan Ilmu Pengetahuan dan perubahan perilaku sosial yang semakin global dan cepat, sudah selayaknya kita perlu mempersiapkan diri agar perkembangan atau perubahan tersebut dapat dimengerti dan dijawab secara baik dan benar, terutama bagi putra-putri kita untuk menjalani proses hidup dan kehidupan di masa yang akan datang. Proses kehidupan di masa yang akan datang adalah proses implementasi diri yang penuh dengan berbagai macam tantangan dan rintangan. Tantangan dalam mengikuti Perkembangan Ilmu Pengetahuan dan rintangan dalam menghadapi perilaku moral. Memang sangat beralasan bagi para orang tua, bahwa anak-anaknya diharapkan dapat menjalani proses kehidupan secara baik dan benar, proporsional dan professional.</p>\r\n<p style=\"text-align: justify;\">&nbsp;</p>\r\n<p style=\"text-align: justify;\">Mewujudkan generasi yang cinta alam, cerdas dan unggul dalam sains dan teknologi adalah Visi Pendidikan Yayasan Mandalahayu. Visi ini dibuat berlandaskan pada kajian berbagai macam bidang Ilmu Pengetahuan, yang dilatarbelakangi harapan terbentuknya kepribadian dan perilaku anak yang memiliki Ilmu Pengetahuan dan Akhlaq. Sebuah Lembaga Pendidikan berkewajiban melakukan pembinaan, pembentukan dan pengembangan potensi dasar yang dimiliki oleh setiap anak agar dapat digunakan secara baik dan proposional. Kerja sama yang baik di antara kita adalah modal utama dalam pembinaan dan pengembangan potensi dasar anak. Kehadiran website ini adalah merupakan bagian yang tak terpisahkan dari pelayanan upaya Yayasan untuk memenuhi segala kebutuhan penunjang akademik. Semoga media ini bisa membantu masyarakat luas untuk dapat melihat serta mendapatkan akses informasi perkembangan Yayasan Mandalahayu dimasa sekarang dan akan datang.</p>\r\n<p style=\"text-align: justify;\">&nbsp;</p>\r\n<p style=\"text-align: justify;\"><strong>Wassalamu&rsquo;alaikum Warahmatullahi Wabarakatuh</strong></p>'),
+(3, 'Sambutan Kepala Sekolah SMK Mandalahayu II Bekasi', '25-05-2018', '../berita/manda.png', '<p style=\"text-align: justify;\"><strong>Alhamdulillahi robbil alamin</strong> kami panjatkan kehadlirat Allah SWT, bahwasannya dengan rahmat dan karunia-Nya lah akhirnya Website sekolah ini dengan alamat www.smk-mandalahayu-2-bekasi.com dapat kami perbaharui. Kami mengucapkan selamat datang di Website kami Sekolah Menengah Kejuruan Mandalahayu II Bekasi yang saya tujukan untuk seluruh unsur pimpinan, guru, karyawan dan siswa serta khalayak umum guna dapat mengakses seluruh informasi tentang segala profil, aktifitas/kegiatan serta fasilitas sekolah kami. Kami selaku pimpinan sekolah mengucapkan terima kasih kepada tim pembuat Website ini yang telah berusaha untuk dapat lebih memperkenalkan segala perihal yang dimiliki oleh sekolah. Dan tentunya Website sekolah kami masih terdapat banyak kekurangan, oleh karena itu kepada seluruh civitas akademika dan masyarakat umum dapat memberikan saran dan kritik yang membangun demi kemajuan Website ini lebih lanjut. Saya berharap</p>\r\n<p style=\"text-align: justify;\">Website ini dapat dijadikan wahana interaksi yang positif baik antar civitas akademika maupun masyarakat pada umumnya sehingga dapat menjalin silaturahmi yang erat disegala unsur. Mari kita bekerja dan berkarya dengan mengharap ridho sang Kuasa dan keikhlasan yang tulus dijiwa demi anak bangsa.</p>\r\n<p style=\"text-align: justify;\"><strong>Terima kasih semoga Allah &lsquo;Azza Wa Jalla menyertai doa kita semua&hellip;&hellip;amin.</strong></p>');
 
 -- --------------------------------------------------------
 
@@ -75,7 +76,7 @@ CREATE TABLE `tbl_biaya` (
 --
 
 INSERT INTO `tbl_biaya` (`id_biaya`, `tahun_pelajaran`, `biaya_pendaftaran`, `uang_gedung`, `biaya_mos`, `biaya_spp`, `seragam_putih_abu`, `seragam_olahraga`, `seragam_batik`, `seragam_pramuka`, `baju_muslim`, `topi`, `dasi`, `ikat_pinggang`, `kbm_pramuka`, `kbm_praktek`, `kbm_ekstra`, `total_pangkal`) VALUES
-(1, '2018 / 2019', '100000', '1600000', '200000', '250000', '76000', '92000', '45000', '93000', '54000', '15000', '10000', '15000', '200000', '200000', '200000', '3050000');
+(2, '2018 / 2019', '100000', '1732000', '200000', '200000', '56000', '72000', '45000', '47000', '63000', '15000', '10000', '10000', '200000', '200000', '200000', '3050000');
 
 -- --------------------------------------------------------
 
@@ -170,12 +171,19 @@ CREATE TABLE `tbl_data_calon_murid` (
 --
 
 INSERT INTO `tbl_data_calon_murid` (`id_calon_murid`, `tahun_pelajaran`, `prodi`, `nisn`, `nama`, `nama_panggilan`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `agama`, `kewarganegaraan`, `anak_ke`, `status_perwalian`, `perwalian_oleh`, `jml_saudara_kandung`, `jml_saudara_tiri`, `jml_saudara_angkat`, `status_keluarga`, `bahasa`, `alamat`, `telepon_rumah`, `status_tinggal`, `jarak`, `transportasi`, `asal_sekolah`, `nomor_ijazah`, `tgl_ijazah`, `lama_belajar`, `jml_un`, `berat_badan`, `tinggi_badan`, `goldar`, `penyakit`, `kelainan`, `nama_ayah`, `tempat_lahir_ayah`, `tgl_lahir_ayah`, `pekerjaan_ayah`, `penghasilan_ayah`, `pendidikan_ayah`, `kewarganegaraan_ayah`, `nama_ibu`, `tempat_lahir_ibu`, `tgl_lahir_ibu`, `pekerjaan_ibu`, `penghasilan_ibu`, `pendidikan_ibu`, `kewarganegaraan_ibu`, `alamat_orangtua`, `nomor_hp`, `pengeluaran`, `jml_keluarga_kerja`, `jml_keluarga_menikah`, `nama_wali`, `tempat_lahir_wali`, `tgl_lahir_wali`, `pekerjaan_wali`, `penghasilan_wali`, `pendidikan_wali`, `kewarganegaraan_wali`, `alamat_wali`, `nomor_hp_wali`, `pengeluaran_wali`, `jml_wali_kerja`, `jml_wali_menikah`, `kesenian`, `olahraga`, `organisasi`, `hasta_karya`, `bakat_lulus`, `cita_cita`, `tgl_daftar`, `syarat_nisn`, `syarat_ijazah`, `syarat_kk`, `syarat_akte`, `syarat_foto`, `kode_daftar`, `status`) VALUES
-(25, '2018 / 2019', 'Teknik Komputer dan Jaringan', '99287888', 'Erma Noviana', 'Erma', 'Perempuan', 'Magelang', '1996-11-12', 'Islam', 'Indonesia', '1', 'Anak Kandung', 'Ayah', 1, 0, 0, 'Tidak Yatim/Piatu/Ya', 'Indonesia', 'Bekasi', '087981711', 'Dengan Orangtua/Wali', '21', 'Motor', 'SMP Negeri 18 Bekasi ', '67867', '2018-04-19', '3', '32', '34', '160', '-', 'Tidak ada', 'Tidak ada', 'Ayah', 'Boyolali', '2018-04-06', 'Pekerjaan Ayah', '8989888888', 'Pendidikan', 'Indonesia', 'Ibu', 'Magelang', '2018-04-17', 'Pekerjaan', '89798987', 'Pendidikan Ibu', 'Indonesia', 'Bekasi', '098765432345678', '59876567890', 1, 2, '', '', '', '', '', '', '', '', '', '', 0, 0, 'Kesenian', 'Olahraga', 'Organisasi', 'Hasta', 'Bakat', 'Cita cita', '03-04-2018', '0', '0', '0', '0', '0', 3227, 0),
+(25, '2018 / 2019', 'Teknik Komputer dan Jaringan', '99287888', 'Erma Noviana', 'Erma', 'Perempuan', 'Magelang', '1996-11-12', 'Islam', 'Indonesia', '1', 'Anak Kandung', 'Ayah', 1, 0, 0, 'Tidak Yatim/Piatu/Ya', 'Indonesia', 'Bekasi', '087981711', 'Dengan Orangtua/Wali', '21', 'Motor', 'SMP Negeri 18 Bekasi ', '67867', '2018-04-19', '3', '32', '34', '160', '-', 'Tidak ada', 'Tidak ada', 'Ayah', 'Boyolali', '2018-04-06', 'Pekerjaan Ayah', '8989888888', 'Pendidikan', 'Indonesia', 'Ibu', 'Magelang', '2018-04-17', 'Pekerjaan', '89798987', 'Pendidikan Ibu', 'Indonesia', 'Bekasi', '098765432345678', '59876567890', 1, 2, '', '', '', '', '', '', '', '', '', '', 0, 0, 'Kesenian', 'Olahraga', 'Organisasi', 'Hasta', 'Bakat', 'Cita cita', '03-04-2018', '0', '../ijazah/11.png', '0', '0', '../foto/cinta-musik-indonesia.jpg', 3227, 0),
 (26, '2018 / 2019', 'Teknik Komputer dan Jaringan', '23452222121', 'Rina Panduwinata', 'Rina', 'Perempuan', 'Bekasi', '2018-04-02', 'Islam', 'Indonesia', '1', 'Anak Kandung', 'Ayah', 1, 0, 1, 'Tidak Yatim/Piatu/Ya', 'Indonesia', 'Bekasi', '087656789', 'Dengan Orangtua/Wali', '10 km', 'Motor', 'SMP Negri 2', 'SU-987890', '2018-04-10', '3 Tahun', '32', '43', '160', 'O', 'Tidak Ada', 'Tidak Ada', 'Tono', 'Bekasi', '2018-04-24', 'PNS', '12090900', 'S1', 'Indonesia', 'Disa', 'Bogor', '2018-04-07', 'Ibu Rumah Tangga', '0', 'S1', 'Indonesia', 'Bekasi', '076789', '20909000', 2, 1, '', '', '', '', '', '', '', '', '', '', 0, 0, 'Menari', 'Bulutangkis', 'Tidak ada', 'Tidak ada', 'Menari ', 'Guru', '28-04-2018', '0', '../ijazah/643x0w.jpg', '../kartu-keluarga/244167369025212.png', '../akte/bigstock-blue-paint-splash-isolated-on-530', '../foto/cinta-musik-indonesia.jpg', 5486, 0),
-(27, '-- Pilih Tahun Pelaj', '-- Pilih Program Studi --', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '../nisn/220px-Sangkuriang1-300x197.jpg', '../ijazah/', '../kartu-keluarga/', '../akte/', '../foto/', 2188, 0),
-(28, '2018 / 2019', 'Teknik Komputer dan Jaringan', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '../nisn/blue-paint-strokes-28651-2560x1440.jpg', '../ijazah/7406f7085ce6db391211bb9d22f5f3c6--appsto', '../kartu-keluarga/081c47a3146a68c528681080aebc8cb2', '../akte/24b99ccf5c3a55ec4579d7ede01abb36.jpg', '../foto/', 9650, 0),
-(29, '2018 / 2019', 'Teknik Komputer dan Jaringan', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '../nisn/4g-network.jpg', '../ijazah/081c47a3146a68c528681080aebc8cb2.png', '../kartu-keluarga/220px-Sangkuriang1-300x197.jpg', '../akte/', '0', 8250, 0),
-(30, '-- Pilih Tahun Pelaj', '-- Pilih Program Studi --', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '0', '../ijazah/220px-Sangkuriang1-300x197.jpg', '0', '0', '0', 2782, 0);
+(27, '2018 / 2019', 'Multimedia', '090766123456', 'Annisa Dwi Rosalina', 'Annisa', 'Perempuan', 'Jakarta', '1997-10-23', 'Islam', 'Indonesia', '2', 'Anak Kandung', 'Ayah', 1, 0, 0, 'Tidak Yatim/Piatu/Ya', 'Bahasa Ibu', 'Komplek Danamon', '021845344', 'Dengan Orangtua/Wali', '20km', 'Jalan kaki', 'SMP n 23', '01920813902', '2012-01-09', '2 tahun', '6.00', '45kg', '168', 'b', 'nop', 'nop', 'Rus', 'pekanbaru', '2018-05-18', 'Bos perusahaan mafia', '1000000000', 's3', 'Australia', 'Nur', 'sumbawa', '1986-05-17', 'ibu rumah tangga', '10000000', 's3', 'malaysia', 'danamon', '081923452345', '100000000', 3, 2, 'nop', '', '', '', '', '', '', '', '', '', 0, 0, 'menyanyi, menari', 'berenang', 'remaja masjid', 'lukisan monalisa', 'berbicara', 'dokter', '23-05-2018', '../nisn/3.jpg', '../ijazah/7ff7947123fa9884a2029b0555aff3f7.jpg', '../kartu-keluarga/5.jpg', '../akte/11.png', '../foto/a.jpg', 5775, 0),
+(28, '2018 / 2019', 'Teknik Komputer dan Jaringan', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '0', '0', '0', '0', '0', 1766, 0),
+(29, '2018 / 2019', 'Multimedia', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '0', '0', '0', '0', '0', 4785, 0),
+(30, '-- Pilih Tahun Pelaj', '-- Pilih Program Studi --', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '../nisn/7ff7947123fa9884a2029b0555aff3f7.jpg', '0', '0', '0', '0', 5860, 0),
+(31, '-- Pilih Tahun Pelaj', '-- Pilih Program Studi --', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '0', '0', '0', '0', '0', 6436, 0),
+(32, '-- Pilih Tahun Pelaj', '-- Pilih Program Studi --', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '../nisn/6.JPG', '../ijazah/4.JPG', '0', '../akte/5.jpg', '../foto/5cMm2UiN_400x400.jpg', 9829, 0),
+(33, '-- Pilih Tahun Pelaj', '-- Pilih Program Studi --', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '../nisn/11.png', '../ijazah/11.png', '../kartu-keluarga/11.png', '0', '../foto/11.png', 2375, 0),
+(34, '-- Pilih Tahun Pelaj', '-- Pilih Program Studi --', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '../nisn/2.JPG', '0', '0', '0', '../foto/5.jpg', 2451, 0),
+(35, '2018 / 2019', 'Multimedia', '090766123456', 'Annisa Dwi Rosalina', 'Nama Panggilan', 'Laki-laki', 'Jakarta', '2018-05-10', 'Islam', 'Indonesia', '2', 'Anak Kandung', 'Ayah', 1, 0, 0, 'Tidak Yatim/Piatu/Ya', 'Bahasa Ibu', 'Komplek Danamon', '4', 'Dengan Orangtua/Wali', '20km', 'Jalan kaki', 'SMP n 23', '01920813902', '2018-05-10', '2 tahun', '6.00', '45kg', '168', 'b', 'nop', 'nop', 'Rus', 'pekanbaru', '2018-05-26', 'Bos perusahaan mafia', '1000000000', 's3', 'Australia', 'Nur', 'sumbawa', '2018-05-22', 'ibu rumah tangga', '10000000', 's3', 'malaysia', 'danamon', '081923452345', '100000000', 3, 2, 'nop', '', '', '', '', '', '', '', '', '', 0, 0, 'menyanyi, menari', 'berenang', 'remaja masjid', 'lukisan monalisa', 'berbicara', 'dokter', '25-05-2018', '../nisn/7ff7947123fa9884a2029b0555aff3f7.jpg', '../ijazah/3.jpg', '0', '0', '../foto/11.png', 5252, 0),
+(36, '2018 / 2019', 'Multimedia', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '../nisn/7ff7947123fa9884a2029b0555aff3f7.jpg', '0', '0', '0', '0', 1981, 0),
+(37, '2018 / 2019', 'Multimedia', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '../nisn/5.jpg', '0', '0', '0', '0', 5436, 0);
 
 -- --------------------------------------------------------
 
@@ -303,7 +311,7 @@ INSERT INTO `tbl_faq` (`id_faq`, `nama`, `email`, `comment`, `balasan`, `tanggal
 
 CREATE TABLE `tbl_galeri` (
   `id_galeri` int(10) NOT NULL,
-  `gambar` varchar(50) NOT NULL,
+  `gambar` varchar(200) NOT NULL,
   `caption` varchar(500) NOT NULL,
   `tgl_update` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -338,6 +346,7 @@ CREATE TABLE `tbl_kelas` (
 CREATE TABLE `tbl_pembayaran` (
   `id_pembayaran` int(10) NOT NULL,
   `kode_daftar` int(30) NOT NULL,
+  `tahun_pelajaran` varchar(20) NOT NULL,
   `b_daftar` int(50) NOT NULL,
   `bukti_daftar` varchar(50) NOT NULL,
   `validasi_daftar` int(10) NOT NULL,
@@ -352,20 +361,32 @@ CREATE TABLE `tbl_pembayaran` (
   `validasi_pangkal_cicil2` varchar(10) NOT NULL,
   `b_pangkal_cicil3` varchar(10) NOT NULL,
   `bukti_pangkal_cicil3` varchar(50) NOT NULL,
-  `validasi_pangkal_cicil3` varchar(10) NOT NULL
+  `validasi_pangkal_cicil3` varchar(10) NOT NULL,
+  `status_pembayaran` int(5) NOT NULL,
+  `jenis_pembayaran` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_pembayaran`
 --
 
-INSERT INTO `tbl_pembayaran` (`id_pembayaran`, `kode_daftar`, `b_daftar`, `bukti_daftar`, `validasi_daftar`, `b_pangkal_lunas`, `bukti_pangkal_lunas`, `validasi_pangkal_lunas`, `b_pangkal_cicil1`, `bukti_pangkal_cicil1`, `validasi_pangkal_cicil1`, `b_pangkal_cicil2`, `bukti_pangkal_cicil2`, `validasi_pangkal_cicil2`, `b_pangkal_cicil3`, `bukti_pangkal_cicil3`, `validasi_pangkal_cicil3`) VALUES
-(31, 3227, 1, '../uploads/5cMm2UiN_400x400.jpg', 1, 0, '', 0, 0, '', 0, '', '', '', '', '', ''),
-(32, 5486, 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', ''),
-(33, 2188, 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', ''),
-(34, 9650, 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', ''),
-(35, 8250, 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', ''),
-(36, 2782, 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '');
+INSERT INTO `tbl_pembayaran` (`id_pembayaran`, `kode_daftar`, `tahun_pelajaran`, `b_daftar`, `bukti_daftar`, `validasi_daftar`, `b_pangkal_lunas`, `bukti_pangkal_lunas`, `validasi_pangkal_lunas`, `b_pangkal_cicil1`, `bukti_pangkal_cicil1`, `validasi_pangkal_cicil1`, `b_pangkal_cicil2`, `bukti_pangkal_cicil2`, `validasi_pangkal_cicil2`, `b_pangkal_cicil3`, `bukti_pangkal_cicil3`, `validasi_pangkal_cicil3`, `status_pembayaran`, `jenis_pembayaran`) VALUES
+(31, 3227, '', 1, '../uploads/5cMm2UiN_400x400.jpg', 1, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
+(33, 2188, '', 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
+(34, 9650, '', 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
+(35, 8250, '', 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
+(36, 2782, '', 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
+(38, 5486, '2018 / 2019', 1, '../uploads/7ff7947123fa9884a2029b0555aff3f7.jpg', 1, 1, '../uploads/5cMm2UiN_400x400.jpg', 1, 0, '', 0, '', '', '', '', '', '', 1, 1),
+(39, 5775, '2018 / 2019', 1, '../uploads/5cMm2UiN_400x400.jpg', 1, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
+(40, 1766, '2018 / 2019', 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
+(41, 2375, '-- Pilih Tahun Pelaj', 1, '', 1, 0, '', 0, 1, '', 1, '1', '', '1', '1', '', '1', 0, 0),
+(42, 2451, '-- Pilih Tahun Pelaj', 1, '../uploads/11.png', 1, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
+(43, 5252, '2018 / 2019', 1, '../uploads/7ff7947123fa9884a2029b0555aff3f7.jpg', 1, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
+(44, 5252, '2018 / 2019', 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
+(45, 5252, '2018 / 2019', 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
+(46, 5252, '2018 / 2019', 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
+(47, 1981, '2018 / 2019', 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
+(48, 5436, '2018 / 2019', 1, '', 1, 0, '', 0, 1, '', 0, '', '', '', '', '', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -375,10 +396,24 @@ INSERT INTO `tbl_pembayaran` (`id_pembayaran`, `kode_daftar`, `b_daftar`, `bukti
 
 CREATE TABLE `tbl_pengumuman` (
   `id_pengumuman` int(10) NOT NULL,
-  `nama` varchar(30) NOT NULL,
   `kode_daftar` int(10) NOT NULL,
-  `pengumuman` varchar(50) NOT NULL
+  `bahasa_indonesia` int(10) NOT NULL,
+  `matematika` int(10) NOT NULL,
+  `bahasa_inggris` int(10) NOT NULL,
+  `kejuruan` int(10) NOT NULL,
+  `buta_warna` varchar(20) NOT NULL,
+  `urine` varchar(20) NOT NULL,
+  `fisik` varchar(20) NOT NULL,
+  `hasil` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_pengumuman`
+--
+
+INSERT INTO `tbl_pengumuman` (`id_pengumuman`, `kode_daftar`, `bahasa_indonesia`, `matematika`, `bahasa_inggris`, `kejuruan`, `buta_warna`, `urine`, `fisik`, `hasil`) VALUES
+(1, 2451, 82, 0, 0, 79, 'Lulus', 'Lulus', 'Lulus', 'Lulus'),
+(2, 5252, 0, 0, 0, 0, 'Lulus', 'Lulus', 'Lulus', 'Tidak Lulus');
 
 -- --------------------------------------------------------
 
@@ -552,19 +587,19 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_berita`
 --
 ALTER TABLE `tbl_berita`
-  MODIFY `id_berita` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_berita` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tbl_biaya`
 --
 ALTER TABLE `tbl_biaya`
-  MODIFY `id_biaya` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_biaya` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_data_calon_murid`
 --
 ALTER TABLE `tbl_data_calon_murid`
-  MODIFY `id_calon_murid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id_calon_murid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `tbl_data_murid`
@@ -594,13 +629,13 @@ ALTER TABLE `tbl_kelas`
 -- AUTO_INCREMENT for table `tbl_pembayaran`
 --
 ALTER TABLE `tbl_pembayaran`
-  MODIFY `id_pembayaran` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id_pembayaran` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `tbl_pengumuman`
 --
 ALTER TABLE `tbl_pengumuman`
-  MODIFY `id_pengumuman` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pengumuman` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tbl_request_kelas`

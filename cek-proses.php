@@ -116,7 +116,7 @@
           }
            elseif ($data['b_daftar']==1 AND $data['validasi_daftar']==1 AND $data['b_pangkal_lunas']==0 AND $data['validasi_pangkal_lunas']==0 AND $data['b_pangkal_cicil1']==1 AND $data['validasi_pangkal_cicil1']==1 AND $data['b_pangkal_cicil2']==1 AND $data['validasi_pangkal_cicil2']==1 AND $data['b_pangkal_cicil3']==1 AND $data['validasi_pangkal_cicil3']==1) {
               echo "<h2>Cek Proses</h2><hr>";
-              echo "<i>Terimakasih, Anda telah membayar biaya uang pangkal cicilan ketiga dan pembayaran telah dikonfirmasi oleh tatausaha kami. Pembayaran uang pangkal telah dilakukan sebanyak 3 kali cicilan dan telah lunas.</i><br>";
+              echo "<i>Terimakasih, Anda telah membayar biaya uang pangkal cicilan ketiga dan pembayaran telah dikonfirmasi oleh tatausaha kami. <br>Pembayaran uang pangkal telah dilakukan sebanyak 3 kali cicilan dan telah lunas.</i><br>";
           }
       }
 ?>

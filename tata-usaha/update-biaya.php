@@ -1,16 +1,28 @@
-<?php
+<style>
 
-  error_reporting(0);
+  table {
+      border-collapse: collapse;
+      width: 100%;
+  }
 
-  include '../config/koneksi.php';
+  th, td {
+      text-align: left;
+      padding: 8px;
+  }
 
-  $id_biaya = $_GET['id_biaya'];
+  tr:nth-child(even){background-color: #bbdfed;}
 
-  $edit    = "SELECT * FROM tbl_biaya ORDER BY id_biaya DESC LIMIT 1";
-  $hasil   = mysqli_query($konek, $edit)or die(mysql_error());
-  $data    = mysqli_fetch_array($hasil);
+  th {
+      background-color: #3bacd6;
+      color: white;
+      font-size: 11px;
+  }
 
-?>
+  td {
+    font-size: 11px;
+  }
+
+</style>
 
 <script>
 function sum() {
@@ -42,114 +54,81 @@ function sum() {
 </div>
    
 <div class="col-md-10" style="min-height:500px">
-  	<h3><b>Update</b> Informasi Biaya</h3>
-    <hr>
-    <br>
-    <div class="form-group">
-                  <label class="col-sm-1"></label>
-                  <label class="col-sm-3">Tahun Pelajaran</label>
-                  <label class="col-sm-1">:</label>
-                  <div class="col-sm-6">
-                    <select class="form-control" name="tahun_pelajaran" id="tahun_pelajaran" onchange="changeValue(this.value)">
-                    <option>-- Pilih Tahun Pelajaran --</option>
-                    <?php
-                    $tujuan = "SELECT * FROM tbl_biaya";
-                    $queryTujuan = mysqli_query($konek,$tujuan);
-                    while ($dataTujuan = mysqli_fetch_array($queryTujuan)) { ?>
-                         <option value="<?php echo $dataTujuan['tahun_pelajaran'] ?>"><?php echo $dataTujuan["tahun_pelajaran"] ?>
-                        </option>
-                    <?php
-                    }
-                    ?>
-                    </select> 
-                  </div>
-                </div>
-    <br>
-    <br>
+  <h3><b>Update</b> Hasil Ujian Masuk</h3>
+  <hr>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle fa-fw"></i>Tambah Informasi Biaya</button>
+  <br>
+  <br>
     <form class="form-horizontal" method="POST">
-    <div class="panel-group">
-    <div class="panel panel-primary">
-      <div class="panel-heading">Informasi Biaya</div>
-      <div class="panel-body">
-      <table class="table table-bordered">  
-      <tr>
-        <input type="hidden" name="id_biaya" value="<?php echo $data['id_biaya'];?>">
-        <th><font size="2px">Tahun Pelajaran</font></th>
-        <td width="800"><i><font size="2px"><?php echo $data['tahun_pelajaran'];?></font></i></td>
-      </tr>
-      <tr>
-        <th><font size="2px">Biaya Pendaftaran</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['biaya_pendaftaran'];?></font></i></td>
-      </tr>
-      <tr>
-        <td colspan="2"><br>
-      <ol class="breadcrumb"></ol></td>
-    </tr>
-      <tr>
-        <th><font size="2px">Uang Gedung</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['uang_gedung'];?></font></i></td>
-      </tr>
-      <tr>
-        <th><font size="2px">Biaya MOS</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['biaya_mos'];?></font></i></td>
-      </tr>
-      <tr>
-        <th><font size="2px">Biaya SPP awal</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['biaya_spp'];?></font></i></td>
-      </tr>
-      <tr>
-        <th><font size="2px">Seragam Putih Abu</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['seragam_putih_abu'];?></font></i></td>
-      </tr>
-      <tr>
-        <th><font size="2px">Baju Olahraga</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['seragam_olahraga'];?></font></i></td>
-      </tr>
-      <tr>
-        <th><font size="2px">Seragam Batik</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['seragam_batik'];?></font></i></td>
-      </tr>
-      <tr>
-        <th><font size="2px">Seragam Pramuka</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['seragam_pramuka'];?></font></i></td>
-      </tr>
-      <tr>
-        <th><font size="2px">Baju Muslim</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['baju_muslim'];?></font></i></td>
-      </tr>
-      <tr>
-        <th><font size="2px">Topi</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['topi'];?></font></i></td>
-      </tr>
-      <tr>
-        <th><font size="2px">Dasi</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['dasi'];?></font></i></td>
-      </tr>
-      <tr>
-        <th><font size="2px">Ikat Pinggang</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['ikat_pinggang'];?></font></i></td>
-      </tr>
-      <tr>
-        <th><font size="2px">KBM Pramuka</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['kbm_pramuka'];?></font></i></td>
-      </tr>
-      <tr>
-        <th><font size="2px">KBM Praktek</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['kbm_praktek'];?></font></i></td>
-      </tr>
-      <tr>
-        <th><font size="2px">KBM Ekstrakulikuler</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['kbm_ekstra'];?></font></i></td>
-      </tr>
-      <tr>
-        <th><font size="2px">Total Pangkal</font></th>
-        <td width="800"><i><font size="2px">Rp. <?php echo $data['total_pangkal'];?></font></i></td>
-      </tr>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Tahun Pelajaran</th>
+            <th>Pendaftaran</th>
+            <th>Gedung</th>
+            <th>MOS</th>
+            <th>Biaya SPP</th>
+            <th>Putih Abu</th>
+            <th>Olahraga</th>
+            <th>Batik</th>
+            <th>Pramuka</th>
+            <th>Baju Muslim</th>
+            <th>Topi</th>
+            <th>Dasi</th>
+            <th>Ikat Pinggang</th>
+            <th>Pramuka</th>
+            <th>Praktek</th>
+            <th>Ekskul</th>
+            <th>Total Pangkal</th>
+            <th colspan="2">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <?php
+
+            include '../config/koneksi.php';
+
+            $query = mysqli_query($konek, "SELECT * FROM tbl_biaya")or die(mysqli_error());
+                    if(mysqli_num_rows($query) == 0){ 
+                      echo '<tr><td colspan="11" align="center"><i>Belum ada Informasi Biaya!</i></td></tr>';    
+                    }
+                      else
+                    { 
+                      $no = 1;        
+                      while($data = mysqli_fetch_array($query)){  
+                        echo '<tr>';
+                        echo '<td>'.$no.'</td>';
+                        echo '<td>'.$data['tahun_pelajaran'].'</td>';
+                        echo '<td>'.$data['biaya_pendaftaran'].'</td>';
+                        echo '<td>'.$data['uang_gedung'].'</td>';
+                        echo '<td>'.$data['biaya_mos'].'</td>';
+                        echo '<td>'.$data['biaya_spp'].'</td>';
+                        echo '<td>'.$data['seragam_putih_abu'].'</td>';
+                        echo '<td>'.$data['seragam_olahraga'].'</td>';
+                        echo '<td>'.$data['seragam_batik'].'</td>';
+                        echo '<td>'.$data['seragam_pramuka'].'</td>';
+                        echo '<td>'.$data['baju_muslim'].'</td>';
+                        echo '<td>'.$data['topi'].'</td>';
+                        echo '<td>'.$data['dasi'].'</td>';
+                        echo '<td>'.$data['ikat_pinggang'].'</td>';
+                        echo '<td>'.$data['kbm_pramuka'].'</td>';
+                        echo '<td>'.$data['kbm_praktek'].'</td>';
+                        echo '<td>'.$data['kbm_ekstra'].'</td>';
+                        echo '<td>'.$data['total_pangkal'].'</td>';
+                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Update" href=tu.php?content=edit-biaya&&id_biaya='.$data['id_biaya'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
+                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Delete" href="../config/delete-biaya.php?id_biaya='.$data['id_biaya'].'?"><i class="fa fa-trash fa-fw"></i></a></center></td>';
+                        echo '</tr>';
+                        $no++;  
+                      }
+                    }
+                  
+                ?>
+                    
+        </tbody>
       </table>
-      <p align="right">
-        <a data-toggle="tooltip" data-placement="left" title="Edit Informasi Biaya" href="tu.php?content=edit-biaya&&id_biaya=<?php echo $data['id_biaya'] ?>"><button type="button" class="btn btn-warning"><i class='fa fa-edit fa-fw'></i> Edit</button></a>&nbsp;<a data-toggle="tooltip" data-placement="left" title="Hapus Informasi Biaya" href="../config/delete-biaya.php?id_biaya=<?php echo $data['id_biaya']?>"><button type="button" class="btn btn-danger"><i class="fa fa-trash fa-fw"></i> Hapus</button></a>&nbsp;<button type="button" class="btn btn-success"><i class="fa fa-print fa-fw"></i> Print</button>&nbsp;<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle fa-fw"></i>Tambah Informasi Biaya</button>
-      </p>
     </form>
+  </div>
   </div>
 </div>
 </div></div>

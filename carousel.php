@@ -83,7 +83,7 @@ body {
       <td>
   <h1>SMK MANDALAHAYU II BEKASI</h1><hr>
   <p>Jl. Pengasinan Tengah No.99, Pengasinan, Rawalumbu, Kota Bks, Jawa Barat 17115</p>
-  <p>Telp.(021)8241 5236-8241 1828 Fax.(021)8241 5236</p>
+  <p>Telp. (021) 82415236</p>
   <br></td></tr>
 </table>
 <div align="right">

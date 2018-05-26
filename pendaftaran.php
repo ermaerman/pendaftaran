@@ -61,7 +61,7 @@
                     </select> 
                   </div>
                 </div>
-                <br><!--
+                <br>
                <ol class="breadcrumb">
                     <li class="active"><b>A. KETERANGAN PRIBADI CALON MURID</b></li>
                 </ol>
@@ -675,7 +675,6 @@
                 <input type="hidden" name="tgl_daftar" value="<?php $tgl=date('d-m-Y'); echo $tgl; ?>">
 
                  <br>
-               -->
 
                 <ol class="breadcrumb">
                     <li class="active"><b>G. UPLOAD PERSYARATAN</b></li>

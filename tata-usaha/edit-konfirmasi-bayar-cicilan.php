@@ -14,12 +14,12 @@
 
 <div class="col-md-10" style="padding:0px">
     <ol class="breadcrumb" style="margin:0;border-radius:0;">
-        <li class="active"><a href="tu.php?content=home-tata-usaha">Home</a> / <a href="tu.php?content=transaksi-cicilan"></a> / Edit Transaksi Cicilan (Validasi)</li>
+        <li class="active"><a href="tu.php?content=home-tata-usaha">Home</a> / <a href="tu.php?content=transaksi-cicilan"></a> Edit Transaksi Cicilan (Validasi)</li>
     </ol>
 </div>
 
 <div class="col-md-10" style="min-height:500px">
-  <h3><b>Edit Transaksi Pendaftaran (Validasi)</b> </h3>
+  <h3><b>Edit Transaksi</b> Cicilan (Validasi)</h3>
     <hr><br><br>
     <br>
     <br>

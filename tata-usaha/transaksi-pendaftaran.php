@@ -50,32 +50,29 @@
             include '../config/koneksi.php';
 
             $query = mysqli_query($konek, "SELECT * FROM tbl_pembayaran WHERE b_daftar=1")or die(mysqli_error($konek));
-                    if(mysqli_num_rows($query) == 0){ 
-                      echo '<tr><td colspan="8" align="center"><i>Tidak ada data!</i></td></tr>';    
+                    if(mysqli_num_rows($query) == 0){
+                      echo '<tr><td colspan="8" align="center"><i>Tidak ada data!</i></td></tr>';
                     }
                       else
-                    { 
-                      $no = 1;        
-                      while($data = mysqli_fetch_array($query)){  
+                    {
+                      $no = 1;
+                      while($data = mysqli_fetch_array($query)){
                       ?>
                         <tr>
                         <td><?php echo $no ?></td>
                         <td><?php echo $data['kode_daftar'] ?></td>
                         <td><?php echo($data['bukti_daftar']);?></td>
                         <td><?php if ($data['validasi_daftar']==0) echo "Belum Dikonfirmasi"; else echo "Dikonfirmasi"; ?></td>
-                        <td><a data-toggle="tooltip" data-placement="right" title="Validasi" href=tu.php?content=edit-konfirmasi-bayar-pendaftaran&&id_pembayaran=<?php echo $data['id_pembayaran'] ?>><i class='fa fa-edit fa-fw'></i></a></td></tr>
+                        <td><a data-toggle="tooltip" data-placement="right" title="Validasi" href=tu.php?content=edit-konfirmasi-bayar-daftar&&id_pembayaran=<?php echo $data['id_pembayaran'] ?>><i class='fa fa-edit fa-fw'></i></a></td></tr>
                       <?php
-                        $no++;  
+                        $no++;
                       }
                     }
-                  
+
                 ?>
-                    
+
         </tbody>
       </table>
     </form>
   </div>
 </div>
-
-
-    

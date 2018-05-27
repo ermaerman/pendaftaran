@@ -1,11 +1,11 @@
 <?php session_start();
 
   if(isset($_SESSION['username'])){
-      
+
     include "../config/koneksi.php";
 
 
-    if(isset($_GET['content'])) $content = $_GET['content']; 
+    if(isset($_GET['content'])) $content = $_GET['content'];
         else $content = "home-tata-usaha";
 ?>
 
@@ -27,9 +27,9 @@
 </head>
 
 <script>
-  $(document).ready(function() 
+  $(document).ready(function()
   {
-    $('[data-toggle="tooltip"]').tooltip();   
+    $('[data-toggle="tooltip"]').tooltip();
   });
 </script>
 
@@ -39,11 +39,11 @@
       <p align="center"><b>Sistem Informasi Pendaftaran SMK Mandalahayu II Bekasi</b></p>
     </div>
     <div class="col-md-12" style="padding:5px;padding-bottom:10px;color:#fff;"><center><i>Anda Login Sebagai Tata Usaha</i></center></div>
-      <?php 
-        include "menu.php"; 
-      ?>  
+      <?php
+        include "menu.php";
+      ?>
    </div>
-         
+
          <?php
             if ($content=='home-tata-usaha')
               include 'home-tata-usaha.php';
@@ -65,8 +65,8 @@
               include 'laporan-keuangan.php';
             else if ($content=='tahun-pelajaran')
               include 'tahun-pelajaran.php';
-            else if ($content=='edit-konfirmasi-bayar-pendaftaran')
-              include 'edit-konfirmasi-bayar-pendaftaran.php';
+            else if ($content=='edit-konfirmasi-bayar-daftar')
+              include 'edit-konfirmasi-bayar-daftar.php';
             else if ($content=='edit-konfirmasi-bayar-cicilan')
               include 'edit-konfirmasi-bayar-cicilan.php';
             else if ($content=='edit-konfirmasi-bayar-lunas')
@@ -81,9 +81,9 @@
               include 'update-nilai.php';
             else if ($content=='edit-pengumuman')
               include 'edit-pengumuman.php';
-           
+
            ?>
-  
+
 <div class="col-md-12" style="background:black;padding:8px;color:#fff;">
   <footer class="container-fluid text-center">
   <div class="container-fluid text-center">

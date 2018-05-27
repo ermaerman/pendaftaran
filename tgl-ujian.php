@@ -1,6 +1,6 @@
 <?php
 
-	
+
 	include 'config/koneksi.php';
 
 	$kode_daftar    = $_GET['kode_daftar'];
@@ -56,11 +56,11 @@
 		  	- Silahkan print kartu ujian dibawah ini dengan meng-klik tombol print kartu ujian.<br>
 		  	- Perhatian! Harap membawa kartu ujian tersebut saat ujian tes masuk.
 		  	<hr>
-		  	<b>Tes yang akan diujikan:</b> 
+		  	<b>Tes yang akan diujikan:</b>
 		  	<br>
 		  	<br>
 		  	- Tes tulis: Bahasa Indonesia, Matematika, Bahasa Inggris dan Kejuruan.<br>
-		  	- Tes lain: Tes Buta Warna, Tes Urine / Bebas Narkoba dan Tes Fisik.  
+		  	- Tes lain: Tes Buta Warna, Tes Urine / Bebas Narkoba dan Tes Fisik.
 		  </p>
 		  <br>
 		  <p align="right">
@@ -83,19 +83,19 @@
 	        <p align="center"><img height="160" width="125" src="foto/<?php echo $data['syarat_foto'] ?>""></p>
 	        <br>
 	        <br>
-	     <table class="table table-bordered">  
+	     <table class="table table-bordered">
 	     	<tr>
 	        <th>Kode Daftar</th>
 	        <td width="500"><i><?php echo $data['kode_daftar']; ?></i></td>
-	      </tr> 
+	      </tr>
 	      <tr>
 	        <th width="100">NISN</th>
 	        <td width="500"><i><?php echo $data['nisn']; ?></i></td>
-	      </tr>  
+	      </tr>
 	       <tr>
 	        <th>Nama Lengkap</th>
 	        <td width="500"><i><?php echo $data['nama']; ?></i></td>
-	      </tr>   
+	      </tr>
 	      <tr>
 	        <th>Tahun Pelajaran</th>
 	        <td width="500"><i><?php echo $data['tahun_pelajaran']; ?></i></td>
@@ -107,15 +107,15 @@
 	      <tr>
 	        <th>Tanggal Ujian</th>
 	        <td width="500"><i></i></td>
-	      </tr> 
+	      </tr>
 	      <tr>
 	        <th>Tes Buta Warna</th>
 	        <td width="500"><i></i></td>
-	      </tr>  
+	      </tr>
 	       <tr>
 	        <th>Tes Urine / Bebas Narkoba</th>
 	        <td width="500"><i></i></td>
-	      </tr> 
+	      </tr>
 	      <tr>
 	        <th>Tes Fisik</th>
 	        <td width="500"><i></i></td>
@@ -131,9 +131,5 @@
 		<br>
 		<p align="right"><a href="print-kartu.php?kode_daftar=<?php echo $kode_daftar ?>" target ="_blank" role="button" class="btn btn-primary"><span class="glyphicon glyphicon-print"></span> &nbsp;Print Kartu Ujian</button></a></p>
 		</div>
-		</div>	
+		</div>
 </body>
-
-
-
-  

@@ -1,5 +1,5 @@
 <?php
-    
+
     include 'koneksi.php';
 
     $id_pembayaran = $_POST['id_pembayaran'];
@@ -14,7 +14,7 @@
         echo "<br><br><br><strong><center><i>Berhasil Hapus Validasi!";
         //echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../tata-usaha/tu.php?content=transaksi-pendaftaran">';
 
-        
+
 
     }
     else {

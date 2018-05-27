@@ -7,7 +7,7 @@
     function hanyaAngka(evt) {
       var charCode = (evt.which) ? evt.which : event.keyCode
        if (charCode > 31 && (charCode < 48 || charCode > 57))
- 
+
         return false;
       return true;
     }
@@ -30,7 +30,7 @@
   <br>
 
   <form class="form-horizontal" action="config/add-konfirmasi-bayar.php" method="POST" enctype="multipart/form-data">
-    
+
         <input type="hidden" name="id_pembayaran">
         <div class="form-group">
             <label class="col-sm-2"></label>
@@ -52,7 +52,7 @@
                       <option value="cicilpertama">Uang Pangkal Cicilan Pertama</option>
                       <option value="cicilkedua">Uang Pangkal Cicilan Kedua</option>
                       <option value="cicilketiga">Uang Pangkal Cicilan Ketiga</option>
-                    </select> 
+                    </select>
                   </div>
                 </div>
         <div class="form-group">
@@ -63,7 +63,6 @@
                 <input type="file" name="fileToUpload" id="fileToUpload">
             </div>
         </div>
-        <!-- <input type="hidden" name="tgl_konfirmasi_bayar" value="<?php $tgl=date('d-m-Y'); echo $tgl; ?>"> -->
         <input type="hidden" name="validasi_daftar" value="0">
         <div class="form-group">
             <label class="control-label col-sm-4"></label>
@@ -72,6 +71,6 @@
             </div>
         </div>
 </div>
-  
+
 <br>
 <br>

@@ -18,7 +18,7 @@
     <li class="active"><a href="tu.php?content=home-tata-usaha">Home</a> / <a href="tu.php?content=transaksi-pendaftaran"></a> Validasi Transaksi Pendaftaran (Validasi)</li>
   </ol>
 </div>
-  
+
 <div class="col-md-10" style="min-height:500px">
   <h3><b>Validasi</b> Transaksi Pendaftaran </h3>
     <hr>
@@ -40,7 +40,7 @@
                   <th><font size="2px">Nama Lengkap</font></th>
                   <td width="800"><i><font size="2px"><?php echo $data['nama'];?></font></i></td>
                 </tr>
-                
+
                 <tr>
                   <th><font size="2px">Bukti Pembayaran</font></th>
                   <td><i><font size="2px"><a data-toggle="tooltip" data-placement="right" title="Lihat Gambar" href="<?php echo $data['bukti_daftar'] ?>" target="_blank"><?php echo $data['bukti_daftar'] ?></a></font></i></td>

@@ -5,8 +5,9 @@
     include '../config/koneksi.php';
 
     $id_pembayaran = $_GET['id_pembayaran'];
+    $kode_daftar = $_GET['kode_daftar'];
 
-    $edit    = "SELECT tbl_pembayaran.kode_daftar, tbl_pembayaran.id_pembayaran, tbl_pembayaran.validasi_pangkal_cicil1, tbl_pembayaran.bukti_pangkal_cicil1, tbl_pembayaran.validasi_pangkal_cicil2, tbl_pembayaran.bukti_pangkal_cicil2, tbl_pembayaran.validasi_pangkal_cicil3, tbl_pembayaran.bukti_pangkal_cicil3, tbl_data_calon_murid.nama FROM tbl_pembayaran, tbl_data_calon_murid WHERE tbl_pembayaran.kode_daftar = '$kode_daftar'";
+    $edit    = "SELECT tbl_pembayaran.kode_daftar, tbl_data_calon_murid.kode_daftar, tbl_pembayaran.id_pembayaran, tbl_pembayaran.validasi_pangkal_cicil1, tbl_pembayaran.bukti_pangkal_cicil1, tbl_pembayaran.validasi_pangkal_cicil2, tbl_pembayaran.bukti_pangkal_cicil2, tbl_pembayaran.validasi_pangkal_cicil3, tbl_pembayaran.bukti_pangkal_cicil3, tbl_data_calon_murid.nama FROM tbl_pembayaran, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar = '$kode_daftar'";
     $hasil   = mysqli_query($konek, $edit)or die(mysql_error());
     $data    = mysqli_fetch_array($hasil);
 

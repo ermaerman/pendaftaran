@@ -3,8 +3,9 @@
 	include 'koneksi.php';
 
     $id_pembayaran          = $_POST['id_pembayaran'];
+    $kode_daftar            = $_POST['kode_daftar'];
 
-    $update     = "UPDATE tbl_pembayaran SET validasi='1' WHERE id_pembayaran='$id_pembayaran'";
+    $update     = "UPDATE tbl_pembayaran SET validasi_pangkal_cicil1='1' WHERE kode_daftar='$kode_daftar'";
 
 	$update	= mysqli_query($konek, $update)or die(mysqli_error());
 

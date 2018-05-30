@@ -58,13 +58,13 @@
             include '../config/koneksi.php';
 
             $query = mysqli_query($konek, "SELECT id_pembayaran, kode_daftar, b_pangkal_cicil1, bukti_pangkal_cicil1, validasi_pangkal_cicil1, b_pangkal_cicil2, bukti_pangkal_cicil2, validasi_pangkal_cicil2, b_pangkal_cicil3, bukti_pangkal_cicil3, validasi_pangkal_cicil3 FROM tbl_pembayaran WHERE b_pangkal_cicil1='1'")or die(mysqli_error());
-                    if(mysqli_num_rows($query) == 0){ 
-                      echo '<tr><td colspan="12" align="center"><i>Tidak ada data!</i></td></tr>';    
+                    if(mysqli_num_rows($query) == 0){
+                      echo '<tr><td colspan="12" align="center"><i>Tidak ada data!</i></td></tr>';
                     }
                       else
-                    { 
-                      $no = 1;        
-                      while($data = mysqli_fetch_array($query)){  
+                    {
+                      $no = 1;
+                      while($data = mysqli_fetch_array($query)){
                       ?>
                         <tr>
                         <td><?php echo $no ?></td>
@@ -78,19 +78,16 @@
                         <td><?php echo $data['b_pangkal_cicil3'] ?></td>
                         <td><?php echo $data['bukti_pangkal_cicil3'] ?></td>
                         <td><?php echo $data['validasi_pangkal_cicil3'] ?></td>
-                        <td><a data-toggle="tooltip" data-placement="left" title="Edit" href=tu.php?content=edit-konfirmasi-bayar-cicilan&&id_pembayaran=<?php echo $data['id_pembayaran']?>><i class='fa fa-edit fa-fw'></i></a></td></tr>
+                        <td><a data-toggle="tooltip" data-placement="left" title="Edit" href=tu.php?content=edit-konfirmasi-bayar-cicilan&&kode_daftar=<?php echo $data['kode_daftar']?>><i class='fa fa-edit fa-fw'></i></a></td></tr>
                       <?php
-                        $no++;  
+                        $no++;
                       }
                     }
-                  
+
                 ?>
-                    
+
         </tbody>
       </table>
     </form>
   </div>
 </div>
-
-
-    

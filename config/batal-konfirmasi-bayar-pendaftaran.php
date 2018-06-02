@@ -23,7 +23,7 @@
     else {
             print"
                 <script>
-                    alert(\"Balasan gagal ditambah!\");
+                    alert(\"Gagal batal konfirmasi!\");
                     history.back(-1);
                 </script>";
         }

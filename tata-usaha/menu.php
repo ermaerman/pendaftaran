@@ -21,7 +21,7 @@
             <li><a href='tu.php?content=update-biaya'><span>Update Informasi Biaya</span></a></li>
          </ul>
       </li>
-      
+      <li><a href='tu.php?content=data-ukuran-baju'><i class="fa fa-clipboard fa-fw"></i>&nbsp; Data Ukuran Baju</a></li>
       <li class='active has-sub'><a href='#'><i class="fa fa-copy fa-fw"></i>&nbsp; Kelas</a>
          <ul>
             <li><a href='tu.php?content=pembagian-kelas'><span>Pembagian Kelas</span></a>

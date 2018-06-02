@@ -20,7 +20,7 @@
 
 #myTable th, #myTable td {
   text-align: left;
-  padding: 12px;
+
 }
 
 #myTable tr {
@@ -42,13 +42,13 @@
         <li class="active"><a data-toggle="tooltip" data-placement="top" title="Click me!" href="index.php">SMK Mandalahayu II Bekasi</a> / Pengumuman</li>
     </ol>
     <h3><b>&nbsp;&nbsp;Pengumuman Kelulusan </b>Ujian Masuk</h3>
-    <hr> 
+    <hr>
     <div class="alert alert-danger">
-	  <strong>Info!</strong><hr><i>- Keputusan dibawah ini adalah mutlak hasil penilaian penguji SMK Mandalahayu II Bekasi. Perlu diperhatikan bahwa keputusan tidak dapat diganggu gugat.<br> 
-        - Bagi anda yang <b>lulus</b> dapat membayar biaya uang pangkal masuk dan konfirmasi <a data-toggle="tooltip" data-placement="top" title="Konfirmasi Pembayaran" href="index.php?content=konfirmasi-pembayaran">disini</a>. Untuk informasi biaya dapat klik <a data-toggle="tooltip" data-placement="right" title="Informasi Biaya" href="index.php?content=biaya">disini</a>.<br>
-        - Bagi anda yang <b>tidak lulus</b> mohon maaf segala bentuk biaya yang telah dibayarkan tidak dapat dikembalikan. Terimakasih.</i>
+	  <strong>Info!</strong><hr><i>- Keputusan dibawah ini adalah mutlak hasil penilaian penguji SMK Mandalahayu II Bekasi. Perlu diperhatikan bahwa keputusan tidak dapat diganggu gugat.<br>
+        - Bagi anda yang <b>Lulus</b> dapat membayar biaya uang pangkal masuk dan konfirmasi <a data-toggle="tooltip" data-placement="top" title="Konfirmasi Pembayaran" href="index.php?content=konfirmasi-pembayaran">disini</a>. Untuk informasi biaya dapat klik <a data-toggle="tooltip" data-placement="right" title="Informasi Biaya" href="index.php?content=biaya">disini</a>.<br>
+        - Bagi anda yang tidak tidak terdapat kode daftarnya dibawah ini maka mohon maaf anda dinyatakan <b>Tidak Lulus</b>, <br>&nbsp;&nbsp;pembayaran pendaftaran / administrasi yang telah dibayarkan tidak dapat dikembalikan. Terimakasih.</i>
 	</div>
-    
+
     <div class="form-group">
         <div class="col-sm-12">
             <div class="input-group">
@@ -58,36 +58,41 @@
     </div>
 
     <form class="form-horizontal" method="POST">
-      <table id="myTable" class="table table-striped">
+      <table border="1px" id="myTable" class="table table-striped">
         <thead>
           <tr>
-            <th>Kode Daftar</th>
-            <th>Hasil</th>
+            <th><center>Kode Daftar</center></th>
+            <th><center>Hasil</center></th>
+            <th colspan="2"><center>Action</center></th>
           </tr>
         </thead>
         <tbody>
           <?php
 
+          error_reporting();
+
             include 'config/koneksi.php';
 
-            $query = mysqli_query($konek, "SELECT * FROM tbl_pengumuman")or die(mysqli_error());
-                    if(mysqli_num_rows($query) == 0){ 
-                      echo '<tr><td colspan="3"><i>Belum ada pengumuman kelulusan!</i></td></tr>';    
+            $query = mysqli_query($konek, "SELECT * FROM tbl_pengumuman WHERE hasil='Lulus'")or die(mysqli_error());
+                    if(mysqli_num_rows($query) == 0){
+                      echo '<tr><td colspan="3"><i>Belum ada pengumuman kelulusan!</i></td></tr>';
                     }
                       else
-                    { 
-                      $no = 1;        
-                      while($data = mysqli_fetch_array($query)){  
+                    {
+                      $no = 1;
+                      while($data = mysqli_fetch_array($query)){
                         echo '<tr  class="header">';
                         echo '<td>'.$data['kode_daftar'].'</td>';
                         echo '<td>'.$data['hasil'].'</td>';
+                        echo '<td><a data-toggle="tooltip" data-placement="right" title="Klik disini untuk input ukuran baju" href=index.php?content=ukuran-baju&&kode_daftar='.$data['kode_daftar'].'><span class="glyphicon glyphicon-circle-arrow-right"></span> Input Ukuran Baju</a></td>';
+                        echo '<td><a href="index.php?content=konfirmasi-pembayaran" data-toggle="tooltip" data-placement="right" title="Klik disini untuk konfirmasi pembayaran uang pangkal"><span class="glyphicon glyphicon-circle-arrow-right"></span> Konfirmasi Pembayaran Pangkal</a></td>';
                         echo '</tr>';
-                        $no++;  
+                        $no++;
                       }
                     }
-                  
+
                 ?>
-                    
+
         </tbody>
       </table>
     </form>
@@ -110,9 +115,7 @@ function myFunction() {
       } else {
         tr[i].style.display = "none";
       }
-    }       
+    }
   }
 }
 </script>
-
-  

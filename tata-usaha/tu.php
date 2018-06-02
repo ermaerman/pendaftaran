@@ -81,7 +81,10 @@
               include 'update-nilai.php';
             else if ($content=='edit-pengumuman')
               include 'edit-pengumuman.php';
-
+            else if ($content=='data-ukuran-baju')
+              include 'data-ukuran-baju.php';
+            else if ($content=='edit-keterangan')
+              include 'edit-keterangan.php';
            ?>
 
 <div class="col-md-12" style="background:black;padding:8px;color:#fff;">

@@ -1,3 +1,18 @@
+<?php
+
+    error_reporting(0);
+
+    include 'config/koneksi.php';
+
+    $kode_daftar = $_GET['kode_daftar'];
+
+    $edit    = "SELECT kode_daftar FROM tbl_pengumuman WHERE kode_daftar = '$kode_daftar'";
+    $hasil   = mysqli_query($konek, $edit)or die(mysql_error());
+    $data    = mysqli_fetch_array($hasil);
+
+?>
+
+
 <br>
 <br>
 <br>
@@ -21,7 +36,7 @@
             <label class="col-sm-2">Kode Daftar</label>
             <label class="col-sm-1">:</label>
             <div class="col-sm-5">
-                <input onkeypress="return hanyaAngka(event)" class="form-control" name="kode_daftar" type="text" placeholder="Masukkan kode daftar anda" required>
+                <input onkeypress="return hanyaAngka(event)" class="form-control" name="kode_daftar" type="text"  value="<?php echo $data['kode_daftar']; ?>"  placeholder="Masukkan kode daftar anda" required>
             </div>
         </div>
         <div class="form-group">
@@ -29,7 +44,14 @@
             <label class="col-sm-2">Masukkan Ukuran Baju</label>
             <label class="col-sm-1">:</label>
             <div class="col-sm-5">
-                <input class="form-control" name="ukuran_baju" type="text" placeholder="Masukkan ukuran baju anda" required>
+              <select  type="text" class="form-control" name="ukuran_baju">
+                <option>-- Pilih Ukuran Baju --</option>
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+                <option>XXL</option>
+              </select>
             </div>
         </div>
         <div class="form-group">
@@ -39,11 +61,10 @@
             </div>
         </div>
 </div>
-  
+
 <br>
 <br>
 <br>
 <br>
-     
+
 </div>
-  

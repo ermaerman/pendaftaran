@@ -9,6 +9,9 @@
     $query    = "UPDATE tbl_pembayaran SET b_daftar='0', bukti_daftar='0', validasi_daftar='0' WHERE kode_daftar='$kode_daftar'";
     $update   = mysqli_query($konek, $query)or die(mysqli_error($konek));
 
+    $querydelete   = "DELETE FROM tbl_pengumuman WHERE kode_daftar='$kode_daftar' ORDER BY id_pengumuman DESC LIMIT 1";
+    $simpan       = mysqli_query($konek, $querydelete)or die(mysqli_error($konek));
+
     if($update)
     {
         echo "<br><br><br><strong><center><i>Berhasil Hapus Validasi!";

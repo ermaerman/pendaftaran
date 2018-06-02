@@ -18,12 +18,12 @@
     <li class="active"><a href="tu.php?content=home-tata-usaha">Home</a><a href="tu.php?content=transaksi-lunas"></a> / Edit Transaksi Uang Pangkal Lunas (Validasi)</li>
   </ol>
 </div>
-  
+
 <div class="col-md-10" style="min-height:500px">
   <h3><b>Edit Transaksi</b> Uang Pangkal Lunas (Validasi)</h3>
     <hr>
     <br>
-    <form class="form-horizontal" action="../config/update-konfirmasi-bayar-lunas.php" method="POST">
+    <form class="form-horizontal" method="POST">
         <input type="hidden" name="id_pembayaran" value="<?php echo $id_pembayaran?>">
         <input type="hidden" name="kode_daftar" value="<?php echo $data['kode_daftar'];?>">
             <div class="panel-group">
@@ -51,10 +51,12 @@
           </table>
           <p><i><font size=2px>&nbsp;&nbsp;Keterangan: <br>&nbsp;&nbsp;Jika status = 0 maka pembayaran uang pangkal (lunas) <b>belum</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Jika status = 1 maka pembayaran uang pangkal (lunas) <b>sudah</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Mohon lihat bukti pembayaran dengan cermat dan teliti.</font></i></p>
           <p align="right">
-          <button type="submit" class="btn btn-primary">Konfirmasi</button>
-          <a href="tu.php?content=transaksi-lunas"><button type="button" class="btn btn-danger">Kembali</button></a></p>
+
+            <button type="submit" formaction="../config/update-konfirmasi-bayar-lunas.php" class="btn btn-primary">Konfirmasi</button>
+            <button type="submit" formaction="../config/batal-konfirmasi-bayar-lunas.php" class="btn btn-danger">Batal Konfirmasi</button>
+            <a href="tu.php?content=transaksi-lunas"><button type="button" class="btn btn-default">Kembali</button></a></p>
           </div>
         </div>
-      </div>   
+      </div>
     </form>
 </div>

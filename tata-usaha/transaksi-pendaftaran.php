@@ -49,7 +49,7 @@
 
             include '../config/koneksi.php';
 
-            $query = mysqli_query($konek, "SELECT * FROM tbl_pembayaran WHERE b_daftar=1")or die(mysqli_error($konek));
+            $query = mysqli_query($konek, "SELECT * FROM tbl_pembayaran WHERE b_daftar=1 ORDER BY id_pembayaran DESC")or die(mysqli_error($konek));
                     if(mysqli_num_rows($query) == 0){
                       echo '<tr><td colspan="8" align="center"><i>Tidak ada data!</i></td></tr>';
                     }

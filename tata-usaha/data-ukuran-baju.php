@@ -49,7 +49,7 @@
 
             include '../config/koneksi.php';
 
-            $query = mysqli_query($konek, "SELECT * FROM tbl_ukuran_baju")or die(mysqli_error());
+            $query = mysqli_query($konek, "SELECT * FROM tbl_ukuran_baju ORDER BY id_ukuran_baju DESC")or die(mysqli_error());
                     if(mysqli_num_rows($query) == 0){
                       echo '<tr><td colspan="5" align="center">Tidak ada data!</td></tr>';
                     }

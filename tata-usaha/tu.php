@@ -85,6 +85,8 @@
               include 'data-ukuran-baju.php';
             else if ($content=='edit-keterangan')
               include 'edit-keterangan.php';
+            else if ($content=='data-buku')
+              include 'data-buku.php';
            ?>
 
 <div class="col-md-12" style="background:black;padding:8px;color:#fff;">

@@ -5,8 +5,9 @@
     include '../config/koneksi.php';
 
     $id_pengumuman = $_GET['id_pengumuman'];
+    $kode_daftar = $_GET['kode_daftar'];
 
-    $edit    = "SELECT * FROM tbl_pengumuman WHERE id_pengumuman = '$id_pengumuman'";
+    $edit    = "SELECT * FROM tbl_pengumuman WHERE kode_daftar = '$kode_daftar'";
     $hasil   = mysqli_query($konek, $edit)or die(mysql_error());
     $data    = mysqli_fetch_array($hasil);
 
@@ -71,7 +72,7 @@
                     <select class="form-control" id="buta_warna" name="buta_warna">
                       <option>Lulus</option>
                       <option>Tidak Lulus</option>
-                    </select> 
+                    </select>
                   </div>
         </div>
         <div class="form-group">
@@ -82,7 +83,7 @@
                     <select class="form-control" id="urine" name="urine">
                       <option>Lulus</option>
                       <option>Tidak Lulus</option>
-                    </select> 
+                    </select>
                   </div>
         </div>
         <div class="form-group">
@@ -93,7 +94,7 @@
                     <select class="form-control" id="fisik" name="fisik">
                       <option>Lulus</option>
                       <option>Tidak Lulus</option>
-                    </select> 
+                    </select>
                   </div>
         </div>
         <hr>
@@ -103,15 +104,15 @@
                   <label class="col-sm-1">:</label>
                   <div class="col-sm-5">
                     <select  type="text" class="form-control" name="hasil">
-                      <option>Lulus</option>
-                      <option>Tidak Lulus</option>
-                    </select>  
+                      <option value="Lulus">Lulus</option>
+                      <option value="TidakLulus">Tidak Lulus</option>
+                    </select>
                   </div>
               </div>
         <div class="form-group">
             <label class="control-label col-sm-4"></label>
             <div class="col-sm-6" align="right">
-                <button class="btn btn-primary">Edit Hasil Ujian Masuk</button>
+                <button type="submit" class="btn btn-primary">Edit Hasil Ujian Masuk</button>
             </div>
         </div>
     </form>

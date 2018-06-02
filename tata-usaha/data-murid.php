@@ -71,13 +71,13 @@
             include '../config/koneksi.php';
 
             $query = mysqli_query($konek, "SELECT * FROM tbl_data_calon_murid WHERE status='1'")or die(mysqli_error());
-                    if(mysqli_num_rows($query) == 0){ 
-                      echo '<tr><td colspan="12" align="center">Tidak ada data!</td></tr>';    
+                    if(mysqli_num_rows($query) == 0){
+                      echo '<tr><td colspan="12" align="center">Tidak ada data!</td></tr>';
                     }
                       else
-                    { 
-                      $no = 1;        
-                      while($data = mysqli_fetch_array($query)){  
+                    {
+                      $no = 1;
+                      while($data = mysqli_fetch_array($query)){
                         echo '<tr>';
                         echo '<td>'.$no.'</td>';
                         echo '<td>'.$data['tahun_pelajaran'].'</td>';
@@ -90,12 +90,12 @@
                         echo '<td>'.$data['telepon_rumah'].'</td>';
                         echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Lihat Data Lengkap" href=tu.php?content=edit-calon-murid&&id_calon_murid='.$data['id_calon_murid'].'><i class="fa fa-bars fa-fw"></i></a></center></td>';
                         echo '</tr>';
-                        $no++;  
+                        $no++;
                       }
                     }
-              
+
                 ?>
-                    
+
         </tbody>
       </table>
     </form>

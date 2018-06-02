@@ -55,7 +55,7 @@
 
             include '../config/koneksi.php';
 
-            $query = mysqli_query($konek, "SELECT * FROM tbl_pengumuman ")or die(mysqli_error());
+            $query = mysqli_query($konek, "SELECT * FROM tbl_pengumuman ORDER BY id_pengumuman DESC")or die(mysqli_error());
                     if(mysqli_num_rows($query) == 0){ 
                       echo '<tr><td colspan="11" align="center"><i>Belum ada pengumuman kelulusan!</i></td></tr>';    
                     }
@@ -74,7 +74,7 @@
                         echo '<td>'.$data['urine'].'</td>';
                         echo '<td>'.$data['fisik'].'</td>';
                         echo '<td>'.$data['hasil'].'</td>';
-                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Update" href=tu.php?content=edit-pengumuman&&id_pengumuman='.$data['id_pengumuman'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
+                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Update" href=tu.php?content=edit-pengumuman&&kode_daftar='.$data['kode_daftar'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
                         echo '</tr>';
                         $no++;  
                       }
@@ -86,62 +86,6 @@
       </table>
     </form>
   </div>
-
-  <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
-          <div class="modal-header" style="background-color:#3bacd6";>
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <p align="center"><img src="../gambar/manda.png" alt="" height="100px" width="130px"></p>
-            <p align="center"><font size="2px"><i>Sistem Informasi Pendaftaran SMK Mandalahayu II Bekasi</i></font></p>
-            <h4 class="modal-title" align="center"><b>Tambahkan Pengumuman Kelulusan</b></h4>
-          </div>
-          <div class="modal-body">
-            <form action="../config/add-pengumuman.php" class="form-horizontal" method="POST">
-              <div class="form-group">
-                <label class="col-sm-1"></label>
-                <label class="col-sm-3">Nama</label>
-                <label class="col-sm-1">:</label>
-                  <div class="col-sm-6">
-                      <input type="text" class="form-control" name="nama" placeholder="Nama" required>
-                  </div>
-              </div>
-              <div class="form-group">
-                <label class="col-sm-1"></label>
-                <label class="col-sm-3">Kode Daftar</label>
-                <label class="col-sm-1">:</label>
-                  <div class="col-sm-6">
-                      <input type="number" class="form-control" name="kode_daftar" placeholder="Kode Daftar" required>
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label class="col-sm-1"></label>
-                  <label class="col-sm-3">Pengumuman</label>
-                  <label class="col-sm-1">:</label>
-                  <div class="col-sm-6">
-                    <select  type="text" class="form-control" name="pengumuman">
-                      <option>-- Pilih --</option>
-                      <option>Lulus</option>
-                      <option>Tidak Lulus</option>
-                    </select>  
-                  </div>
-              </div>
-              <div class="form-group">
-                  <label class="control-label col-sm-4"></label>
-                  <div class="col-sm-7" align="right">
-                      <button class="btn btn-primary">Tambah</button>
-                  </div>
-              </div>
-            </form>
-          </div>
-          <div class="modal-footer">
-            
-          </div>
-      </div>
-    </div>
 
 </div>
 

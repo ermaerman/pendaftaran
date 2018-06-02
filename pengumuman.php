@@ -73,7 +73,7 @@
 
             include 'config/koneksi.php';
 
-            $query = mysqli_query($konek, "SELECT * FROM tbl_pengumuman WHERE hasil='Lulus'")or die(mysqli_error());
+            $query = mysqli_query($konek, "SELECT * FROM tbl_pengumuman WHERE hasil='Lulus' ORDER BY id_pengumuman DESC")or die(mysqli_error());
                     if(mysqli_num_rows($query) == 0){
                       echo '<tr><td colspan="3"><i>Belum ada pengumuman kelulusan!</i></td></tr>';
                     }

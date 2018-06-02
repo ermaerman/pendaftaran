@@ -42,6 +42,7 @@
             <th>LKS</th>
             <th>Status</th>
             <th>Keterangan</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>

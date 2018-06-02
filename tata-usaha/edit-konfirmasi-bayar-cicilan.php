@@ -6,8 +6,11 @@
 
     $id_pembayaran = $_GET['id_pembayaran'];
     $kode_daftar = $_GET['kode_daftar'];
+    $validasi_pangkal_cicil1 = $_GET['validasi_pangkal_cicil1'];
+    $validasi_pangkal_cicil2 = $_GET['validasi_pangkal_cicil2'];
+    $validasi_pangkal_cicil3 = $_GET['validasi_pangkal_cicil3'];
 
-    $edit    = "SELECT tbl_pembayaran.kode_daftar, tbl_data_calon_murid.kode_daftar, tbl_pembayaran.id_pembayaran, tbl_pembayaran.validasi_pangkal_cicil1, tbl_pembayaran.bukti_pangkal_cicil1, tbl_pembayaran.validasi_pangkal_cicil2, tbl_pembayaran.bukti_pangkal_cicil2, tbl_pembayaran.validasi_pangkal_cicil3, tbl_pembayaran.bukti_pangkal_cicil3, tbl_data_calon_murid.nama FROM tbl_pembayaran, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar = '$kode_daftar'";
+    $edit    = "SELECT tbl_pembayaran.kode_daftar, tbl_data_calon_murid.kode_daftar, tbl_pembayaran.id_pembayaran, tbl_pembayaran.validasi_pangkal_cicil1, tbl_pembayaran.bukti_pangkal_cicil1, tbl_pembayaran.validasi_pangkal_cicil2, tbl_pembayaran.bukti_pangkal_cicil2, tbl_pembayaran.validasi_pangkal_cicil3, tbl_pembayaran.bukti_pangkal_cicil3, tbl_data_calon_murid.nama FROM tbl_pembayaran, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar = '$kode_daftar' AND tbl_pembayaran.kode_daftar = '$kode_daftar'";
     $hasil   = mysqli_query($konek, $edit)or die(mysql_error());
     $data    = mysqli_fetch_array($hasil);
 
@@ -19,10 +22,14 @@
     </ol>
 </div>
 
+<!-- ===================================================================================================================================== -->
+<!-- ===================================================================================================================================== -->
+<!-- ===================================================================================================================================== -->
+
 <div class="col-md-10" style="min-height:500px">
   <h3><b>Edit Transaksi</b> Cicilan (Validasi)</h3>
     <hr><br>
-    <form class="form-horizontal" action="../config/edit-konfirmasi-bayar-cicilansatu.php" method="POST">
+    <form class="form-horizontal" method="POST">
     <input type="hidden" name="id_pembayaran" value="<?php echo $id_pembayaran?>">
     <input type="hidden" name="kode_daftar" value="<?php echo $data['kode_daftar'];?>">
       <div class="panel-group">
@@ -49,15 +56,19 @@
           </table>
           <p><i><font size=2px>&nbsp;&nbsp;Keterangan: <br>&nbsp;&nbsp;Jika status = 0 maka pembayaran cicilan pertama <b>belum</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Jika status = 1 maka pembayaran cicilan pertama <b>sudah</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Mohon lihat bukti pembayaran dengan cermat dan teliti.</font></i></p>
           <p align="right">
-          <button type="submit" class="btn btn-primary">Konfirmasi</button>
-          <a href="../config/batal-konfirmasi-bayar-cicil1.php"><button type="button" class="btn btn-danger">Batal Konfirmasi</button></a>
-          <a href="tu.php?content=transaksi-cicilan"><button type="button" class="btn btn-default">Kembali</button></a></p>
+            <button type="submit" formaction="../config/edit-konfirmasi-bayar-cicilansatu.php" class="btn btn-primary">Konfirmasi</button>
+            <button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilansatu.php" class="btn btn-danger">Batal Konfirmasi</button>
+            <a href="tu.php?content=transaksi-cicilan"><button type="button" class="btn btn-default">Kembali</button></a></p>
         </div>
       </div>
   </form>
 
+<!-- ===================================================================================================================================== -->
+<!-- ===================================================================================================================================== -->
+<!-- ===================================================================================================================================== -->
+
   <hr>
-  <form class="form-horizontal" action="../config/edit-konfirmasi-bayar-cicilankedua.php" method="POST">
+  <form class="form-horizontal" method="POST">
   <input type="hidden" name="id_pembayaran" value="<?php echo $id_pembayaran?>">
   <input type="hidden" name="kode_daftar" value="<?php echo $data['kode_daftar'];?>">
     <div class="panel-group">
@@ -79,20 +90,24 @@
           </tr>
           <tr>
             <th><font size="2px">Status</font></th>
-            <td><font size="2px"><i><?php echo $data['validasi_pangkal_cicil1']; ?></i></font></td>
+            <td><font size="2px"><i><?php echo $data['validasi_pangkal_cicil2']; ?></i></font></td>
           </tr>
         </table>
         <p><i><font size=2px>&nbsp;&nbsp;Keterangan: <br>&nbsp;&nbsp;Jika status = 0 maka pembayaran cicilan kedua <b>belum</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Jika status = 1 maka pembayaran cicilan kedua <b>sudah</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Mohon lihat bukti pembayaran dengan cermat dan teliti.</font></i></p>
         <p align="right">
-        <button type="submit" class="btn btn-primary">Konfirmasi</button>
-        <a href="../config/batal-konfirmasi-bayar-cicil2.php"><button type="button" class="btn btn-danger">Batal Konfirmasi</button></a>
-        <a href="tu.php?content=transaksi-cicilan"><button type="button" class="btn btn-default">Kembali</button></a></p>
+          <button type="submit" formaction="../config/edit-konfirmasi-bayar-cicilankedua.php" class="btn btn-primary">Konfirmasi</button>
+          <button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilankedua.php" class="btn btn-danger">Batal Konfirmasi</button>
+          <a href="tu.php?content=transaksi-cicilan"><button type="button" class="btn btn-default">Kembali</button></a></p>
       </div>
     </div>
 </form>
 
+<!-- ===================================================================================================================================== -->
+<!-- ===================================================================================================================================== -->
+<!-- ===================================================================================================================================== -->
+
 <hr>
-<form class="form-horizontal" action="../config/edit-konfirmasi-bayar-cicilanketiga.php" method="POST">
+<form class="form-horizontal" method="POST">
 <input type="hidden" name="id_pembayaran" value="<?php echo $id_pembayaran?>">
 <input type="hidden" name="kode_daftar" value="<?php echo $data['kode_daftar'];?>">
   <div class="panel-group">
@@ -119,9 +134,9 @@
       </table>
       <p><i><font size=2px>&nbsp;&nbsp;Keterangan: <br>&nbsp;&nbsp;Jika status = 0 maka pembayaran cicilan ketiga <b>belum</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Jika status = 1 maka pembayaran cicilan ketiga <b>sudah</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Mohon lihat bukti pembayaran dengan cermat dan teliti.</font></i></p>
       <p align="right">
-      <button type="submit" class="btn btn-primary">Konfirmasi</button>
-      <a href="../config/batal-konfirmasi-bayar-cicil3.php"><button type="button" class="btn btn-danger">Batal Konfirmasi</button></a>
-      <a href="tu.php?content=transaksi-cicilan"><button type="button" class="btn btn-default">Kembali</button></a></p>
+        <button type="submit" formaction="../config/edit-konfirmasi-bayar-cicilanketiga.php" class="btn btn-primary">Konfirmasi</button>
+        <button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilanketiga.php" class="btn btn-danger">Batal Konfirmasi</button>
+        <a href="tu.php?content=transaksi-cicilan"><button type="button" class="btn btn-default">Kembali</button></a></p>
     </div>
   </div>
 </form>

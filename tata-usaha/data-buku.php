@@ -40,8 +40,8 @@
             <th>No</th>
             <th>Kode Daftar</th>
             <th>LKS</th>
-            <th>Status</th>
             <th>Keterangan</th>
+            <th>Status</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -67,8 +67,8 @@
                         echo '<td>'.$no.'</td>';
                         echo '<td>'.$data['kode_daftar'].'</td>';
                         echo '<td>'.$data['lks'].'</td>';
-                        echo '<td>'.$data['status'].'</td>';
                         echo '<td>'.$data['keterangan'].'</td>';
+                        echo '<td>'.$data['status_buku'].'</td>';
                         echo '<td  width="20"><a data-toggle="tooltip" data-placement="right" title="Edit Keterangan" href=tu.php?content=edit-buku&&kode_daftar='.$data['kode_daftar'].'><i class="fa fa-edit fa-fw"></i></a></td>';
                         echo '</tr>';
                         $no++;

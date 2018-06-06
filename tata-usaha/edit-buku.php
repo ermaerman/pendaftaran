@@ -48,19 +48,22 @@
         </div>
         <div class="form-group">
             <label class="col-sm-2"></label>
-            <label class="col-sm-2">Status</label>
+            <label class="col-sm-2">Keterangan</label>
             <label class="col-sm-1">:</label>
             <div class="col-sm-5">
-                <input class="form-control" name="status_buku" type="password" value="<?php echo $data['status_buku']; ?>" required>
+                <input class="form-control" name="keterangan" type="text" value="<?php echo $data['keterangan']; ?>" required>
             </div>
         </div>
         <div class="form-group">
             <label class="col-sm-2"></label>
-            <label class="col-sm-2">Keterangan</label>
+            <label class="col-sm-2">Status</label>
             <label class="col-sm-1">:</label>
-            <div class="col-sm-5">
-                <input class="form-control" name="Keterangan" type="text" value="<?php echo $data['keterangan']; ?>" required>
-            </div>
+         <div class="col-sm-5">
+                    <select class="form-control" id="status_buku" name="status_buku" value="<?php echo $data['status_buku']; ?>">
+                      <option>Belum Diterima</option>
+                      <option>Sudah Diterima</option>
+                    </select> 
+        </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-4"></label>

@@ -13,19 +13,24 @@
                   <li><a href='tu.php?content=transaksi-lunas'><span>Langsung Lunas</span></a></li>
                </ul>
             </li>
+            <li><a href='tu.php?content=daftar-ulang'><span>Daftar Ulang</span></a>
+            </li>
          </ul>
       </li>
       <li class='active has-sub'><a href='#'><i class="fa fa-bars fa-fw"></i>&nbsp; Update</a>
          <ul>
+            <li><a href='tu.php?content=update-tanggal'><span>Update Tanggal Ujian Masuk</span></a></li>
             <li><a href='tu.php?content=update-nilai'><span>Update Hasil Ujian Masuk</span></a></li>
             <li><a href='tu.php?content=update-biaya'><span>Update Informasi Biaya</span></a></li>
          </ul>
       </li>
       <li class='active has-sub'><a href='#'><i class="fa fa-copy fa-fw"></i>&nbsp; Kelas</a>
          <ul>
-            <li><a href='tu.php?content=pembagian-kelas'><span>Pembagian Kelas</span></a>
+            <li><a href='tu.php?content=pembagian-kelas'><span>Pembagian Kelas Awal</span></a>
             </li>
-            <li><a href='tu.php?content=request-kelas'><span>Request kelas</span></a>
+            <li><a href='tu.php?content=request-kelas'><span>Request Kelas</span></a>
+            </li>
+            <li><a href='tu.php?content=naik-kelas'><span>Naik Kelas</span></a>
             </li>
          </ul>
       </li>

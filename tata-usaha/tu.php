@@ -91,6 +91,12 @@
               include 'edit-buku.php';
             else if ($content=='edit-kelas')
               include 'edit-kelas.php';
+            else if ($content=='naik-kelas')
+              include 'naik-kelas.php';
+            else if ($content=='daftar-ulang')
+              include 'daftar-ulang.php';
+            else if ($content=='update-tanggal')
+              include 'update-tanggal.php';
            ?>
 
 <div class="col-md-12" style="background:black;padding:8px;color:#fff;">

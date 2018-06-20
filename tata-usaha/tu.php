@@ -89,6 +89,8 @@
               include 'data-buku.php';
             else if ($content=='edit-buku')
               include 'edit-buku.php';
+            else if ($content=='edit-kelas')
+              include 'edit-kelas.php';
            ?>
 
 <div class="col-md-12" style="background:black;padding:8px;color:#fff;">

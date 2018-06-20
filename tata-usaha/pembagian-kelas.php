@@ -53,8 +53,8 @@
         <thead>
           <tr>
             <th>No</th>
-            <th>Tahun Pelajaran</th>
             <th>Kode Daftar</th>
+            <th>Kelas</th>
             <th><center>Action</center></th>
           </tr>
         </thead>
@@ -63,9 +63,11 @@
 
             include '../config/koneksi.php';
 
-            $query = mysqli_query($konek, "SELECT id_calon_murid, tahun_pelajaran, kode_daftar FROM tbl_data_calon_murid WHERE status='1'")or die(mysqli_error());
+            
+            $query = mysqli_query($konek, "SELECT * FROM tbl_kelas")or die(mysqli_error($konek));
+
                     if(mysqli_num_rows($query) == 0){
-                      echo '<tr><td colspan="4" align="center">Tidak ada data!</td></tr>';
+                      echo '<tr><td colspan="5" align="center">Tidak ada data!</td></tr>';
                     }
                       else
                     {
@@ -73,9 +75,9 @@
                       while($data = mysqli_fetch_array($query)){
                         echo '<tr>';
                         echo '<td>'.$no.'</td>';
-                        echo '<td>'.$data['tahun_pelajaran'].'</td>';
                         echo '<td>'.$data['kode_daftar'].'</td>';
-                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Lihat Data Lengkap" href=tu.php?content=edit-calon-murid&&id_calon_murid='.$data['id_calon_murid'].'><i class="fa fa-bars fa-fw"></i></a></center></td>';
+                        echo '<td>'.$data['kelas'].'</td>';
+                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Edit Kelas" href=tu.php?content=edit-kelas&&kode_daftar='.$data['kode_daftar'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
                         echo '</tr>';
                         $no++;
                       }

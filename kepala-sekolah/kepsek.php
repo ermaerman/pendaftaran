@@ -56,6 +56,8 @@
               include 'laporan-keuangan.php';
             else if ($content=='edit-calon-murid')
               include 'edit-calon-murid.php';
+            else if ($content=='edit-status-request-kelas')
+              include 'edit-status-request-kelas.php';
            ?>
   
     <div class="col-md-12" style="background:black;padding:8px;color:#fff;">

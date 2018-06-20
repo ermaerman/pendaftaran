@@ -24,6 +24,9 @@
 	 	$update 		= "INSERT INTO tbl_lks (kode_daftar) SELECT kode_daftar FROM tbl_pengumuman ORDER BY id_pengumuman DESC LIMIT 1";
 	 	$updatehasil	= mysqli_query($konek, $update)or die(mysqli_error($konek));
 
+	 	$update 		= "INSERT INTO tbl_kelas (kode_daftar) SELECT kode_daftar FROM tbl_pengumuman ORDER BY id_pengumuman DESC LIMIT 1";
+	 	$updatehasil	= mysqli_query($konek, $update)or die(mysqli_error($konek));
+
 	 	if ($updatehasil)
 	 		{
 	 			echo "<br><br><br><strong><center><i>Hasil Ujian Berhasil di Update!";

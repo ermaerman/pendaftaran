@@ -7,7 +7,7 @@
   $id_pembayaran = $_GET['id_pembayaran'];
   $kode_daftar = $_GET['kode_daftar'];
 
-  $edit    = "SELECT tbl_pembayaran.kode_daftar, tbl_pembayaran.id_pembayaran, tbl_pembayaran.validasi_daftar,  tbl_pembayaran.bukti_daftar, tbl_data_calon_murid.nama FROM tbl_pembayaran, tbl_data_calon_murid WHERE tbl_pembayaran.id_pembayaran = '$id_pembayaran'";
+  $edit    = "SELECT tbl_pembayaran.kode_daftar, tbl_pembayaran.id_pembayaran, tbl_pembayaran.validasi_daftar,  tbl_pembayaran.bukti_daftar, tbl_data_calon_murid.nama FROM tbl_pembayaran, tbl_data_calon_murid WHERE tbl_pembayaran.id_pembayaran = '$id_pembayaran' AND tbl_data_calon_murid.kode_daftar = tbl_pembayaran.kode_daftar";
   $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
   $data    = mysqli_fetch_array($hasil);
 

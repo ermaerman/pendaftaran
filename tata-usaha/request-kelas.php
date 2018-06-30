@@ -48,6 +48,7 @@
           <tr>
             <th>No</th>
             <th>Nama Kelas</th>
+            <th>Jumlah Murid</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -74,7 +75,9 @@
                         $kalimat_new = ucwords($kalimat);
                         echo $kalimat_new;
                         ?></td>
-                        <td><?php if ($data['status']==0) echo "Belum Dikonfirmasi"; else echo "Sudah Dikonfirmasi"; ?></td></tr>
+                        <td><?php echo $data['jumlah_murid'] ?></td>
+                        <td><?php if ($data['status']==0) echo "Belum Dikonfirmasi"; else echo "Sudah Dikonfirmasi"; ?></td>
+                      </tr>
                         <?php
                         $no++;
                       }
@@ -108,6 +111,14 @@
                 <label class="col-sm-1">:</label>
                   <div class="col-sm-6">
                       <input type="text" style="text-transform: capitalize;" class="form-control" name="nama_kelas" placeholder="Nama Kelas" required>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-1"></label>
+                <label class="col-sm-3">Jumlah Murid</label>
+                <label class="col-sm-1">:</label>
+                  <div class="col-sm-6">
+                      <input type="number" min="1" max="30" class="form-control" name="jumlah_murid" placeholder="Jumlah Kelas" required>
                   </div>
               </div>
               <div class="form-group">

@@ -15,7 +15,7 @@
 
 		if($hasil=='Lulus')
 	 {
-	 	$update 		= "UPDATE tbl_pengumuman SET kode_daftar='$kode_daftar', bahasa_indonesia='$bahasa_indonesia', matematika='$matematika', bahasa_inggris='$bahasa_inggris', kejuruan='$kejuruan', buta_warna='$buta_warna', urine='$urine', fisik='$fisik', hasil='$hasil' WHERE kode_daftar='$kode_daftar'";
+	 	$update 		= "UPDATE tbl_pengumuman SET kode_daftar='$kode_daftar', bahasa_indonesia='$bahasa_indonesia', matematika='$matematika', bahasa_inggris='$bahasa_inggris', kejuruan='$kejuruan', buta_warna='$buta_warna', urine='$urine', fisik='$fisik', hasil='1' WHERE kode_daftar='$kode_daftar'";
 	 	$updatehasil	= mysqli_query($konek, $update)or die(mysqli_error($konek));
 
 		$update 		= "UPDATE tbl_data_calon_murid SET status='1' WHERE kode_daftar='$kode_daftar'";
@@ -42,7 +42,7 @@
 	 }
 	 elseif ($hasil=='TidakLulus')
 	 {
-		 $update 		= "UPDATE tbl_pengumuman SET kode_daftar='$kode_daftar', bahasa_indonesia='$bahasa_indonesia', matematika='$matematika', bahasa_inggris='$bahasa_inggris', kejuruan='$kejuruan', buta_warna='$buta_warna', urine='$urine', fisik='$fisik', hasil='$hasil' WHERE kode_daftar='$kode_daftar'";
+		 $update 		= "UPDATE tbl_pengumuman SET kode_daftar='$kode_daftar', bahasa_indonesia='$bahasa_indonesia', matematika='$matematika', bahasa_inggris='$bahasa_inggris', kejuruan='$kejuruan', buta_warna='$buta_warna', urine='$urine', fisik='$fisik', hasil='0' WHERE kode_daftar='$kode_daftar'";
  	 	$updatehasil	= mysqli_query($konek, $update)or die(mysqli_error($konek));
 
 	 	if ($updatehasil)

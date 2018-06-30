@@ -63,7 +63,7 @@
           <tr>
             <th><center>Kode Daftar</center></th>
             <th><center>Hasil</center></th>
-            <th colspan="2"><center>Action</center></th>
+            <th><center>Action</center></th>
           </tr>
         </thead>
         <tbody>
@@ -73,7 +73,7 @@
 
             include 'config/koneksi.php';
 
-            $query = mysqli_query($konek, "SELECT * FROM tbl_pengumuman WHERE hasil='Lulus' ORDER BY id_pengumuman DESC")or die(mysqli_error());
+            $query = mysqli_query($konek, "SELECT * FROM tbl_pengumuman ORDER BY id_pengumuman DESC")or die(mysqli_error());
                     if(mysqli_num_rows($query) == 0){
                       echo '<tr><td colspan="3"><i>Belum ada pengumuman kelulusan!</i></td></tr>';
                     }
@@ -83,9 +83,10 @@
                       while($data = mysqli_fetch_array($query)){
                         echo '<tr  class="header">';
                         echo '<td>'.$data['kode_daftar'].'</td>';
-                        echo '<td>'.$data['hasil'].'</td>';
+                        ?>
+                        <td><?php if ($data['hasil']==1) echo "Lulus"; else echo "Tidak Lulus"; ?></td>
+                        <?php
                         echo '<td><a data-toggle="tooltip" data-placement="right" title="Klik disini untuk input ukuran baju" href=index.php?content=ukuran-baju&&kode_daftar='.$data['kode_daftar'].'><span class="glyphicon glyphicon-circle-arrow-right"></span> Input Ukuran Baju</a></td>';
-                        echo '<td><a href="index.php?content=konfirmasi-pembayaran" data-toggle="tooltip" data-placement="right" title="Klik disini untuk konfirmasi pembayaran uang pangkal"><span class="glyphicon glyphicon-circle-arrow-right"></span> Konfirmasi Pembayaran Pangkal</a></td>';
                         echo '</tr>';
                         $no++;
                       }

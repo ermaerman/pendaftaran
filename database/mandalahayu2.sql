@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2018 at 05:31 PM
+-- Generation Time: Jun 30, 2018 at 02:28 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.2
 
@@ -171,7 +171,7 @@ CREATE TABLE `tbl_data_calon_murid` (
 --
 
 INSERT INTO `tbl_data_calon_murid` (`id_calon_murid`, `tahun_pelajaran`, `prodi`, `nisn`, `nama`, `nama_panggilan`, `jenis_kelamin`, `tempat_lahir`, `tgl_lahir`, `agama`, `kewarganegaraan`, `anak_ke`, `status_perwalian`, `perwalian_oleh`, `jml_saudara_kandung`, `jml_saudara_tiri`, `jml_saudara_angkat`, `status_keluarga`, `bahasa`, `alamat`, `telepon_rumah`, `status_tinggal`, `jarak`, `transportasi`, `asal_sekolah`, `nomor_ijazah`, `tgl_ijazah`, `lama_belajar`, `jml_un`, `berat_badan`, `tinggi_badan`, `goldar`, `penyakit`, `kelainan`, `nama_ayah`, `tempat_lahir_ayah`, `tgl_lahir_ayah`, `pekerjaan_ayah`, `penghasilan_ayah`, `pendidikan_ayah`, `kewarganegaraan_ayah`, `nama_ibu`, `tempat_lahir_ibu`, `tgl_lahir_ibu`, `pekerjaan_ibu`, `penghasilan_ibu`, `pendidikan_ibu`, `kewarganegaraan_ibu`, `alamat_orangtua`, `nomor_hp`, `pengeluaran`, `jml_keluarga_kerja`, `jml_keluarga_menikah`, `nama_wali`, `tempat_lahir_wali`, `tgl_lahir_wali`, `pekerjaan_wali`, `penghasilan_wali`, `pendidikan_wali`, `kewarganegaraan_wali`, `alamat_wali`, `nomor_hp_wali`, `pengeluaran_wali`, `jml_wali_kerja`, `jml_wali_menikah`, `kesenian`, `olahraga`, `organisasi`, `hasta_karya`, `bakat_lulus`, `cita_cita`, `tgl_daftar`, `syarat_nisn`, `syarat_ijazah`, `syarat_kk`, `syarat_akte`, `syarat_foto`, `kode_daftar`, `status`) VALUES
-(25, '2018 / 2019', 'Teknik Komputer dan Jaringan', '99287888', 'Erma Noviana', 'Erma', 'Perempuan', 'Magelang', '1996-11-12', 'Islam', 'Indonesia', '1', 'Anak Kandung', 'Ayah', 1, 0, 0, 'Tidak Yatim/Piatu/Ya', 'Indonesia', 'Bekasi', '087981711', 'Dengan Orangtua/Wali', '21', 'Motor', 'SMP Negeri 18 Bekasi ', '67867', '2018-04-19', '3', '32', '34', '160', '-', 'Tidak ada', 'Tidak ada', 'Ayah', 'Boyolali', '2018-04-06', 'Pekerjaan Ayah', '8989888888', 'Pendidikan', 'Indonesia', 'Ibu', 'Magelang', '2018-04-17', 'Pekerjaan', '89798987', 'Pendidikan Ibu', 'Indonesia', 'Bekasi', '098765432345678', '59876567890', 1, 2, '', '', '', '', '', '', '', '', '', '', 0, 0, 'Kesenian', 'Olahraga', 'Organisasi', 'Hasta', 'Bakat', 'Cita cita', '03-04-2018', '0', '../ijazah/11.png', '0', '0', '../foto/cinta-musik-indonesia.jpg', 3227, 1),
+(25, '2018 / 2019', 'Teknik Komputer dan Jaringan', '99287888', 'Erma Noviana', 'Erma', 'Perempuan', 'Magelang', '1996-11-12', 'Islam', 'Indonesia', '1', 'Anak Kandung', 'Ayah', 1, 0, 0, 'Tidak Yatim/Piatu/Ya', 'Indonesia', 'Bekasi', '087981711', 'Dengan Orangtua/Wali', '21', 'Motor', 'SMP Negeri 18 Bekasi ', '67867', '2018-04-19', '3', '32', '34', '160', '-', 'Tidak ada', 'Tidak ada', 'Ayah', 'Boyolali', '2018-04-06', 'Pekerjaan Ayah', '8989888888', 'Pendidikan', 'Indonesia', 'Ibu', 'Magelang', '2018-04-17', 'Pekerjaan', '89798987', 'Pendidikan Ibu', 'Indonesia', 'Bekasi', '098765432345678', '59876567890', 1, 2, '', '', '', '', '', '', '', '', '', '', 0, 0, 'Kesenian', 'Olahraga', 'Organisasi', 'Hasta', 'Bakat', 'Cita cita', '03-04-2018', '../nisn/bgsheep.jpg', '../ijazah/11.png', '0', '../akte/1.jpeg', '../foto/cinta-musik-indonesia.jpg', 3227, 1),
 (26, '2018 / 2019', 'Teknik Komputer dan Jaringan', '23452222121', 'Rina Panduwinata', 'Rina', 'Perempuan', 'Bekasi', '2018-04-02', 'Islam', 'Indonesia', '1', 'Anak Kandung', 'Ayah', 1, 0, 1, 'Tidak Yatim/Piatu/Ya', 'Indonesia', 'Bekasi', '087656789', 'Dengan Orangtua/Wali', '10 km', 'Motor', 'SMP Negri 2', 'SU-987890', '2018-04-10', '3 Tahun', '32', '43', '160', 'O', 'Tidak Ada', 'Tidak Ada', 'Tono', 'Bekasi', '2018-04-24', 'PNS', '12090900', 'S1', 'Indonesia', 'Disa', 'Bogor', '2018-04-07', 'Ibu Rumah Tangga', '0', 'S1', 'Indonesia', 'Bekasi', '076789', '20909000', 2, 1, '', '', '', '', '', '', '', '', '', '', 0, 0, 'Menari', 'Bulutangkis', 'Tidak ada', 'Tidak ada', 'Menari ', 'Guru', '28-04-2018', '0', '../ijazah/643x0w.jpg', '../kartu-keluarga/244167369025212.png', '../akte/bigstock-blue-paint-splash-isolated-on-530', '../foto/cinta-musik-indonesia.jpg', 5486, 0),
 (27, '2018 / 2019', 'Multimedia', '090766123456', 'Annisa Dwi Rosalina', 'Annisa', 'Perempuan', 'Jakarta', '1997-10-23', 'Islam', 'Indonesia', '2', 'Anak Kandung', 'Ayah', 1, 0, 0, 'Tidak Yatim/Piatu/Ya', 'Bahasa Ibu', 'Komplek Danamon', '021845344', 'Dengan Orangtua/Wali', '20km', 'Jalan kaki', 'SMP n 23', '01920813902', '2012-01-09', '2 tahun', '6.00', '45kg', '168', 'b', 'nop', 'nop', 'Rus', 'pekanbaru', '2018-05-18', 'Bos perusahaan mafia', '1000000000', 's3', 'Australia', 'Nur', 'sumbawa', '1986-05-17', 'ibu rumah tangga', '10000000', 's3', 'malaysia', 'danamon', '081923452345', '100000000', 3, 2, 'nop', '', '', '', '', '', '', '', '', '', 0, 0, 'menyanyi, menari', 'berenang', 'remaja masjid', 'lukisan monalisa', 'berbicara', 'dokter', '23-05-2018', '../nisn/3.jpg', '../ijazah/7ff7947123fa9884a2029b0555aff3f7.jpg', '../kartu-keluarga/5.jpg', '../akte/11.png', '../foto/a.jpg', 5775, 0),
 (28, '2018 / 2019', 'Teknik Komputer dan Jaringan', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '0', '0', '0', '0', '0', 1766, 0),
@@ -183,7 +183,8 @@ INSERT INTO `tbl_data_calon_murid` (`id_calon_murid`, `tahun_pelajaran`, `prodi`
 (34, '-- Pilih Tahun Pelaj', '-- Pilih Program Studi --', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '../nisn/2.JPG', '0', '0', '0', '../foto/5.jpg', 2451, 0),
 (35, '2018 / 2019', 'Multimedia', '090766123456', 'Annisa Dwi Rosalina', 'Nama Panggilan', 'Laki-laki', 'Jakarta', '2018-05-10', 'Islam', 'Indonesia', '2', 'Anak Kandung', 'Ayah', 1, 0, 0, 'Tidak Yatim/Piatu/Ya', 'Bahasa Ibu', 'Komplek Danamon', '4', 'Dengan Orangtua/Wali', '20km', 'Jalan kaki', 'SMP n 23', '01920813902', '2018-05-10', '2 tahun', '6.00', '45kg', '168', 'b', 'nop', 'nop', 'Rus', 'pekanbaru', '2018-05-26', 'Bos perusahaan mafia', '1000000000', 's3', 'Australia', 'Nur', 'sumbawa', '2018-05-22', 'ibu rumah tangga', '10000000', 's3', 'malaysia', 'danamon', '081923452345', '100000000', 3, 2, 'nop', '', '', '', '', '', '', '', '', '', 0, 0, 'menyanyi, menari', 'berenang', 'remaja masjid', 'lukisan monalisa', 'berbicara', 'dokter', '25-05-2018', '../nisn/7ff7947123fa9884a2029b0555aff3f7.jpg', '../ijazah/3.jpg', '0', '0', '../foto/11.png', 5252, 0),
 (36, '2018 / 2019', 'Multimedia', '', '', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '../nisn/7ff7947123fa9884a2029b0555aff3f7.jpg', '0', '0', '0', '0', 1981, 1),
-(37, '2018 / 2019', 'Multimedia', '', 'Rina', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '../nisn/5.jpg', '0', '0', '0', '0', 5436, 0);
+(37, '2018 / 2019', 'Multimedia', '', 'Rina', '', '', '', '', '', '', '', '', '', 0, 0, 0, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '', '', '', 0, 0, '', '', '', '', '', '', '', '../nisn/5.jpg', '0', '0', '0', '0', 5436, 0),
+(38, '2018 / 2019', 'Multimedia', '789789', 'line getrich', 'lgr', 'Perempuan', 'korea', '2018-06-20', 'Islam', 'hgj', '6', 'Anak Kandung', 'uuy', 8, 8, 8, 'Tidak Yatim/Piatu/Ya', 'hgh', 'hbh', '8799', 'Dengan Orangtua/Wali', '767', 'hgjhghgjh', 'hgjhghjg', '76876', '2018-06-09', 'hg', 'hgjh', 'hgh', 'hgh', 'jhhgj', 'jgjhg', 'jgjhg', 'bjhb', 'jhg', '2018-06-14', 'hghjg', 'hgjhgj', 'jgjhg', 'hgjgh', 'jhgjhgh', 'gjghj', '2018-06-07', 'htgy', 'guyg', 'yg', 'g', 'g', '7687', 'g', 0, 7687, 'hgh', '', '', '', '', '', '', '', '', '', 0, 0, 'gfhg', 'hgfhg', 'gfh', 'ggfghf', 'gfghf', 'gfhg', '29-06-2018', '../nisn/', '0', '../kartu-keluarga/leaderboard-icon-27.png', '0', '0', 5897, 1);
 
 -- --------------------------------------------------------
 
@@ -301,8 +302,7 @@ INSERT INTO `tbl_faq` (`id_faq`, `nama`, `email`, `comment`, `balasan`, `tanggal
 (18, 'Adi Ramadhan', 'adi@gmail.com', 'Hallo, saya alumni sekolah ini.', 'Hallo :)', '17-03-2018:10:36:28'),
 (19, 'Nindy Ami', 'ami@gmail.com', 'Terimakasih sudah menyediakan fasilitas daftar online.', 'Senang bisa membantu anda. Terimakasih kembali.', '17-03-2018:10:36:50'),
 (20, 'Agus Budi', 'agus@gmail.com', 'Apakah sekolah ini benar di Bekasi?', 'Benar sekali.', '17-03-2018:10:37:45'),
-(21, 'Ari Wibowo', 'ari@gmail.com', 'Apakah saya bisa mentransfer pembayaran?', 'Tentu saja.', '17-03-2018:10:44:54'),
-(22, '', '', '', '', '');
+(21, 'Ari Wibowo', 'ari@gmail.com', 'Apakah saya bisa mentransfer pembayaran?', 'Tentu saja.', '17-03-2018:10:44:54');
 
 -- --------------------------------------------------------
 
@@ -343,8 +343,10 @@ CREATE TABLE `tbl_kelas` (
 --
 
 INSERT INTO `tbl_kelas` (`id_kelas`, `kode_daftar`, `kelas`) VALUES
-(1, 3227, 'd'),
-(2, 2222, 'tkj 3');
+(1, 3227, 'mobile legend'),
+(2, 2222, 'mobile legend'),
+(3, 5897, 'mobile legend'),
+(4, 3322, '');
 
 -- --------------------------------------------------------
 
@@ -366,9 +368,11 @@ CREATE TABLE `tbl_lks` (
 
 INSERT INTO `tbl_lks` (`id_lks`, `kode_daftar`, `lks`, `status_buku`, `keterangan`) VALUES
 (1, 2782, 'g', 'Sudah Diterima', 's'),
-(2, 2222, '', '', ''),
-(3, 2222, '', '', ''),
-(4, 2222, '', '', '');
+(2, 2222, 's', 'Belum Diterima', 'weee'),
+(3, 2222, 's', 'Belum Diterima', 'weee'),
+(4, 2222, 's', 'Belum Diterima', 'weee'),
+(5, 5897, '', '', ''),
+(6, 5897, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -404,7 +408,7 @@ CREATE TABLE `tbl_pembayaran` (
 --
 
 INSERT INTO `tbl_pembayaran` (`id_pembayaran`, `kode_daftar`, `tahun_pelajaran`, `b_daftar`, `bukti_daftar`, `validasi_daftar`, `b_pangkal_lunas`, `bukti_pangkal_lunas`, `validasi_pangkal_lunas`, `b_pangkal_cicil1`, `bukti_pangkal_cicil1`, `validasi_pangkal_cicil1`, `b_pangkal_cicil2`, `bukti_pangkal_cicil2`, `validasi_pangkal_cicil2`, `b_pangkal_cicil3`, `bukti_pangkal_cicil3`, `validasi_pangkal_cicil3`, `status_pembayaran`, `jenis_pembayaran`) VALUES
-(31, 3227, '', 1, '../uploads/11.png', 1, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
+(31, 3227, '', 0, '0', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
 (33, 2188, '', 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
 (34, 9650, '', 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
 (35, 8250, '', 0, '', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
@@ -419,7 +423,8 @@ INSERT INTO `tbl_pembayaran` (`id_pembayaran`, `kode_daftar`, `tahun_pelajaran`,
 (45, 5252, '2018 / 2019', 0, '0', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
 (46, 5252, '2018 / 2019', 0, '0', 0, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
 (47, 1981, '2018 / 2019', 1, '../uploads/7ff7947123fa9884a2029b0555aff3f7.jpg', 1, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0),
-(48, 5436, '2018 / 2019', 0, '0', 0, 0, '', 0, 0, '0', 0, '', '', '', '', '', '', 0, 0);
+(48, 5436, '2018 / 2019', 0, '0', 0, 0, '', 0, 0, '0', 0, '', '', '', '', '', '', 0, 0),
+(49, 5897, '2018 / 2019', 1, '../uploads/maxresdefault (1).jpg', 1, 0, '', 0, 0, '', 0, '', '', '', '', '', '', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -445,10 +450,10 @@ CREATE TABLE `tbl_pengumuman` (
 --
 
 INSERT INTO `tbl_pengumuman` (`id_pengumuman`, `kode_daftar`, `bahasa_indonesia`, `matematika`, `bahasa_inggris`, `kejuruan`, `buta_warna`, `urine`, `fisik`, `hasil`) VALUES
-(15, 3227, 78, 90, 80, 68, 'Lulus', 'Lulus', 'Lulus', 'Lulus'),
-(16, 1981, 0, 0, 0, 0, 'Lulus', 'Lulus', 'Lulus', 'Lulus'),
-(17, 2782, 0, 0, 0, 0, 'Lulus', 'Lulus', 'Lulus', 'Lulus'),
-(18, 2222, 0, 0, 0, 0, 'Lulus', 'Lulus', 'Lulus', 'Lulus');
+(16, 1981, 0, 0, 0, 0, 'Lulus', 'Lulus', 'Lulus', '0'),
+(17, 2782, 0, 0, 0, 0, 'Lulus', 'Lulus', 'Lulus', '0'),
+(18, 2222, 0, 0, 0, 0, 'Lulus', 'Lulus', 'Lulus', '1'),
+(19, 5897, 0, 0, 0, 0, 'Lulus', 'Lulus', 'Lulus', '1');
 
 -- --------------------------------------------------------
 
@@ -459,22 +464,24 @@ INSERT INTO `tbl_pengumuman` (`id_pengumuman`, `kode_daftar`, `bahasa_indonesia`
 CREATE TABLE `tbl_request_kelas` (
   `id_request_kelas` int(10) NOT NULL,
   `nama_kelas` varchar(20) NOT NULL,
-  `status` varchar(20) NOT NULL
+  `status` varchar(20) NOT NULL,
+  `jumlah_murid` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_request_kelas`
 --
 
-INSERT INTO `tbl_request_kelas` (`id_request_kelas`, `nama_kelas`, `status`) VALUES
-(1, '', ''),
-(2, '', ''),
-(3, 'd', '1'),
-(4, 'tkj 3', '0'),
-(5, 'x tkj 4', '0'),
-(6, 'shjg sghhs', '0'),
-(7, 'sjhsjhs ajha', '0'),
-(8, 'annisa dwi dangeng', '0');
+INSERT INTO `tbl_request_kelas` (`id_request_kelas`, `nama_kelas`, `status`, `jumlah_murid`) VALUES
+(1, 'Lulus', '1', 0),
+(2, '', '', 0),
+(3, 'd', '1', 0),
+(4, 'tkj 3', '0', 0),
+(5, 'x tkj 4', '0', 0),
+(6, 'shjg sghhs', '0', 0),
+(7, 'sjhsjhs ajha', '0', 0),
+(9, 'gg', '0', 0),
+(10, 'mobile legend', '1', 3);
 
 -- --------------------------------------------------------
 
@@ -505,6 +512,20 @@ CREATE TABLE `tbl_tahun_pelajaran` (
 
 INSERT INTO `tbl_tahun_pelajaran` (`id_tahun_pelajaran`, `tahun_pelajaran`) VALUES
 (1, '2018 / 2019');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_tanggal_ujian`
+--
+
+CREATE TABLE `tbl_tanggal_ujian` (
+  `id_tanggal_ujian` int(10) NOT NULL,
+  `tanggal` varchar(30) NOT NULL,
+  `pukul` varchar(30) NOT NULL,
+  `tempat` varchar(50) NOT NULL,
+  `pakaian` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -634,6 +655,12 @@ ALTER TABLE `tbl_tahun_pelajaran`
   ADD PRIMARY KEY (`id_tahun_pelajaran`);
 
 --
+-- Indexes for table `tbl_tanggal_ujian`
+--
+ALTER TABLE `tbl_tanggal_ujian`
+  ADD PRIMARY KEY (`id_tanggal_ujian`);
+
+--
 -- Indexes for table `tbl_ukuran_baju`
 --
 ALTER TABLE `tbl_ukuran_baju`
@@ -665,7 +692,7 @@ ALTER TABLE `tbl_biaya`
 -- AUTO_INCREMENT for table `tbl_data_calon_murid`
 --
 ALTER TABLE `tbl_data_calon_murid`
-  MODIFY `id_calon_murid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_calon_murid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `tbl_data_murid`
@@ -677,7 +704,7 @@ ALTER TABLE `tbl_data_murid`
 -- AUTO_INCREMENT for table `tbl_faq`
 --
 ALTER TABLE `tbl_faq`
-  MODIFY `id_faq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_faq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `tbl_galeri`
@@ -689,31 +716,31 @@ ALTER TABLE `tbl_galeri`
 -- AUTO_INCREMENT for table `tbl_kelas`
 --
 ALTER TABLE `tbl_kelas`
-  MODIFY `id_kelas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_kelas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_lks`
 --
 ALTER TABLE `tbl_lks`
-  MODIFY `id_lks` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_lks` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_pembayaran`
 --
 ALTER TABLE `tbl_pembayaran`
-  MODIFY `id_pembayaran` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_pembayaran` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `tbl_pengumuman`
 --
 ALTER TABLE `tbl_pengumuman`
-  MODIFY `id_pengumuman` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_pengumuman` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tbl_request_kelas`
 --
 ALTER TABLE `tbl_request_kelas`
-  MODIFY `id_request_kelas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_request_kelas` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tbl_status`
@@ -726,6 +753,12 @@ ALTER TABLE `tbl_status`
 --
 ALTER TABLE `tbl_tahun_pelajaran`
   MODIFY `id_tahun_pelajaran` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `tbl_tanggal_ujian`
+--
+ALTER TABLE `tbl_tanggal_ujian`
+  MODIFY `id_tanggal_ujian` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_ukuran_baju`

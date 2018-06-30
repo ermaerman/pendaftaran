@@ -5,9 +5,9 @@
 
 <div class="container">
  	<ol class="breadcrumb">
-    <li class="active"><a data-toggle="tooltip" data-placement="top" title="Click me!" href="index.php">SMK Mandalahayu II Bekasi</a> / Hubungi Kami</li>
+    <li class="active"><a data-toggle="tooltip" data-placement="top" title="Click me!" href="index.php">SMK Mandalahayu II Bekasi</a> / FAQ & Hepldesk</li>
   </ol>
-  <h3><b>&nbsp;&nbsp;Hubungi Kami </b> / FAQ</h3>
+  <h3><b>&nbsp;&nbsp;FAQ </b> (Frequently Answer Question)</h3>
   <hr>
 
 	<ul class="list-group">
@@ -22,6 +22,8 @@
 
   <br>
 
+   <h3><b>&nbsp;&nbsp;Helpdesk</b></h3>
+  <hr>
   <ol class="breadcrumb">
     <li class="active"><b>TULIS PERTANYAAN / KOMENTAR</b></li>
   </ol>

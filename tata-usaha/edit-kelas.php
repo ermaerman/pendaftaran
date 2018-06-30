@@ -46,7 +46,7 @@
                     <select class="form-control" name="kelas" id="kelas">
                     <option>-- Pilih Kelas --</option>
                     <?php
-                    $tujuan = "SELECT * FROM tbl_request_kelas WHERE status='1'";
+                    $tujuan = "SELECT COUNT(tbl_kelas.kelas) AS jml, tbl_request_kelas.nama_kelas, tbl_request_kelas.jumlah_murid, tbl_request_kelas.status FROM tbl_kelas, tbl_request_kelas WHERE tbl_request_kelas.status='1' AND jml =! tbl_request_kelas.jumlah_murid";
                     $queryTujuan = mysqli_query($konek,$tujuan);
                     while ($dataTujuan = mysqli_fetch_array($queryTujuan)) { ?>
                          <option value="<?php echo $dataTujuan['nama_kelas'] ?>"><?php echo $dataTujuan["nama_kelas"] ?>

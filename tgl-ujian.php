@@ -4,13 +4,10 @@
 	include 'config/koneksi.php';
 
 	$kode_daftar    = $_GET['kode_daftar'];
-	$kode_dftr    	= $_POST['kode_daftar'];
 
 	$query     = "SELECT * FROM tbl_data_calon_murid WHERE kode_daftar='$kode_daftar'";
 	$cek       = mysqli_query($konek, $query)or die(mysqli_error($konek));
 	$data      = mysqli_fetch_array($cek);
-
-
 ?>
 <br>
 <br>
@@ -35,21 +32,25 @@
 		  				<td width="50"></td>
 		  				<td width="100"><b>Tanggal</b></td>
 		  				<td>:</td>
+		  				<td><?php echo $data['tanggal']; ?></td>
 		  			</tr>
 		  			<tr>
 		  				<td width="50"></td>
 		  				<td><b>Pukul</b></td>
 		  				<td>:</td>
+		  				<td><?php echo $data['pukul']; ?></td>
 		  			</tr>
 		  			<tr>
 		  				<td width="50"></td>
 		  				<td><b>Tempat</b></td>
 		  				<td>:</td>
+		  				<td><?php echo $data['tempat']; ?></td>
 		  			</tr>
 		  			<tr>
 		  				<td width="50"></td>
 		  				<td><b>Pakaian</b></td>
 		  				<td>:</td>
+		  				<td><?php echo $data['pakaian']; ?></td>
 		  			</tr>
 		  	</table>
 		  	<br>

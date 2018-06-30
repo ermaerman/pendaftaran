@@ -67,7 +67,7 @@
             <li><a href="index.php?content=fasilitas">Fasilitas</a></li>
           </ul>
         </li>
-        <li><a href="index.php?content=hubungi-kami">Hubungi Kami / FAQ</a></li>
+        <li><a href="index.php?content=hubungi-kami">FAQ & Helpdesk</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.php?content=alur-pendaftaran">Alur Pendaftaran</a></li>

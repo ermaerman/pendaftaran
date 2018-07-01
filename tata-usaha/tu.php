@@ -97,6 +97,8 @@
               include 'daftar-ulang.php';
             else if ($content=='update-tanggal')
               include 'update-tanggal.php';
+            else if ($content=='edit-konfirmasi-daftar-ulang')
+              include 'edit-konfirmasi-daftar-ulang.php';
            ?>
 
 <div class="col-md-12" style="background:black;padding:8px;color:#fff;">

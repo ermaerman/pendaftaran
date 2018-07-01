@@ -145,5 +145,42 @@
     			</script>";
     	}
 	}
+	elseif ($b_daftar=='daftarulang1')
+	{
+		$update 		= "UPDATE tbl_pembayaran SET kode_daftar='$kode_daftar', b_daftar_ulang1='1',
+						   bukti_daftar_ulang1='$target_file', validasi_daftar_ulang1='0' WHERE kode_daftar='$kode_daftar'";
+		$updatebayar	= mysqli_query($konek, $update)or die(mysqli_error($konek));
 
+		if ($updatebayar)
+    	{
+    		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran daftar ulang naik kelas 11!";
+			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=konfirmasi-pembayaran">';
+    	}
+	else {
+    		print"
+    			<script>
+    				alert(\"Balasan gagal ditambah!\");
+    				history.back(-1);
+    			</script>";
+    	}
+	}
+		elseif ($b_daftar=='daftarulang2')
+		{
+			$update 		= "UPDATE tbl_pembayaran SET kode_daftar='$kode_daftar', b_daftar_ulang2='1',
+							   bukti_daftar_ulang2='$target_file', validasi_daftar_ulang2='0' WHERE kode_daftar='$kode_daftar'";
+			$updatebayar	= mysqli_query($konek, $update)or die(mysqli_error($konek));
+
+			if ($updatebayar)
+	    	{
+	    		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran daftar ulang naik kelas 12!";
+				echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=konfirmasi-pembayaran">';
+	    	}
+		else {
+	    		print"
+	    			<script>
+	    				alert(\"Balasan gagal ditambah!\");
+	    				history.back(-1);
+	    			</script>";
+	    	}
+		}
 ?>

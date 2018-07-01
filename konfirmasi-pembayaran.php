@@ -52,6 +52,8 @@
                       <option value="cicilpertama">Uang Pangkal Cicilan Pertama</option>
                       <option value="cicilkedua">Uang Pangkal Cicilan Kedua</option>
                       <option value="cicilketiga">Uang Pangkal Cicilan Ketiga</option>
+                      <option value="daftarulang1">Daftar Ulang Naik Kelas 11</option>
+                      <option value="daftarulang2">Daftar Ulang Naik Kelas 12</option>
                     </select>
                   </div>
                 </div>

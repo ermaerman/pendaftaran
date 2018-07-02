@@ -84,10 +84,18 @@
                         echo '<tr  class="header">';
                         echo '<td>'.$data['kode_daftar'].'</td>';
                         ?>
-                        <td><?php if ($data['hasil']==1) echo "Lulus"; else echo "Tidak Lulus"; ?></td>
+                        <td><?php if ($data['hasil']==1) { 
+                          echo "Lulus"; 
+                          echo '<td><center><a data-toggle="tooltip" data-placement="right" title="Klik disini untuk input ukuran baju" href=index.php?content=ukuran-baju&&kode_daftar='.$data['kode_daftar'].'><span class="glyphicon glyphicon-circle-arrow-right"></span> Input Ukuran Baju</a></center></td>';
+                          echo '</tr>'; }
+
+                          else  { 
+                            echo "Tidak Lulus";
+                             echo '<td></td>';
+                          echo '</tr>'; } 
+                          ?></td>
                         <?php
-                        echo '<td><a data-toggle="tooltip" data-placement="right" title="Klik disini untuk input ukuran baju" href=index.php?content=ukuran-baju&&kode_daftar='.$data['kode_daftar'].'><span class="glyphicon glyphicon-circle-arrow-right"></span> Input Ukuran Baju</a></td>';
-                        echo '</tr>';
+                       
                         $no++;
                       }
                     }

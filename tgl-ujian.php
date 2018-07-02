@@ -10,6 +10,8 @@
 	$data      = mysqli_fetch_array($cek);
 ?>
 <br>
+<br>	
+<br>	
 <br>
 
 <body>
@@ -19,7 +21,7 @@
 	    </ol>
 	    	<h3><b>&nbsp;&nbsp;Perihal</b> Ujian Masuk</h3>
 	      	<hr>
-	      	<div class="alert alert-info">
+	      	<div class="alert alert-info"><font color="black">
 		  <strong>Info!</strong><hr> <i>Hallo, terimakasih karena anda telah melunasi biaya administrasi pendaftaran<br>Berikut ini adalah informasi yang harus kamu ketahui:</i>
 		  <br>
 		  <br>
@@ -66,7 +68,7 @@
 		  <br>
 		  <p align="right">
 		  	<i>Perihal Ujian Masuk SMK Mandalahayu II Bekasi</i>
-		  </p>
+		  </p></font>
 	</div>
 		<form class="form-horizontal" action="#" method="POST">
 	    <div class="panel-group">

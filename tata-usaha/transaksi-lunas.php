@@ -32,7 +32,8 @@
 <div class="col-md-10" style="min-height:500px">
   <h3><b>Transaksi Keuangan</b> Uang Pangkal Lunas</h3>
   <hr>
-  <br>
+  <p align="right"><a href="print-kartu.php?kode_daftar=<?php echo $kode_daftar ?>" target ="_blank" role="button" class="btn btn-primary"><i class="fa fa-print fa-fw"></i> &nbsp;Print Data Transaksi Keuangan Pangkal Lunas</button></a></p>
+  
     <form class="form-horizontal" method="POST">
       <table class="table table-striped">
         <thead>

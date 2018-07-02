@@ -5,7 +5,7 @@
 
 <div class="container">
  	<ol class="breadcrumb">
-    <li class="active"><a data-toggle="tooltip" data-placement="top" title="Click me!" href="index.php">SMK Mandalahayu II Bekasi</a> / FAQ & Hepldesk</li>
+    <li class="active"><a data-toggle="tooltip" data-placement="top" title="Click me!" href="index.php">SMK Mandalahayu II Bekasi</a> / FAQ & Helpdesk</li>
   </ol>
   <h3><b>&nbsp;&nbsp;FAQ </b> (Frequently Answer Question)</h3>
   <hr>

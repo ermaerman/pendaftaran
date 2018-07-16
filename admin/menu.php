@@ -7,7 +7,7 @@
             <li><a href='admin.php?content=galeri'>Galeri</a></li>
          </ul>
       </li>
-      <li><a href='admin.php?content=faq'><i class="fa fa-question fa-fw"></i>&nbsp; FAQ</a></li>
+      <li><a href='admin.php?content=faq'><i class="fa fa-question fa-fw"></i>&nbsp; Helpdesk</a></li>
       <li><a href='admin.php?content=manajemen-user'><i class="fa fa-folder fa-fw"></i>&nbsp; Manajemen User</a></li>
       <li class='last'><a onClick="return confirm('Apakah anda ingin keluar?')" href='../config/logout.php'><i class="fa fa-sign-out fa-fw"></i>&nbsp; Logout</a></li>
    </ul>

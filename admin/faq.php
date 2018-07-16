@@ -28,7 +28,7 @@
 </div>
 
 <div class="col-md-10" style="min-height:500px">
-  <h3><b>Hubungi Kami /</b> FAQ</h3>
+  <h3><b>Helpdesk</b></h3>
   <hr>
   <br>
     <form class="form-horizontal" method="POST">

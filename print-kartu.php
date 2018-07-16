@@ -33,16 +33,27 @@
 	      <div class="panel-body">
 	        <table class="table">
 	          <tr>
-	          <td><br><p align="center">
+	          <td><p align="center">
 	          			<img src="gambar/manda.png" height="100"><br>
-	          			<font size="5px"><b>YAYASAN MANDALAHAYU</b></font><br>
-	                  <font size="6px"><b>SMK MANDALAHAYU II BEKASI</b></font><br>Jl. Pengasinan Tengah No.99, Pengasinan, Rawalumbu, Kota Bks, Jawa Barat 17115</p><hr></td>
+	          			<font size="4px"><b>YAYASAN MANDALAHAYU</b></font><br>
+	                  <font size="5px"><b>SMK MANDALAHAYU II BEKASI</b></font><br>Jl. Pengasinan Tengah No.99, Pengasinan, Rawalumbu, Kota Bks, Jawa Barat 17115</p><hr></td>
 	          </tr>
 	        </table>
 	        <p align="center"><img height="160" width="125" src="foto/<?php echo $data['syarat_foto'] ?>""></p>
 	        <br>
 	        <br>
 	     <table class="table table-bordered">  
+
+	     		<?php
+		  				
+						include 'config/koneksi.php';		  				
+
+		  				$querytanggal     = "SELECT * FROM tbl_tanggal_ujian ORDER BY id_tanggal_ujian DESC LIMIT 1";
+		  				$cekquery         = mysqli_query($konek, $querytanggal)or die(mysqli_error($konek));
+		  				$hasil      	  = mysqli_fetch_array($cekquery);
+		  				
+		  			?>	
+
 	     	<tr>
 	        <th width="200">Kode Daftar</th>
 	        <td><i><?php echo $data['kode_daftar']; ?></i></td>
@@ -60,20 +71,32 @@
 	        <td><i><?php echo $data['tahun_pelajaran']; ?></i></td>
 	      </tr>
 	      <tr>
-	        <th>Program Studi</th>
-	        <td><i><?php echo $data['prodi'] ?></i></td>
-	      </tr> 
+	        <th>Tanggal Ujian</th>
+	        <td width="500"><i><?php echo $hasil['tanggal'] ?></i></td>
+	      </tr>
+	      <tr>
+	        <th>Pukul</th>
+	        <td width="500"><i><?php echo $hasil['pukul'] ?></i></td>
+	      </tr>
+	      <tr>
+	        <th>Tempat</th>
+	        <td width="500"><i><?php echo $hasil['tempat'] ?></i></td>
+	      </tr>
+	      <tr>
+	        <th>Pakaian</th>
+	        <td width="500"><i><?php echo $hasil['pakaian'] ?></i></td>
+	      </tr>
 	      <tr>
 	        <th>Tes Buta Warna</th>
-	        <td><i></i></td>
-	      </tr>  
+	        <td width="500"><i></i></td>
+	      </tr>
 	       <tr>
 	        <th>Tes Urine / Bebas Narkoba</th>
-	        <td><i></i></td>
-	      </tr> 
+	        <td width="500"><i></i></td>
+	      </tr>
 	      <tr>
 	        <th>Tes Fisik</th>
-	        <td><i></i></td>
+	        <td width="500"><i></i></td>
 	      </tr>
 	  </table>
 	<p align="right">Bekasi, <?php

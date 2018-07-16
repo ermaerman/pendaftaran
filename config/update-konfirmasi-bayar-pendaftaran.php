@@ -8,8 +8,7 @@
     $query    = "UPDATE tbl_pembayaran SET validasi_daftar='1' WHERE kode_daftar='$kode_daftar'";
     $update   = mysqli_query($konek, $query)or die(mysqli_error($konek));
 
-    $queryinput   = "INSERT INTO tbl_pengumuman (kode_daftar) SELECT kode_daftar FROM tbl_pembayaran WHERE validasi_daftar='1' ORDER BY id_pembayaran DESC LIMIT 1";
-    $simpan       = mysqli_query($konek, $queryinput)or die(mysqli_error($konek));
+   
 
     if($update)
     {

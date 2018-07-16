@@ -1,4 +1,4 @@
-<style>
+  <style>
 
   table {
       border-collapse: collapse;

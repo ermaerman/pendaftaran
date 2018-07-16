@@ -25,7 +25,7 @@
 
 <div class="col-md-10" style="padding:0px">
   <ol class="breadcrumb" style="margin:0;border-radius:0;">
-    <li class="active"><a href="#">Transaksi Keuangan</a> / <a href="#">Daftar Ulang</a> / Uang Pangkal Langsung Lunas</li>
+    <li class="active"><a href="#">Transaksi Keuangan</a> / Uang Pangkal Langsung Lunas</li>
   </ol>
 </div>
    

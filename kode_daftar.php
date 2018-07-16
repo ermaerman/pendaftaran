@@ -38,4 +38,7 @@
   $queryinput   = "INSERT INTO tbl_pembayaran (kode_daftar, tahun_pelajaran) SELECT kode_daftar, tahun_pelajaran FROM tbl_data_calon_murid ORDER BY id_calon_murid DESC LIMIT 1";
   $simpan       = mysqli_query($konek, $queryinput)or die(mysqli_error($konek)); 
 
+ $queryinput   = "INSERT INTO tbl_pengumuman (kode_daftar) SELECT kode_daftar FROM tbl_data_calon_murid ORDER BY id_calon_murid DESC LIMIT 1";
+    $simpan       = mysqli_query($konek, $queryinput)or die(mysqli_error($konek));
+
 ?>

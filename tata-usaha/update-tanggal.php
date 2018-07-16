@@ -47,9 +47,11 @@
         <thead>
           <tr>
             <th>No</th>
-            <th>Nama Kelas</th>
-            <th>Jumlah Murid</th>
-            <th>Status</th>
+            <th>Tanggal</th>
+            <th>Pukul</th>
+            <th>Tempat</th>
+            <th>Pakaian</th>
+            <th colspan="2">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -58,27 +60,24 @@
             include '../config/koneksi.php';
 
             
-            $query = mysqli_query($konek, "SELECT * FROM tbl_request_kelas")or die(mysqli_error($konek));
+            $query = mysqli_query($konek, "SELECT * FROM tbl_tanggal_ujian ORDER BY id_tanggal_ujian DESC")or die(mysqli_error($konek));
 
                     if(mysqli_num_rows($query) == 0){
-                      echo '<tr><td colspan="5" align="center">Tidak ada data!</td></tr>';
+                      echo '<tr><td colspan="6" align="center">Tidak ada data!</td></tr>';
                     }
                       else
                     {
                       $no = 1;
                       while($data = mysqli_fetch_array($query)){
-                        ?>
-                        <tr>
-                        <td><?php echo $no ?></td>
-                        <td><?php
-                        $kalimat = $data['nama_kelas'];
-                        $kalimat_new = ucwords($kalimat);
-                        echo $kalimat_new;
-                        ?></td>
-                        <td><?php echo $data['jumlah_murid'] ?></td>
-                        <td><?php if ($data['status']==0) echo "Belum Dikonfirmasi"; else echo "Sudah Dikonfirmasi"; ?></td>
-                      </tr>
-                        <?php
+                         echo '<tr>';
+                        echo '<td>'.$no.'</td>';
+                        echo '<td>'.$data['tanggal'].'</td>';
+                        echo '<td>'.$data['pukul'].'</td>';
+                        echo '<td>'.$data['tempat'].'</td>';
+                        echo '<td>'.$data['pakaian'].'</td>';
+                        echo '<td  width="20"><a data-toggle="tooltip" data-placement="left" title="Edit" href=tu.php?content=edit-tanggal-ujian&&id_tanggal_ujian='.$data['id_tanggal_ujian'].'><i class="fa fa-edit fa-fw"></i></a></td>';
+                        echo '<td  width="20"><a data-toggle="tooltip" data-placement="left" title="Delete" href=../config/delete-tanggal-ujian.php?id_tanggal_ujian='.$data['id_tanggal_ujian'].'><i class="fa fa-trash fa-fw"></i></a></td>';
+                        echo '</tr>';
                         $no++;
                       }
                     }
@@ -101,30 +100,46 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <p align="center"><img src="../gambar/manda.png" alt="" height="100px" width="130px"></p>
             <p align="center"><font size="2px"><i>Sistem Informasi Pendaftaran SMK Mandalahayu II Bekasi</i></font></p>
-            <h4 class="modal-title" align="center"><b>Request Kelas</b></h4>
+            <h4 class="modal-title" align="center"><b>Tambah Tanggal Ujian Masuk</b></h4>
           </div>
           <div class="modal-body">
-            <form action="../config/add-request-kelas.php" class="form-horizontal" method="POST">
+            <form action="../config/add-tanggal-ujian.php" class="form-horizontal" method="POST">
               <div class="form-group">
                 <label class="col-sm-1"></label>
-                <label class="col-sm-3">Nama Kelas</label>
+                <label class="col-sm-3">Tanggal</label>
                 <label class="col-sm-1">:</label>
                   <div class="col-sm-6">
-                      <input type="text" style="text-transform: capitalize;" class="form-control" name="nama_kelas" placeholder="Nama Kelas" required>
+                      <input type="date" class="form-control" name="tanggal" placeholder="Masukkan Tanggal" required>
                   </div>
               </div>
               <div class="form-group">
                 <label class="col-sm-1"></label>
-                <label class="col-sm-3">Jumlah Murid</label>
+                <label class="col-sm-3">Pukul</label>
                 <label class="col-sm-1">:</label>
                   <div class="col-sm-6">
-                      <input type="number" min="1" max="30" class="form-control" name="jumlah_murid" placeholder="Jumlah Kelas" required>
+                      <input type="text" class="form-control" name="pukul" placeholder="Masukkan Waktu" required>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-1"></label>
+                <label class="col-sm-3">Tempat</label>
+                <label class="col-sm-1">:</label>
+                  <div class="col-sm-6">
+                      <input type="text" class="form-control" name="tempat" placeholder="Masukkan Tempat" required>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-1"></label>
+                <label class="col-sm-3">Pakaian</label>
+                <label class="col-sm-1">:</label>
+                  <div class="col-sm-6">
+                      <input type="text" class="form-control" name="pakaian" placeholder="Masukkan Pakaiam" required>
                   </div>
               </div>
               <div class="form-group">
                   <label class="control-label col-sm-5"></label>
                   <div class="col-sm-6" align="right">
-                      <button class="btn btn-primary">Request</button>
+                      <button class="btn btn-primary">Tambah</button>
                   </div>
               </div>
             </form>

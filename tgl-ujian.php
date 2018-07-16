@@ -1,6 +1,5 @@
 <?php
 
-
 	include 'config/koneksi.php';
 
 	$kode_daftar    = $_GET['kode_daftar'];
@@ -8,6 +7,7 @@
 	$query     = "SELECT * FROM tbl_data_calon_murid WHERE kode_daftar='$kode_daftar'";
 	$cek       = mysqli_query($konek, $query)or die(mysqli_error($konek));
 	$data      = mysqli_fetch_array($cek);
+	
 ?>
 <br>
 <br>	
@@ -30,29 +30,38 @@
 		  	- Peserta ujian adalah calon murid yang telah membayar biaya administrasi yang telah dikonfirmasi oleh tata usaha SMK Mandalahayu II Bekasi.<br>
 		  	- Peserta diharuskan mengikuti tes ujian masuk di SMK Mandalahayu II Bekasi pada:<br><br>
 		  		<table>
+		  			<?php
+		  				
+						include 'config/koneksi.php';		  				
+
+		  				$querytanggal     = "SELECT * FROM tbl_tanggal_ujian ORDER BY id_tanggal_ujian DESC LIMIT 1";
+		  				$cekquery         = mysqli_query($konek, $querytanggal)or die(mysqli_error($konek));
+		  				$hasil      	  = mysqli_fetch_array($cekquery);
+		  				
+		  			?>	
 		  			<tr>
 		  				<td width="50"></td>
 		  				<td width="100"><b>Tanggal</b></td>
 		  				<td>:</td>
-		  				<td><?php echo $data['tanggal']; ?></td>
+		  				<td>&nbsp;<?php echo $hasil['tanggal']; ?></td>
 		  			</tr>
 		  			<tr>
 		  				<td width="50"></td>
 		  				<td><b>Pukul</b></td>
 		  				<td>:</td>
-		  				<td><?php echo $data['pukul']; ?></td>
+		  				<td>&nbsp;<?php echo $hasil['pukul']; ?></td>
 		  			</tr>
 		  			<tr>
 		  				<td width="50"></td>
 		  				<td><b>Tempat</b></td>
 		  				<td>:</td>
-		  				<td><?php echo $data['tempat']; ?></td>
+		  				<td>&nbsp;<?php echo $hasil['tempat']; ?></td>
 		  			</tr>
 		  			<tr>
 		  				<td width="50"></td>
 		  				<td><b>Pakaian</b></td>
 		  				<td>:</td>
-		  				<td><?php echo $data['pakaian']; ?></td>
+		  				<td>&nbsp;<?php echo $hasil['pakaian']; ?></td>
 		  			</tr>
 		  	</table>
 		  	<br>
@@ -109,7 +118,19 @@
 	      </tr>
 	      <tr>
 	        <th>Tanggal Ujian</th>
-	        <td width="500"><i></i></td>
+	        <td width="500"><i><?php echo $hasil['tanggal'] ?></i></td>
+	      </tr>
+	      <tr>
+	        <th>Pukul</th>
+	        <td width="500"><i><?php echo $hasil['pukul'] ?></i></td>
+	      </tr>
+	      <tr>
+	        <th>Tempat</th>
+	        <td width="500"><i><?php echo $hasil['tempat'] ?></i></td>
+	      </tr>
+	      <tr>
+	        <th>Pakaian</th>
+	        <td width="500"><i><?php echo $hasil['pakaian'] ?></i></td>
 	      </tr>
 	      <tr>
 	        <th>Tes Buta Warna</th>

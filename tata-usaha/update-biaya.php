@@ -54,7 +54,7 @@ function sum() {
 </div>
    
 <div class="col-md-10" style="min-height:500px">
-  <h3><b>Update</b> Hasil Ujian Masuk</h3>
+  <h3><b>Update</b> Informasi Biaya</h3>
   <hr>
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle fa-fw"></i>Tambah Informasi Biaya</button>
   <br>

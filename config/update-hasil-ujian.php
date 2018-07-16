@@ -13,7 +13,7 @@
     $fisik              = $_POST['fisik'];
     $hasil              = $_POST['hasil'];
 
-		if($hasil=='Lulus')
+	if($hasil=='Lulus')
 	 {
 	 	$update 		= "UPDATE tbl_pengumuman SET kode_daftar='$kode_daftar', bahasa_indonesia='$bahasa_indonesia', matematika='$matematika', bahasa_inggris='$bahasa_inggris', kejuruan='$kejuruan', buta_warna='$buta_warna', urine='$urine', fisik='$fisik', hasil='1' WHERE kode_daftar='$kode_daftar'";
 	 	$updatehasil	= mysqli_query($konek, $update)or die(mysqli_error($konek));

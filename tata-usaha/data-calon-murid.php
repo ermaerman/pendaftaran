@@ -60,7 +60,7 @@
 
             include '../config/koneksi.php';
 
-            $query = mysqli_query($konek, "SELECT * FROM tbl_data_calon_murid WHERE status='0'")or die(mysqli_error());
+            $query = mysqli_query($konek, "SELECT * FROM tbl_data_calon_murid WHERE status='0' order by id_calon_murid DESC")or die(mysqli_error());
                     if(mysqli_num_rows($query) == 0){ 
                       echo '<tr><td colspan="12" align="center">Tidak ada data!</td></tr>';    
                     }

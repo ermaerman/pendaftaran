@@ -58,8 +58,8 @@
                   <div class="col-sm-6">
                     <select class="form-control" id="prodi" name="prodi">
                       <option>-- Pilih Program Studi --</option>
-                      <option>Multimedia</option>
-                      <option>Teknik Komputer dan Jaringan</option>
+                      <option value="Multimedia">Multimedia</option>
+                      <option value="TKJ">Teknik Komputer dan Jaringan</option>
                     </select> 
                   </div>
                 </div>

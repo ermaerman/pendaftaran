@@ -76,7 +76,7 @@
                         echo '<tr>';
                         echo '<td>'.$no.'</td>';
                         echo '<td>'.$data['kode_daftar'].'</td>';
-                        echo '<td>'.$data['kelas'].'</td>';
+                        echo '<td>'.$data['id_request_kelas'].'</td>';
                         echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Edit Kelas" href=tu.php?content=edit-kelas&&kode_daftar='.$data['kode_daftar'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
                         echo '</tr>';
                         $no++;

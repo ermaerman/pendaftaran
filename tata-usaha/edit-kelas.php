@@ -7,8 +7,9 @@
     $id_kelas = $_GET['id_kelas'];
     $kode_daftar = $_GET['kode_daftar'];
 
+
     $edit    = "SELECT * FROM tbl_kelas WHERE kode_daftar = '$kode_daftar'";
-    $hasil   = mysqli_query($konek, $edit)or die(mysql_error());
+    $hasil   = mysqli_query($konek, $edit)or die(mysqli_error());
     $data    = mysqli_fetch_array($hasil);
 
 ?>
@@ -38,6 +39,25 @@
                 <input class="form-control" name="kode_daftar" type="text" value="<?php echo $data['kode_daftar']; ?>" required>
             </div>
         </div>
+        <?php
+
+            $data    = "SELECT * FROM tbl_data_calon_murid WHERE kode_daftar = '$kode_daftar'";
+            $query   = mysqli_query($konek,$data)or die(mysqli_error());
+            $tampil  = mysqli_fetch_array($query);
+
+            $prodi   = $tampil['prodi'];
+            echo $prodi;
+            // echo '<br>';
+
+            $select  = "SELECT COUNT(tbl_kelas.id_request_kelas) AS jumlah FROM tbl_kelas, tbl_request_kelas WHERE tbl_request_kelas.nama_kelas LIKE '%$prodi%' AND tbl_request_kelas.id_request_kelas = tbl_kelas.id_request_kelas";
+            $mysqli  = mysqli_query($konek,$select)or die(mysqli_error($konek));
+            $muncul  = mysqli_fetch_array($mysqli);
+
+            $jumlah  = $muncul['jumlah'];
+
+            echo $jumlah;
+
+        ?>
         <div class="form-group">
                   <label class="col-sm-2"></label>
                   <label class="col-sm-2">Kelas</label>
@@ -46,13 +66,14 @@
                     <select class="form-control" name="kelas" id="kelas">
                     <option>-- Pilih Kelas --</option>
                     <?php
-                    $tujuan = "SELECT COUNT(tbl_kelas.kelas) AS jml, tbl_request_kelas.nama_kelas, tbl_request_kelas.jumlah_murid, tbl_request_kelas.status FROM tbl_kelas, tbl_request_kelas WHERE tbl_request_kelas.status='1' AND jml =! tbl_request_kelas.jumlah_murid";
-                    $queryTujuan = mysqli_query($konek,$tujuan);
-                    while ($dataTujuan = mysqli_fetch_array($queryTujuan)) { ?>
-                         <option value="<?php echo $dataTujuan['nama_kelas'] ?>"><?php echo $dataTujuan["nama_kelas"] ?>
-                        </option>
+                        $kelas = "SELECT * FROM tbl_request_kelas WHERE jumlah_murid != '$jumlah' AND nama_kelas LIKE '%$prodi%'";
+                        $querykelas = mysqli_query($konek,$kelas);
+                        while ($datakelas = mysqli_fetch_array($querykelas)) { ?>
+                            <option value="<?php echo $datakelas['id_request_kelas']; ?>">
+                                <?php echo $datakelas['nama_kelas']; ?>
+                            </option>
                     <?php
-                    }
+                        }
                     ?>
                     </select>
                   </div>

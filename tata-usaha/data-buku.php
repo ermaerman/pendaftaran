@@ -55,7 +55,7 @@
             $id_lks = $_GET['id_lks'];
             $kode_daftar = $_GET['kode_daftar'];
 
-            $query = mysqli_query($konek, "SELECT * FROM tbl_lks")or die(mysqli_error());
+            $query = mysqli_query($konek, "SELECT DISTINCT kode_daftar,lks,keterangan,status_buku FROM tbl_lks")or die(mysqli_error());
                     if(mysqli_num_rows($query) == 0){
                       echo '<tr><td colspan="5" align="center">Tidak ada data!</td></tr>';
                     }

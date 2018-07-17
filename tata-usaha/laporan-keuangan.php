@@ -1,14 +1,12 @@
 <?php
 
-  error_reporting(0);
+  //error_reporting(0);
 
   include '../config/koneksi.php';
 
-  $id_pembayaran = $_GET['id_pembayaran'];
-
-  $edit    = "SELECT tbl_pembayaran.kode_daftar, tbl_pembayaran.id_pembayaran, tbl_pembayaran.validasi_daftar_ulang1,  tbl_pembayaran.bukti_daftar_ulang1, tbl_pembayaran.validasi_daftar_ulang2,  tbl_pembayaran.bukti_daftar_ulang2, tbl_data_calon_murid.nama FROM tbl_pembayaran, tbl_data_calon_murid WHERE tbl_pembayaran.id_pembayaran = '$id_pembayaran' AND tbl_data_calon_murid.kode_daftar = tbl_pembayaran.kode_daftar";
-  $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
-  $data    = mysqli_fetch_array($hasil);
+  // $edit    = "SELECT * FROM tbl_pembayaran";
+  // $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+  // $data    = mysqli_fetch_array($hasil);
 
 ?>
 
@@ -30,8 +28,24 @@
             <div class="panel-body">
               <table class="table table-bordered">
                 <tr>
+                  <?php
+                      $edit    = "SELECT COUNT(validasi_daftar) AS jumlah FROM tbl_pembayaran WHERE validasi_daftar='1'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $jumlah  = $data['jumlah'];
+
+                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $pendaftaran = $data['biaya_pendaftaran'];
+
+                      $total   = $jumlah * $pendaftaran;
+                      
+                  ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. </font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?> </font></i></td>
                 </tr>
               </table>
               <p align="right">
@@ -51,8 +65,32 @@
             <div class="panel-body">
               <table class="table table-bordered">
                 <tr>
+                  <?php
+                    
+                      $edit    = "SELECT COUNT(validasi_pangkal_cicil1) AS jumlah FROM tbl_pembayaran WHERE validasi_pangkal_cicil1='1'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $jumlah  = $data['jumlah'];
+                      // echo $jumlah;
+
+                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $pangkal = $data['total_pangkal'];
+                      // echo '<br>';
+                      // echo $pangkal;
+
+                      $cicil   = $pangkal / 3;
+                      // echo '<br>';
+                      // echo $cicil;
+
+                      $total   = $jumlah * $cicil;
+                      
+                  ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. </font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">

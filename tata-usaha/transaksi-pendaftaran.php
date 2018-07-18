@@ -34,10 +34,10 @@
     <hr>
      <form class="form-inline" action="" method="POST">
     <div class="form-group">
-      <input size="127px" type="text" name="pencarian" class="form-control" placeholder="Pencarian">
+      <input size="127px" type="text" name="pencarian" class="form-control" placeholder="Masukkan kode daftar">
       <button type="submit" class="btn btn-primary"><i class="fa fa-search fa-fw"></i></button>
       <a href="tu.php?content=transaksi-pendaftaran"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
-      <a target ="_blank" role="button" href="print-transaksi-pendaftaran"><button type="button" class="btn btn-success"><i class="fa fa-print fa-fw"></i></button></a>  
+      <a target ="_blank" role="button" href="print-transaksi-pendaftaran.php"><button type="button" class="btn btn-success"><i class="fa fa-print fa-fw"></i></button></a>  
     </div>
   </form>
    

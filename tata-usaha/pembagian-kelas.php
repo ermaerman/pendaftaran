@@ -35,19 +35,12 @@
 <div class="col-md-10" style="">
   	<h3><b>Pembagian</b> Kelas</h3>
     <hr>
-    <br>
-    <div class="form-group">
-        <div class="col-sm-12">
-            <div class="input-group">
-                <input type="text" class="form-control" name="" placeholder="Cari .." required>
-                <span class="input-group-addon"><a href="#"><i class="fa fa-search fa-fw"></i></a></span>
-              </div>
-        </div>
-    </div>
+
+   
 </div>
 
 <div class="col-md-10">
-<hr>
+
   <form class="form-horizontal" method="POST">
       <table class="table table-striped">
         <thead>

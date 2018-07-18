@@ -83,12 +83,12 @@
                         echo '<td>'.$data['tahun_pelajaran'].'</td>';
                         echo '<td>'.$data['prodi'].'</td>';
                         echo '<td>'.$data['nisn'].'</td>';
-                        echo '<td>'.$data['id_calon_murid'].'</td>';
+                        echo '<td>'.$data['kode_daftar'].'</td>';
                         echo '<td>'.$data['nama'].'</td>';
                         echo '<td>'.$data['tgl_lahir'].'</td>';
                         echo '<td>'.$data['agama'].'</td>';
                         echo '<td>'.$data['telepon_rumah'].'</td>';
-                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Lihat Data Lengkap" href=tu.php?content=edit-calon-murid&&id_calon_murid='.$data['id_calon_murid'].'><i class="fa fa-bars fa-fw"></i></a></center></td>';
+                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Lihat Data Lengkap" href=tu.php?content=edit-murid&&id_calon_murid='.$data['id_calon_murid'].'><i class="fa fa-bars fa-fw"></i></a></center></td>';
                         echo '</tr>';
                         $no++;
                       }

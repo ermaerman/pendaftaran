@@ -101,6 +101,10 @@
               include 'edit-konfirmasi-daftar-ulang.php';
             else if ($content=='edit-tanggal-ujian')
               include 'edit-tanggal-ujian.php';
+            else if ($content=='edit-murid')
+              include 'edit-murid.php';
+            else if ($content=='lihat-kelas')
+              include 'lihat-kelas.php';
            ?>
 
 <div class="col-md-12" style="background:black;padding:8px;color:#fff;">

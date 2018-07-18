@@ -72,7 +72,7 @@
           $batas  = 6;
           $hal    = @$_GET['hal'];
           if (empty($hal)) {
-            $posisi = 1;
+            $posisi = 0;
             $hal    = 1;
           } else {
             $posisi = ($hal - 1) * $batas;
@@ -80,17 +80,17 @@
           if($_SERVER['REQUEST_METHOD'] == "POST") {
             $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
             if ($pencarian != '') {
-              $sql = "SELECT * FROM tbl_data_calon_murid WHERE status='0' AND nama LIKE '%$pencarian%' OR kode_daftar LIKE '%$pencarian' OR tahun_pelajaran LIKE '%$pencarian' OR prodi LIKE '%$pencarian' OR nisn LIKE '%$pencarian' OR agama LIKE '%$pencarian'";
+              $sql = "SELECT * FROM tbl_data_calon_murid WHERE status='0' AND nama LIKE '%$pencarian%' OR kode_daftar LIKE '%$pencarian' OR tahun_pelajaran LIKE '%$pencarian' OR prodi LIKE '%$pencarian' OR nisn LIKE '%$pencarian' OR agama LIKE '%$pencarian' ORDER BY id_calon_murid DESC";
               $query = $sql;
               $queryJml = $sql;
             } else {
-              $query = "SELECT * FROM tbl_data_calon_murid WHERE status='0' LIMIT $posisi, $batas ";
-              $queryJml = "SELECT * FROM tbl_data_calon_murid WHERE status='0' C";
+              $query = "SELECT * FROM tbl_data_calon_murid WHERE status='0' ORDER BY id_calon_murid DESC LIMIT $posisi, $batas ";
+              $queryJml = "SELECT * FROM tbl_data_calon_murid WHERE status='0' ORDER BY id_calon_murid DESC";
               $no = $posisi + 1;
             }
           } else {
-            $query = "SELECT * FROM tbl_data_calon_murid WHERE status='0'  LIMIT $posisi, $batas ";
-            $queryJml = "SELECT * FROM tbl_data_calon_murid WHERE status='0'";
+            $query = "SELECT * FROM tbl_data_calon_murid WHERE status='0' ORDER BY id_calon_murid DESC LIMIT $posisi, $batas ";
+            $queryJml = "SELECT * FROM tbl_data_calon_murid WHERE status='0' ORDER BY id_calon_murid DESC";
             $no = $posisi + 1;
           }
 

@@ -22,7 +22,8 @@
   <h3><b>&nbsp;&nbsp;Konfirmasi</b> Pembayaran</h3>
   <hr>
       <div class="alert alert-info">
-      <strong>Info!</strong><i> Bagi anda yang telah melakukan konfirmasi pembayaran silahkan tunggu sampai pembayaran dikonfirmasi oleh tata usaha. Klik <a data-toggle="tooltip" data-placement="top" title="Cek proses!" href="index.php?content=cek-proses">disini</a> untuk mengecek.</i>
+      <strong>Info!</strong><i> Bagi anda yang telah melakukan konfirmasi pembayaran silahkan tunggu sampai pembayaran dikonfirmasi oleh tata usaha. Klik <a data-toggle="tooltip" data-placement="top" title="Cek proses!" href="index.php?content=cek-proses">disini</a> untuk mengecek.<br><br>
+      <p><i>No. Rekening: 999322332 (BNI) A.N. SMK Mandalahayu II Bekasi</i></p></i>
       </div>
   <br>
   <br>

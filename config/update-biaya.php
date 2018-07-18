@@ -20,10 +20,12 @@
     $kbm_praktek        = $_POST['kbm_praktek'];
     $kbm_ekstra         = $_POST['kbm_ekstra'];
     $total_pangkal      = $_POST['total_pangkal'];
+    $daftar_ulang1      = $_POST['daftar_ulang1'];
+    $daftar_ulang2      = $_POST['daftar_ulang2'];
 
 
 
-	$update 	= "UPDATE tbl_biaya SET tahun_pelajaran='$tahun_pelajaran', biaya_pendaftaran='$biaya_pendaftaran', uang_gedung='$uang_gedung', biaya_mos='$biaya_mos', biaya_spp='$biaya_spp', seragam_putih_abu='$seragam_putih_abu', seragam_olahraga='$seragam_olahraga', seragam_batik='$seragam_batik', seragam_pramuka='$seragam_pramuka', baju_muslim='$baju_muslim', topi='$topi', dasi='$dasi', ikat_pinggang='$ikat_pinggang', kbm_pramuka='$kbm_pramuka', kbm_praktek='$kbm_praktek', kbm_ekstra='$kbm_ekstra', total_pangkal='$total_pangkal' WHERE id_biaya='$id_biaya'";
+	$update 	= "UPDATE tbl_biaya SET tahun_pelajaran='$tahun_pelajaran', biaya_pendaftaran='$biaya_pendaftaran', uang_gedung='$uang_gedung', biaya_mos='$biaya_mos', biaya_spp='$biaya_spp', seragam_putih_abu='$seragam_putih_abu', seragam_olahraga='$seragam_olahraga', seragam_batik='$seragam_batik', seragam_pramuka='$seragam_pramuka', baju_muslim='$baju_muslim', topi='$topi', dasi='$dasi', ikat_pinggang='$ikat_pinggang', kbm_pramuka='$kbm_pramuka', kbm_praktek='$kbm_praktek', kbm_ekstra='$kbm_ekstra', total_pangkal='$total_pangkal', daftar_ulang1='$daftar_ulang1', daftar_ulang2='$daftar_ulang2' WHERE id_biaya='$id_biaya'";
 	$updatebiaya	= mysqli_query($konek, $update)or die(mysqli_error());
 
 	if ($updatebiaya)

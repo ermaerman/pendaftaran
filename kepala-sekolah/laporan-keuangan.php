@@ -1,14 +1,12 @@
 <?php
 
-  error_reporting(0);
+  //error_reporting(0);
 
   include '../config/koneksi.php';
 
-  $id_pembayaran = $_GET['id_pembayaran'];
-
-  $edit    = "SELECT tbl_pembayaran.kode_daftar, tbl_pembayaran.id_pembayaran, tbl_pembayaran.validasi_daftar_ulang1,  tbl_pembayaran.bukti_daftar_ulang1, tbl_pembayaran.validasi_daftar_ulang2,  tbl_pembayaran.bukti_daftar_ulang2, tbl_data_calon_murid.nama FROM tbl_pembayaran, tbl_data_calon_murid WHERE tbl_pembayaran.id_pembayaran = '$id_pembayaran' AND tbl_data_calon_murid.kode_daftar = tbl_pembayaran.kode_daftar";
-  $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
-  $data    = mysqli_fetch_array($hasil);
+  // $edit    = "SELECT * FROM tbl_pembayaran";
+  // $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+  // $data    = mysqli_fetch_array($hasil);
 
 ?>
 
@@ -30,12 +28,28 @@
             <div class="panel-body">
               <table class="table table-bordered">
                 <tr>
+                  <?php
+                      $edit    = "SELECT COUNT(validasi_daftar) AS jumlah FROM tbl_pembayaran WHERE validasi_daftar='1'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $jumlah  = $data['jumlah'];
+
+                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $pendaftaran = $data['biaya_pendaftaran'];
+
+                      $total   = $jumlah * $pendaftaran;
+                      
+                  ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. </font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?> </font></i></td>
                 </tr>
               </table>
               <p align="right">
-                <button type="submit" formaction="kepsek.php?content=detail-pendaftaran" class="btn btn-primary">Detail Transaksi</button>
+                <button type="submit" formaction="tu.php?content=transaksi-pendaftaran" class="btn btn-primary">Detail Transaksi</button>
                 <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p>
             </div>
           </div>
@@ -51,12 +65,36 @@
             <div class="panel-body">
               <table class="table table-bordered">
                 <tr>
+                  <?php
+                    
+                      $edit    = "SELECT COUNT(validasi_pangkal_cicil1) AS jumlah FROM tbl_pembayaran WHERE validasi_pangkal_cicil1='1'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $jumlah  = $data['jumlah'];
+                      // echo $jumlah;
+
+                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $pangkal = $data['total_pangkal'];
+                      // echo '<br>';
+                      // echo $pangkal;
+
+                      $cicil   = $pangkal / 3;
+                      // echo '<br>';
+                      // echo $cicil;
+
+                      $total   = $jumlah * $cicil;
+                      
+                  ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. </font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">
-                <button type="submit" formaction="kepsek.php?content=detail-transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
+                <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
                 <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p>
             </div>
           </div>
@@ -72,12 +110,38 @@
             <div class="panel-body">
               <table class="table table-bordered">
                 <tr>
+
+                    <?php
+                    
+                      $edit    = "SELECT COUNT(validasi_pangkal_cicil2) AS jumlah FROM tbl_pembayaran WHERE validasi_pangkal_cicil2='1'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $jumlah  = $data['jumlah'];
+                      // echo $jumlah;
+
+                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $pangkal = $data['total_pangkal'];
+                      // echo '<br>';
+                      // echo $pangkal;
+
+                      $cicil   = $pangkal / 3;
+                      // echo '<br>';
+                      // echo $cicil;
+
+                      $total   = $jumlah * $cicil;
+                      
+                  ?>
+
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. </font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">
-                <button type="submit" formaction="kepsek.php?content=detail-transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
+                <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
                 <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p>
             </div>
           </div>
@@ -93,12 +157,39 @@
             <div class="panel-body">
               <table class="table table-bordered">
                 <tr>
+
+
+                    <?php
+                    
+                      $edit    = "SELECT COUNT(validasi_pangkal_cicil3) AS jumlah FROM tbl_pembayaran WHERE validasi_pangkal_cicil3='1'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $jumlah  = $data['jumlah'];
+                      // echo $jumlah;
+
+                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $pangkal = $data['total_pangkal'];
+                      // echo '<br>';
+                      // echo $pangkal;
+
+                      $cicil   = $pangkal / 3;
+                      // echo '<br>';
+                      // echo $cicil;
+
+                      $total   = $jumlah * $cicil;
+                      
+                  ?>
+
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. </font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">
-                <button type="submit" formaction="kepsek.php?content=detail-transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
+                <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
                 <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p>
             </div>
           </div>
@@ -114,12 +205,29 @@
             <div class="panel-body">
               <table class="table table-bordered">
                 <tr>
+
+                   <?php
+                      $edit    = "SELECT COUNT(validasi_pangkal_lunas) AS jumlah FROM tbl_pembayaran WHERE validasi_pangkal_lunas='1'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $jumlah  = $data['jumlah'];
+
+                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $pangkal = $data['total_pangkal'];
+
+                      $total   = $jumlah * $pangkal;
+                      
+                  ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. </font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">
-                <button type="submit" formaction="kepsek.php?content=detail-transaksi-lunas" class="btn btn-primary">Detail Transaksi</button>
+                <button type="submit" formaction="tu.php?content=transaksi-lunas" class="btn btn-primary">Detail Transaksi</button>
                 <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p>
             </div>
           </div>
@@ -135,12 +243,29 @@
             <div class="panel-body">
               <table class="table table-bordered">
                 <tr>
+
+                   <?php
+                      $edit    = "SELECT COUNT(validasi_daftar_ulang1) AS jumlah FROM tbl_pembayaran WHERE validasi_daftar_ulang1='1'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $jumlah  = $data['jumlah'];
+
+                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $du = $data['daftar_ulang1'];
+
+                      $total   = $jumlah * $du;
+                      
+                  ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. </font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">
-                <button type="submit" formaction="kepsek.php?content=detail-daftar-ulang" class="btn btn-primary">Detail Transaksi</button>
+                <button type="submit" formaction="tu.php?content=daftar-ulang" class="btn btn-primary">Detail Transaksi</button>
                 <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p>
             </div>
           </div>
@@ -156,12 +281,28 @@
             <div class="panel-body">
               <table class="table table-bordered">
                 <tr>
+
+                   <?php
+                      $edit    = "SELECT COUNT(validasi_daftar_ulang2) AS jumlah FROM tbl_pembayaran WHERE validasi_daftar_ulang2='1'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $jumlah  = $data['jumlah'];
+
+                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $du = $data['daftar_ulang2'];
+
+                      $total   = $jumlah * $du;
+                      ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. </font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">
-                <button type="submit" formaction="kepsek.php?content=detail-daftar-ulang" class="btn btn-primary">Detail Transaksi</button>
+                <button type="submit" formaction="tu.php?content=daftar-ulang" class="btn btn-primary">Detail Transaksi</button>
                 <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p>
             </div>
           </div>
@@ -190,6 +331,7 @@
       <hr>
        <p align="right"><button type="submit" formaction="#" class="btn btn-danger"><i class='fa fa-print fa-fw'></i> Print Semua Laporan Keuangan</button></p>
   </div>
+</div>
 </div>
 </div>
 </div>

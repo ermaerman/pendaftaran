@@ -178,9 +178,7 @@ function sum() {
             </div>
         </div>
 
-        <ol class="breadcrumb" style="margin:0;border-radius:0;">
-        </ol>
-        <br>
+        <hr>
 
         <div class="form-group">
             <label class="col-sm-2"></label>
@@ -190,6 +188,27 @@ function sum() {
                 <input class="form-control" name="total_pangkal" type="text" id="total_pangkal" value="<?php echo $data['total_pangkal']; ?>" required>
             </div>
         </div>  
+
+        <ol class="breadcrumb" style="margin:0;border-radius:0;">
+        </ol>
+        <br>
+
+        <div class="form-group">
+            <label class="col-sm-2"></label>
+            <label class="col-sm-3">Daftar Ulang Kelas 11</label>
+            <label class="col-sm-1">:</label>
+            <div class="col-sm-4">
+                <input class="form-control" name="daftar_ulang1" type="text" value="<?php echo $data['daftar_ulang1']; ?>" required>
+            </div>
+        </div> 
+         <div class="form-group">
+            <label class="col-sm-2"></label>
+            <label class="col-sm-3">Daftar Ulang Kelas 12</label>
+            <label class="col-sm-1">:</label>
+            <div class="col-sm-4">
+                <input class="form-control" name="daftar_ulang2" type="text" value="<?php echo $data['daftar_ulang2']; ?>" required>
+            </div>
+        </div> 
 
         <div class="form-group">
             <label class="col-sm-10">

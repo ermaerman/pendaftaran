@@ -23,11 +23,12 @@
     </ol>
       	<h3><b>&nbsp;&nbsp;Informasi </b>Biaya</h3>
       	<hr>
+        <p><i>&nbsp;&nbsp;&nbsp;No. Rekening: 999322332 (BNI) A.N. SMK Mandalahayu II Bekasi</i></p>
       	<br>
     <form class="form-horizontal" method="POST">
     <div class="panel-group">
     <div class="panel panel-primary">
-      <div class="panel-heading">Informasi Biaya</div>
+      <div class="panel-heading">Informasi Biaya Pendaftaran</div>
       <div class="panel-body">
       <table class="table table-bordered">
       <tr>
@@ -113,6 +114,21 @@
     <p><i><font size="2px">4. Tidak ada biaya ulangan umum atau UTS.</font></i></p>
     <p><i><font size="2px">5. Biaya total pangkal belum termasuk uang pendaftaran</font></i></p>
   </div></div></div>
+
+   <div class="panel panel-primary">
+      <div class="panel-heading">Informasi Biaya Daftar Ulang Saat Naik Kelas</div>
+      <div class="panel-body">
+      <table class="table table-bordered">
+        <tr>
+          <th><font size="2px">Daftar Ulang Kelas 11</font></th>
+          <td width="800"><i><font size="2px">Rp. <?php echo $data['daftar_ulang1'];?></font></i></td>
+        </tr>
+         <tr>
+          <th><font size="2px">Daftar Ulang Kelas 12</font></th>
+          <td width="800"><i><font size="2px">Rp. <?php echo $data['daftar_ulang2'];?></font></i></td>
+        </tr>
+      </table>
+    </div></div></div>
 </div>
 
 

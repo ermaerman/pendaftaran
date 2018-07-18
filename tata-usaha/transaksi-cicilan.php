@@ -33,7 +33,7 @@
 <div class="col-md-10" style="min-height:500px">
   <h3><b>Transaksi Keuangan</b> Uang Pangkal Cicilan</h3>
   <hr>
-   <p align="right"><a href="print-kartu.php?kode_daftar=<?php echo $kode_daftar ?>" target ="_blank" role="button" class="btn btn-primary"><i class="fa fa-print fa-fw"></i> &nbsp;Print Data Transaksi Keuangan Pangkal Cicilan</button></a></p>
+   <p align="right"><a href="print-transaksi-cicilan.php" target ="_blank" role="button" class="btn btn-primary"><i class="fa fa-print fa-fw"></i> &nbsp;Print Data Transaksi Keuangan Cicilan</button></a></p>
   
     <form class="form-horizontal" method="POST">
       <table class="table table-striped">
@@ -70,15 +70,15 @@
                         <tr>
                         <td><?php echo $no ?></td>
                         <td><?php echo $data['kode_daftar'] ?></td>
-                        <td><?php echo $data['b_pangkal_cicil1'] ?></td>
+                        <td><?php if ($data['b_pangkal_cicil1']==0) echo "Belum"; else echo "Sudah"; ?></td>
                         <td><?php echo $data['bukti_pangkal_cicil1'] ?></td>
-                        <td><?php echo $data['validasi_pangkal_cicil1'] ?></td>
-                        <td><?php echo $data['b_pangkal_cicil2'] ?></td>
+                        <td><?php if ($data['validasi_pangkal_cicil1']==0) echo "Belum Konfirmasi"; else echo "Dikonfirmasi"; ?></td>
+                        <td><?php if ($data['b_pangkal_cicil2']==0) echo "Belum"; else echo "Sudah"; ?></td>
                         <td><?php echo $data['bukti_pangkal_cicil2'] ?></td>
-                        <td><?php echo $data['validasi_pangkal_cicil2'] ?></td>
-                        <td><?php echo $data['b_pangkal_cicil3'] ?></td>
+                        <td><?php if ($data['validasi_pangkal_cicil2']==0) echo "Belum Konfirmasi"; else echo "Dikonfirmasi"; ?></td>
+                        <td><?php if ($data['b_pangkal_cicil3']==0) echo "Belum"; else echo "Sudah"; ?></td>
                         <td><?php echo $data['bukti_pangkal_cicil3'] ?></td>
-                        <td><?php echo $data['validasi_pangkal_cicil3'] ?></td>
+                        <td><?php if ($data['validasi_pangkal_cicil3']==0) echo "Belum Konfirmasi"; else echo "Dikonfirmasi"; ?></td>
                         <td><a data-toggle="tooltip" data-placement="left" title="Edit" href=tu.php?content=edit-konfirmasi-bayar-cicilan&&kode_daftar=<?php echo $data['kode_daftar']?>><i class='fa fa-edit fa-fw'></i></a></td></tr>
                       <?php
                         $no++;

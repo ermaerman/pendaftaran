@@ -34,15 +34,14 @@
   <ul class="pagination">
     <li><a href="index.php?content=alur-pendaftaran">1</a></li>
     <li class="active"><a href="index.php?content=alur-dua">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">6</a></li>
-    <li><a href="#">7</a></li>
-    <li><a href="#">8</a></li>
-    <li><a href="#">9</a></li>
-    <li><a href="#">10</a></li>
-    <li><a href="#">11</a></li>
+    <li><a href="index.php?content=alur-tiga">3</a></li>
+    <li><a href="index.php?content=alur-empat">4</a></li>
+    <li><a href="index.php?content=alur-lima">5</a></li>
+    <li><a href="index.php?content=alur-enam">6</a></li>
+    <li><a href="index.php?content=alur-tujuh">7</a></li>
+    <li><a href="index.php?content=alur-delapan">8</a></li>
+    <li><a href="index.php?content=alur-sembilan">9</a></li>
+    <li><a href="index.php?content=alur-sepuluh">10</a></li>
   </ul>
 </div>
 </div>

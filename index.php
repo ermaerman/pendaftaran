@@ -135,6 +135,22 @@
                 include 'tgl-ujian.php';
               else if ($content=='alur-dua')
                 include 'alur-dua.php';
+              else if ($content=='alur-tiga')
+                include 'alur-tiga.php';
+              else if ($content=='alur-empat')
+                include 'alur-empat.php';
+              else if ($content=='alur-lima')
+                include 'alur-lima.php';
+              else if ($content=='alur-enam')
+                include 'alur-enam.php';
+              else if ($content=='alur-tujuh')
+                include 'alur-tujuh.php';
+              else if ($content=='alur-delapan')
+                include 'alur-delapan.php';
+              else if ($content=='alur-sembilan')
+                include 'alur-sembilan.php';
+              else if ($content=='alur-sepuluh')
+                include 'alur-sepuluh.php';
            ?>
         </div>
 </div>

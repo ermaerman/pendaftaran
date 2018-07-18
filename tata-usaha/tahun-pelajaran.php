@@ -32,7 +32,6 @@
 <div class="col-md-10" style="min-height:500px">
   <h3><b>Manajemen Update</b> Tahun Pelajaran</h3>
     <hr>
-    <br>
     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle fa-fw"></i>Tambah Tahun Pelajaran</button>
     <br>
     <br>

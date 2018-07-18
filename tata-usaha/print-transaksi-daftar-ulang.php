@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
-  <title>Print Transaksi Keuangan Pendaftaran</title>
+  <title>Print Transaksi Keuangan Daftar Ulang</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
  <body onload="window.print()">
    <div class="panel-group">
       <div class="panel panel-primary">
-        <div class="panel-heading"><p align="center"><b>Transaksi Keuangan Pendaftaran</b></p></div>
+        <div class="panel-heading"><p align="center"><b>Transaksi Keuangan Daftar Ulang</b></p></div>
         <div class="panel-body">
           <table class="table">
             <tr>
@@ -23,20 +23,21 @@
                     <font size="5px"><b>SMK MANDALAHAYU II BEKASI</b></font><br>Jl. Pengasinan Tengah No.99, Pengasinan, Rawalumbu, Kota Bks, Jawa Barat 17115</p><hr></td>
             </tr>
           </table>
- <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th><center>No</center></th>
-            <th><center>Kode Daftar</center></th>
-            <th><center>Bukti Pembayaran</center></th>
+           <table class="table table-striped">
+            <thead>
+              <tr>
+            <th>No</th>
+            <th>Kode Daftar</th>
+            <th>Bukti Daftar Ulang Kelas 11</th>
+            <th>Bukti Daftar Ulang Kelas 12</th>
           </tr>
-        </thead>
-        <tbody>
-          <?php
+            </thead>
+            <tbody>
+ <?php
 
             include '../config/koneksi.php';
 
-            $query = mysqli_query($konek, "SELECT * FROM tbl_pembayaran WHERE b_daftar=1 ORDER BY id_pembayaran DESC")or die(mysqli_error($konek));
+            $query = mysqli_query($konek, "SELECT * FROM tbl_pembayaran WHERE status_pembayaran=1 ORDER BY id_pembayaran DESC")or die(mysqli_error($konek));
                     if(mysqli_num_rows($query) == 0){
                       echo '<tr><td colspan="8" align="center"><i>Tidak ada data!</i></td></tr>';
                     }
@@ -46,17 +47,20 @@
                       while($data = mysqli_fetch_array($query)){
                       ?>
                         <tr>
-                        <td><center><?php echo $no ?></center></td>
+                        <td><?php echo $no ?></td>
                         <td><?php echo $data['kode_daftar'] ?></td>
-                        <td><img src='<?php echo $data['bukti_daftar'];?>' width='30' height='50'> <?php echo $data['bukti_daftar'];?></td>
-                       </tr>
+                        <td><img src='<?php echo $data['bukti_daftar_ulang1'];?>' width='30' height='50'></td>
+                        <td><img src='<?php echo $data['bukti_daftar_ulang2'];?>' width='30' height='50'></td>
+                      </tr>
                       <?php
                         $no++;
                       }
                     }
 
                 ?>
-        </tbody>
+                 </tbody>
       </table>
     </body>
     </html>
+
+                    

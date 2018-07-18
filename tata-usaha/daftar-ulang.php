@@ -33,7 +33,7 @@
   <div class="col-md-10" style="min-height:500px">
   <h3><b>Transaksi Keuangan</b> Daftar Ulang</h3>
     <hr>
-    <p align="right"><a href="print-kartu.php?kode_daftar=<?php echo $kode_daftar ?>" target ="_blank" role="button" class="btn btn-primary"><i class="fa fa-print fa-fw"></i> &nbsp;Print Data Transaksi Keuangan Daftar Ulang</button></a></p>
+    <p align="right"><a href="print-transaksi-daftar-ulang.php" target ="_blank" role="button" class="btn btn-primary"><i class="fa fa-print fa-fw"></i> &nbsp;Print Data Transaksi Daftar Ulang</button></a></p>
   
     <form class="form-horizontal" method="POST">
       <table class="table table-striped">

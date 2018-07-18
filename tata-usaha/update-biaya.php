@@ -81,6 +81,8 @@ function sum() {
             <th>Praktek</th>
             <th>Ekskul</th>
             <th>Total Pangkal</th>
+            <th>Daftar Ulang 11</th>
+            <th>Daftar Ulang 12</th>
             <th colspan="2">Action</th>
           </tr>
         </thead>
@@ -89,9 +91,9 @@ function sum() {
 
             include '../config/koneksi.php';
 
-            $query = mysqli_query($konek, "SELECT * FROM tbl_biaya")or die(mysqli_error());
+            $query = mysqli_query($konek, "SELECT * FROM tbl_biaya order by id_biaya DESC")or die(mysqli_error());
                     if(mysqli_num_rows($query) == 0){ 
-                      echo '<tr><td colspan="11" align="center"><i>Belum ada Informasi Biaya!</i></td></tr>';    
+                      echo '<tr><td colspan="13" align="center"><i>Belum ada Informasi Biaya!</i></td></tr>';    
                     }
                       else
                     { 
@@ -116,6 +118,8 @@ function sum() {
                         echo '<td>'.$data['kbm_praktek'].'</td>';
                         echo '<td>'.$data['kbm_ekstra'].'</td>';
                         echo '<td>'.$data['total_pangkal'].'</td>';
+                        echo '<td>'.$data['daftar_ulang1'].'</td>';
+                        echo '<td>'.$data['daftar_ulang2'].'</td>';
                         echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Update" href=tu.php?content=edit-biaya&&id_biaya='.$data['id_biaya'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
                         echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Delete" href="../config/delete-biaya.php?id_biaya='.$data['id_biaya'].'?"><i class="fa fa-trash fa-fw"></i></a></center></td>';
                         echo '</tr>';
@@ -278,14 +282,31 @@ function sum() {
                     <input type="text" class="form-control" name="kbm_ekstra" id="kbm_ekstra" onkeyup="sum();" / placeholder="KBM Ektrakurikuler" required>
                   </div>
               </div>
-              <ol class="breadcrumb">
-              </ol>
+              <hr>
                <div class="form-group">
                 <label class="col-sm-1"></label>
                 <label class="col-sm-3">Total Pangkal</label>
                 <label class="col-sm-1">:</label>
                   <div class="col-sm-6">
                     <input type="text" class="form-control" name="total_pangkal" id="total_pangkal" onkeyup="sum();" / placeholder="Total Pangkal" required>
+                  </div>
+              </div>
+              <ol class="breadcrumb">
+              </ol>
+              <div class="form-group">
+                <label class="col-sm-1"></label>
+                <label class="col-sm-3">Daftar Ulang Kelas 11</label>
+                <label class="col-sm-1">:</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" name="daftar_ulang1" placeholder="Daftar Ulang Kelas 11" required>
+                  </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-1"></label>
+                <label class="col-sm-3">Daftar Ulang Kelas 12</label>
+                <label class="col-sm-1">:</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" name="daftar_ulang2" placeholder="Daftar Ulang Kelas 12" required>
                   </div>
               </div>
               <div class="form-group">

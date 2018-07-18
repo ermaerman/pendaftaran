@@ -44,7 +44,6 @@
               </table>
               <p align="right">
                 <button type="submit" formaction="../config/update-request-kelas.php?id_request_kelas=<?php echo $data['id_request_kelas'] ?>" class="btn btn-primary">Konfirmasi</button>
-                <button type="submit" formaction="../config/batal-request-kelas.php" class="btn btn-danger">Batal Konfirmasi</button>
                 <a href="kepsek.php?content=data-request-kelas"><button type="button" class="btn btn-default">Kembali</button></a></p>
             </div>
           </div>

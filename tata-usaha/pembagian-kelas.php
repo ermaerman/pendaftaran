@@ -47,6 +47,7 @@
           <tr>
             <th>No</th>
             <th>Kode Daftar</th>
+            <th>Kelas</th>
             <th><center>Action</center></th>
           </tr>
         </thead>
@@ -56,7 +57,7 @@
             include '../config/koneksi.php';
 
             
-            $query = mysqli_query($konek, "SELECT * FROM tbl_kelas WHERE id_request_kelas = '0'")or die(mysqli_error($konek));
+            $query = mysqli_query($konek, "SELECT * FROM tbl_kelas")or die(mysqli_error($konek));
 
                     if(mysqli_num_rows($query) == 0){
                       echo '<tr><td colspan="5" align="center">Tidak ada data!</td></tr>';
@@ -68,6 +69,7 @@
                         echo '<tr>';
                         echo '<td>'.$no.'</td>';
                         echo '<td>'.$data['kode_daftar'].'</td>';
+                        echo '<td>'.$data['id_request_kelas'].'</td>';
                         echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Edit Kelas" href=tu.php?content=edit-kelas&&kode_daftar='.$data['kode_daftar'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
                         echo '</tr>';
                         $no++;

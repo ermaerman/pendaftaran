@@ -152,7 +152,7 @@
         </div>
         <?php
       }
-        $edit    = "SELECT COUNT(validasi_pangkal_cicil1) AS jumlah FROM tbl_pembayaran WHERE validasi_pangkal_cicil1='1'";
+                      $edit    = "SELECT COUNT(validasi_pangkal_cicil1) AS jumlah FROM tbl_pembayaran WHERE validasi_pangkal_cicil1='1'";
                       $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
                       $data    = mysqli_fetch_array($hasil);  
 
@@ -226,5 +226,106 @@
                       echo '</tr>';
                       echo '</table>';
     ?>
+    <br>
+    <br>
+    <form class="form-horizontal" method="POST">
+      <div class="form-group">
+        <label class="control-label col-sm-4">Tahun Ajaran :</label>
+        <div class="col-sm-6">
+            <select class="form-control" name="id_tahun" id="tahun">
+                <option>--Pilih Tujuan--</option>
+                <?php
+                $tahun       = "SELECT * FROM tbl_tahun_pelajaran";
+                $queryTahun  = mysqli_query($konek,$tahun);
+                while ($dataTahun = mysqli_fetch_array($queryTahun)) { ?>
+                    <option value="<?php echo $dataTahun['tahun_pelajaran'] ?>"><?php echo $dataTahun["tahun_pelajaran"] ?>
+                    </option>
+                <?php
+                }
+                ?>
+            </select>
+        </div>
+      </div><!-- 
+      <div class="form-group">
+        <label class="control-label col-sm-4">Cicilan :</label>
+        <div class="col-sm-6">
+            <select class="form-control" name="cicilan" id="cicil">
+                <option value="cicilan1">Cicilan Pertama</option>
+                <option value="cicilan2">Cicilan Kedua</option>
+                <option value="cicilan3">Cicilan Ketiga</option>
+            </select>
+        </div>
+      </div> -->
+      <div class="form-group">
+        <label class=""></label>
+        <div class="col-sm-6">
+            <input class="form-control" name="cicil1" id="total1" readonly>
+                
+            </input>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class=""></label>
+        <div class="col-sm-6">
+            <input class="form-control" name="cicil2" id="total2" readonly>
+                
+            </input>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class=""></label>
+        <div class="col-sm-6">
+            <input class="form-control" name="cicil3" id="total3" readonly>
+                
+            </input>
+        </div>
+      </div>
+    </form>
   </div>
 </div>
+
+<!-- Javascript untuk memanggil Kelas dari Tujuan dan Jumlah Pembayaran dari penumpang&kelas -->
+<script type="text/javascript">
+
+    $( "#tahun" ).change(function() {
+      var tahun_pelajaran = $("#tahun").val();
+      console.log(tahun);
+
+      $.ajax({
+        url: "./ajax_total_cicilan.php?tahun_pelajaran=" + tahun_pelajaran,
+        success: function(result){
+            console.log(result);
+          $("#total1").val(result);
+          // $("#total2").val(result);
+          // $("#cicil3").val(result);
+        }
+      });
+    });
+
+    $( "#tahun" ).change(function() {
+      var tahun_pelajaran = $("#tahun").val();
+      console.log(tahun);
+
+      $.ajax({
+        url: "./ajax_total_cicilan2.php?tahun_pelajaran=" + tahun_pelajaran,
+        success: function(result){
+            console.log(result);
+          $("#total2").val(result);
+        }
+      });
+    });
+    
+    $( "#tahun" ).change(function() {
+      var tahun_pelajaran = $("#tahun").val();
+      console.log(tahun);
+
+      $.ajax({
+        url: "./ajax_total_cicilan3.php?tahun_pelajaran=" + tahun_pelajaran,
+        success: function(result){
+            console.log(result);
+           $("#total3").val(result);
+        }
+      });
+    });
+</script>

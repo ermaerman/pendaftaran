@@ -65,39 +65,47 @@
         </div>
 
          <form class="form-horizontal" method="POST">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>Nama</th>
-            <th>Pertanyaan / Komentar</th>
-            <th>Balasan Kami</th>
-          </tr>
-        </thead>
-        <tbody>
           <?php
 
             include 'config/koneksi.php';
 
-            $query = mysqli_query($konek, "SELECT nama, comment, balasan FROM tbl_faq ORDER BY tanggal DESC ")or die(mysqli_error());
+            $query = mysqli_query($konek, "SELECT nama, comment, balasan, tanggal FROM tbl_faq ORDER BY tanggal DESC ")or die(mysqli_error());
                     if(mysqli_num_rows($query) == 0){ 
                       echo '<tr><td colspan="4" align="center"><i>Belum ada pertanyaan / komentar!</i></td></tr>';    
                     }
                       else
                     { 
                       $no = 1;        
-                      while($data = mysqli_fetch_array($query)){  
-                        echo '<tr>';
-                        echo '<td><b>'.$data['nama'].'</b></td>';
-                        echo '<td><i>'.$data['comment'].'</i></td>';
-                        echo '<td><i>'.$data['balasan'].'</i></td>';  
+                      while($data = mysqli_fetch_array($query)){ 
+                         echo '<div class="media">
+                               <div class="media-left">
+                                  <img src="gambar/faq.png" class="media-object" style="width:45px">
+                               </div>';
+                         echo '<div class="media-body">';
+                         echo '<h4 class="media-heading"><b>'.$data['nama'].'</b> &nbsp;&nbsp;<small ><i>'.$data['tanggal'].'</i></small></h4>
+                            <p>'.$data['comment'].'</p>';
+                        echo '<div class="media">
+                        <div class="media-left">
+                            <img src="gambar/manda.png" class="media-object" style="width:60px">
+                        </div>';
+                        echo '<div class="media-body">';
+                        echo '<h4 class="media-heading">Balasan</h4>
+                          <p>'.$data['balasan'].'</p>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '<hr>';
                       }
                     }
               
                 ?>
-                    
-        </tbody>
-      </table>
+
     </form>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
   

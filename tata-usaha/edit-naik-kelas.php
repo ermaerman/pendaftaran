@@ -29,7 +29,7 @@
     <br>
     <br>
     <br>
-    <form class="form-horizontal" action="../config/edit-keterangan-kelas.php" method="POST">
+    <form class="form-horizontal" action="../config/add-naik-kelas.php" method="POST">
         <input type="hidden" name="id_kelas" value="<?php echo $id_kelas ?>">
         <div class="form-group">
             <label class="col-sm-2"></label>
@@ -68,7 +68,7 @@
                     <option>-- Pilih Kelas --</option>
                     <?php
                         //$kelas = "SELECT * FROM tbl_request_kelas WHERE jumlah_murid != '$jumlah' AND nama_kelas LIKE '%$prodi%'";
-                        $kelas = "SELECT * FROM tbl_request_kelas WHERE nama_kelas LIKE '%$prodi%'";
+                        $kelas = "SELECT * FROM tbl_request_kelas WHERE nama_kelas LIKE '%$prodi%' AND nama_kelas LIKE '%XI%' OR nama_kelas LIKE '%XII%'";
                         $querykelas = mysqli_query($konek,$kelas);
                         while ($datakelas = mysqli_fetch_array($querykelas)) { ?>
                             <option value="<?php echo $datakelas['id_request_kelas']; ?>">

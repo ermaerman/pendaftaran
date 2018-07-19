@@ -65,7 +65,79 @@
                         $no++;
                       }
                     }
+                    $edit    = "SELECT COUNT(validasi_pangkal_cicil1) AS jumlah FROM tbl_pembayaran WHERE validasi_pangkal_cicil1='1'";
+                                  $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                                  $data    = mysqli_fetch_array($hasil);  
 
+                                  $jumlah  = $data['jumlah'];
+                                  // echo $jumlah;
+
+                                  $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                                  $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                                  $data    = mysqli_fetch_array($hasil);  
+
+                                  $pangkal = $data['total_pangkal'];
+                                  // echo '<br>';
+                                  // echo $pangkal;
+
+                                  $cicil   = $pangkal / 3;
+                                  // echo '<br>';
+                                  // echo $cicil;
+
+                                  $total2   = ceil($jumlah * $cicil);
+
+                                  $edit    = "SELECT COUNT(validasi_pangkal_cicil2) AS jumlah FROM tbl_pembayaran WHERE validasi_pangkal_cicil2='1'";
+                                  $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                                  $data    = mysqli_fetch_array($hasil);  
+
+                                  $jumlah  = $data['jumlah'];
+                                  // echo $jumlah;
+
+                                  $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                                  $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                                  $data    = mysqli_fetch_array($hasil);  
+
+                                  $pangkal = $data['total_pangkal'];
+                                  // echo '<br>';
+                                  // echo $pangkal;
+
+                                  $cicil   = $pangkal / 3;
+                                  // echo '<br>';
+                                  // echo $cicil;
+
+                                  $total3   = ceil($jumlah * $cicil);
+
+                                  $edit    = "SELECT COUNT(validasi_pangkal_cicil3) AS jumlah FROM tbl_pembayaran WHERE validasi_pangkal_cicil3='1'";
+                                  $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                                  $data    = mysqli_fetch_array($hasil);  
+
+                                  $jumlah  = $data['jumlah'];
+                                  // echo $jumlah;
+
+                                  $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                                  $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                                  $data    = mysqli_fetch_array($hasil);  
+
+                                  $pangkal = $data['total_pangkal'];
+                                  // echo '<br>';
+                                  // echo $pangkal;
+
+                                  $cicil   = $pangkal / 3;
+                                  // echo '<br>';
+                                  // echo $cicil;
+
+                                  $total4   = ceil($jumlah * $cicil);
+
+                                  echo '<br>';
+                                  echo '<hr>';
+                                  echo '<table>';
+                                  echo '<tr>';
+                                  echo '<td width="300"><b>Total Keuangan Cicilan Pertama</b></td><td>:</td> <td><i>Rp '.$total2.'</i></td></tr>';
+                                  echo '<tr><td width="300"><b>Total Keuangan Cicilan Kedua</b></td><td>:</td> <td><i>Rp '.$total3.'</i></td>';
+                                  echo '</tr>';
+                                  echo '<tr><td width="300"><b>Total Keuangan Cicilan Ketiga</b></td><td>:</td> <td><i>Rp '.$total4.'</i></td>';
+                                  echo '</tr>';
+                                  echo '</table>';
                 ?>
                 </tbody>
       </table>

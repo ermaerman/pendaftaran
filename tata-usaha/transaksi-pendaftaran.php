@@ -137,7 +137,26 @@
           </ul>
         </div>
         <?php
-      }
-    ?>
+            }
+            $edit    = "SELECT COUNT(validasi_daftar) AS jumlah FROM tbl_pembayaran WHERE validasi_daftar='1'";
+            $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+            $data    = mysqli_fetch_array($hasil);  
+
+            $jumlah  = $data['jumlah'];
+
+            $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+            $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+            $data    = mysqli_fetch_array($hasil);  
+
+            $pendaftaran = ceil($data['biaya_pendaftaran']);
+
+            $total1   = $jumlah * $pendaftaran;
+            echo '<br>';
+            echo '<hr>';
+             echo '<table>';
+             echo '<tr>';
+             echo '<td width="300"><b>Total Keuangan Administrasi Pendaftaran</b></td><td>:</td> <td><i>Rp '.$total1.'</i></td></tr>';
+             echo '</table>';
+          ?>
   </div>
 </div>

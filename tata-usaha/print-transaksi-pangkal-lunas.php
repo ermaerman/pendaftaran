@@ -54,7 +54,26 @@ error_reporting(0);
                         $no++;  
                       }
                     }
-                  
+                  $edit    = "SELECT COUNT(validasi_pangkal_lunas) AS jumlah FROM tbl_pembayaran WHERE validasi_pangkal_lunas='1'";
+                                 $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                                 $data    = mysqli_fetch_array($hasil);  
+
+                                 $jumlah  = $data['jumlah'];
+
+                                 $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                                 $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                                 $data    = mysqli_fetch_array($hasil);  
+
+                                 $pangkal = $data['total_pangkal'];
+
+                                 $total5   = ceil($jumlah * $pangkal);
+
+                                 echo '<br>';
+                                 echo '<hr>';
+                                  echo '<table>';
+                                  echo '<tr>';
+                                  echo '<td width="300"><b>Total Uang Pangkal Lunas</b></td><td>:</td> <td><i>Rp '.$total5.'</i></td></tr>';
+                                  echo '</table>';
                 ?>
                      </tbody>
       </table>

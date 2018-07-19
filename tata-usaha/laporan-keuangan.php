@@ -42,11 +42,11 @@
 
                       $pendaftaran = $data['biaya_pendaftaran'];
 
-                      $total   = $jumlah * $pendaftaran;
+                      $total1   = $jumlah * $pendaftaran;
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?> </font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total1; ?> </font></i></td>
                 </tr>
               </table>
               <p align="right">
@@ -86,11 +86,11 @@
                       // echo '<br>';
                       // echo $cicil;
 
-                      $total   = $jumlah * $cicil;
+                      $total2   = $jumlah * $cicil;
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total2; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">
@@ -132,12 +132,12 @@
                       // echo '<br>';
                       // echo $cicil;
 
-                      $total   = $jumlah * $cicil;
+                      $total3   = $jumlah * $cicil;
                       
                   ?>
 
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total3; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">
@@ -179,12 +179,12 @@
                       // echo '<br>';
                       // echo $cicil;
 
-                      $total   = $jumlah * $cicil;
+                      $total4   = $jumlah * $cicil;
                       
                   ?>
 
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total4; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">
@@ -217,11 +217,11 @@
 
                       $pangkal = $data['total_pangkal'];
 
-                      $total   = $jumlah * $pangkal;
+                      $total5   = $jumlah * $pangkal;
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total5; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">
@@ -254,11 +254,11 @@
 
                       $du = $data['daftar_ulang1'];
 
-                      $total   = $jumlah * $du;
+                      $total6   = $jumlah * $du;
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total6; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">
@@ -291,10 +291,10 @@
 
                       $du = $data['daftar_ulang2'];
 
-                      $total   = $jumlah * $du;
+                      $total7   = $jumlah * $du;
                       ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total7; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">
@@ -312,9 +312,14 @@
             <div class="panel-heading">Laporan Keuangan Keseluruhan</div>
             <div class="panel-body">
               <table class="table table-bordered">
+                <?php
+
+                  $total = $total1 + $total2 + $total3 + $total4 + $total5 + $total6 + $total7;
+
+                ?>
                 <tr>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. </font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total;?></font></i></td>
                 </tr>
               </table>
             </div>

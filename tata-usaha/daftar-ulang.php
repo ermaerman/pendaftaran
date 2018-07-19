@@ -141,6 +141,41 @@
         </div>
         <?php
       }
+      $edit    = "SELECT COUNT(validasi_daftar_ulang1) AS jumlah FROM tbl_pembayaran WHERE validasi_daftar_ulang1='1'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $jumlah  = $data['jumlah'];
+
+                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $du = $data['daftar_ulang1'];
+
+                      $total6   = ceil($jumlah * $du);
+
+       $edit    = "SELECT COUNT(validasi_daftar_ulang2) AS jumlah FROM tbl_pembayaran WHERE validasi_daftar_ulang2='1'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $jumlah  = $data['jumlah'];
+
+                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      $data    = mysqli_fetch_array($hasil);  
+
+                      $du = $data['daftar_ulang2'];
+
+                      $total7   = ceil($jumlah * $du);
+
+                      echo '<br>';
+                      echo '<hr>';
+                       echo '<table>';
+                       echo '<tr>';
+                       echo '<td width="300"><b>Total Keuangan Daftar Ulang Kelas 11</b></td><td>:</td> <td><i>Rp '.$total6.'</i></td></tr>';
+                         echo '<td width="300"><b>Total Keuangan Daftar Ulang Kelas 12</b></td><td>:</td> <td><i>Rp '.$total7.'</i></td></tr>';
+                       echo '</table>';
     ?>
   </div>
 </div>

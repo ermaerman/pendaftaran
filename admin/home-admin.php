@@ -4,7 +4,7 @@
     </ol>
 </div>
    
-<div class="col-md-10" style="min-height:1165px;background:url(../gambar/blue2.jpg) no-repeat center center fixed;">
+<div class="col-md-10" style="min-height:664px;background:url(../gambar/blue2.jpg) no-repeat center center fixed;">
 	<br>
 	<p align="right">
 		<?php

@@ -56,6 +56,7 @@
           <?php
           include '../config/koneksi.php';
 
+          error_reporting(0);
 
           $batas  = 10;
           $hal    = @$_GET['hal'];

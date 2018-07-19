@@ -19,7 +19,6 @@
 <div class="col-md-10" style="min-height:500px">
   <h3><b>Laporan</b> Keuangan </h3>
     <hr>
-    <br>
         <form class="form-horizontal" method="POST">
         <input type="hidden" name="id_pembayaran" value="<?php echo $id_pembayaran?>">
           <div class="panel-group">

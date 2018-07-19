@@ -34,7 +34,7 @@
             </thead>
             <tbody>
  <?php
-
+error_reporting(0);
             include '../config/koneksi.php';
 
             $query = mysqli_query($konek, "SELECT * FROM tbl_pembayaran WHERE status_pembayaran=1 ORDER BY id_pembayaran DESC")or die(mysqli_error($konek));

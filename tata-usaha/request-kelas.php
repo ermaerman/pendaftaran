@@ -63,7 +63,7 @@
           <?php
                     include '../config/koneksi.php';
 
-
+                    error_reporting(0);
                     $batas  = 10;
                     $hal    = @$_GET['hal'];
                     if (empty($hal)) {
@@ -140,7 +140,7 @@
             $jml_hal = ceil($jml / $batas);
             for ($i=1; $i <= $jml_hal; $i++) {
               if ($i != $hal) {
-                echo "<li><a href=\"tu.php?content=transaksi-pendaftaran&&hal=$i\">$i</a></li>";
+                echo "<li><a href=\"tu.php?content=request-kelas&&hal=$i\">$i</a></li>";
               } else {
                 echo "<li class=\"active\"><a>$i</a></li>";
               }

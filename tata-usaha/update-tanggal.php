@@ -58,6 +58,7 @@
           <?php
 
             include '../config/koneksi.php';
+            error_reporting(0);
 
             
             $query = mysqli_query($konek, "SELECT * FROM tbl_tanggal_ujian ORDER BY id_tanggal_ujian DESC")or die(mysqli_error($konek));

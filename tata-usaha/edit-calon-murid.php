@@ -37,7 +37,7 @@
     
     <table class="table table-bordered">  
       <tr>
-        <input type="hidden" name="id_calon_murid" value="<?php echo $id_calon_murid?>">
+        <input type="text" name="id_calon_murid" value="<?php echo $id_calon_murid?>">
         <th><font size="2px">Tahun Pelajaran</font></th>
         <td width="800"><i><font size="2px"><?php echo $data['tahun_pelajaran'];?></font></i></td>
       </tr>
@@ -342,7 +342,7 @@
         <td width="800"><i><font size="2px"><?php echo $data['tgl_daftar'];?></font></i></td>
       </tr>
   </table>
-  <p align="right">&nbsp;&nbsp;<a href="tu.php?content=data-calon-murid"><button type="button" class="btn btn-primary">Kembali</button></a></p>
+  <p align="right"> <a target ="_blank" role="button" href="print-data-calon-murid-detail.php"><button type="button" class="btn btn-success btn-md"><i class="fa fa-print fa-fw"></i> Print</button></a>&nbsp;&nbsp;<a href="tu.php?content=data-calon-murid"><button type="button" class="btn btn-primary">Kembali</button></a></p>
 
 </div>
 </div>

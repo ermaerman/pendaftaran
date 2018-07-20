@@ -39,7 +39,7 @@
       <input size="127px" type="text" name="pencarian" class="form-control" placeholder="Pencarian">
       <button type="submit" class="btn btn-primary"><i class="fa fa-search fa-fw"></i></button>
       <a href="tu.php?content=data-calon-murid"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
-      <a target ="_blank" role="button" href="print-data-murid.php"><button type="button" class="btn btn-success"><i class="fa fa-print fa-fw"></i></button></a>    
+      <a target ="_blank" role="button" href="print-data-calon-murid.php"><button type="button" class="btn btn-success"><i class="fa fa-print fa-fw"></i></button></a>    
     </div>
   </form>
 </div>

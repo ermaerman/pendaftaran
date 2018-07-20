@@ -19,8 +19,6 @@
 <div class="col-md-10" style="min-height:500px">
   <h3><b>Laporan</b> Keuangan </h3>
     <hr>
-       <p><button type="submit" formaction="#" class="btn btn-primary"><i class='fa fa-print fa-fw'></i> Print Semua Total Laporan Keuangan</button></p>
-    <br>
         <form class="form-horizontal" method="POST">
         <input type="hidden" name="id_pembayaran" value="<?php echo $id_pembayaran?>">
           <div class="panel-group">
@@ -314,7 +312,7 @@
               <table class="table table-bordered">
                 <?php
 
-                  $total = $total1 + $total2 + $total3 + $total4 + $total5 + $total6 + $total7;
+                  $total = ceil($total1 + $total2 + $total3 + $total4 + $total5 + $total6 + $total7);
 
                 ?>
                 <tr>
@@ -322,6 +320,8 @@
                   <td width="800"><i><font size="2px">Rp. <?php echo $total;?></font></i></td>
                 </tr>
               </table>
+               <p align="right">
+                <button type="submit" formaction="tu.php?content=detail-keuangan" class="btn btn-primary">Detail Transaksi</button></p>
             </div>
           </div>
       </form>

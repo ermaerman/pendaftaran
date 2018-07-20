@@ -53,7 +53,7 @@
           <p align="right">
 
             <button type="submit" formaction="../config/update-konfirmasi-bayar-lunas.php" class="btn btn-primary">Konfirmasi</button>
-            <button type="submit" formaction="../config/batal-konfirmasi-bayar-lunas.php" class="btn btn-danger">Batal Konfirmasi</button>
+            <!-- <button type="submit" formaction="../config/batal-konfirmasi-bayar-lunas.php" class="btn btn-danger">Batal Konfirmasi</button> -->
             <a href="tu.php?content=transaksi-lunas"><button type="button" class="btn btn-default">Kembali</button></a></p>
           </div>
         </div>

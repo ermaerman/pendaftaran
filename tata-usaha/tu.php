@@ -107,6 +107,8 @@
               include 'lihat-kelas.php';
             else if ($content=='edit-naik-kelas')
               include 'edit-naik-kelas.php';
+            else if ($content=='detail-keuangan')
+              include 'detail-keuangan.php';
            ?>
 
 <div class="col-md-12" style="background:black;padding:8px;color:#fff;">

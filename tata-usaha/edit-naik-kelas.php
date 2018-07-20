@@ -16,12 +16,12 @@
 
 <div class="col-md-10" style="padding:0px">
     <ol class="breadcrumb" style="margin:0;border-radius:0;">
-        <li class="active"><a href="tu.php?content=home-tata-usaha">Home</a> / <a href="#">Kelas</a> / <a href="#">Pembagian Kelas</a> / Edit Kelas</li>
+        <li class="active"><a href="tu.php?content=home-tata-usaha">Home</a> / <a href="#">Kelas</a> / <a href="tu.php?content=naik-kelas">Naik Kelas</a> / Edit Naik Kelas</li>
     </ol>
 </div>
 
 <div class="col-md-10" style="min-height:500px">
-  <h3><b>Edit</b> Kelas</h3>
+  <h3><b>Edit</b> Naik Kelas</h3>
     <hr>
     <br>
     <br>
@@ -67,6 +67,7 @@
                     <select class="form-control" name="kelas" id="kelas">
                     <option>-- Pilih Kelas --</option>
                     <?php
+
                         //$kelas = "SELECT * FROM tbl_request_kelas WHERE jumlah_murid != '$jumlah' AND nama_kelas LIKE '%$prodi%'";
                         $kelas = "SELECT * FROM tbl_request_kelas WHERE nama_kelas LIKE '%$prodi%' AND nama_kelas LIKE '%XI%' OR nama_kelas LIKE '%XII%'";
                         $querykelas = mysqli_query($konek,$kelas);

@@ -53,7 +53,7 @@
               <p><i><font size=2px>&nbsp;&nbsp;Keterangan: <br>&nbsp;&nbsp;Jika status = 0 maka pembayaran pendaftaran <b>belum</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Jika status = 1 maka pembayaran pendaftaran <b>sudah</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Mohon lihat bukti pembayaran dengan cermat dan teliti.</font></i></p>
               <p align="right">
                 <button type="submit" formaction="../config/update-konfirmasi-bayar-pendaftaran.php" class="btn btn-primary">Konfirmasi</button>
-                <button type="submit" formaction="../config/batal-konfirmasi-bayar-pendaftaran.php" class="btn btn-danger">Batal Konfirmasi</button>
+               <!--  <button type="submit" formaction="../config/batal-konfirmasi-bayar-pendaftaran.php" class="btn btn-danger">Batal Konfirmasi</button> -->
                 <a href="tu.php?content=transaksi-pendaftaran"><button type="button" class="btn btn-default">Kembali</button></a></p>
             </div>
           </div>

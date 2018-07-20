@@ -97,9 +97,9 @@
                         <td><?php echo $no ?></td>
                         <td><?php echo $data['kode_daftar'] ?></td>
                         <td><?php echo($data['bukti_daftar_ulang1']);?></td>
-                        <td><?php if ($data['validasi_daftar_ulang1']==0) echo "Belum Dikonfirmasi"; else echo "Dikonfirmasi"; ?></td>
+                        <td><?php if ($data['validasi_daftar_ulang1']==0) echo "<i class='fa fa-times fa-fw'></i>"; else echo "<i class='fa fa-check fa-fw'></i>"; ?></td>
                         <td><?php echo($data['bukti_daftar_ulang2']);?></td>
-                        <td><?php if ($data['validasi_daftar_ulang2']==0) echo "Belum Dikonfirmasi"; else echo "Dikonfirmasi"; ?></td>
+                        <td><?php if ($data['validasi_daftar_ulang2']==0) echo "<i class='fa fa-times fa-fw'></i>"; else echo "<i class='fa fa-check fa-fw'></i>"; ?></td>
                         <td><a data-toggle="tooltip" data-placement="right" title="Validasi" href=tu.php?content=edit-konfirmasi-daftar-ulang&&id_pembayaran=<?php echo $data['id_pembayaran'] ?>><i class='fa fa-edit fa-fw'></i></a></td></tr>
                       <?php
                         $no++;
@@ -169,13 +169,82 @@
 
                       $total7   = ceil($jumlah * $du);
 
-                      echo '<br>';
+                     /* echo '<br>';
                       echo '<hr>';
                        echo '<table>';
                        echo '<tr>';
                        echo '<td width="300"><b>Total Keuangan Daftar Ulang Kelas 11</b></td><td>:</td> <td><i>Rp '.$total6.'</i></td></tr>';
                          echo '<td width="300"><b>Total Keuangan Daftar Ulang Kelas 12</b></td><td>:</td> <td><i>Rp '.$total7.'</i></td></tr>';
-                       echo '</table>';
+                       echo '</table>';*/
     ?>
+    <br>
+    <br>
+    <form class="form-horizontal" method="POST">
+      <div class="form-group">
+        <label class="control-label col-sm-2">Tahun Ajaran :</label>
+        <div class="col-sm-6">
+            <select class="form-control" name="id_tahun" id="tahun">
+                <option>--Pilih Tujuan--</option>
+                <?php
+                $tahun       = "SELECT * FROM tbl_tahun_pelajaran";
+                $queryTahun  = mysqli_query($konek,$tahun);
+                while ($dataTahun = mysqli_fetch_array($queryTahun)) { ?>
+                    <option value="<?php echo $dataTahun['tahun_pelajaran'] ?>"><?php echo $dataTahun["tahun_pelajaran"] ?>
+                    </option>
+                <?php
+                }
+                ?>
+            </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class=""></label>
+        <div class="col-sm-6">
+          <p>Total Daftar Ulang Kelas 11</p>
+            <input class="form-control" name="daftar_ulang1" id="total6" readonly>
+                
+            </input>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class=""></label>
+        <div class="col-sm-6">
+          <p>Total Daftar Ulang Kelas 12</p>
+            <input class="form-control" name="daftar_ulang2" id="total7" readonly>
+                
+            </input>
+        </div>
+      </div>
   </div>
 </div>
+
+<script type="text/javascript">
+
+    $( "#tahun" ).change(function() {
+      var tahun_pelajaran = $("#tahun").val();
+      console.log(tahun);
+
+      $.ajax({
+        url: "./ajax_total_du1.php?tahun_pelajaran=" + tahun_pelajaran,
+        success: function(result){
+            console.log(result);
+          $("#total6").val(result);
+          // $("#total2").val(result);
+          // $("#cicil3").val(result);
+        }
+      });
+    });
+
+    $( "#tahun" ).change(function() {
+      var tahun_pelajaran = $("#tahun").val();
+      console.log(tahun);
+
+      $.ajax({
+        url: "./ajax_total_du2.php?tahun_pelajaran=" + tahun_pelajaran,
+        success: function(result){
+            console.log(result);
+          $("#total7").val(result);
+        }
+      });
+    });
+</script>

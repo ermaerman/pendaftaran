@@ -95,7 +95,7 @@
                         <td><?php echo $no ?></td>
                         <td><?php echo $data['kode_daftar'] ?></td>
                         <td><?php echo($data['bukti_pangkal_lunas']);?></td>
-                        <td><?php if ($data['validasi_pangkal_lunas']==0) echo "Belum Dikonfirmasi"; else echo "Dikonfirmasi"; ?></td>
+                        <td><?php if ($data['validasi_pangkal_lunas']==0) echo "<i class='fa fa-times fa-fw'></i>"; else echo "<i class='fa fa-check fa-fw'></i>"; ?></td>
                         <td><a data-toggle="tooltip" data-placement="left" title="Edit" href=tu.php?content=edit-konfirmasi-bayar-lunas&&id_pembayaran=<?php echo $data['id_pembayaran']?>><i class='fa fa-edit fa-fw'></i></a></td></tr>
                       <?php
                         $no++;  
@@ -137,29 +137,77 @@
         </div>
         <?php
       }
-       $edit    = "SELECT COUNT(validasi_pangkal_lunas) AS jumlah FROM tbl_pembayaran WHERE validasi_pangkal_lunas='1'";
-                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
-                      $data    = mysqli_fetch_array($hasil);  
+      // $edit    = "SELECT COUNT(validasi_pangkal_lunas) AS jumlah FROM tbl_pembayaran WHERE validasi_pangkal_lunas='1'";
+        //              $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+          //            $data    = mysqli_fetch_array($hasil);  
 
-                      $jumlah  = $data['jumlah'];
+                    //  $jumlah  = $data['jumlah'];
 
-                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
-                      $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
-                      $data    = mysqli_fetch_array($hasil);  
+                      //$edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      //$hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
+                      //$data    = mysqli_fetch_array($hasil);  
 
-                      $pangkal = $data['total_pangkal'];
+                      //$pangkal = $data['total_pangkal'];
 
-                      $total5   = ceil($jumlah * $pangkal);
+                      //$total5   = ceil($jumlah * $pangkal);
 
-                      echo '<br>';
-                      echo '<hr>';
-                       echo '<table>';
-                       echo '<tr>';
-                       echo '<td width="300"><b>Total Uang Pangkal Lunas</b></td><td>:</td> <td><i>Rp '.$total5.'</i></td></tr>';
-                       echo '</table>';
+                      //echo '<br>';
+                      //echo '<hr>';
+                       //echo '<table>';
+                       //echo '<tr>';
+                       //echo '<td width="300"><b>Total Uang Pangkal Lunas</b></td><td>:</td> <td><i>Rp '.$total5.'</i></td></tr>';
+                       //echo '</table>';
     ?>
+  <br>
+          <br>
+          <form class="form-horizontal" method="POST">
+            <div class="form-group">
+              <label class="control-label col-sm-2"><p align="left">Tahun Ajaran</p></label>
+               <label class="control-label col-sm-1">:</label>
+              <div class="col-sm-3">
+                  <select class="form-control" name="id_tahun" id="tahun">
+                      <option>--Pilih Tahun Pelajaran--</option>
+                      <?php
+                      $tahun       = "SELECT * FROM tbl_tahun_pelajaran";
+                      $queryTahun  = mysqli_query($konek,$tahun);
+                      while ($dataTahun = mysqli_fetch_array($queryTahun)) { ?>
+                          <option value="<?php echo $dataTahun['tahun_pelajaran'] ?>"><?php echo $dataTahun["tahun_pelajaran"] ?>
+                          </option>
+                      <?php
+                      }
+                      ?>
+                  </select>
+              </div>
+
+            </div>
+            <div class="form-group">
+              <label class=""></label>
+               <label class="control-label col-sm-2"><p align="left">Total Keuangan</p></label>
+               <label class="control-label col-sm-1">:</label>
+              <div class="col-sm-3">
+                  <input class="form-control" name="total_pangkal" id="total" readonly>
+                  
+                  </input>
+              </div>
+            </div>
+          </form>
   </div>
 </div>
 
+<!-- Javascript untuk memanggil Kelas dari Tujuan dan Jumlah Pembayaran -->
+<script type="text/javascript">
+
+    $( "#tahun" ).change(function() {
+      var tahun_pelajaran = $("#tahun").val();
+      console.log(tahun);
+      $.ajax({
+        url: "./ajax_total_lunas.php?tahun_pelajaran=" + tahun_pelajaran,
+        success: function(result){
+            console.log(result);
+          $("#total").val(result);
+        }
+      });
+    });
+</script>
 
     

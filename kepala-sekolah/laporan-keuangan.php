@@ -48,8 +48,8 @@
                 </tr>
               </table>
               <p align="right">
-                <button type="submit" formaction="tu.php?content=transaksi-pendaftaran" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p>
+               <!--  <button type="submit" formaction="tu.php?content=transaksi-pendaftaran" class="btn btn-primary">Detail Transaksi</button>
+                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
             </div>
           </div>
       </form>
@@ -92,9 +92,9 @@
                   <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
                 </tr>
               </table>
-              <p align="right">
+              <!-- <p align="right">
                 <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p>
+                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
             </div>
           </div>
       </form> 
@@ -140,8 +140,8 @@
                 </tr>
               </table>
               <p align="right">
-                <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p>
+               <!--  <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
+                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
             </div>
           </div>
       </form>     
@@ -187,9 +187,9 @@
                   <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
                 </tr>
               </table>
-              <p align="right">
+             <!--  <p align="right">
                 <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p>
+                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
             </div>
           </div>
       </form> 
@@ -225,9 +225,9 @@
                   <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
                 </tr>
               </table>
-              <p align="right">
+              <!-- <p align="right">
                 <button type="submit" formaction="tu.php?content=transaksi-lunas" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p>
+                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
             </div>
           </div>
       </form> 
@@ -264,8 +264,8 @@
                 </tr>
               </table>
               <p align="right">
-                <button type="submit" formaction="tu.php?content=daftar-ulang" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p>
+              <!--   <button type="submit" formaction="tu.php?content=daftar-ulang" class="btn btn-primary">Detail Transaksi</button>
+                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
             </div>
           </div>
       </form> 
@@ -301,8 +301,8 @@
                 </tr>
               </table>
               <p align="right">
-                <button type="submit" formaction="tu.php?content=daftar-ulang" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p>
+            <!--     <button type="submit" formaction="tu.php?content=daftar-ulang" class="btn btn-primary">Detail Transaksi</button>
+                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
             </div>
           </div>
       </form> 
@@ -321,14 +321,14 @@
                   <td width="800"><i><font size="2px">Rp. </font></i></td>
                 </tr>
               </table>
-              <p align="right">
+             <!--  <p align="right">
                 <button type="submit" formaction="#" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p>
+                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
             </div>
           </div>
       </form> 
       <hr>
-       <p align="right"><button type="submit" formaction="#" class="btn btn-danger"><i class='fa fa-print fa-fw'></i> Print Semua Laporan Keuangan</button></p>
+      <!--  <p align="right"><button type="submit" formaction="#" class="btn btn-danger"><i class='fa fa-print fa-fw'></i> Print Semua Laporan Keuangan</button></p> -->
   </div>
 </div>
 </div>

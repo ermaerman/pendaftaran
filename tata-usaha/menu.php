@@ -15,6 +15,8 @@
             </li>
             <li><a href='tu.php?content=daftar-ulang'><span>Daftar Ulang</span></a>
             </li>
+            <li><a href='tu.php?content=detail-keuangan'><span>Detail Keuangan</span></a>
+            </li>
          </ul>
       </li>
       <li class='active has-sub'><a href='#'><i class="fa fa-bars fa-fw"></i>&nbsp; Update</a>
@@ -29,8 +31,6 @@
             <li><a href='tu.php?content=pembagian-kelas'><span>Pembagian Kelas Awal</span></a>
             </li>
             <li><a href='tu.php?content=request-kelas'><span>Request Kelas</span></a>
-            </li>
-            <li><a href='tu.php?content=lihat-kelas'><span>Lihat Kelas</span></a>
             </li>
             <li><a href='tu.php?content=naik-kelas'><span>Naik Kelas</span></a>
             </li>

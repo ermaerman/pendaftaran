@@ -57,7 +57,7 @@
           <p><i><font size=2px>&nbsp;&nbsp;Keterangan: <br>&nbsp;&nbsp;Jika status = 0 maka pembayaran cicilan pertama <b>belum</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Jika status = 1 maka pembayaran cicilan pertama <b>sudah</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Mohon lihat bukti pembayaran dengan cermat dan teliti.</font></i></p>
           <p align="right">
             <button type="submit" formaction="../config/edit-konfirmasi-bayar-cicilansatu.php" class="btn btn-primary">Konfirmasi</button>
-            <button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilansatu.php" class="btn btn-danger">Batal Konfirmasi</button>
+            <!-- <button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilansatu.php" class="btn btn-danger">Batal Konfirmasi</button> -->
             <a href="tu.php?content=transaksi-cicilan"><button type="button" class="btn btn-default">Kembali</button></a></p>
         </div>
       </div>
@@ -96,7 +96,7 @@
         <p><i><font size=2px>&nbsp;&nbsp;Keterangan: <br>&nbsp;&nbsp;Jika status = 0 maka pembayaran cicilan kedua <b>belum</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Jika status = 1 maka pembayaran cicilan kedua <b>sudah</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Mohon lihat bukti pembayaran dengan cermat dan teliti.</font></i></p>
         <p align="right">
           <button type="submit" formaction="../config/edit-konfirmasi-bayar-cicilankedua.php" class="btn btn-primary">Konfirmasi</button>
-          <button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilankedua.php" class="btn btn-danger">Batal Konfirmasi</button>
+          <!-- <button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilankedua.php" class="btn btn-danger">Batal Konfirmasi</button> -->
           <a href="tu.php?content=transaksi-cicilan"><button type="button" class="btn btn-default">Kembali</button></a></p>
       </div>
     </div>
@@ -135,7 +135,7 @@
       <p><i><font size=2px>&nbsp;&nbsp;Keterangan: <br>&nbsp;&nbsp;Jika status = 0 maka pembayaran cicilan ketiga <b>belum</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Jika status = 1 maka pembayaran cicilan ketiga <b>sudah</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Mohon lihat bukti pembayaran dengan cermat dan teliti.</font></i></p>
       <p align="right">
         <button type="submit" formaction="../config/edit-konfirmasi-bayar-cicilanketiga.php" class="btn btn-primary">Konfirmasi</button>
-        <button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilanketiga.php" class="btn btn-danger">Batal Konfirmasi</button>
+       <!--  <button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilanketiga.php" class="btn btn-danger">Batal Konfirmasi</button> -->
         <a href="tu.php?content=transaksi-cicilan"><button type="button" class="btn btn-default">Kembali</button></a></p>
     </div>
   </div>

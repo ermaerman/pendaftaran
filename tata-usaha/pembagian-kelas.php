@@ -33,7 +33,7 @@
 </div>
    
 <div class="col-md-10" style="">
-  	<h3><b>Pembagian</b> Kelas</h3>
+    <h3><b>Pembagian</b> Kelas</h3>
     <hr>
 
    
@@ -69,7 +69,26 @@
                         echo '<tr>';
                         echo '<td>'.$no.'</td>';
                         echo '<td>'.$data['kode_daftar'].'</td>';
-                        echo '<td>'.$data['id_request_kelas'].'</td>';
+                        ?>
+                        <td>
+                          <?php
+                            
+                            if ($data['id_request_kelas']==0){
+                              echo 'Belum Dapat Kelas';
+                            } 
+                            else {
+                              $id_request_kelas = $data['id_request_kelas'];
+                              $query_kelas = "SELECT * FROM tbl_request_kelas WHERE id_request_kelas = '$id_request_kelas'";
+                              $hasil   = mysqli_query($konek, $query_kelas)or die(mysql_error());
+                              $tampil  = mysqli_fetch_array($hasil);
+
+                              echo $tampil['nama_kelas'];
+
+                            }
+                          ?> 
+                        </td>
+                        <?php
+                        // echo '<td>'.$data['id_request_kelas']=.'</td>';
                         echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Edit Kelas" href=tu.php?content=edit-kelas&&kode_daftar='.$data['kode_daftar'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
                         echo '</tr>';
                         $no++;

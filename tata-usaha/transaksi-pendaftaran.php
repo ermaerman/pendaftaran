@@ -96,7 +96,7 @@
                         <td><?php echo $no ?></td>
                         <td><?php echo $data['kode_daftar'] ?></td>
                         <td><?php echo($data['bukti_daftar']);?></td>
-                        <td><?php if ($data['validasi_daftar']==0) echo "Belum Dikonfirmasi"; else echo "Dikonfirmasi"; ?></td>
+                        <td><?php if ($data['validasi_daftar']==0) echo "<i class='fa fa-times fa-fw'></i>"; else echo "<i class='fa fa-check fa-fw'></i>"; ?></td>
                         <td><a data-toggle="tooltip" data-placement="right" title="Validasi" href=tu.php?content=edit-konfirmasi-bayar-daftar&&id_pembayaran=<?php echo $data['id_pembayaran'] ?>><i class='fa fa-edit fa-fw'></i></a></td></tr>
                       <?php
                         $no++;

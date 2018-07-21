@@ -60,6 +60,8 @@
               include 'edit-status-request-kelas.php';
             else if ($content=='edit-murid')
               include 'edit-murid.php';
+            else if ($content=='laporan-keuangan-detail')
+              include 'laporan-keuangan-detail.php';
            ?>
   
     <div class="col-md-12" style="background:black;padding:8px;color:#fff;">

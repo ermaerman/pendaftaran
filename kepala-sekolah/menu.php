@@ -7,6 +7,7 @@
          <ul>
             <li><a href='kepsek.php?content=laporan-data-murid'><span>Laporan Data Murid</span></a></li>
             <li><a href='kepsek.php?content=laporan-keuangan'><span> Laporan Keuangan</span></a></li>
+            <li><a href='kepsek.php?content=laporan-keuangan-detail'><span> Laporan Keuangan Detail</span></a></li>
          </ul>
       </li>
       <li class='last'><a onClick="return confirm('Apakah anda ingin keluar?')" href='../config/logout.php'><i class="fa fa-sign-out fa-fw"></i>&nbsp; Logout</a></li>

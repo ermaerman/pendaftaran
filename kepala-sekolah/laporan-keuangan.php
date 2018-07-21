@@ -40,7 +40,7 @@
 
                       $pendaftaran = $data['biaya_pendaftaran'];
 
-                      $total1   = $jumlah * $pendaftaran;
+                      $total1   = ceil($jumlah * $pendaftaran);
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
@@ -84,16 +84,16 @@
                       // echo '<br>';
                       // echo $cicil;
 
-                      $total2   = $jumlah * $cicil;
+                      $total2   = ceil($jumlah * $cicil);
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
                   <td width="800"><i><font size="2px">Rp. <?php echo $total2; ?></font></i></td>
                 </tr>
               </table>
-              <p align="right">
+             <!--  <p align="right">
                 <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
-               </p>
+               </p> -->
             </div>
           </div>
       </form> 
@@ -130,7 +130,7 @@
                       // echo '<br>';
                       // echo $cicil;
 
-                      $total3   = $jumlah * $cicil;
+                      $total3   = ceil($jumlah * $cicil);
                       
                   ?>
 
@@ -138,8 +138,8 @@
                   <td width="800"><i><font size="2px">Rp. <?php echo $total3; ?></font></i></td>
                 </tr>
               </table>
-              <p align="right">
-                <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
+              <!-- <p align="right">
+                <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button></p> -->
             </div>
           </div>
       </form>     
@@ -177,7 +177,7 @@
                       // echo '<br>';
                       // echo $cicil;
 
-                      $total4   = $jumlah * $cicil;
+                      $total4   = ceil($jumlah * $cicil);
                       
                   ?>
 
@@ -185,8 +185,8 @@
                   <td width="800"><i><font size="2px">Rp. <?php echo $total4; ?></font></i></td>
                 </tr>
               </table>
-              <p align="right">
-                <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
+              <!-- <p align="right">
+                <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button> -->
             </div>
           </div>
       </form> 
@@ -215,15 +215,15 @@
 
                       $pangkal = $data['total_pangkal'];
 
-                      $total5   = $jumlah * $pangkal;
+                      $total5   = ceil($jumlah * $pangkal);
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
                   <td width="800"><i><font size="2px">Rp. <?php echo $total5; ?></font></i></td>
                 </tr>
               </table>
-              <p align="right">
-                <button type="submit" formaction="tu.php?content=transaksi-lunas" class="btn btn-primary">Detail Transaksi</button>
+            <!--   <p align="right">
+                <button type="submit" formaction="tu.php?content=transaksi-lunas" class="btn btn-primary">Detail Transaksi</button> -->
             </div>
           </div>
       </form> 
@@ -252,15 +252,15 @@
 
                       $du = $data['daftar_ulang1'];
 
-                      $total6   = $jumlah * $du;
+                      $total6   = ceil($jumlah * $du);
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
                   <td width="800"><i><font size="2px">Rp. <?php echo $total6; ?></font></i></td>
                 </tr>
               </table>
-              <p align="right">
-                <button type="submit" formaction="tu.php?content=daftar-ulang" class="btn btn-primary">Detail Transaksi</button>
+            <!--   <p align="right">
+                <button type="submit" formaction="tu.php?content=daftar-ulang" class="btn btn-primary">Detail Transaksi</button> -->
             </div>
           </div>
       </form> 
@@ -289,14 +289,14 @@
 
                       $du = $data['daftar_ulang2'];
 
-                      $total7   = $jumlah * $du;
+                      $total7   = ceil($jumlah * $du);
                       ?>
                   <th><font size="2px">Total Keuangan</font></th>
                   <td width="800"><i><font size="2px">Rp. <?php echo $total7; ?></font></i></td>
                 </tr>
               </table>
-              <p align="right">
-                <button type="submit" formaction="tu.php?content=daftar-ulang" class="btn btn-primary">Detail Transaksi</button>
+             <!--  <p align="right">
+                <button type="submit" formaction="tu.php?content=daftar-ulang" class="btn btn-primary">Detail Transaksi</button> -->
             </div>
           </div>
       </form> 
@@ -321,7 +321,7 @@
                 </tr>
               </table>
                <p align="right">
-                <button type="submit" formaction="tu.php?content=detail-keuangan" class="btn btn-primary">Detail Transaksi</button></p>
+                <button type="submit" formaction="kepsek.php?content=laporan-keuangan-detail" class="btn btn-primary">Detail Transaksi</button></p>
             </div>
           </div>
       </form>

@@ -28,26 +28,26 @@
 
 	// Check file size
 	if ($_FILES["fileToUpload"]["size"] > 500000) {
-	    echo "Sorry, your file is too large.";
+	    echo "";
 	    $uploadOk = 0;
 	}
 	// Allow certain file formats
 	if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
 	&& $imageFileType != "gif" && $imageFileType != "JPG" && $imageFileType != "PNG" && $imageFileType != "JPEG"
 	&& $imageFileType != "GIF" ) {
-	    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+	    echo "";
 	    $uploadOk = 0;
 	}
 	// Check if $uploadOk is set to 0 by an error
 	if ($uploadOk == 0) {
-	    echo "Sorry, your file was not uploaded.";
+	    echo "";
 
 	// if everything is ok, try to upload file
 	} else {
 	    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 	        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
 	    } else {
-	        echo "Sorry, there was an error uploading your file.";
+	        echo "";
 	    }
 	}
 
@@ -59,7 +59,7 @@
 		if ($updatebayar)
     	{
     		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran pendaftaran!";
-			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=konfirmasi-pembayaran">';
+			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=cek-proses">';
     	}
 		else {
     		print"
@@ -78,7 +78,7 @@
 		if ($updatebayar)
     	{
     		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran pangkal lunas!";
-			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=konfirmasi-pembayaran">';
+			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=cek-proses">';
     	}
 	else {
     		print"
@@ -97,7 +97,7 @@
 		if ($updatebayar)
     	{
     		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran pangkal lunas!";
-			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=konfirmasi-pembayaran">';
+			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=cek-proses">';
     	}
 	else {
     		print"
@@ -116,7 +116,7 @@
 		if ($updatebayar)
     	{
     		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran pangkal lunas!";
-			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=konfirmasi-pembayaran">';
+			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=cek-proses">';
     	}
 	else {
     		print"
@@ -135,7 +135,7 @@
 		if ($updatebayar)
     	{
     		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran pangkal lunas!";
-			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=konfirmasi-pembayaran">';
+			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=cek-proses">';
     	}
 	else {
     		print"

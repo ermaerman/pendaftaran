@@ -141,8 +141,8 @@
               echo "<br>";
               echo '<div class="col-md-12">';
               echo "<i>Selamat, anda telah lulus dalam mengikuti ujian tes masuk SMK Mandalahayu II Bekasi.</i><br>";
-              echo "<i>Selanjutnya, silahkan bayar dan konfirmasi uang pangkal anda. Klik pada button dibawah ini untuk konfirmasi pembayaran.</i>";
-                echo "<button data-toggle='modal' data-target='#myModaldaftar' type='button' class='btn btn-danger'>Konfirmasi Pembayaran</button>";
+              echo "<i>Selanjutnya, silahkan bayar dan konfirmasi uang pangkal anda. Klik pada button dibawah ini untuk konfirmasi pembayaran.</i><br><br>";
+                echo "<button data-toggle='modal' data-target='#myModalpangkal' type='button' class='btn btn-danger'>Konfirmasi Pembayaran</button>";
               echo "</div>";
           }
           elseif ($data['b_daftar']==1 AND $data['validasi_daftar']==1 AND $data['hasil']==1 AND $data['b_pangkal_lunas']==1 AND $data['validasi_pangkal_lunas']==0 AND $data['b_pangkal_cicil1']==0 AND $data['validasi_pangkal_cicil1']==0 AND $data['b_pangkal_cicil2']==0 AND $data['validasi_pangkal_cicil2']==0 AND $data['b_pangkal_cicil3']==0 AND $data['validasi_pangkal_cicil3']==0) {
@@ -265,7 +265,7 @@
               echo "<br>";
               echo '<div class="col-md-12">';
               echo "<i>Anda telah membayar biaya uang pangkal cicilan kedua dan pembayaran telah dikonfirmasi oleh tatausaha kami.</i><br>";
-               echo "<i>Silahkan membayar pembayaran uang pangkal ketiga, klik <a data-toggle='tooltip' data-placement='bottom' title='Konfirmasi Pembayaran Uang Pangkal Cicil Ketiga' href='index.php?content=konfirmasi-pembayaran'>disini</a> untuk konfirmasi pembayaran.</i><br><br>";
+               echo "<i>Silahkan membayar pembayaran uang pangkal ketiga, klik pada button dibawah ini untuk konfirmasi pembayaran.</i><br><br>";
                  echo "<button data-toggle='modal' data-target='#myModalcicil3' type='button' class='btn btn-danger'>Konfirmasi Pembayaran</button>";
                echo "</div>";
           }
@@ -375,6 +375,70 @@
     </div>
 </div>
 
+
+<!-- Modal pangkal -->
+<div id="myModalpangkal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+          <div class="modal-header" style="background-color:#db4e66";>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <p align="center"><img src="gambar/manda.png" alt="" height="100px" width="130px"></p>
+            <p align="center"><font size="2px"><i>Sistem Informasi Pendaftaran SMK Mandalahayu II Bekasi</i></font></p>
+            <h4 class="modal-title" align="center"><b>Konfirmasi Pembayaran</b></h4>
+          </div>
+          <br>
+          <div class="modal-body">
+             <form class="form-horizontal" action="config/add-konfirmasi-bayar.php" method="POST" enctype="multipart/form-data">
+
+        <input type="hidden" name="id_pembayaran">
+        <div class="form-group">
+            <label class="col-sm-1"></label>
+            <label class="col-sm-4">Kode Daftar</label>
+            <label class="col-sm-1">:</label>
+            <div class="col-sm-5">
+                <input onkeypress="return hanyaAngka(event)" class="form-control" name="kode_daftar" value="<?php echo $data['kode_daftar']; ?>" type="text" placeholder="Masukkan kode daftar anda" required>
+            </div>
+        </div>
+        <div class="form-group">
+                  <label class="col-sm-1"></label>
+                  <label class="col-sm-4">Pembayaran</label>
+                  <label class="col-sm-1">:</label>
+                  <div class="col-sm-5">
+                    <select class="form-control" id="b_daftar" name="b_daftar" required>
+                      <option>-- Pilih Pembayaran --</option>
+                      <option value="pangkallunas">Uang Pangkal Langsung Lunas</option>
+                      <option value="cicilpertama">Uang Pangkal Cicilan Kedua</option>
+                    </select>
+                  </div>
+                </div>
+        <div class="form-group">
+            <label class="col-sm-1"></label>
+            <label class="col-sm-4">Bukti Pembayaran</label>
+            <label class="col-sm-1">:</label>
+            <div class="col-sm-5">
+                <input type="file" name="fileToUpload" id="fileToUpload" required>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group">
+            <label class="control-label col-sm-5"></label>
+            <div class="col-sm-6" align="right">
+                <button class="btn btn-danger" type="submit" name="submit" value="Konfirmasi Pembayaran">Konfirmasi Pembayaran</button>
+            </div>
+        </div>
+</div>
+</form>
+          </div>
+          <div class="modal-footer">
+            
+          </div>
+      </div>
+    </div>
+</div>
+
+
 <!-- Modal cicil 2 -->
 <div id="myModalcicil2" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -408,6 +472,68 @@
                     <select class="form-control" id="b_daftar" name="b_daftar" required>
                       <option>-- Pilih Pembayaran --</option>
                       <option value="cicilkedua">Uang Pangkal Cicilan Kedua</option>
+                    </select>
+                  </div>
+                </div>
+        <div class="form-group">
+            <label class="col-sm-1"></label>
+            <label class="col-sm-4">Bukti Pembayaran</label>
+            <label class="col-sm-1">:</label>
+            <div class="col-sm-5">
+                <input type="file" name="fileToUpload" id="fileToUpload" required>
+            </div>
+        </div>
+        <hr>
+        <div class="form-group">
+            <label class="control-label col-sm-5"></label>
+            <div class="col-sm-6" align="right">
+                <button class="btn btn-danger" type="submit" name="submit" value="Konfirmasi Pembayaran">Konfirmasi Pembayaran</button>
+            </div>
+        </div>
+</div>
+</form>
+          </div>
+          <div class="modal-footer">
+            
+          </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- Modal cicil 2 -->
+<div id="myModalcicil3" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+          <div class="modal-header" style="background-color:#db4e66";>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <p align="center"><img src="gambar/manda.png" alt="" height="100px" width="130px"></p>
+            <p align="center"><font size="2px"><i>Sistem Informasi Pendaftaran SMK Mandalahayu II Bekasi</i></font></p>
+            <h4 class="modal-title" align="center"><b>Konfirmasi Pembayaran</b></h4>
+          </div>
+          <br>
+          <div class="modal-body">
+             <form class="form-horizontal" action="config/add-konfirmasi-bayar.php" method="POST" enctype="multipart/form-data">
+
+        <input type="hidden" name="id_pembayaran">
+        <div class="form-group">
+            <label class="col-sm-1"></label>
+            <label class="col-sm-4">Kode Daftar</label>
+            <label class="col-sm-1">:</label>
+            <div class="col-sm-5">
+                <input onkeypress="return hanyaAngka(event)" class="form-control" name="kode_daftar" value="<?php echo $data['kode_daftar']; ?>" type="text" placeholder="Masukkan kode daftar anda" required>
+            </div>
+        </div>
+        <div class="form-group">
+                  <label class="col-sm-1"></label>
+                  <label class="col-sm-4">Pembayaran</label>
+                  <label class="col-sm-1">:</label>
+                  <div class="col-sm-5">
+                    <select class="form-control" id="b_daftar" name="b_daftar" required>
+                      <option>-- Pilih Pembayaran --</option>
+                      <option value="cicilketiga">Uang Pangkal Cicilan Ketiga</option>
                     </select>
                   </div>
                 </div>

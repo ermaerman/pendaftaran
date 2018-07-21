@@ -47,7 +47,7 @@ body {
 <body>
 
 <video autoplay muted loop id="myVideo">
-  <source src="video/manda.mp4" type="video/mp4">
+  <source src="video/mandalahayu.mp4" type="video/mp4">
   Your browser does not support HTML5 video.
 </video>
 
@@ -80,3 +80,26 @@ function myFunction() {
 </script>
 
 </body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+

@@ -8,6 +8,12 @@
     $update     = "UPDATE tbl_pembayaran SET validasi_daftar_ulang1='1' WHERE kode_daftar='$kode_daftar'";
 	$update	    = mysqli_query($konek, $update)or die(mysqli_error());
 
+     $insert         = "INSERT INTO tbl_ukuran_baju VALUES ('','$kode_daftar','','Belum Diterima')";
+     $simpan         = mysqli_query($konek, $insert)or die(mysqli_error($konek));
+
+     $insert2         = "INSERT INTO tbl_lks VALUES ('','$kode_daftar','','Belum Diterima','')";
+     $simpan2         = mysqli_query($konek, $insert2)or die(mysqli_error($konek));
+
 	if ($update)
     	{
     		echo "<br><br><br><strong><center><i>Berhasil Validasi!";

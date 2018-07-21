@@ -46,7 +46,9 @@
         <thead>
           <tr>
             <th>No</th>
+            <th>ID</th>
             <th>Kode Daftar</th>
+            <th>Nama</th>
             <th>Ukuran Baju</th>
             <th>Keterangan</th>
             <th>Action</th>
@@ -68,17 +70,17 @@
             if($_SERVER['REQUEST_METHOD'] == "POST") {
               $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
               if ($pencarian != '') {
-                $sql = "SELECT * FROM tbl_ukuran_baju WHERE kode_daftar LIKE '%$pencarian%' ORDER BY id_ukuran_baju DESC";
+                $sql = "SELECT tbl_ukuran_baju.id_ukuran_baju, tbl_ukuran_baju.kode_daftar, tbl_ukuran_baju.ukuran_baju, tbl_ukuran_baju.keterangan, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_ukuran_baju, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_ukuran_baju.kode_daftar AND tbl_ukuran_baju.kode_daftar LIKE '%$pencarian%' ORDER BY tbl_ukuran_baju.kode_daftar DESC";
                 $query = $sql;
                 $queryJml = $sql;
               } else {
-                $query = "SELECT * FROM tbl_ukuran_baju ORDER BY id_ukuran_baju DESC LIMIT $posisi, $batas ";
-                $queryJml = "SELECT * FROM tbl_ukuran_baju ORDER BY id_ukuran_baju DESC";
+                $query = "SELECT tbl_ukuran_baju.id_ukuran_baju, tbl_ukuran_baju.kode_daftar, tbl_ukuran_baju.ukuran_baju, tbl_ukuran_baju.keterangan, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_ukuran_baju, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_ukuran_baju.kode_daftar ORDER BY tbl_ukuran_baju.id_ukuran_baju DESC LIMIT $posisi, $batas ";
+                $queryJml = "SELECT tbl_ukuran_baju.id_ukuran_baju, tbl_ukuran_baju.kode_daftar, tbl_ukuran_baju.ukuran_baju, tbl_ukuran_baju.keterangan, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_ukuran_baju, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_ukuran_baju.kode_daftar ORDER BY tbl_ukuran_baju.kode_daftar DESC";
                 $no = $posisi + 1;
               }
             } else {
-              $query = "SELECT * FROM tbl_ukuran_baju ORDER BY id_ukuran_baju DESC LIMIT $posisi, $batas ";
-              $queryJml = "SELECT * FROM tbl_ukuran_baju ORDER BY id_ukuran_baju DESC";
+              $query = "SELECT tbl_ukuran_baju.id_ukuran_baju, tbl_ukuran_baju.kode_daftar, tbl_ukuran_baju.ukuran_baju, tbl_ukuran_baju.keterangan, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_ukuran_baju, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_ukuran_baju.kode_daftar ORDER BY tbl_ukuran_baju.kode_daftar DESC LIMIT $posisi, $batas ";
+              $queryJml = "SELECT tbl_ukuran_baju.id_ukuran_baju, tbl_ukuran_baju.kode_daftar, tbl_ukuran_baju.ukuran_baju, tbl_ukuran_baju.keterangan, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_ukuran_baju, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_ukuran_baju.kode_daftar ORDER BY tbl_ukuran_baju.kode_daftar DESC";
               $no = $posisi + 1;
             }
 
@@ -93,7 +95,9 @@
                       while($data = mysqli_fetch_array($querydata)){
                         echo '<tr>';
                         echo '<td>'.$no.'</td>';
+                        echo '<td>'.$data['id_ukuran_baju'].'</td>';
                         echo '<td>'.$data['kode_daftar'].'</td>';
+                        echo '<td>'.$data['nama'].'</td>';
                         echo '<td>'.$data['ukuran_baju'].'</td>';
                         echo '<td>'.$data['keterangan'].'</td>';
                         echo '<td  width="20"><a data-toggle="tooltip" data-placement="right" title="Edit Keterangan" href=tu.php?content=edit-keterangan&&kode_daftar='.$data['kode_daftar'].'><i class="fa fa-edit fa-fw"></i></a></td>';

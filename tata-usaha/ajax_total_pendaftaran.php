@@ -5,6 +5,7 @@
 
 
 	$edit    = "SELECT COUNT(validasi_daftar) AS jumlah FROM tbl_pembayaran WHERE validasi_daftar='1' AND tahun_pelajaran='$tahun_pelajaran'";
+	
 	$hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
 	$data    = mysqli_fetch_array($hasil);  
 

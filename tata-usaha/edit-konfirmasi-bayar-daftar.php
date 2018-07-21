@@ -47,13 +47,19 @@
                 </tr>
                 <tr>
                   <th><font size="2px">Status</font></th>
-                  <td><font size="2px"><i><?php echo $data['validasi_daftar']; ?></i></font></td>
+                  <td><font size="2px"><i><?php if ($data['validasi_daftar']==0) echo "Belum dikonfirmasi <i class='fa fa-times fa-fw'></i>"; else echo "Sudah dikonfirmasi <i class='fa fa-check fa-fw'></i>"; ?></td></i></font>
                 </tr>
               </table>
-              <p><i><font size=2px>&nbsp;&nbsp;Keterangan: <br>&nbsp;&nbsp;Jika status = 0 maka pembayaran pendaftaran <b>belum</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Jika status = 1 maka pembayaran pendaftaran <b>sudah</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Mohon lihat bukti pembayaran dengan cermat dan teliti.</font></i></p>
               <p align="right">
-                <button type="submit" formaction="../config/update-konfirmasi-bayar-pendaftaran.php" class="btn btn-primary">Konfirmasi</button>
-               <!--  <button type="submit" formaction="../config/batal-konfirmasi-bayar-pendaftaran.php" class="btn btn-danger">Batal Konfirmasi</button> -->
+                <?php
+                  if ($data['validasi_daftar']==1) {
+                    
+                  } else {
+                    echo "<button type='submit' formaction='../config/update-konfirmasi-bayar-pendaftaran.php' class='btn btn-primary'>Konfirmasi</button>";
+                  }
+                ?>
+                
+               <button type="submit" formaction="../config/batal-konfirmasi-bayar-pendaftaran.php" class="btn btn-danger">Batal Konfirmasi</button>
                 <a href="tu.php?content=transaksi-pendaftaran"><button type="button" class="btn btn-default">Kembali</button></a></p>
             </div>
           </div>

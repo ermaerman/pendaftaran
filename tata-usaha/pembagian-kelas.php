@@ -47,6 +47,7 @@
           <tr>
             <th>No</th>
             <th>Kode Daftar</th>
+            <th>Nama</th>
             <th>Kelas</th>
             <th><center>Action</center></th>
           </tr>
@@ -57,7 +58,7 @@
             include '../config/koneksi.php';
 
             
-            $query = mysqli_query($konek, "SELECT * FROM tbl_kelas")or die(mysqli_error($konek));
+            $query = mysqli_query($konek, "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.nama FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas='0' AND tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar")or die(mysqli_error($konek));
 
                     if(mysqli_num_rows($query) == 0){
                       echo '<tr><td colspan="5" align="center">Tidak ada data!</td></tr>';
@@ -69,6 +70,7 @@
                         echo '<tr>';
                         echo '<td>'.$no.'</td>';
                         echo '<td>'.$data['kode_daftar'].'</td>';
+                        echo '<td>'.$data['nama'].'</td>';
                         ?>
                         <td>
                           <?php
@@ -76,15 +78,6 @@
                             if ($data['id_request_kelas']==0){
                               echo 'Belum Dapat Kelas';
                             } 
-                            else {
-                              $id_request_kelas = $data['id_request_kelas'];
-                              $query_kelas = "SELECT * FROM tbl_request_kelas WHERE id_request_kelas = '$id_request_kelas'";
-                              $hasil   = mysqli_query($konek, $query_kelas)or die(mysql_error());
-                              $tampil  = mysqli_fetch_array($hasil);
-
-                              echo $tampil['nama_kelas'];
-
-                            }
                           ?> 
                         </td>
                         <?php

@@ -46,7 +46,9 @@
         <thead>
           <tr>
             <th>No</th>
+            <th>ID</th>
             <th>Kode Daftar</th>
+            <th>Nama</th>
             <th>LKS</th>
             <th>Keterangan</th>
             <th>Status</th>
@@ -71,17 +73,17 @@
             if($_SERVER['REQUEST_METHOD'] == "POST") {
               $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
               if ($pencarian != '') {
-                $sql = "SELECT * FROM tbl_lks WHERE kode_daftar LIKE '%$pencarian%'";
+                $sql = "SELECT tbl_lks.id_lks, tbl_lks.kode_daftar, tbl_lks.lks, tbl_lks.keterangan, tbl_lks.status_buku, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_lks, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_lks.kode_daftar AND tbl_lks.kode_daftar LIKE '%$pencarian%'";
                 $query = $sql;
                 $queryJml = $sql;
               } else {
-                $query = "SELECT * FROM tbl_lks LIMIT $posisi, $batas ";
-                $queryJml = "SELECT * FROM tbl_lks";
+                $query = "SELECT tbl_lks.id_lks, tbl_lks.kode_daftar, tbl_lks.lks, tbl_lks.keterangan, tbl_lks.status_buku, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_lks, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_lks.kode_daftar LIMIT $posisi, $batas ";
+                $queryJml = "SELECT tbl_lks.id_lks, tbl_lks.kode_daftar, tbl_lks.lks, tbl_lks.keterangan, tbl_lks.status_buku, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_lks, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_lks.kode_daftar";
                 $no = $posisi + 1;
               }
             } else {
-              $query = "SELECT * FROM tbl_lks LIMIT $posisi, $batas ";
-              $queryJml = "SELECT * FROM tbl_lks";
+              $query = "SELECT tbl_lks.id_lks, tbl_lks.kode_daftar, tbl_lks.lks, tbl_lks.keterangan, tbl_lks.status_buku, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_lks, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_lks.kode_daftar LIMIT $posisi, $batas ";
+              $queryJml = "SELECT tbl_lks.id_lks, tbl_lks.kode_daftar, tbl_lks.lks, tbl_lks.keterangan, tbl_lks.status_buku, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_lks, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_lks.kode_daftar";
               $no = $posisi + 1;
             }
 
@@ -95,11 +97,13 @@
                       while($data = mysqli_fetch_array($querydata)){
                         echo '<tr>';
                         echo '<td>'.$no.'</td>';
+                        echo '<td>'.$data['id_lks'].'</td>';
                         echo '<td>'.$data['kode_daftar'].'</td>';
+                        echo '<td>'.$data['nama'].'</td>';
                         echo '<td>'.$data['lks'].'</td>';
                         echo '<td>'.$data['keterangan'].'</td>';
                         echo '<td>'.$data['status_buku'].'</td>';
-                        echo '<td  width="20"><a data-toggle="tooltip" data-placement="right" title="Edit Keterangan" href=tu.php?content=edit-buku&&kode_daftar='.$data['kode_daftar'].'><i class="fa fa-edit fa-fw"></i></a></td>';
+                        echo '<td  width="20"><a data-toggle="tooltip" data-placement="right" title="Edit Keterangan" href=tu.php?content=edit-buku&&id_lks='.$data['id_lks'].'&&kode_daftar='.$data['kode_daftar'].'><i class="fa fa-edit fa-fw"></i></a></td>';
                         echo '</tr>';
                         $no++;
                       }

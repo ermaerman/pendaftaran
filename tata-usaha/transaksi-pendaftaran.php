@@ -47,6 +47,7 @@
           <tr>
             <th>No</th>
             <th>Kode Daftar</th>
+            <th>Nama</th>
             <th>Bukti Pembayaran</th>
             <th>Validasi</th>
             <th>Action</th>
@@ -69,17 +70,17 @@
           if($_SERVER['REQUEST_METHOD'] == "POST") {
             $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
             if ($pencarian != '') {
-              $sql = "SELECT * FROM tbl_pembayaran WHERE b_daftar=1 AND kode_daftar LIKE '%$pencarian%' ORDER BY id_pembayaran DESC";
+              $sql = "SELECT tbl_pembayaran.id_pembayaran, tbl_pembayaran.kode_daftar, tbl_pembayaran.b_daftar, tbl_pembayaran.bukti_daftar, tbl_pembayaran.validasi_daftar, tbl_data_calon_murid.nama, tbl_data_calon_murid.kode_daftar FROM tbl_pembayaran, tbl_data_calon_murid WHERE tbl_pembayaran.b_daftar=1 AND tbl_pembayaran.kode_daftar=tbl_data_calon_murid.kode_daftar AND kode_daftar LIKE '%$pencarian%' ORDER BY id_pembayaran DESC";
               $query = $sql;
               $queryJml = $sql;
             } else {
-              $query = "SELECT * FROM tbl_pembayaran WHERE b_daftar=1 ORDER BY id_pembayaran DESC LIMIT $posisi, $batas ";
-              $queryJml = "SELECT * FROM tbl_pembayaran WHERE b_daftar=1 ORDER BY id_pembayaran DESC";
+              $query = "SELECT tbl_pembayaran.id_pembayaran, tbl_pembayaran.kode_daftar, tbl_pembayaran.b_daftar, tbl_pembayaran.bukti_daftar, tbl_pembayaran.validasi_daftar, tbl_data_calon_murid.nama, tbl_data_calon_murid.kode_daftar FROM tbl_pembayaran, tbl_data_calon_murid WHERE tbl_pembayaran.b_daftar=1 AND tbl_pembayaran.kode_daftar=tbl_data_calon_murid.kode_daftar ORDER BY tbl_pembayaran.id_pembayaran DESC LIMIT $posisi, $batas ";
+              $queryJml = "SELECT tbl_pembayaran.id_pembayaran, tbl_pembayaran.kode_daftar, tbl_pembayaran.b_daftar, tbl_pembayaran.bukti_daftar, tbl_pembayaran.validasi_daftar, tbl_data_calon_murid.nama, tbl_data_calon_murid.kode_daftar FROM tbl_pembayaran, tbl_data_calon_murid WHERE tbl_pembayaran.b_daftar=1 AND tbl_pembayaran.kode_daftar=tbl_data_calon_murid.kode_daftar ORDER BY tbl_pembayaran.id_pembayaran DESC";
               $no = $posisi + 1;
             }
           } else {
-            $query = "SELECT * FROM tbl_pembayaran WHERE b_daftar=1 ORDER BY id_pembayaran DESC LIMIT $posisi, $batas ";
-            $queryJml = "SELECT * FROM tbl_pembayaran WHERE b_daftar=1 ORDER BY id_pembayaran DESC";
+            $query = "SELECT tbl_pembayaran.id_pembayaran, tbl_pembayaran.kode_daftar, tbl_pembayaran.b_daftar, tbl_pembayaran.bukti_daftar, tbl_pembayaran.validasi_daftar, tbl_data_calon_murid.nama, tbl_data_calon_murid.kode_daftar FROM tbl_pembayaran, tbl_data_calon_murid WHERE tbl_pembayaran.b_daftar=1 AND tbl_pembayaran.kode_daftar=tbl_data_calon_murid.kode_daftar ORDER BY id_pembayaran DESC LIMIT $posisi, $batas ";
+            $queryJml = "SELECT tbl_pembayaran.id_pembayaran, tbl_pembayaran.kode_daftar, tbl_pembayaran.b_daftar, tbl_pembayaran.bukti_daftar, tbl_pembayaran.validasi_daftar, tbl_data_calon_murid.nama, tbl_data_calon_murid.kode_daftar FROM tbl_pembayaran, tbl_data_calon_murid WHERE tbl_pembayaran.b_daftar=1 AND tbl_pembayaran.kode_daftar=tbl_data_calon_murid.kode_daftar ORDER BY tbl_pembayaran.id_pembayaran DESC";
             $no = $posisi + 1;
           }
 
@@ -95,6 +96,7 @@
                         <tr>
                         <td><?php echo $no ?></td>
                         <td><?php echo $data['kode_daftar'] ?></td>
+                        <td><?php echo $data['nama'] ?></td>
                         <td><?php echo($data['bukti_daftar']);?></td>
                         <td><?php if ($data['validasi_daftar']==0) echo "<i class='fa fa-times fa-fw'></i>"; else echo "<i class='fa fa-check fa-fw'></i>"; ?></td>
                         <td><a data-toggle="tooltip" data-placement="right" title="Validasi" href=tu.php?content=edit-konfirmasi-bayar-daftar&&id_pembayaran=<?php echo $data['id_pembayaran'] ?>><i class='fa fa-edit fa-fw'></i></a></td></tr>

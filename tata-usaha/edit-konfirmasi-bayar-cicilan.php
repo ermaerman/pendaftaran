@@ -51,12 +51,18 @@
             </tr>
             <tr>
               <th><font size="2px">Status</font></th>
-              <td><font size="2px"><i><?php echo $data['validasi_pangkal_cicil1']; ?></i></font></td>
+              <td><font size="2px"><i><?php if ($data['validasi_pangkal_cicil1']==0) echo "Belum dikonfirmasi <i class='fa fa-times fa-fw'></i>"; else echo "Sudah dikonfirmasi <i class='fa fa-check fa-fw'></i>"; ?></i></font></td>
             </tr>
           </table>
-          <p><i><font size=2px>&nbsp;&nbsp;Keterangan: <br>&nbsp;&nbsp;Jika status = 0 maka pembayaran cicilan pertama <b>belum</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Jika status = 1 maka pembayaran cicilan pertama <b>sudah</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Mohon lihat bukti pembayaran dengan cermat dan teliti.</font></i></p>
+         
           <p align="right">
-            <button type="submit" formaction="../config/edit-konfirmasi-bayar-cicilansatu.php" class="btn btn-primary">Konfirmasi</button>
+            <?php if ($data['validasi_pangkal_cicil1']==1) {
+              
+            } else {
+              echo "<button type='submit' formaction='../config/edit-konfirmasi-bayar-cicilansatu.php' class='btn btn-primary'>Konfirmasi</button>";
+            }
+
+            ?>
             <!-- <button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilansatu.php" class="btn btn-danger">Batal Konfirmasi</button> -->
             <a href="tu.php?content=transaksi-cicilan"><button type="button" class="btn btn-default">Kembali</button></a></p>
         </div>
@@ -90,12 +96,19 @@
           </tr>
           <tr>
             <th><font size="2px">Status</font></th>
-            <td><font size="2px"><i><?php echo $data['validasi_pangkal_cicil2']; ?></i></font></td>
+            <td><font size="2px"><i><?php if ($data['validasi_pangkal_cicil2']==0) echo "Belum dikonfirmasi <i class='fa fa-times fa-fw'></i>"; else echo "Sudah dikonfirmasi <i class='fa fa-check fa-fw'></i>"; ?></i></font></td>
           </tr>
         </table>
-        <p><i><font size=2px>&nbsp;&nbsp;Keterangan: <br>&nbsp;&nbsp;Jika status = 0 maka pembayaran cicilan kedua <b>belum</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Jika status = 1 maka pembayaran cicilan kedua <b>sudah</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Mohon lihat bukti pembayaran dengan cermat dan teliti.</font></i></p>
+     
         <p align="right">
-          <button type="submit" formaction="../config/edit-konfirmasi-bayar-cicilankedua.php" class="btn btn-primary">Konfirmasi</button>
+        <?php if ($data['validasi_pangkal_cicil2']==1) {
+          
+        } else {
+          echo "<button type='submit' formaction='../config/edit-konfirmasi-bayar-cicilankedua.php' class='btn btn-primary'>Konfirmasi</button>";
+        }
+
+        ?>
+          
           <!-- <button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilankedua.php" class="btn btn-danger">Batal Konfirmasi</button> -->
           <a href="tu.php?content=transaksi-cicilan"><button type="button" class="btn btn-default">Kembali</button></a></p>
       </div>
@@ -129,12 +142,18 @@
         </tr>
         <tr>
           <th><font size="2px">Status</font></th>
-          <td><font size="2px"><i><?php echo $data['validasi_pangkal_cicil3']; ?></i></font></td>
+          <td><font size="2px"><i><?php if ($data['validasi_pangkal_cicil3']==0) echo "Belum dikonfirmasi <i class='fa fa-times fa-fw'></i>"; else echo "Sudah dikonfirmasi <i class='fa fa-check fa-fw'></i>"; ?></i></font></td>
         </tr>
       </table>
-      <p><i><font size=2px>&nbsp;&nbsp;Keterangan: <br>&nbsp;&nbsp;Jika status = 0 maka pembayaran cicilan ketiga <b>belum</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Jika status = 1 maka pembayaran cicilan ketiga <b>sudah</b> dikonfirmasi / divalidasi.<br>&nbsp;&nbsp;Mohon lihat bukti pembayaran dengan cermat dan teliti.</font></i></p>
+    
       <p align="right">
-        <button type="submit" formaction="../config/edit-konfirmasi-bayar-cicilanketiga.php" class="btn btn-primary">Konfirmasi</button>
+        <?php if ($data['validasi_pangkal_cicil3']==1) {
+          
+        } else {
+          echo "<button type='submit' formaction='../config/edit-konfirmasi-bayar-cicilanketiga.php' class='btn btn-primary'>Konfirmasi</button>";
+        }
+
+        ?>
        <!--  <button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilanketiga.php" class="btn btn-danger">Batal Konfirmasi</button> -->
         <a href="tu.php?content=transaksi-cicilan"><button type="button" class="btn btn-default">Kembali</button></a></p>
     </div>

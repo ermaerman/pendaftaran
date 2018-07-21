@@ -2,10 +2,11 @@
 
 	include 'koneksi.php';
 
+    $id_ukuran_baju            = $_POST['id_ukuran_baju'];
     $kode_daftar            = $_POST['kode_daftar'];
     $keterangan            = $_POST['keterangan'];
 
-    $update     = "UPDATE tbl_ukuran_baju SET keterangan='$keterangan' WHERE kode_daftar='$kode_daftar'";
+    $update     = "UPDATE tbl_ukuran_baju SET keterangan='$keterangan' WHERE id_ukuran_baju='$id_ukuran_baju'";
 
 	$update	= mysqli_query($konek, $update)or die(mysqli_error());
 

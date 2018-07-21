@@ -110,7 +110,7 @@
                         <td><?php if ($data['validasi_pangkal_cicil2']==0) echo "<i class='fa fa-times fa-fw'></i>"; else echo "<i class='fa fa-check fa-fw'></i>"; ?></td>
                         <td><?php if ($data['b_pangkal_cicil3']==0) echo "<i class='fa fa-times fa-fw'></i>"; else echo "<i class='fa fa-check fa-fw'></i>"; ?></td>
                         <td><?php echo $data['bukti_pangkal_cicil3'] ?></td>
-                        <td><?php if ($data['validasi_pangkal_cicil3']==0) echo "<i class='fa fa-times fa-fw'></i>"; else echo "Dikonfirmasi"; ?></td>
+                        <td><?php if ($data['validasi_pangkal_cicil3']==0) echo "<i class='fa fa-times fa-fw'></i>"; else echo "<i class='fa fa-check fa-fw'></i>"; ?></td>
                         <td><a data-toggle="tooltip" data-placement="left" title="Edit" href=tu.php?content=edit-konfirmasi-bayar-cicilan&&kode_daftar=<?php echo $data['kode_daftar']?>><i class='fa fa-edit fa-fw'></i></a></td></tr>
                       <?php
                         $no++;
@@ -230,7 +230,8 @@
     <br>
     <form class="form-horizontal" method="POST">
       <div class="form-group">
-        <label class="control-label col-sm-2">Tahun Ajaran :</label>
+        <label class="control-label col-sm-2">Tahun Ajaran</label>
+        <label class="control-label col-sm-1">:</label>
         <div class="col-sm-6">
             <select class="form-control" name="id_tahun" id="tahun">
                 <option>--Pilih Tujuan--</option>

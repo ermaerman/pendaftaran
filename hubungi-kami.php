@@ -60,7 +60,7 @@
         <div class="form-group">
 
             <div class="col-sm-12" align="right">
-                <button class="btn btn-primary">Send</button>
+                <button class="btn btn-primary">Kirim</button>
             </div>
         </div>
 
@@ -108,4 +108,7 @@
 </div>
 </div>
 </div>
-  
+</div>
+</div>
+</div>
+</div>

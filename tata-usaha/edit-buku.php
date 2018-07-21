@@ -29,7 +29,7 @@
     <br>
     <br>
     <form class="form-horizontal" action="../config/edit-keterangan-buku.php" method="POST">
-        <input type="hidden" name="id_lks" value="<?php echo $id_lks ?>">
+        <input type="" name="id_lks" value="<?php echo $id_lks ?>">
         <div class="form-group">
             <label class="col-sm-2"></label>
             <label class="col-sm-2">Kode Daftar</label>

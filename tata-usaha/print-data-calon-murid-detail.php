@@ -28,7 +28,6 @@
                                   <input type="hidden" name="id_pembayaran" value="<?php echo $id_pembayaran?>">
                                   <div class="panel-group">
                                   <div class="panel panel-primary">
-                                    <div class="panel-heading">Data Lengkap Calon Murid</div>
                                     <div class="panel-body">
                                       <table class="table">
                                         <tr>
@@ -40,7 +39,7 @@
                                   
                                   <table class="table table-bordered">  
                                     <tr>
-                                      <input type="text" name="id_calon_murid" value="<?php echo $id_calon_murid?>">
+                                      <input type="hidden" name="id_calon_murid" value="<?php echo $id_calon_murid?>">
                                       <th><font size="2px">Tahun Pelajaran</font></th>
                                       <td width="800"><i><font size="2px"><?php echo $data['tahun_pelajaran'];?></font></i></td>
                                     </tr>

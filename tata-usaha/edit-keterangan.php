@@ -24,7 +24,7 @@
     <hr>
     <br>
         <form class="form-horizontal" action="../config/edit-keterangan-baju.php" method="POST">
-        <input type="hidden" name="$id_ukuran_baju" value="<?php echo $data['id_ukuran_baju']?>">
+        <input type="hidden" name="id_ukuran_baju" value="<?php echo $data['id_ukuran_baju']?>">
         <input type="hidden" name="kode_daftar" value="<?php echo $data['kode_daftar']?>">
           <div class="panel-group">
           <div class="panel panel-primary">
@@ -54,7 +54,7 @@
               </table>
               <p align="right">
                 <button type="submit"class="btn btn-primary">Simpan</button>
-                <a href="tu.php?content=transaksi-pendaftaran"><button type="button" class="btn btn-danger">Kembali</button></a></p>
+                <a href="tu.php?content=data-ukuran-baju"><button type="button" class="btn btn-default">Kembali</button></a></p>
             </div>
           </div>
       </form>

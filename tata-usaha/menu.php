@@ -34,6 +34,8 @@
             </li>
             <li><a href='tu.php?content=naik-kelas'><span>Naik Kelas</span></a>
             </li>
+            <li><a href='tu.php?content=lihat-kelas'><span>Kelas</span></a>
+            </li>
          </ul>
       </li>
       <li><a href='tu.php?content=data-murid'><i class="fa fa-clone fa-fw"></i>&nbsp; Data Murid</a></li>

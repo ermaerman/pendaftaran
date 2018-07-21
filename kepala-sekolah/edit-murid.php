@@ -14,18 +14,18 @@
 
 <div class="col-md-10" style="padding:0px">
   <ol class="breadcrumb" style="margin:0;border-radius:0;">
-    <li class="active"><a href="kepsek.php?content=home-kepala-sekolah">Home</a> / <a href="kepsek.php?content=data-calon-murid">Data Calon Murid</a> / Data Lengkap Calon Murid</li>
+    <li class="active"><a href="kepsek.php?content=home-kepala-sekolah">Home</a> / <a href="kepsek.php?content=laporan-data-murid">Data Murid</a> / Data Lengkap Murid</li>
   </ol>
 </div>
   
 <div class="col-md-10" style="min-height:500px">
-  <h3><b>Data Lengkap</b> Calon Murid</h3>
+  <h3><b>Data Lengkap</b> Murid</h3>
     <hr>
     <form class="form-horizontal" action="#" method="POST">
     <input type="hidden" name="id_pembayaran" value="<?php echo $id_pembayaran?>">
     <div class="panel-group">
     <div class="panel panel-primary">
-      <div class="panel-heading">Data Lengkap Calon Murid</div>
+      <div class="panel-heading">Data Lengkap Murid</div>
       <div class="panel-body">
         <table class="table">
           <tr>
@@ -346,7 +346,7 @@
         <td width="800"><i><font size="2px"><?php echo $data['tgl_daftar'];?></font></i></td>
       </tr>
   </table>
-  <p align="right"><a target ="_blank" role="button" href="print-data-calon-murid-detail.php?id_calon_murid=<?php echo $data['id_calon_murid']; ?>"><button type="button" class="btn btn-success btn-md"><i class="fa fa-print fa-fw"></i> Print</button></a>&nbsp;&nbsp;<a href="kepsek.php?content=data-calon-murid"><button type="button" class="btn btn-primary">Kembali</button></a></p>
+  <p align="right"><a target ="_blank" role="button" href="print-data-murid-detail.php?id_calon_murid=<?php echo $data['id_calon_murid']; ?>"><button type="button" class="btn btn-success btn-md"><i class="fa fa-print fa-fw"></i> Print</button></a>&nbsp;&nbsp;<a href="kepsek.php?content=laporan-data-murid"><button type="button" class="btn btn-primary">Kembali</button></a></p>
 
 </div>
 </div>

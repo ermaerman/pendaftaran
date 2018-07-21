@@ -40,16 +40,15 @@
 
                       $pendaftaran = $data['biaya_pendaftaran'];
 
-                      $total   = $jumlah * $pendaftaran;
+                      $total1   = $jumlah * $pendaftaran;
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?> </font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total1; ?> </font></i></td>
                 </tr>
               </table>
-              <p align="right">
-               <!--  <button type="submit" formaction="tu.php?content=transaksi-pendaftaran" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
+             <!--  <p align="right">
+                <button type="submit" formaction="tu.php?content=transaksi-pendaftaran" class="btn btn-primary">Detail Transaksi</button></p> -->
             </div>
           </div>
       </form>
@@ -85,16 +84,16 @@
                       // echo '<br>';
                       // echo $cicil;
 
-                      $total   = $jumlah * $cicil;
+                      $total2   = $jumlah * $cicil;
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total2; ?></font></i></td>
                 </tr>
               </table>
-              <!-- <p align="right">
+              <p align="right">
                 <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
+               </p>
             </div>
           </div>
       </form> 
@@ -131,17 +130,16 @@
                       // echo '<br>';
                       // echo $cicil;
 
-                      $total   = $jumlah * $cicil;
+                      $total3   = $jumlah * $cicil;
                       
                   ?>
 
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total3; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">
-               <!--  <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
+                <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
             </div>
           </div>
       </form>     
@@ -179,17 +177,16 @@
                       // echo '<br>';
                       // echo $cicil;
 
-                      $total   = $jumlah * $cicil;
+                      $total4   = $jumlah * $cicil;
                       
                   ?>
 
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total4; ?></font></i></td>
                 </tr>
               </table>
-             <!--  <p align="right">
+              <p align="right">
                 <button type="submit" formaction="tu.php?content=transaksi-cicilan" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
             </div>
           </div>
       </form> 
@@ -218,16 +215,15 @@
 
                       $pangkal = $data['total_pangkal'];
 
-                      $total   = $jumlah * $pangkal;
+                      $total5   = $jumlah * $pangkal;
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total5; ?></font></i></td>
                 </tr>
               </table>
-              <!-- <p align="right">
+              <p align="right">
                 <button type="submit" formaction="tu.php?content=transaksi-lunas" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
             </div>
           </div>
       </form> 
@@ -256,16 +252,15 @@
 
                       $du = $data['daftar_ulang1'];
 
-                      $total   = $jumlah * $du;
+                      $total6   = $jumlah * $du;
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total6; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">
-              <!--   <button type="submit" formaction="tu.php?content=daftar-ulang" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
+                <button type="submit" formaction="tu.php?content=daftar-ulang" class="btn btn-primary">Detail Transaksi</button>
             </div>
           </div>
       </form> 
@@ -294,15 +289,14 @@
 
                       $du = $data['daftar_ulang2'];
 
-                      $total   = $jumlah * $du;
+                      $total7   = $jumlah * $du;
                       ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total; ?></font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total7; ?></font></i></td>
                 </tr>
               </table>
               <p align="right">
-            <!--     <button type="submit" formaction="tu.php?content=daftar-ulang" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
+                <button type="submit" formaction="tu.php?content=daftar-ulang" class="btn btn-primary">Detail Transaksi</button>
             </div>
           </div>
       </form> 
@@ -316,19 +310,21 @@
             <div class="panel-heading">Laporan Keuangan Keseluruhan</div>
             <div class="panel-body">
               <table class="table table-bordered">
+                <?php
+
+                  $total = ceil($total1 + $total2 + $total3 + $total4 + $total5 + $total6 + $total7);
+
+                ?>
                 <tr>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. </font></i></td>
+                  <td width="800"><i><font size="2px">Rp. <?php echo $total;?></font></i></td>
                 </tr>
               </table>
-             <!--  <p align="right">
-                <button type="submit" formaction="#" class="btn btn-primary">Detail Transaksi</button>
-                <button type="submit" formaction="#" class="btn btn-success"><i class='fa fa-print fa-fw'></i> Print</button></p> -->
+               <p align="right">
+                <button type="submit" formaction="tu.php?content=detail-keuangan" class="btn btn-primary">Detail Transaksi</button></p>
             </div>
           </div>
-      </form> 
-      <hr>
-      <!--  <p align="right"><button type="submit" formaction="#" class="btn btn-danger"><i class='fa fa-print fa-fw'></i> Print Semua Laporan Keuangan</button></p> -->
+      </form>
   </div>
 </div>
 </div>

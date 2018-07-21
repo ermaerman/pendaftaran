@@ -27,7 +27,7 @@
 
 <div class="col-md-10" style="padding:0px">
   <ol class="breadcrumb" style="margin:0;border-radius:0;">
-    <li class="active"><a href="tu.php?content=home-kepala-sekolah">Home</a> / Data Calon Murid</li>
+    <li class="active"><a href="kepsek.php?content=home-kepala-sekolah">Home</a> / Data Calon Murid</li>
       </ol>
   </div>
    
@@ -39,7 +39,7 @@
       <input size="127px" type="text" name="pencarian" class="form-control" placeholder="Pencarian">
       <button type="submit" class="btn btn-primary"><i class="fa fa-search fa-fw"></i></button>
       <a href="kepsek.php?content=data-calon-murid"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
-      <a target ="_blank" role="button" href="../tata-usaha/print-data-murid.php"><button type="button" class="btn btn-success"><i class="fa fa-print fa-fw"></i></button></a>    
+      <a target ="_blank" role="button" href="print-data-calon-murid.php"><button type="button" class="btn btn-success"><i class="fa fa-print fa-fw"></i></button></a>    
     </div>
   </form>
 </div>
@@ -115,7 +115,7 @@
                         echo '<td>'.$data['telepon_rumah'].'</td>';
                         echo '<td>'.$data['tgl_daftar'].'</td>';
                         echo '<td>'.$data['kode_daftar'].'</td>';
-                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Lihat Data Lengkap" href=tu.php?content=edit-calon-murid&&id_calon_murid='.$data['id_calon_murid'].'><i class="fa fa-bars fa-fw"></i></a></center></td>';
+                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Lihat Data Lengkap" href=kepsek.php?content=edit-calon-murid&&id_calon_murid='.$data['id_calon_murid'].'><i class="fa fa-bars fa-fw"></i></a></center></td>';
                         echo '</tr>';
                         $no++;  
                       }

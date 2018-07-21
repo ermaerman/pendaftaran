@@ -5,6 +5,13 @@
 </div>
 
 <div class="col-md-10" style="min-height:1600px;background:url(../gambar/blue2.jpg) no-repeat center center fixed;">
+	<br>
+	<p align="right">
+		<?php
+		date_default_timezone_set('Asia/Jakarta');
+		echo "<b>Login hari ini:</b> " . date("d/m/Y | h:i:s");
+		?>
+	</p>
    	<br>
    	<br>
    	<br>
@@ -14,6 +21,7 @@
    	<br>
    	<br>
    	<br>
+
 
 	<h3 align="center"><b>Welcome to</b>, Kepala Sekolah's Room</h3>
 	<p align="center">
@@ -37,10 +45,5 @@
 	<br>
 	<br>
 
-	<p align="right">
-		<?php
-		date_default_timezone_set('Asia/Jakarta');
-		echo "<b>Login hari ini:</b> " . date("d/m/Y | h:i:s");
-		?>
-	</p>
+	
 </div>

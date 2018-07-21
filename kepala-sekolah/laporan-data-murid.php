@@ -40,7 +40,7 @@
         <input size="127px" type="text" name="pencarian" class="form-control" placeholder="Pencarian">
         <button type="submit" class="btn btn-primary"><i class="fa fa-search fa-fw"></i></button>
         <a href="kepsek.php?content=laporan-data-murid"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
-        <a target ="_blank" role="button" href="../tata-usaha/print-data-murid.php"><button type="button" class="btn btn-success"><i class="fa fa-print fa-fw"></i></button></a>  
+        <a target ="_blank" role="button" href="print-data-murid.php"><button type="button" class="btn btn-success"><i class="fa fa-print fa-fw"></i></button></a>  
       </div>
     </form>
 </div>
@@ -111,7 +111,7 @@
                         echo '<td>'.$data['tgl_lahir'].'</td>';
                         echo '<td>'.$data['agama'].'</td>';
                         echo '<td>'.$data['telepon_rumah'].'</td>';
-                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Lihat Data Lengkap" href=tu.php?content=edit-murid&&id_calon_murid='.$data['id_calon_murid'].'><i class="fa fa-bars fa-fw"></i></a></center></td>';
+                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Lihat Data Lengkap" href=kepsek.php?content=edit-murid&&id_calon_murid='.$data['id_calon_murid'].'><i class="fa fa-bars fa-fw"></i></a></center></td>';
                         echo '</tr>';
                         $no++;
                       }

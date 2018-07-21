@@ -33,7 +33,7 @@
 </script>
 
 <body>
-    <div class="col-md-2 colmenu" style="padding:0;height:2940;">
+    <div class="col-md-2 colmenu" style="padding:0;height:3150;">
       <div class="col-md-12" style="padding:10px;"><center><img src="../gambar/manda.png" alt="" height="100px" width="130px"></center>
         <p align="center"><b>Sistem Informasi Pendaftaran SMK Mandalahayu II Bekasi</b></p>
       </div>
@@ -58,6 +58,8 @@
               include 'edit-calon-murid.php';
             else if ($content=='edit-status-request-kelas')
               include 'edit-status-request-kelas.php';
+            else if ($content=='edit-murid')
+              include 'edit-murid.php';
            ?>
   
     <div class="col-md-12" style="background:black;padding:8px;color:#fff;">

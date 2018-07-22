@@ -32,9 +32,9 @@
             </li>
             <li><a href='tu.php?content=request-kelas'><span>Request Kelas</span></a>
             </li>
-            <li><a href='tu.php?content=naik-kelas'><span>Naik Kelas</span></a>
-            </li>
             <li><a href='tu.php?content=lihat-kelas'><span>Kelas</span></a>
+            </li>
+            <li><a href='tu.php?content=naik-kelas'><span>Naik Kelas</span></a>
             </li>
          </ul>
       </li>

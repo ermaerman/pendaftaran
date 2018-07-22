@@ -3,7 +3,7 @@
 	include 'koneksi.php';
 
     $kode_daftar            = $_POST['kode_daftar'];
-    $kelas                   = $_POST['kelas'];
+    $kelas                  = $_POST['kelas'];
 
     $update     = "UPDATE tbl_kelas SET kode_daftar='$kode_daftar', id_request_kelas='$kelas' WHERE kode_daftar='$kode_daftar'";
 

@@ -134,7 +134,7 @@
           <div class="form-group">
             <input size="134px" type="text" name="pencarian" class="form-control" placeholder="Masukkan kode daftar">
             <button type="submit" class="btn btn-primary"><i class="fa fa-search fa-fw"></i></button>
-            <a href="tu.php?content=data-ukuran-baju"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
+            <a href="tu.php?content=tambah-baju"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
           </div>
         </form>
 

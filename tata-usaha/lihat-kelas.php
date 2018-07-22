@@ -37,7 +37,7 @@
     <hr>
        <form class="form-inline" action="" method="POST">
       <div class="form-group">
-        <input size="134px" type="text" name="pencarian" class="form-control" placeholder="Masukkan kode daftar atau nama murid">
+        <input size="134px" type="text" name="pencarian" class="form-control" placeholder="Masukkan nama kelas">
         <button type="submit" class="btn btn-primary"><i class="fa fa-search fa-fw"></i></button>
         <a href="tu.php?content=lihat-kelas"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
       </div>
@@ -51,10 +51,8 @@
           <tr>
             <th>No</th>
             <th>ID</th>
-            <th>Kode Daftar</th>
-            <th>Nama</th>
             <th>Kelas</th>
-            <th><center>Action</center></th>
+            <th><center>Lihat Data Murid</center></th>
           </tr>
         </thead>
         <tbody>
@@ -74,17 +72,17 @@
             if($_SERVER['REQUEST_METHOD'] == "POST") {
               $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
               if ($pencarian != '') {
-                $sql = "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.nama, tbl_data_calon_murid.id_calon_murid FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!='0' AND tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar AND tbl_kelas.kode_daftar LIKE '%$pencarian%' OR tbl_data_calon_murid.nama LIKE '%$pencarian%' OR tbl_kelas.id_request_kelas LIKE '%$pencarian%'";
+                $sql = "SELECT * FROM tbl_request_kelas WHERE nama_kelas LIKE '%$pencarian%' ORDER BY id_request_kelas DESC";
                 $query = $sql;
                 $queryJml = $sql;
               } else {
-                $query = "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.nama, tbl_data_calon_murid.id_calon_murid FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!='0' AND tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar LIMIT $posisi, $batas ";
-                $queryJml = "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.nama, tbl_data_calon_murid.id_calon_murid FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!='0' AND tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar";
+                $query = "SELECT * FROM tbl_request_kelas ORDER BY id_request_kelas DESC LIMIT $posisi, $batas ";
+                $queryJml = "SELECT * FROM tbl_request_kelas ORDER BY id_request_kelas DESC";
                 $no = $posisi + 1;
               }
             } else {
-              $query = "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.nama, tbl_data_calon_murid.id_calon_murid FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!='0' AND tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar LIMIT $posisi, $batas ";
-              $queryJml = "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.nama, tbl_data_calon_murid.id_calon_murid FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!='0' AND tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar";
+              $query = "SELECT * FROM tbl_request_kelas ORDER BY id_request_kelas DESC LIMIT $posisi, $batas ";
+              $queryJml = "SELECT * FROM tbl_request_kelas ORDER BY id_request_kelas DESC";
               $no = $posisi + 1;
             }
 
@@ -100,24 +98,9 @@
                       while($data = mysqli_fetch_array($querydata)){
                         echo '<tr>';
                         echo '<td>'.$no.'</td>';
-                        echo '<td>'.$data['id_calon_murid'].'</td>';
-                        echo '<td>'.$data['kode_daftar'].'</td>';
-                        echo '<td>'.$data['nama'].'</td>';
-                        ?>
-                        <td>
-                          <?php
-                            
-                            $id_request_kelas = $data['id_request_kelas'];
-                            $query_kelas = "SELECT * FROM tbl_request_kelas WHERE id_request_kelas = '$id_request_kelas'";
-                            $hasil = mysqli_query($konek, $query_kelas)or die(mysqli_error());
-                            $tampil = mysqli_fetch_array($hasil);
-
-                            echo $tampil['nama_kelas'];
-                          ?> 
-                        </td>
-                        <?php
-                        // echo '<td>'.$data['id_request_kelas']=.'</td>';
-                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Edit Kelas" href=tu.php?content=edit-murid&&id_calon_murid='.$data['id_calon_murid'].'><i class="fa fa-bars fa-fw"></i></a></center></td>';
+                        echo '<td>'.$data['id_request_kelas'].'</td>';
+                        echo '<td>'.$data['nama_kelas'].'</td>';
+                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Lihat Data Murid" href=tu.php?content=lihat-kelas-detail&&id_request_kelas='.$data['id_request_kelas'].'><i class="fa fa-bars fa-fw"></i></a></center></td>';
                         echo '</tr>';
                         $no++;
                       }

@@ -111,6 +111,8 @@
               include 'detail-keuangan.php';
             else if ($content=='tambah-baju')
               include 'tambah-baju.php';
+            else if ($content=='lihat-kelas-detail')
+              include 'lihat-kelas-detail.php';
            ?>
 
 <div class="col-md-12" style="background:black;padding:8px;color:#fff;">

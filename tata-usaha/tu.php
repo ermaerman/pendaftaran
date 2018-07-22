@@ -109,6 +109,8 @@
               include 'edit-naik-kelas.php';
             else if ($content=='detail-keuangan')
               include 'detail-keuangan.php';
+            else if ($content=='tambah-baju')
+              include 'tambah-baju.php';
            ?>
 
 <div class="col-md-12" style="background:black;padding:8px;color:#fff;">

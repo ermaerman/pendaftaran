@@ -37,7 +37,7 @@
         <input size="127px" type="text" name="pencarian" class="form-control" placeholder="Masukkan kode daftar">
         <button type="submit" class="btn btn-primary"><i class="fa fa-search fa-fw"></i></button>
         <a href="tu.php?content=data-ukuran-baju"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
-        <a target ="_blank" role="button" href="print-data-ukuran-baju.php"><button type="button" class="btn btn-success"><i class="fa fa-print fa-fw"></i></button></a>  
+         <a href="tu.php?content=tambah-baju"><button type="button" class="btn btn-info"><i class="fa fa-plus fa-fw"></i></button></a>  
       </div>
     </form>
 

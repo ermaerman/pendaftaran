@@ -342,7 +342,7 @@
         <td width="800"><i><font size="2px"><?php echo $data['tgl_daftar'];?></font></i></td>
       </tr>
   </table>
-  <p align="right">&nbsp;&nbsp;<a href="tu.php?content=data-murid"><button type="button" class="btn btn-primary">Kembali</button></a></p>
+  <p align="right"><a target ="_blank" role="button" href="print-data-murid-detail.php?id_calon_murid=<?php echo $data['id_calon_murid']; ?>"><button type="button" class="btn btn-success btn-md"><i class="fa fa-print fa-fw"></i> Print</button></a>&nbsp;&nbsp;<a href="tu.php?content=data-murid"><button type="button" class="btn btn-primary">Kembali</button></a></p>
 
 </div>
 </div>

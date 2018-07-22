@@ -2,9 +2,9 @@
   //menyambungkan koneksi
   include '../config/koneksi.php';
 
-//session_start();
-//if(isset($_SESSION['username']) ){
-  //header("Location: 404.php");}
+session_start();
+if(isset($_SESSION['username']) ){
+header("Location: 404.php");}
 ?>
 
 <!DOCTYPE html>

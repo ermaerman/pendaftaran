@@ -56,7 +56,7 @@
             include '../config/koneksi.php';
                        error_reporting(0);
 
-                       $batas  = 8;
+                       $batas  = 6;
                        $hal    = @$_GET['hal'];
                        if (empty($hal)) {
                          $posisi = 0;

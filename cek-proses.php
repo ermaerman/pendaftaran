@@ -18,7 +18,8 @@
   <hr>
   
   <div class="alert alert-info">
-  <strong>Info!</strong> <i>Silahkan cek proses dengan memasukkan kode daftar yang anda dapatkan saat mendaftar.</i>
+  <strong>Info!</strong> <i>Silahkan cek proses dengan memasukkan kode daftar yang anda dapatkan saat mendaftar.</i><br>
+  <i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;No. Rekening: 999322332 (BNI) A.N. SMK Mandalahayu II Bekasi</i>
   </div>
 <br>
 <br>

@@ -70,17 +70,17 @@
             if($_SERVER['REQUEST_METHOD'] == "POST") {
               $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
               if ($pencarian != '') {
-                $sql = "SELECT * FROM tbl_pembayaran WHERE status_pembayaran=1 AND kode_daftar LIKE '%$pencarian%' ORDER BY id_pembayaran DESC";
+                $sql = "SELECT * FROM tbl_pembayaran WHERE status_pembayaran=1 AND b_daftar_ulang1=1 AND kode_daftar LIKE '%$pencarian%' ORDER BY id_pembayaran DESC";
                 $query = $sql;
                 $queryJml = $sql;
               } else {
-                $query = "SELECT * FROM tbl_pembayaran WHERE status_pembayaran=1 ORDER BY id_pembayaran DESC LIMIT $posisi, $batas ";
-                $queryJml = "SELECT * FROM tbl_pembayaran WHERE status_pembayaran=1 ORDER BY id_pembayaran DESC";
+                $query = "SELECT * FROM tbl_pembayaran WHERE status_pembayaran=1 AND b_daftar_ulang1=1 ORDER BY id_pembayaran DESC LIMIT $posisi, $batas ";
+                $queryJml = "SELECT * FROM tbl_pembayaran WHERE status_pembayaran=1 AND b_daftar_ulang1=1 ORDER BY id_pembayaran DESC";
                 $no = $posisi + 1;
               }
             } else {
-              $query = "SELECT * FROM tbl_pembayaran WHERE status_pembayaran=1 ORDER BY id_pembayaran DESC LIMIT $posisi, $batas ";
-              $queryJml = "SELECT * FROM tbl_pembayaran WHERE status_pembayaran=1 ORDER BY id_pembayaran DESC";
+              $query = "SELECT * FROM tbl_pembayaran WHERE status_pembayaran=1 AND b_daftar_ulang1=1 ORDER BY id_pembayaran DESC LIMIT $posisi, $batas ";
+              $queryJml = "SELECT * FROM tbl_pembayaran WHERE status_pembayaran=1 AND b_daftar_ulang1=1 ORDER BY id_pembayaran DESC";
               $no = $posisi + 1;
             }
 

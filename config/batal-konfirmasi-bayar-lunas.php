@@ -6,7 +6,7 @@
     $kode_daftar   = $_POST['kode_daftar'];
 
 
-    $query    = "UPDATE tbl_pembayaran SET b_pangkal_lunas='0', bukti_pangkal_lunas='0', validasi_pangkal_lunas='0' WHERE kode_daftar='$kode_daftar'";
+    $query    = "UPDATE tbl_pembayaran SET b_pangkal_lunas='0', bukti_pangkal_lunas='0', validasi_pangkal_lunas='0', status_pembayaran='0' WHERE kode_daftar='$kode_daftar'";
     $update   = mysqli_query($konek, $query)or die(mysqli_error($konek));
 
     if($update)

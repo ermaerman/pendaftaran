@@ -9,6 +9,8 @@
     $query    = "UPDATE tbl_pembayaran SET b_daftar_ulang1='0', bukti_daftar_ulang1='0', validasi_daftar_ulang1='0' WHERE kode_daftar='$kode_daftar'";
     $update   = mysqli_query($konek, $query)or die(mysqli_error($konek));
 
+
+
     if($update)
     {
         echo "<br><br><br><strong><center><i>Berhasil Hapus Validasi!";

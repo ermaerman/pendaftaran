@@ -72,17 +72,17 @@
             if($_SERVER['REQUEST_METHOD'] == "POST") {
               $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
               if ($pencarian != '') {
-                $sql = "SELECT * FROM tbl_request_kelas WHERE nama_kelas LIKE '%$pencarian%' ORDER BY id_request_kelas DESC";
+                $sql = "SELECT * FROM tbl_request_kelas WHERE status='1' AND nama_kelas LIKE '%$pencarian%' ORDER BY id_request_kelas DESC";
                 $query = $sql;
                 $queryJml = $sql;
               } else {
-                $query = "SELECT * FROM tbl_request_kelas ORDER BY id_request_kelas DESC LIMIT $posisi, $batas ";
-                $queryJml = "SELECT * FROM tbl_request_kelas ORDER BY id_request_kelas DESC";
+                $query = "SELECT * FROM tbl_request_kelas WHERE status='1' ORDER BY id_request_kelas DESC LIMIT $posisi, $batas ";
+                $queryJml = "SELECT * FROM tbl_request_kelas WHERE status='1' ORDER BY id_request_kelas DESC";
                 $no = $posisi + 1;
               }
             } else {
-              $query = "SELECT * FROM tbl_request_kelas ORDER BY id_request_kelas DESC LIMIT $posisi, $batas ";
-              $queryJml = "SELECT * FROM tbl_request_kelas ORDER BY id_request_kelas DESC";
+              $query = "SELECT * FROM tbl_request_kelas WHERE status='1' ORDER BY id_request_kelas DESC LIMIT $posisi, $batas ";
+              $queryJml = "SELECT * FROM tbl_request_kelas WHERE status='1' ORDER BY id_request_kelas DESC";
               $no = $posisi + 1;
             }
 

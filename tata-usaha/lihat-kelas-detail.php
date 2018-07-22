@@ -79,17 +79,17 @@
             if($_SERVER['REQUEST_METHOD'] == "POST") {
               $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
               if ($pencarian != '') {
-                $sql = "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.nama, tbl_data_calon_murid.tahun_pelajaran, tbl_data_calon_murid.id_calon_murid FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!='0' AND tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar AND tbl_kelas.kode_daftar LIKE '%$pencarian%' OR tbl_data_calon_murid.nama LIKE '%$pencarian%' OR tbl_kelas.id_request_kelas LIKE '%$pencarian%'";
+                $sql = "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.nama, tbl_data_calon_murid.tahun_pelajaran, tbl_data_calon_murid.id_calon_murid FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar AND tbl_kelas.kode_daftar LIKE '%$pencarian%' OR tbl_data_calon_murid.nama LIKE '%$pencarian%' OR tbl_kelas.id_request_kelas LIKE '%$pencarian%'";
                 $query = $sql;
                 $queryJml = $sql;
               } else {
-                $query = "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.nama, tbl_data_calon_murid.id_calon_murid, tbl_data_calon_murid.tahun_pelajaran FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!='0' AND tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar LIMIT $posisi, $batas ";
-                $queryJml = "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.nama, tbl_data_calon_murid.id_calon_murid, tbl_data_calon_murid.tahun_pelajaran FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!='0' AND tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar";
+                $query = "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.nama, tbl_data_calon_murid.id_calon_murid, tbl_data_calon_murid.tahun_pelajaran FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar LIMIT $posisi, $batas ";
+                $queryJml = "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.nama, tbl_data_calon_murid.id_calon_murid, tbl_data_calon_murid.tahun_pelajaran FROM tbl_kelas, tbl_data_calon_murid WHERE  tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar";
                 $no = $posisi + 1;
               }
             } else {
-              $query = "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.tahun_pelajaran, tbl_data_calon_murid.nama, tbl_data_calon_murid.id_calon_murid FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!='0' AND tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar LIMIT $posisi, $batas ";
-              $queryJml = "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.tahun_pelajaran, tbl_data_calon_murid.nama, tbl_data_calon_murid.id_calon_murid FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!='0' AND tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar";
+              $query = "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.tahun_pelajaran, tbl_data_calon_murid.nama, tbl_data_calon_murid.id_calon_murid FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar LIMIT $posisi, $batas ";
+              $queryJml = "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.tahun_pelajaran, tbl_data_calon_murid.nama, tbl_data_calon_murid.id_calon_murid FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar";
               $no = $posisi + 1;
             }
 

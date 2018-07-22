@@ -16,8 +16,8 @@
 
     $pangkal = ceil($tampil['total_pangkal']);
 
-    $total   = $jumlah * $pangkal;
+    $totalpangkallunas   = $jumlah * $pangkal;
 
-	echo $total;
+	echo $totalpangkallunas;
 	
 ?>

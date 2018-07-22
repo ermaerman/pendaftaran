@@ -320,8 +320,8 @@
                   <td width="800"><i><font size="2px">Rp. <?php echo $total;?></font></i></td>
                 </tr>
               </table>
-               <p align="right">
-                <button type="submit" formaction="tu.php?content=detail-keuangan" class="btn btn-primary">Detail Transaksi</button></p>
+               <!-- <p align="right">
+                <button type="submit" formaction="tu.php?content=detail-keuangan" class="btn btn-primary">Detail Transaksi</button></p> -->
             </div>
           </div>
       </form>

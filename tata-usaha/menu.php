@@ -38,6 +38,8 @@
             </li>
             <li><a href='tu.php?content=naik-kelas2'><span>Naik Kelas XII</span></a>
             </li>
+            <li><a href='tu.php?content=lulus'><span>Lulus</span></a>
+            </li>
          </ul>
       </li>
       <li><a href='tu.php?content=data-murid'><i class="fa fa-clone fa-fw"></i>&nbsp; Data Murid</a></li>

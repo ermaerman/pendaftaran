@@ -62,7 +62,7 @@
             $query = mysqli_query($konek, "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_data_calon_murid.  tahun_pelajaran, tbl_kelas.id_request_kelas, tbl_data_calon_murid.nama FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas='0' AND tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar")or die(mysqli_error($konek));
 
                     if(mysqli_num_rows($query) == 0){
-                      echo '<tr><td colspan="5" align="center">Tidak ada data!</td></tr>';
+                      echo '<tr><td colspan="6" align="center">Tidak ada data!</td></tr>';
                     }
                       else
                     {

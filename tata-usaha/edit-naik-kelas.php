@@ -7,10 +7,33 @@
     $id_kelas = $_GET['id_kelas'];
     $kode_daftar = $_GET['kode_daftar'];
 
-
     $edit    = "SELECT * FROM tbl_kelas WHERE kode_daftar = '$kode_daftar'";
     $hasil   = mysqli_query($konek, $edit)or die(mysqli_error());
     $data    = mysqli_fetch_array($hasil);
+
+    $id_request_kelas = $data['id_request_kelas'];
+    // echo $id_request_kelas;
+
+    $select  = "SELECT tbl_kelas.tahun_pelajaran, tbl_request_kelas.id_request_kelas, tbl_request_kelas.keterangan FROM tbl_kelas, tbl_request_kelas WHERE tbl_kelas.kode_daftar = '$kode_daftar' AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas";
+    $que     = mysqli_query($konek,$select)or die(mysqli_error());
+    $tampil  = mysqli_fetch_array($que);
+
+    $keterangan   = $tampil['keterangan'];
+
+    $tahun        = $tampil['tahun_pelajaran'];
+
+    $replace      = str_replace('/', '', $tahun);
+
+    $thn          = $replace+10001;
+
+    $pertama      = substr($thn, 0,4);
+    
+    $kedua        = substr($thn, 4,8);
+
+    $thn_pelajaran= $pertama.'/'.$kedua;
+
+    $ket          = $keterangan+1;
+
 
 ?>
 
@@ -36,27 +59,18 @@
             <label class="col-sm-2">Kode Daftar</label>
             <label class="col-sm-1">:</label>
             <div class="col-sm-5">
-                <input class="form-control" name="kode_daftar" type="text" value="<?php echo $data['kode_daftar']; ?>" required>
+                <input class="form-control" name="kode_daftar" type="text" value="<?php echo $data['kode_daftar']; ?>" required readonly>
             </div>
         </div>
         <?php
 
+            //untuk mendapatkan prodi si siswa berdasarkan kode daftar
             $data    = "SELECT * FROM tbl_data_calon_murid WHERE kode_daftar = '$kode_daftar'";
             $query   = mysqli_query($konek,$data)or die(mysqli_error());
             $tampil  = mysqli_fetch_array($query);
 
             $prodi   = $tampil['prodi'];
-            //echo $prodi;
-            // echo '<br>';
-            // $select  = "SELECT COUNT(tbl_kelas.id_request_kelas) AS jumlah FROM tbl_kelas, tbl_request_kelas WHERE tbl_request_kelas.nama_kelas LIKE '%$prodi%' AND tbl_request_kelas.id_request_kelas = tbl_kelas.id_request_kelas";
 
-            $select  = "SELECT tbl_kelas.id_request_kelas  FROM tbl_kelas, tbl_request_kelas WHERE tbl_request_kelas.nama_kelas LIKE '%$prodi%' AND tbl_request_kelas.id_request_kelas = tbl_kelas.id_request_kelas";
-            $mysqli  = mysqli_query($konek,$select)or die(mysqli_error($konek));
-            $muncul  = mysqli_fetch_array($mysqli);
-
-            //$jumlah  = $muncul['jumlah'];
-
-            //echo $jumlah;
 
         ?>
         <div class="form-group">
@@ -68,8 +82,7 @@
                     <option>-- Pilih Kelas --</option>
                     <?php
 
-                        //$kelas = "SELECT * FROM tbl_request_kelas WHERE jumlah_murid != '$jumlah' AND nama_kelas LIKE '%$prodi%'";
-                        $kelas = "SELECT * FROM tbl_request_kelas WHERE nama_kelas LIKE '%$prodi%'";
+                        $kelas = "SELECT * FROM tbl_request_kelas WHERE nama_kelas LIKE '%$prodi%' AND keterangan='$ket' AND tahun_pelajaran = '$thn_pelajaran'";
                         $querykelas = mysqli_query($konek,$kelas);
                         while ($datakelas = mysqli_fetch_array($querykelas)) { ?>
                             <option value="<?php echo $datakelas['id_request_kelas']; ?>">
@@ -81,6 +94,8 @@
                     </select>
                   </div>
                 </div>
+                <input type="hidden" name="thn_pelajaran" value="<?php echo $thn_pelajaran ?>">
+                <input type="hidden" name="keterangan" value="<?php echo $keterangan ?>">
         <div class="form-group">
             <label class="control-label col-sm-4"></label>
             <div class="col-sm-6" align="right">

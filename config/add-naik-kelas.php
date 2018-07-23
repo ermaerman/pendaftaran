@@ -1,18 +1,34 @@
 <?php
 
-    error_reporting(0);
+    // error_reporting(0);
     
     include 'koneksi.php';
 
-    $nama           = $_POST["nama"];
-    $kode_daftar    = $_POST["kode_daftar"];
-    $kelas     		= $_POST["kelas"];
+    $kode_daftar  	   = $_POST['kode_daftar'];
+    $kd_daftar  	   = $_GET['kode_daftar'];
+    $thn_pelajaran     = $_POST['thn_pelajaran'];
+    $kelas 			   = $_POST['kelas'];
+    $keterangan 	   = $_POST['keterangan'];
 
-    $insert         = "INSERT INTO tbl_kelas VALUES ('','$kode_daftar','$kelas')";
+    if ($keterangan=='10') {
+    	$insert         = "INSERT INTO tbl_kelas VALUES ('','$thn_pelajaran','$kode_daftar','$kelas', '1','1','0')";
+    	$simpan         = mysqli_query($konek, $insert)or die(mysqli_error($konek));
+    	
+    	$update 		= "UPDATE tbl_kelas SET sebelas='1' WHERE kode_daftar='$kd_daftar'";
+    	$edit           = mysqli_query($konek, $update)or die(mysqli_error($konek));
 
-    $simpan         = mysqli_query($konek, $insert)or die(mysqli_error($konek));
+    	// echo "<br><br><br><strong><center><i>Anda berhasil menambahkan data naik kelas!";
+    	// echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../tata-usaha/tu.php?content=naik-kelas">';	
+    }
+    elseif ($keterangan=='11') {
+    	$insert         = "INSERT INTO tbl_kelas VALUES ('','$thn_pelajaran','$kode_daftar','$kelas', '1','1','1')";
+    	$simpan         = mysqli_query($konek, $insert)or die(mysqli_error($konek));
 
-    echo "<br><br><br><strong><center><i>Anda berhasil menambahkan data naik kelas!";
-    echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../tata-usaha/tu.php?content=naik-kelas">';  
+    	$update 		= "UPDATE tbl_kelas SET duabelas='1' WHERE kode_daftar='$kd_daftar'";
+    	$edit           = mysqli_query($konek, $update)or die(mysqli_error($konek));
+    	// echo "<br><br><br><strong><center><i>Anda berhasil menambahkan data naik kelas!";
+    	// echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../tata-usaha/tu.php?content=naik-kelas">';	
+    }
+      
 
 ?>

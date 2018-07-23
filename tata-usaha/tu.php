@@ -117,6 +117,8 @@
               include 'edit-murid-detail.php';
             else if ($content=='naik-kelas2')
               include 'naik-kelas2.php';
+             else if ($content=='lulus')
+              include 'lulus.php';
            ?>
 
 <div class="col-md-12" style="background:black;padding:8px;color:#fff;">

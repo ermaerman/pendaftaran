@@ -73,17 +73,17 @@
             if($_SERVER['REQUEST_METHOD'] == "POST") {
               $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
               if ($pencarian != '') {
-                $sql = "SELECT tbl_lks.id_lks, tbl_lks.kode_daftar, tbl_lks.lks, tbl_lks.keterangan, tbl_lks.status_buku, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_lks, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_lks.kode_daftar AND tbl_lks.kode_daftar LIKE '%$pencarian%'";
+                $sql = "SELECT DISTINCT tbl_lks.id_lks, tbl_lks.kode_daftar, tbl_lks.lks, tbl_lks.keterangan, tbl_lks.status_buku, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_lks, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_lks.kode_daftar AND tbl_lks.kode_daftar LIKE '%$pencarian%'";
                 $query = $sql;
                 $queryJml = $sql;
               } else {
-                $query = "SELECT tbl_lks.id_lks, tbl_lks.kode_daftar, tbl_lks.lks, tbl_lks.keterangan, tbl_lks.status_buku, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_lks, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_lks.kode_daftar LIMIT $posisi, $batas ";
-                $queryJml = "SELECT tbl_lks.id_lks, tbl_lks.kode_daftar, tbl_lks.lks, tbl_lks.keterangan, tbl_lks.status_buku, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_lks, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_lks.kode_daftar";
+                $query = "SELECT DISTINCT tbl_lks.id_lks, tbl_lks.kode_daftar, tbl_lks.lks, tbl_lks.keterangan, tbl_lks.status_buku, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_lks, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_lks.kode_daftar LIMIT $posisi, $batas ";
+                $queryJml = "SELECT DISTINCT tbl_lks.id_lks, tbl_lks.kode_daftar, tbl_lks.lks, tbl_lks.keterangan, tbl_lks.status_buku, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_lks, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_lks.kode_daftar";
                 $no = $posisi + 1;
               }
             } else {
-              $query = "SELECT tbl_lks.id_lks, tbl_lks.kode_daftar, tbl_lks.lks, tbl_lks.keterangan, tbl_lks.status_buku, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_lks, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_lks.kode_daftar LIMIT $posisi, $batas ";
-              $queryJml = "SELECT tbl_lks.id_lks, tbl_lks.kode_daftar, tbl_lks.lks, tbl_lks.keterangan, tbl_lks.status_buku, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_lks, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_lks.kode_daftar";
+              $query = "SELECT DISTINCT tbl_lks.id_lks, tbl_lks.kode_daftar, tbl_lks.lks, tbl_lks.keterangan, tbl_lks.status_buku, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_lks, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_lks.kode_daftar LIMIT $posisi, $batas ";
+              $queryJml = "SELECT DISTINCT tbl_lks.id_lks, tbl_lks.kode_daftar, tbl_lks.lks, tbl_lks.keterangan, tbl_lks.status_buku, tbl_data_calon_murid.kode_daftar, tbl_data_calon_murid.nama FROM tbl_lks, tbl_data_calon_murid WHERE tbl_data_calon_murid.kode_daftar=tbl_lks.kode_daftar";
               $no = $posisi + 1;
             }
 

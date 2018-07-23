@@ -28,13 +28,15 @@
       </li>
       <li class='active has-sub'><a href='#'><i class="fa fa-copy fa-fw"></i>&nbsp; Kelas</a>
          <ul>
-            <li><a href='tu.php?content=pembagian-kelas'><span>Pembagian Kelas Awal</span></a>
+            <li><a href='tu.php?content=request-kelas'><span>Tambah Kelas</span></a>
             </li>
-            <li><a href='tu.php?content=request-kelas'><span>Request Kelas</span></a>
+            <li><a href='tu.php?content=pembagian-kelas'><span>Pembagian Kelas Awal</span></a>
             </li>
             <li><a href='tu.php?content=lihat-kelas'><span>Kelas</span></a>
             </li>
-            <li><a href='tu.php?content=naik-kelas'><span>Naik Kelas</span></a>
+            <li><a href='tu.php?content=naik-kelas'><span>Naik Kelas XI</span></a>
+            </li>
+            <li><a href='tu.php?content=naik-kelas2'><span>Naik Kelas XII</span></a>
             </li>
          </ul>
       </li>

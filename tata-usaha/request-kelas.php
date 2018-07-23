@@ -29,12 +29,12 @@
 
 <div class="col-md-10" style="padding:0px">
     <ol class="breadcrumb" style="margin:0;border-radius:0;">
-        <li class="active"><a href="#">Kelas</a> / Request Kelas</li>
+        <li class="active"><a href="#">Kelas</a> / Tambah Kelas</li>
     </ol>
 </div>
    
 <div class="col-md-10" style="">
-  	<h3><b>Request</b> Kelas</h3>
+  	<h3><b>Tambah</b> Kelas</h3>
     <hr>
        <form class="form-inline" action="" method="POST">
       <div class="form-group" style="float:right;">
@@ -43,7 +43,7 @@
         <a href="tu.php?content=request-kelas"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
       </div>
     </form>
-     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle fa-fw"></i>Request Kelas</button>
+     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-circle fa-fw"></i>Tambah Kelas</button>
     <br>
     <br>
 </div>
@@ -54,6 +54,7 @@
         <thead>
           <tr>
             <th>No</th>
+            <th>Tahun Pelajaran</th>
             <th>Nama Kelas</th>
             <th>Jumlah Murid</th>
             <th>Status</th>
@@ -102,6 +103,7 @@
                         ?>
                         <tr>
                         <td><?php echo $no ?></td>
+                        <td><?php echo $data['tahun_pelajaran'] ?></td>
                         <td><?php
                         $kalimat = $data['nama_kelas'];
                         $kalimat_new = ucwords($kalimat);
@@ -164,30 +166,47 @@
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <p align="center"><img src="../gambar/manda.png" alt="" height="100px" width="130px"></p>
             <p align="center"><font size="2px"><i>Sistem Informasi Pendaftaran SMK Mandalahayu II Bekasi</i></font></p>
-            <h4 class="modal-title" align="center"><b>Request Kelas</b></h4>
+            <h4 class="modal-title" align="center"><b>Tambah Kelas</b></h4>
           </div>
           <div class="modal-body">
             <form action="../config/add-request-kelas.php" class="form-horizontal" method="POST">
               <div class="form-group">
                 <label class="col-sm-1"></label>
-                <label class="col-sm-3">Nama Kelas</label>
+                <label class="col-sm-3">Tahun Pelajaran</label>
                 <label class="col-sm-1">:</label>
                   <div class="col-sm-6">
-                      <input type="text" style="text-transform: capitalize;" class="form-control" name="nama_kelas" placeholder="Nama Kelas" required>
+                      <input type="text" class="form-control" name="tahun_pelajaran" placeholder="Tahun Pelajaran" required>
                   </div>
               </div>
               <div class="form-group">
                 <label class="col-sm-1"></label>
-                <label class="col-sm-3">Jumlah Murid</label>
+                <label class="col-sm-3">Kelas</label>
                 <label class="col-sm-1">:</label>
                   <div class="col-sm-6">
-                      <input type="number" min="1" max="30" class="form-control" name="jumlah_murid" placeholder="Jumlah Kelas" required>
+                      <select class="form-control" id="nama_kelas" name="kelas" required>
+                      <option>-- Pilih Kelas --</option>
+                      <option value="X">X</option>
+                      <option value="XI">XI</option>
+                      <option value="XII">XII</option>
+                    </select> 
+                  </div>
+              </div>
+               <div class="form-group">
+                <label class="col-sm-1"></label>
+                <label class="col-sm-3">Prodi</label>
+                <label class="col-sm-1">:</label>
+                  <div class="col-sm-6">
+                      <select class="form-control" id="prodi" name="prodi" required>
+                      <option>-- Pilih Prodi --</option>
+                      <option value="Multimedia">Multimedia</option>
+                      <option value="TKJ">TKJ</option>
+                    </select> 
                   </div>
               </div>
               <div class="form-group">
                   <label class="control-label col-sm-5"></label>
                   <div class="col-sm-6" align="right">
-                      <button class="btn btn-primary">Request</button>
+                      <button class="btn btn-primary">Tambah Kelas</button>
                   </div>
               </div>
             </form>

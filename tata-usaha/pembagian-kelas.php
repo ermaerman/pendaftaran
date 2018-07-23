@@ -46,6 +46,7 @@
         <thead>
           <tr>
             <th>No</th>
+            <th>Tahun Pelajaran</th>
             <th>Kode Daftar</th>
             <th>Nama</th>
             <th>Kelas</th>
@@ -58,7 +59,7 @@
             include '../config/koneksi.php';
 
             
-            $query = mysqli_query($konek, "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_kelas.id_request_kelas, tbl_data_calon_murid.nama FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas='0' AND tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar")or die(mysqli_error($konek));
+            $query = mysqli_query($konek, "SELECT tbl_kelas.id_kelas, tbl_kelas.kode_daftar, tbl_data_calon_murid.  tahun_pelajaran, tbl_kelas.id_request_kelas, tbl_data_calon_murid.nama FROM tbl_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas='0' AND tbl_kelas.kode_daftar=tbl_data_calon_murid.kode_daftar")or die(mysqli_error($konek));
 
                     if(mysqli_num_rows($query) == 0){
                       echo '<tr><td colspan="5" align="center">Tidak ada data!</td></tr>';
@@ -69,6 +70,7 @@
                       while($data = mysqli_fetch_array($query)){
                         echo '<tr>';
                         echo '<td>'.$no.'</td>';
+                        echo '<td>'.$data['tahun_pelajaran'].'</td>';
                         echo '<td>'.$data['kode_daftar'].'</td>';
                         echo '<td>'.$data['nama'].'</td>';
                         ?>
@@ -82,7 +84,7 @@
                         </td>
                         <?php
                         // echo '<td>'.$data['id_request_kelas']=.'</td>';
-                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Edit Kelas" href=tu.php?content=edit-kelas&&kode_daftar='.$data['kode_daftar'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
+                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Edit Kelas" href=tu.php?content=edit-kelas&&kode_daftar='.$data['kode_daftar'].'&&tahun_pelajaran='.$data['tahun_pelajaran'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
                         echo '</tr>';
                         $no++;
                       }

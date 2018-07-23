@@ -50,7 +50,7 @@
         <thead>
           <tr>
             <th>No</th>
-            <th>ID</th>
+            <th>Tahun Pelajaran</th>
             <th>Kelas</th>
             <th><center>Lihat Data Murid</center></th>
           </tr>
@@ -98,7 +98,7 @@
                       while($data = mysqli_fetch_array($querydata)){
                         echo '<tr>';
                         echo '<td>'.$no.'</td>';
-                        echo '<td>'.$data['id_request_kelas'].'</td>';
+                        echo '<td>'.$data['tahun_pelajaran'].'</td>';
                         echo '<td>'.$data['nama_kelas'].'</td>';
                         echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Lihat Data Murid" href=tu.php?content=lihat-kelas-detail&&id_request_kelas='.$data['id_request_kelas'].'><i class="fa fa-bars fa-fw"></i></a></center></td>';
                         echo '</tr>';

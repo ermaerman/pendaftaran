@@ -4,10 +4,21 @@
 	
 	include 'koneksi.php';
 
-	$nama_kelas		   	= $_POST["nama_kelas"];
-	$jumlah_murid	   	= $_POST["jumlah_murid"];
+	$tahun_pelajaran   	= $_POST["tahun_pelajaran"];
+	$nama_kelas		   	= $_POST["kelas"];
+	$prodi			   	= $_POST["prodi"];
 
-	$insert			= "INSERT INTO tbl_request_kelas VALUES ('','$nama_kelas','0', '$jumlah_murid')";
+	$kelas  			= $nama_kelas."-".$prodi;
+
+	if ($nama_kelas=='X') {
+		$kls = '10';
+	} elseif ($nama_kelas=='XI') {
+		$kls = '11';
+	} else {
+		$kls = '12';
+	}
+
+	$insert			= "INSERT INTO tbl_request_kelas VALUES ('','$tahun_pelajaran','$kelas','0','0','$kls')";
 
 	$simpan			= mysqli_query($konek, $insert)or die(mysqli_error($konek));
 

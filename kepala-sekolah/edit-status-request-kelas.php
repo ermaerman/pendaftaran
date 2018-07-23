@@ -37,10 +37,6 @@
                   <th><font size="2px">Status</font></th>
                   <td><font size="2px"><i><?php echo $data['status']; ?></i></font></td>
                 </tr>
-                <tr>
-                  <th><font size="2px">Jumlah Murid</font></th>
-                  <td><font size="2px"><i><?php echo $data['jumlah_murid']; ?></i></font></td>
-                </tr>
               </table>
               <p align="right">
                 <button type="submit" formaction="../config/update-request-kelas.php?id_request_kelas=<?php echo $data['id_request_kelas'] ?>" class="btn btn-primary">Konfirmasi</button>

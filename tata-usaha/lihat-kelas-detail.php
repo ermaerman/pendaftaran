@@ -66,7 +66,7 @@
              //error_reporting(0);
 
              $id_request_kelas = $_GET['id_request_kelas'];
-             echo $id_request_kelas;
+             //echo $id_request_kelas;
 
             $batas  = 8;
             $hal    = @$_GET['hal'];
@@ -79,17 +79,17 @@
             if($_SERVER['REQUEST_METHOD'] == "POST") {
               $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
               if ($pencarian != '') {
-                $sql = "SELECT tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_kelas.kode_daftar, tbl_data_calon_murid.nama, tbl_data_calon_murid.tahun_pelajaran, tbl_request_kelas.nama_kelas FROM tbl_kelas, tbl_data_calon_murid, tbl_request_kelas WHERE tbl_kelas.id_request_kelas = '$id_request_kelas' AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas AND tbl_kelas.kode_daftar LIKE '%$pencarian%' OR tbl_data_calon_murid.nama LIKE '%$pencarian%' OR tbl_kelas.id_request_kelas LIKE '%$pencarian%'";
+                $sql = "SELECT tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_kelas.kode_daftar, tbl_data_calon_murid.nama, tbl_data_calon_murid.id_calon_murid, tbl_data_calon_murid.tahun_pelajaran, tbl_request_kelas.nama_kelas FROM tbl_kelas, tbl_data_calon_murid, tbl_request_kelas WHERE tbl_kelas.id_request_kelas = '$id_request_kelas' AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas AND tbl_kelas.kode_daftar LIKE '%$pencarian%' OR tbl_data_calon_murid.nama LIKE '%$pencarian%' OR tbl_kelas.id_request_kelas LIKE '%$pencarian%'";
                 $query = $sql;
                 $queryJml = $sql;
               } else {
-                $query = "SELECT tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_kelas.kode_daftar, tbl_data_calon_murid.nama, tbl_data_calon_murid.tahun_pelajaran, tbl_request_kelas.nama_kelas FROM tbl_kelas, tbl_data_calon_murid, tbl_request_kelas WHERE tbl_kelas.id_request_kelas = '$id_request_kelas' AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas LIMIT $posisi, $batas ";
-                $queryJml = "SELECT tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_kelas.kode_daftar, tbl_data_calon_murid.nama, tbl_data_calon_murid.tahun_pelajaran, tbl_request_kelas.nama_kelas FROM tbl_kelas, tbl_data_calon_murid, tbl_request_kelas WHERE tbl_kelas.id_request_kelas = '$id_request_kelas' AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas";
+                $query = "SELECT tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_kelas.kode_daftar, tbl_data_calon_murid.nama, tbl_data_calon_murid.tahun_pelajaran, tbl_data_calon_murid.id_calon_murid, tbl_request_kelas.nama_kelas FROM tbl_kelas, tbl_data_calon_murid, tbl_request_kelas WHERE tbl_kelas.id_request_kelas = '$id_request_kelas' AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas LIMIT $posisi, $batas ";
+                $queryJml = "SELECT tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_kelas.kode_daftar, tbl_data_calon_murid.nama, tbl_data_calon_murid.id_calon_murid, tbl_data_calon_murid.tahun_pelajaran, tbl_request_kelas.nama_kelas FROM tbl_kelas, tbl_data_calon_murid, tbl_request_kelas WHERE tbl_kelas.id_request_kelas = '$id_request_kelas' AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas";
                 $no = $posisi + 1;
               }
             } else {
-              $query = "SELECT tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_kelas.kode_daftar, tbl_data_calon_murid.nama, tbl_data_calon_murid.tahun_pelajaran, tbl_request_kelas.nama_kelas FROM tbl_kelas, tbl_data_calon_murid, tbl_request_kelas WHERE tbl_kelas.id_request_kelas = '$id_request_kelas' AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas LIMIT $posisi, $batas ";
-              $queryJml = "SELECT tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_kelas.kode_daftar, tbl_data_calon_murid.nama, tbl_data_calon_murid.tahun_pelajaran, tbl_request_kelas.nama_kelas FROM tbl_kelas, tbl_data_calon_murid, tbl_request_kelas WHERE tbl_kelas.id_request_kelas = '$id_request_kelas' AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas";
+              $query = "SELECT tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_kelas.kode_daftar, tbl_data_calon_murid.nama, tbl_data_calon_murid.tahun_pelajaran, tbl_request_kelas.nama_kelas, tbl_data_calon_murid.id_calon_murid FROM tbl_kelas, tbl_data_calon_murid, tbl_request_kelas WHERE tbl_kelas.id_request_kelas = '$id_request_kelas' AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas LIMIT $posisi, $batas ";
+              $queryJml = "SELECT tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_kelas.kode_daftar, tbl_data_calon_murid.nama, tbl_data_calon_murid.tahun_pelajaran, tbl_data_calon_murid.id_calon_murid, tbl_request_kelas.nama_kelas FROM tbl_kelas, tbl_data_calon_murid, tbl_request_kelas WHERE tbl_kelas.id_request_kelas = '$id_request_kelas' AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas";
               $no = $posisi + 1;
             }
 
@@ -97,7 +97,7 @@
             $querydata = mysqli_query($konek, $query)or die(mysqli_error($konek));
 
                     if(mysqli_num_rows($querydata) == 0){
-                      echo '<tr><td colspan="5" align="center">Tidak ada data!</td></tr>';
+                      echo '<tr><td colspan="7" align="center">Tidak ada data!</td></tr>';
                     }
                       else
                     {
@@ -123,7 +123,7 @@
                         </td>
                         <?php
                         // echo '<td>'.$data['id_request_kelas']=.'</td>';
-                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Edit Kelas" href=tu.php?content=edit-murid&&id_calon_murid='.$data['id_calon_murid'].'><i class="fa fa-bars fa-fw"></i></a></center></td>';
+                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Edit Kelas" href=tu.php?content=edit-murid-detail&&id_calon_murid='.$data['id_calon_murid'].'><i class="fa fa-bars fa-fw"></i></a></center></td>';
                         echo '</tr>';
                         $no++;
                       }

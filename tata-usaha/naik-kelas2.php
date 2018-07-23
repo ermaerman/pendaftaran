@@ -28,18 +28,18 @@
 
 <div class="col-md-10" style="padding:0px">
     <ol class="breadcrumb" style="margin:0;border-radius:0;">
-        <li class="active"><a href="#">Kelas</a> / Naik Kelas XI</li>
+        <li class="active"><a href="#">Kelas</a> / Naik Kelas XII</li>
     </ol>
 </div>
    
 <div class="col-md-10" style="">
-    <h3><b>Naik</b> Kelas XI</h3>
+    <h3><b>Naik</b> Kelas XII</h3>
     <hr>
        <form class="form-inline" action="" method="POST">
       <div class="form-group">
         <input size="134px" type="text" name="pencarian" class="form-control" placeholder="Masukkan kode daftar atau nama murid">
         <button type="submit" class="btn btn-primary"><i class="fa fa-search fa-fw"></i></button>
-        <a href="tu.php?content=naik-kelas"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
+        <a href="tu.php?content=naik-kelas2"><button type="button" class="btn btn-warning"><i class="fa fa-refresh fa-fw"></i></button></a>
       </div>
     </form>
 </div>
@@ -50,6 +50,7 @@
         <thead>
           <tr>
             <th>No</th>
+            <th>ID</th>
             <th>Tahun Pelajaran</th>
             <th>Kode Daftar</th>
             <th>Nama</th>
@@ -74,17 +75,17 @@
             if($_SERVER['REQUEST_METHOD'] == "POST") {
               $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
               if ($pencarian != '') {
-                $sql = "SELECT tbl_kelas.kode_daftar, tbl_kelas.tahun_pelajaran, tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_request_kelas.keterangan, tbl_data_calon_murid.nama FROM tbl_kelas, tbl_request_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!=0 AND tbl_request_kelas.keterangan='10' AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar AND tbl_kelas.kode_daftar LIKE '%$pencarian%' OR tbl_data_calon_murid.nama LIKE '%$pencarian%' OR tbl_kelas.id_request_kelas LIKE '%$pencarian%' ORDER BY tbl_kelas.tahun_pelajaran DESC";
+                $sql = "SELECT tbl_kelas.kode_daftar, tbl_kelas.tahun_pelajaran, tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_request_kelas.keterangan, tbl_data_calon_murid.nama FROM tbl_kelas, tbl_request_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!=0 AND tbl_request_kelas.keterangan='11' AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar AND tbl_kelas.kode_daftar LIKE '%$pencarian%' OR tbl_data_calon_murid.nama LIKE '%$pencarian%' OR tbl_kelas.id_request_kelas LIKE '%$pencarian%' ORDER BY tbl_kelas.tahun_pelajaran DESC";
                 $query = $sql;
                 $queryJml = $sql;
               } else {
-                $query = "SELECT tbl_kelas.kode_daftar, tbl_kelas.tahun_pelajaran, tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_request_kelas.keterangan, tbl_data_calon_murid.nama FROM tbl_kelas, tbl_request_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!=0 AND tbl_request_kelas.keterangan='10' AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar ORDER BY tbl_kelas.tahun_pelajaran DESC LIMIT $posisi, $batas ";
-                $queryJml = "SELECT tbl_kelas.kode_daftar, tbl_kelas.tahun_pelajaran, tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_request_kelas.keterangan, tbl_data_calon_murid.nama FROM tbl_kelas, tbl_request_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!=0 AND tbl_request_kelas.keterangan='10' AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar ORDER BY tbl_kelas.tahun_pelajaran DESC";
+                $query = "SELECT tbl_kelas.kode_daftar, tbl_kelas.tahun_pelajaran, tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_request_kelas.keterangan, tbl_data_calon_murid.nama FROM tbl_kelas, tbl_request_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!=0 AND tbl_request_kelas.keterangan='11' AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar ORDER BY tbl_kelas.tahun_pelajaran DESC LIMIT $posisi, $batas ";
+                $queryJml = "SELECT tbl_kelas.kode_daftar, tbl_kelas.tahun_pelajaran, tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_request_kelas.keterangan, tbl_data_calon_murid.nama FROM tbl_kelas, tbl_request_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!=0 AND tbl_request_kelas.keterangan='11' AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar ORDER BY tbl_kelas.tahun_pelajaran DESC";
                 $no = $posisi + 1;
               }
             } else {
-              $query = "SELECT tbl_kelas.kode_daftar, tbl_kelas.tahun_pelajaran, tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_request_kelas.keterangan, tbl_data_calon_murid.nama FROM tbl_kelas, tbl_request_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!=0 AND tbl_request_kelas.keterangan='10' AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar ORDER BY tbl_kelas.tahun_pelajaran DESC LIMIT $posisi, $batas ";
-              $queryJml = "SELECT tbl_kelas.kode_daftar, tbl_kelas.tahun_pelajaran, tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_request_kelas.keterangan, tbl_data_calon_murid.nama FROM tbl_kelas, tbl_request_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!=0 AND tbl_request_kelas.keterangan='10' AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar ORDER BY tbl_kelas.tahun_pelajaran DESC";
+              $query = "SELECT tbl_kelas.kode_daftar, tbl_kelas.tahun_pelajaran, tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_request_kelas.keterangan, tbl_data_calon_murid.nama FROM tbl_kelas, tbl_request_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!=0 AND tbl_request_kelas.keterangan='11' AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar ORDER BY tbl_kelas.tahun_pelajaran DESC LIMIT $posisi, $batas ";
+              $queryJml = "SELECT tbl_kelas.kode_daftar, tbl_kelas.tahun_pelajaran, tbl_kelas.id_request_kelas, tbl_request_kelas.nama_kelas, tbl_request_kelas.keterangan, tbl_data_calon_murid.nama FROM tbl_kelas, tbl_request_kelas, tbl_data_calon_murid WHERE tbl_kelas.id_request_kelas!=0 AND tbl_request_kelas.keterangan='11' AND tbl_kelas.id_request_kelas = tbl_request_kelas.id_request_kelas AND tbl_data_calon_murid.kode_daftar = tbl_kelas.kode_daftar ORDER BY tbl_kelas.tahun_pelajaran DESC";
               $no = $posisi + 1;
             }
 
@@ -100,6 +101,7 @@
                       while($data = mysqli_fetch_array($querydata)){
                         echo '<tr>';
                         echo '<td>'.$no.'</td>';
+                        echo '<td>'.$data['id_calon_murid'].'</td>';
                         echo '<td>'.$data['tahun_pelajaran'].'</td>';
                         echo '<td>'.$data['kode_daftar'].'</td>';
                         echo '<td>'.$data['nama'].'</td>';
@@ -148,7 +150,7 @@
             $jml_hal = ceil($jml / $batas);
             for ($i=1; $i <= $jml_hal; $i++) {
               if ($i != $hal) {
-                echo "<li><a href=\"admin.php?content=naik-kelas&&hal=$i\">$i</a></li>";
+                echo "<li><a href=\"admin.php?content=naik-kelas2&&hal=$i\">$i</a></li>";
               } else {
                 echo "<li class=\"active\"><a>$i</a></li>";
               }

@@ -3,9 +3,10 @@
 	include 'koneksi.php';
 
     $kode_daftar            = $_POST['kode_daftar'];
+    $tahun_pelajaran        = $_POST['tahun_pelajaran'];
     $kelas                  = $_POST['kelas'];
 
-    $update     = "UPDATE tbl_kelas SET kode_daftar='$kode_daftar', id_request_kelas='$kelas' WHERE kode_daftar='$kode_daftar'";
+    $update     = "UPDATE tbl_kelas SET kode_daftar='$kode_daftar', tahun_pelajaran='$tahun_pelajaran', id_request_kelas='$kelas' WHERE kode_daftar='$kode_daftar'";
 
 	$update	= mysqli_query($konek, $update)or die(mysqli_error($konek));
 

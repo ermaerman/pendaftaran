@@ -6,6 +6,7 @@
 
     $id_kelas = $_GET['id_kelas'];
     $kode_daftar = $_GET['kode_daftar'];
+    $tahun_pelajaran = $_GET['tahun_pelajaran'];
 
 
     $edit    = "SELECT * FROM tbl_kelas WHERE kode_daftar = '$kode_daftar'";
@@ -30,6 +31,7 @@
     <br>
     <br>
     <form class="form-horizontal" action="../config/edit-keterangan-kelas.php" method="POST">
+        <input type="hidden" name="tahun_pelajaran" value="<?php echo $tahun_pelajaran ?>">
         <input type="hidden" name="id_kelas" value="<?php echo $id_kelas ?>">
         <div class="form-group">
             <label class="col-sm-2"></label>
@@ -50,7 +52,7 @@
             // echo '<br>';
             // $select  = "SELECT COUNT(tbl_kelas.id_request_kelas) AS jumlah FROM tbl_kelas, tbl_request_kelas WHERE tbl_request_kelas.nama_kelas LIKE '%$prodi%' AND tbl_request_kelas.id_request_kelas = tbl_kelas.id_request_kelas";
 
-            $select  = "SELECT tbl_kelas.id_request_kelas  FROM tbl_kelas, tbl_request_kelas WHERE tbl_request_kelas.nama_kelas LIKE '%$prodi%' AND tbl_request_kelas.id_request_kelas = tbl_kelas.id_request_kelas";
+            $select  = "SELECT tbl_kelas.id_request_kelas  FROM tbl_kelas, tbl_request_kelas WHERE tbl_request_kelas.nama_kelas LIKE '%$prodi%' AND tbl_request_kelas.id_request_kelas = tbl_kelas.id_request_kelas AND tbl_request_kelas.tahun_pelajaran = tbl_kelas.tahun_pelajaran ";
             $mysqli  = mysqli_query($konek,$select)or die(mysqli_error($konek));
             $muncul  = mysqli_fetch_array($mysqli);
 
@@ -60,6 +62,7 @@
 
         ?>
         <div class="form-group">
+
                   <label class="col-sm-2"></label>
                   <label class="col-sm-2">Kelas</label>
                   <label class="col-sm-1">:</label>
@@ -68,7 +71,7 @@
                     <option>-- Pilih Kelas --</option>
                     <?php
                         //$kelas = "SELECT * FROM tbl_request_kelas WHERE jumlah_murid != '$jumlah' AND nama_kelas LIKE '%$prodi%'";
-                        $kelas = "SELECT * FROM tbl_request_kelas WHERE nama_kelas LIKE '%$prodi%'";
+                        $kelas = "SELECT * FROM tbl_request_kelas WHERE nama_kelas LIKE '%$prodi%' AND nama_kelas NOT LIKE '%XI%' AND nama_kelas NOT LIKE '%XII%'";
                         $querykelas = mysqli_query($konek,$kelas);
                         while ($datakelas = mysqli_fetch_array($querykelas)) { ?>
                             <option value="<?php echo $datakelas['id_request_kelas']; ?>">

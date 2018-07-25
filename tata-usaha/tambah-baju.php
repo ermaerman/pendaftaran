@@ -15,7 +15,7 @@
   th {
       background-color: #3bacd6;
       color: white;
-      font-size: 14px;
+      font-size: 12px;
   }
 
   td {
@@ -144,6 +144,8 @@
               <tr>
                 <th>No</th>
                 <th>Kode Daftar</th>
+                <th>Nama</th>
+                <th>Kelas</th>
                 <th>Seragam Putih Abu</th>
                 <th>Seragam Olahraga</th>
                 <th>Seragam Batik</th>
@@ -197,6 +199,8 @@
                             echo '<tr>';
                             echo '<td>'.$no.'</td>';
                             echo '<td>'.$data['kode_daftar'].'</td>';
+                            echo '<td>'.$data['nama'].'</td>';
+                            echo '<td>'.$data['nama'].'</td>';
                             echo '<td>'.$data['seragam_putih_abu'].'</td>';
                             echo '<td>'.$data['seragam_olahraga'].'</td>';
                             echo '<td>'.$data['seragam_batik'].'</td>';

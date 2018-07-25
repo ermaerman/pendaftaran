@@ -33,7 +33,7 @@
 </div>
    
 <div class="col-md-10" style="">
-    <h3><b>Lulus</b></h3>
+    <h3><b>Kelulusan</b></h3>
     <hr>
        <form class="form-inline" action="" method="POST">
       <div class="form-group">

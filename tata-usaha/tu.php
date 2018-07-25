@@ -107,6 +107,8 @@
               include 'lihat-kelas.php';
             else if ($content=='edit-naik-kelas')
               include 'edit-naik-kelas.php';
+             else if ($content=='edit-naik-kelas2')
+              include 'edit-naik-kelas2.php';
             else if ($content=='detail-keuangan')
               include 'detail-keuangan.php';
             else if ($content=='tambah-baju')

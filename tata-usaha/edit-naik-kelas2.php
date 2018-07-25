@@ -1,6 +1,6 @@
 <?php
 
-    error_reporting(0);
+    //error_reporting(0);
 
     include '../config/koneksi.php';
 
@@ -19,21 +19,30 @@
     $tampil  = mysqli_fetch_array($que);
 
 
+
     $keterangan   = $tampil['keterangan'];
 
     $tahun        = $tampil['tahun_pelajaran'];
 
     $replace      = str_replace('/', '', $tahun);
 
-    $thn          = $replace+10001;
+    $thn          = $replace+20002;
+
+    $thn2         = $replace+10001;
 
     $pertama      = substr($thn, 0,4);
     
     $kedua        = substr($thn, 4,8);
 
+    $pertama2      = substr($thn2, 0,4);
+    
+    $kedua2        = substr($thn2, 4,8);
+
+    $thn_pelajaran2= $pertama2.'/'.$kedua2;
+
     $thn_pelajaran= $pertama.'/'.$kedua;
 
-    $ket          = $keterangan+1;
+    $ket          = $keterangan+2;
 
 
 ?>
@@ -53,7 +62,7 @@
     <br>
     <br>
     <br>
-    <form class="form-horizontal" action="../config/add-naik-kelas.php" method="POST">
+    <form class="form-horizontal" action="../config/add-naik-kelas2.php" method="POST">
         <input type="hidden" name="id_kelas" value="<?php echo $id_kelas ?>">
         <div class="form-group">
             <label class="col-sm-2"></label>
@@ -97,6 +106,7 @@
                 </div>
                 <input type="text" name="thn_pelajaran" value="<?php echo $thn_pelajaran ?>">
                 <input type="text" name="tahun" value="<?php echo $tahun ?>">
+                <input type="text" name="thn_pelajaran2" value="<?php echo $thn_pelajaran2 ?>">
                 <input type="text" name="keterangan" value="<?php echo $keterangan ?>">
         <div class="form-group">
             <label class="control-label col-sm-4"></label>

@@ -119,7 +119,7 @@
                         </td>
                         <?php
                         // echo '<td>'.$data['id_request_kelas']=.'</td>';
-                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Naik Kelas" href=tu.php?content=edit-naik-kelas&&kode_daftar='.$data['kode_daftar'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
+                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Naik Kelas" href=tu.php?content=edit-naik-kelas2&&kode_daftar='.$data['kode_daftar'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
                         echo '</tr>';
                         $no++;
                       }

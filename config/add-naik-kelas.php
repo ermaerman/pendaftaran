@@ -12,7 +12,7 @@
     $tahun             = $_POST['tahun'];
 
     
-    	$insert         = "INSERT INTO tbl_kelas VALUES ('','$thn_pelajaran','$kode_daftar','$kelas', '1','1','0')";
+    	$insert         = "INSERT INTO tbl_kelas VALUES ('','$thn_pelajaran','$kode_daftar','$kelas', '1','1','0','0')";
     	$simpan         = mysqli_query($konek, $insert)or die(mysqli_error($konek));
     	
     	$update 		= "UPDATE tbl_kelas SET sebelas='1' WHERE kode_daftar='$kd_daftar'";

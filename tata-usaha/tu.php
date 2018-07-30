@@ -121,6 +121,8 @@
               include 'naik-kelas2.php';
              else if ($content=='lulus')
               include 'lulus.php';
+            else if ($content=='edit-lulus')
+              include 'edit-lulus.php';
            ?>
 
 <div class="col-md-12" style="background:black;padding:8px;color:#fff;">

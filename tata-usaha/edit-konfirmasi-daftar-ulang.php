@@ -52,7 +52,7 @@
               </table>
               <p align="right">
                 <?php if ($data['validasi_daftar_ulang1']==1) {
-                  echo '<button type="submit" formaction="../config/batal-konfirmasi-daftar-ulang1.php" class="btn btn-danger">Batal Konfirmasi</button>';
+                  //echo '<button type="submit" formaction="../config/batal-konfirmasi-daftar-ulang1.php" class="btn btn-danger">Batal Konfirmasi</button>';
                 } else {
                   echo ' <button type="submit" formaction="../config/update-konfirmasi-daftar-ulang1.php" class="btn btn-primary">Konfirmasi</button>';
                 }
@@ -93,7 +93,7 @@
               </table>
               <p align="right">
                 <?php if ($data['validasi_daftar_ulang2']==1) {
-                  echo '<button type="submit" formaction="../config/batal-konfirmasi-daftar-ulang2.php" class="btn btn-danger">Batal Konfirmasi</button>';
+                  //echo '<button type="submit" formaction="../config/batal-konfirmasi-daftar-ulang2.php" class="btn btn-danger">Batal Konfirmasi</button>';
                 } else {
                   echo '<button type="submit" formaction="../config/update-konfirmasi-daftar-ulang2.php" class="btn btn-primary">Konfirmasi</button>';
                 }

@@ -57,7 +57,7 @@
           <?php
           include '../config/koneksi.php';
 
-          error_reporting(0);
+          //error_reporting(0);
 
           $batas  = 10;
           $hal    = @$_GET['hal'];
@@ -140,25 +140,6 @@
         </div>
         <?php
             }
-            // $edit    = "SELECT COUNT(validasi_daftar) AS jumlah FROM tbl_pembayaran WHERE validasi_daftar='1'";
-            // $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
-            // $data    = mysqli_fetch_array($hasil);  
-
-            // $jumlah  = $data['jumlah'];
-
-            // $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
-            // $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
-            // $data    = mysqli_fetch_array($hasil);  
-
-            // $pendaftaran = ceil($data['biaya_pendaftaran']);
-
-            // $total1   = $jumlah * $pendaftaran;
-            // echo '<br>';
-            // echo '<hr>';
-            //  echo '<table>';
-            //  echo '<tr>';
-            //  echo '<td width="300"><b>Total Keuangan Administrasi Pendaftaran</b></td><td>:</td> <td><i>Rp '.$total1.'</i></td></tr>';
-            //  echo '</table>';
           ?>
           <br>
           <br>
@@ -167,14 +148,14 @@
               <label class="control-label col-sm-2"><p align="left">Tahun Ajaran</p></label>
                <label class="control-label col-sm-1">:</label>
               <div class="col-sm-3">
-                  <select class="form-control" name="id_tahun" id="tahun">
+                  <select class="form-control" name="tahun_pelajaran" id="tahun">
                       <option>--Pilih Tahun Pelajaran--</option>
                       <?php
-                      $tahun       = "SELECT * FROM tbl_tahun_pelajaran";
-                      $queryTahun  = mysqli_query($konek,$tahun);
-                      while ($dataTahun = mysqli_fetch_array($queryTahun)) { ?>
-                          <option value="<?php echo $dataTahun['tahun_pelajaran'] ?>"><?php echo $dataTahun["tahun_pelajaran"] ?>
-                          </option>
+                        $tahun       = "SELECT * FROM tbl_tahun_pelajaran";
+                        $queryTahun  = mysqli_query($konek,$tahun);
+                        while ($data = mysqli_fetch_array($queryTahun)) { ?>
+                            <option value="<?php echo $data['tahun_pelajaran'] ?>"><?php echo $data["tahun_pelajaran"] ?>
+                            </option>
                       <?php
                       }
                       ?>
@@ -184,10 +165,10 @@
             </div>
             <div class="form-group">
               <label class=""></label>
-               <label class="control-label col-sm-2"><p align="left">Total Keuangan</p></label>
-               <label class="control-label col-sm-1">:</label>
+              <label class="control-label col-sm-2"><p align="left">Total Keuangan (Rp.)</p></label>
+              <label class="control-label col-sm-1">:</label>
               <div class="col-sm-3">
-                  <input class="form-control" name="pendaftaran" id="total" readonly>
+                  <input class="form-control" id="total" readonly>
                   
                   </input>
               </div>
@@ -198,16 +179,15 @@
 
 <!-- Javascript untuk memanggil Kelas dari Tujuan dan Jumlah Pembayaran -->
 <script type="text/javascript">
-
-    $( "#tahun" ).change(function() {
-      var tahun_pelajaran = $("#tahun").val();
-      console.log(tahun);
-      $.ajax({
-        url: "./ajax_total_pendaftaran.php?tahun_pelajaran=" + tahun_pelajaran,
-        success: function(result){
-            console.log(result);
-          $("#total").val(result);
-        }
-      });
-    });
+  $("#tahun").change(function() {
+     var tahun_pelajaran = $("#tahun").val();
+     console.log(tahun_pelajaran);
+     $.ajax({
+       url: "./ajax_daftar.php?tahun_pelajaran=" + tahun_pelajaran,
+       success: function(result){
+         console.log(result);
+         $("#total").val(result);
+       }
+     });
+  });
 </script>

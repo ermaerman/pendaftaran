@@ -51,7 +51,7 @@
           </table>
           <p align="right">
             <?php if ($data['validasi_pangkal_lunas']==1) {
-              echo '<button type="submit" formaction="../config/batal-konfirmasi-bayar-lunas.php" class="btn btn-danger">Batal Konfirmasi</button>';
+              //echo '<button type="submit" formaction="../config/batal-konfirmasi-bayar-lunas.php" class="btn btn-danger">Batal Konfirmasi</button>';
             } else {
               echo '<button type="submit" formaction="../config/update-konfirmasi-bayar-lunas.php" class="btn btn-primary">Konfirmasi</button>';
             }

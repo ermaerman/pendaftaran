@@ -182,7 +182,7 @@
             </div>
             <div class="form-group">
               <label class=""></label>
-               <label class="control-label col-sm-2"><p align="left">Total Keuangan</p></label>
+               <label class="control-label col-sm-2"><p align="left">Total Keuangan (Rp.)</p></label>
                <label class="control-label col-sm-1">:</label>
               <div class="col-sm-3">
                   <input class="form-control" name="total_pangkal" id="totalpangkallunas" readonly>

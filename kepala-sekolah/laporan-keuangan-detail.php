@@ -242,7 +242,7 @@
       var tahun_pelajaran = $("#tahun").val();
       console.log(tahun);
       $.ajax({
-        url: "../tata-usaha/ajax_total_pendaftaran.php?tahun_pelajaran=" + tahun_pelajaran,
+        url: "./ajax_total_pendaftaran.php?tahun_pelajaran=" + tahun_pelajaran,
         success: function(result){
             console.log(result);
           $("#total").val(result);

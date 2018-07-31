@@ -230,46 +230,36 @@
     <br>
     <form class="form-horizontal" method="POST">
       <div class="form-group">
-        <label class="control-label col-sm-2">Tahun Ajaran</label>
+        <label class="control-label col-sm-3"><p align="left">Tahun Ajaran</p></label>
         <label class="control-label col-sm-1">:</label>
         <div class="col-sm-6">
             <select class="form-control" name="id_tahun" id="tahun">
                 <option>--Pilih Tujuan--</option>
                 <?php
-                $tahun       = "SELECT * FROM tbl_tahun_pelajaran";
-                $queryTahun  = mysqli_query($konek,$tahun);
-                while ($dataTahun = mysqli_fetch_array($queryTahun)) { ?>
+                  $tahun       = "SELECT * FROM tbl_tahun_pelajaran";
+                  $queryTahun  = mysqli_query($konek,$tahun);
+                  while ($dataTahun = mysqli_fetch_array($queryTahun)) { ?>
                     <option value="<?php echo $dataTahun['tahun_pelajaran'] ?>"><?php echo $dataTahun["tahun_pelajaran"] ?>
                     </option>
                 <?php
-                }
+                  }
                 ?>
             </select>
         </div>
-      </div><!-- 
+      </div>
       <div class="form-group">
-        <label class="control-label col-sm-4">Cicilan :</label>
+        <label class="control-label col-sm-3"><p align="left">Total Cicilan Pertama (Rp.)</p></label>
+        <label class="control-label col-sm-1">:</label>
         <div class="col-sm-6">
-            <select class="form-control" name="cicilan" id="cicil">
-                <option value="cicilan1">Cicilan Pertama</option>
-                <option value="cicilan2">Cicilan Kedua</option>
-                <option value="cicilan3">Cicilan Ketiga</option>
-            </select>
-        </div>
-      </div> -->
-      <div class="form-group">
-        <label class=""></label>
-        <div class="col-sm-6">
-          <p>Total Cicilan Pertama</p>
             <input class="form-control" name="cicil1" id="total1" readonly>
                 
             </input>
         </div>
       </div>
       <div class="form-group">
-        <label class=""></label>
+        <label class="control-label col-sm-3"><p align="left">Total Cicilan Kedua &nbsp;&nbsp;&nbsp;(Rp.)</p></label>
+        <label class="control-label col-sm-1">:</label>
         <div class="col-sm-6">
-          <p>Total Cicilan Kedua</p>
             <input class="form-control" name="cicil2" id="total2" readonly>
                 
             </input>
@@ -277,9 +267,9 @@
       </div>
 
       <div class="form-group">
-        <label class=""></label>
+        <label class="control-label col-sm-3"><p align="left">Total Cicilan Ketiga &nbsp;&nbsp;&nbsp;(Rp.)</p></label>
+        <label class="control-label col-sm-1">:</label>
         <div class="col-sm-6">
-          <p>Total Cicilan Ketiga</p>
             <input class="form-control" name="cicil3" id="total3" readonly>
                 
             </input>
@@ -301,8 +291,6 @@
         success: function(result){
             console.log(result);
           $("#total1").val(result);
-          // $("#total2").val(result);
-          // $("#cicil3").val(result);
         }
       });
     });

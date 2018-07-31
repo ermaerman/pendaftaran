@@ -34,13 +34,13 @@
 
                       $jumlah  = $data['jumlah'];
 
-                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $edit    = "SELECT * FROM tbl_biaya";
                       $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
                       $data    = mysqli_fetch_array($hasil);  
 
                       $pendaftaran = $data['biaya_pendaftaran'];
 
-                      $total1   = $jumlah * $pendaftaran;
+                      $total1   = ceil($jumlah * $pendaftaran);
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
@@ -72,7 +72,7 @@
                       $jumlah  = $data['jumlah'];
                       // echo $jumlah;
 
-                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $edit    = "SELECT * FROM tbl_biaya";
                       $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
                       $data    = mysqli_fetch_array($hasil);  
 
@@ -84,7 +84,7 @@
                       // echo '<br>';
                       // echo $cicil;
 
-                      $total2   = $jumlah * $cicil;
+                      $total2   = ceil($jumlah * $cicil);
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
@@ -118,7 +118,7 @@
                       $jumlah  = $data['jumlah'];
                       // echo $jumlah;
 
-                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $edit    = "SELECT * FROM tbl_biaya";
                       $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
                       $data    = mysqli_fetch_array($hasil);  
 
@@ -130,7 +130,7 @@
                       // echo '<br>';
                       // echo $cicil;
 
-                      $total3   = $jumlah * $cicil;
+                      $total3   = ceil($jumlah * $cicil);
                       
                   ?>
 
@@ -165,7 +165,7 @@
                       $jumlah  = $data['jumlah'];
                       // echo $jumlah;
 
-                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $edit    = "SELECT * FROM tbl_biaya";
                       $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
                       $data    = mysqli_fetch_array($hasil);  
 
@@ -177,7 +177,7 @@
                       // echo '<br>';
                       // echo $cicil;
 
-                      $total4   = $jumlah * $cicil;
+                      $total4   = ceil($jumlah * $cicil);
                       
                   ?>
 
@@ -209,13 +209,13 @@
 
                       $jumlah  = $data['jumlah'];
 
-                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $edit    = "SELECT * FROM tbl_biaya";
                       $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
                       $data    = mysqli_fetch_array($hasil);  
 
                       $pangkal = $data['total_pangkal'];
 
-                      $total5   = $jumlah * $pangkal;
+                      $total5   = ceil($jumlah * $pangkal);
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
@@ -246,13 +246,13 @@
 
                       $jumlah  = $data['jumlah'];
 
-                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $edit    = "SELECT * FROM tbl_biaya";
                       $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
                       $data    = mysqli_fetch_array($hasil);  
 
                       $du = $data['daftar_ulang1'];
 
-                      $total6   = $jumlah * $du;
+                      $total6   = ceil($jumlah * $du);
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
@@ -283,13 +283,13 @@
 
                       $jumlah  = $data['jumlah'];
 
-                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $edit    = "SELECT * FROM tbl_biaya";
                       $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
                       $data    = mysqli_fetch_array($hasil);  
 
                       $du = $data['daftar_ulang2'];
 
-                      $total7   = $jumlah * $du;
+                      $total7   = ceil($jumlah * $du);
                       ?>
                   <th><font size="2px">Total Keuangan</font></th>
                   <td width="800"><i><font size="2px">Rp. <?php echo $total7; ?></font></i></td>

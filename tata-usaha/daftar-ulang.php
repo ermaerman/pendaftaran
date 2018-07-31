@@ -181,10 +181,11 @@
     <br>
     <form class="form-horizontal" method="POST">
       <div class="form-group">
-        <label class="control-label col-sm-2">Tahun Ajaran :</label>
+        <label class="control-label col-sm-3"><p align="left">Tahun Ajaran</p></label>
+        <label class="control-label col-sm-1">:</label>
         <div class="col-sm-6">
             <select class="form-control" name="id_tahun" id="tahun">
-                <option>--Pilih Tujuan--</option>
+                <option>--Pilih Tahun Ajaran--</option>
                 <?php
                 $tahun       = "SELECT * FROM tbl_tahun_pelajaran";
                 $queryTahun  = mysqli_query($konek,$tahun);
@@ -198,18 +199,18 @@
         </div>
       </div>
       <div class="form-group">
-        <label class=""></label>
+        <label class="control-label col-sm-3"><p align="left">Total Daftar Ulang Kelas 11 (Rp.)</p></label>
+        <label class="control-label col-sm-1">:</label>
         <div class="col-sm-6">
-          <p>Total Daftar Ulang Kelas 11</p>
             <input class="form-control" name="daftar_ulang1" id="total6" readonly>
                 
             </input>
         </div>
       </div>
       <div class="form-group">
-        <label class=""></label>
+        <label class="control-label col-sm-3"><p align="left">Total Daftar Ulang Kelas 12 (Rp.)</p></label>
+        <label class="control-label col-sm-1">:</label>
         <div class="col-sm-6">
-          <p>Total Daftar Ulang Kelas 12</p>
             <input class="form-control" name="daftar_ulang2" id="total7" readonly>
                 
             </input>

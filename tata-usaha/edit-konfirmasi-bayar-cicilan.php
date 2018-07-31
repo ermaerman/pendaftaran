@@ -57,7 +57,7 @@
          
           <p align="right">
             <?php if ($data['validasi_pangkal_cicil1']==1) {
-              echo '<button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilansatu.php" class="btn btn-danger">Batal Konfirmasi</button> ';
+              //echo '<button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilansatu.php" class="btn btn-danger">Batal Konfirmasi</button> ';
             } else {
               echo "<button type='submit' formaction='../config/edit-konfirmasi-bayar-cicilansatu.php' class='btn btn-primary'>Konfirmasi</button>";
             }
@@ -102,7 +102,7 @@
      
         <p align="right">
         <?php if ($data['validasi_pangkal_cicil2']==1) {
-          echo '<button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilankedua.php" class="btn btn-danger">Batal Konfirmasi</button>';
+          //echo '<button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilankedua.php" class="btn btn-danger">Batal Konfirmasi</button>';
         } else {
           echo "<button type='submit' formaction='../config/edit-konfirmasi-bayar-cicilankedua.php' class='btn btn-primary'>Konfirmasi</button>";
         }
@@ -146,7 +146,7 @@
     
       <p align="right">
         <?php if ($data['validasi_pangkal_cicil3']==1) {
-          echo '<button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilanketiga.php" class="btn btn-danger">Batal Konfirmasi</button>';
+          //echo '<button type="submit" formaction="../config/batal-konfirmasi-bayar-cicilanketiga.php" class="btn btn-danger">Batal Konfirmasi</button>';
         } else {
           echo "<button type='submit' formaction='../config/edit-konfirmasi-bayar-cicilanketiga.php' class='btn btn-primary'>Konfirmasi</button>";
         }

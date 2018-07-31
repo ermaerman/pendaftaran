@@ -35,7 +35,7 @@
           <form class="form-horizontal" method="POST">
             <div class="form-group">
               <label class="control-label col-sm-3"></label>
-              <label class="control-label col-sm-2"><p align="left">Tahun Ajaran</p></label>
+              <label class="control-label col-sm-2"><p align="left">Tahun Pelajaran</p></label>
                <label class="control-label col-sm-1">:</label>
               <div class="col-sm-3">
                   <select class="form-control" name="id_tahun" id="tahun">
@@ -228,6 +228,28 @@
                   </input>
               </div>
             </div>
+            <div class="form-group">
+              <label class=""></label>
+              <label class="control-label col-sm-3"></label>
+               <label class="control-label col-sm-2"><p align="left">Daftar Ulang 11</p></label>
+               <label class="control-label col-sm-1">:</label>
+              <div class="col-sm-3">
+                  <input class="form-control" name="totaldu1" id="totaldu1" readonly>
+                  
+                  </input>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class=""></label>
+              <label class="control-label col-sm-3"></label>
+               <label class="control-label col-sm-2"><p align="left">Daftar Ulang 12</p></label>
+               <label class="control-label col-sm-1">:</label>
+              <div class="col-sm-3">
+                  <input class="form-control" name="totaldu2" id="totaldu2" readonly>
+                  
+                  </input>
+              </div>
+            </div>
           </form>
   </div>
   </div>
@@ -242,7 +264,7 @@
       var tahun_pelajaran = $("#tahun").val();
       console.log(tahun);
       $.ajax({
-        url: "./ajax_total_pendaftaran.php?tahun_pelajaran=" + tahun_pelajaran,
+        url: "./ajax_daftar.php?tahun_pelajaran=" + tahun_pelajaran,
         success: function(result){
             console.log(result);
           $("#total").val(result);
@@ -486,6 +508,36 @@
         success: function(result){
             console.log(result);
           $("#totalpangkallunas").val(result);
+        }
+      });
+    });
+</script>
+
+<script type="text/javascript">
+
+    $( "#tahun" ).change(function() {
+      var tahun_pelajaran = $("#tahun").val();
+      console.log(tahun);
+      $.ajax({
+        url: "./ajax_total_du1.php?tahun_pelajaran=" + tahun_pelajaran,
+        success: function(result){
+            console.log(result);
+          $("#totaldu1").val(result);
+        }
+      });
+    });
+</script>
+
+<script type="text/javascript">
+
+    $( "#tahun" ).change(function() {
+      var tahun_pelajaran = $("#tahun").val();
+      console.log(tahun);
+      $.ajax({
+        url: "./ajax_total_du2.php?tahun_pelajaran=" + tahun_pelajaran,
+        success: function(result){
+            console.log(result);
+          $("#totaldu2").val(result);
         }
       });
     });

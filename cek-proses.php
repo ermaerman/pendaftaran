@@ -131,10 +131,10 @@
                     <table>
                     <tr><td width="500">Pendaftaran</td><td><span class="glyphicon glyphicon-ok"><span class="glyphicon glyphicon-ok"></td></tr>
                     <tr><td width="500">Ujian Tes Masuk</td><td><span class="glyphicon glyphicon-ok"></td></tr>
-                    <tr><td width="500"><a href="index.php?content=konfirmasi-pembayaran">Uang Pangkal Langsung Lunas</a></td><td><span class="glyphicon glyphicon-remove"><span class="glyphicon glyphicon-remove"></td></tr>
-                    <tr><td width="500"><a href="index.php?content=konfirmasi-pembayaran">Uang Pangkal Cicilan 1</a></td><td><span class="glyphicon glyphicon-remove"><span class="glyphicon glyphicon-remove"></td></tr>
+                    <tr><td width="500"><a href="#">Uang Pangkal Langsung Lunas</a></td><td><span class="glyphicon glyphicon-remove"><span class="glyphicon glyphicon-remove"></td></tr>
+                    <tr><td width="500"><a href="#">Uang Pangkal Cicilan 1</a></td><td><span class="glyphicon glyphicon-remove"><span class="glyphicon glyphicon-remove"></td></tr>
                     <tr><td width="500"<a href="index.php?content=konfirmasi-pembayaran">Uang Pangkal Cicilan 2</a></td><td><span class="glyphicon glyphicon-remove"><span class="glyphicon glyphicon-remove"></td></tr>
-                    <tr><td width="500"><a href="index.php?content=konfirmasi-pembayaran">Uang Pangkal Cicilan 3</a></td><td><span class="glyphicon glyphicon-remove"><span class="glyphicon glyphicon-remove"></td></tr>
+                    <tr><td width="500">Uang Pangkal Cicilan 3</td><td><span class="glyphicon glyphicon-remove"><span class="glyphicon glyphicon-remove"></td></tr>
                     </table></div>';
               echo '</div>';
               echo '</div>';
@@ -410,7 +410,7 @@
                     <select class="form-control" id="b_daftar" name="b_daftar" required>
                       <option>-- Pilih Pembayaran --</option>
                       <option value="pangkallunas">Uang Pangkal Langsung Lunas</option>
-                      <option value="cicilpertama">Uang Pangkal Cicilan Kedua</option>
+                      <option value="cicilpertama">Uang Pangkal Cicilan Pertama</option>
                     </select>
                   </div>
                 </div>

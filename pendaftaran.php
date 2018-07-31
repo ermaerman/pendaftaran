@@ -40,11 +40,11 @@
                     <select class="form-control" name="tahun_pelajaran" id="tahun_pelajaran">
                     <option>-- Pilih Tahun Pelajaran --</option>
                     <?php
-                    $tujuan = "SELECT * FROM tbl_tahun_pelajaran";
-                    $queryTujuan = mysqli_query($konek,$tujuan);
-                    while ($dataTujuan = mysqli_fetch_array($queryTujuan)) { ?>
-                         <option value="<?php echo $dataTujuan['tahun_pelajaran'] ?>"><?php echo $dataTujuan["tahun_pelajaran"] ?>
-                        </option>
+                      $tujuan = "SELECT * FROM tbl_tahun_pelajaran";
+                      $queryTujuan = mysqli_query($konek,$tujuan);
+                      while ($dataTujuan = mysqli_fetch_array($queryTujuan)) { ?>
+                           <option value="<?php echo $dataTujuan['tahun_pelajaran'] ?>"><?php echo $dataTujuan["tahun_pelajaran"] ?>
+                          </option>
                     <?php
                     }
                     ?>

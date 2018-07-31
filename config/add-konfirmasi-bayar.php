@@ -96,7 +96,7 @@
 
 		if ($updatebayar)
     	{
-    		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran pangkal lunas!";
+    		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran pangkal cicilan pertama!";
 			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=cek-proses">';
     	}
 	else {
@@ -115,7 +115,7 @@
 
 		if ($updatebayar)
     	{
-    		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran pangkal lunas!";
+    		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran pangkal cicilan kedua!";
 			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=cek-proses">';
     	}
 	else {
@@ -134,7 +134,7 @@
 
 		if ($updatebayar)
     	{
-    		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran pangkal lunas!";
+    		echo "<br><br><br><strong><center><i>Anda berhasil mengkonfirmasi pembayaran pangkal cicilan ketiga!";
 			echo '<META HTTP-EQUIV="REFRESH" CONTENT = "1; URL=../index.php?content=cek-proses">';
     	}
 	else {

@@ -145,7 +145,6 @@
                 <th>No</th>
                 <th>Kode Daftar</th>
                 <th>Nama</th>
-                <th>Kelas</th>
                 <th>Seragam Putih Abu</th>
                 <th>Seragam Olahraga</th>
                 <th>Seragam Batik</th>
@@ -154,7 +153,6 @@
                 <th>Topi</th>
                 <th>Dasi</th>
                 <th>Ikat Pinggang</th>
-                <th>Action</th>
               </tr>
             </thead>
             <tbody>
@@ -173,17 +171,17 @@
                 if($_SERVER['REQUEST_METHOD'] == "POST") {
                   $pencarian = trim(mysqli_real_escape_string($konek, $_POST['pencarian']));
                   if ($pencarian != '') {
-                    $sql = "SELECT * FROM tbl_pembelian WHERE kode_daftar LIKE '%$pencarian%'";
+                    $sql = "SELECT tbl_data_calon_murid.nama, tbl_data_calon_murid.kode_daftar, tbl_pembelian.kode_daftar, tbl_pembelian.seragam_putih_abu, tbl_pembelian.seragam_olahraga, tbl_pembelian.seragam_batik, tbl_pembelian.seragam_pramuka, tbl_pembelian.baju_muslim, tbl_pembelian.topi, tbl_pembelian.dasi, tbl_pembelian.ikat_pinggang FROM tbl_data_calon_murid, tbl_pembelian WHERE tbl_data_calon_murid.kode_daftar=tbl_pembelian.kode_daftar AND tbl_pembelian.kode_daftar LIKE '%$pencarian%'";
                     $query = $sql;
                     $queryJml = $sql;
                   } else {
-                    $query = "SELECT * FROM tbl_pembelian LIMIT $posisi, $batas ";
-                    $queryJml = "SELECT * FROM tbl_pembelian";
+                    $query = "SELECT tbl_data_calon_murid.nama, tbl_data_calon_murid.kode_daftar, tbl_pembelian.kode_daftar, tbl_pembelian.seragam_putih_abu, tbl_pembelian.seragam_olahraga, tbl_pembelian.seragam_batik, tbl_pembelian.seragam_pramuka, tbl_pembelian.baju_muslim, tbl_pembelian.topi, tbl_pembelian.dasi, tbl_pembelian.ikat_pinggang FROM tbl_data_calon_murid, tbl_pembelian WHERE tbl_data_calon_murid.kode_daftar=tbl_pembelian.kode_daftar LIMIT $posisi, $batas ";
+                    $queryJml = "SELECT tbl_data_calon_murid.nama, tbl_data_calon_murid.kode_daftar, tbl_pembelian.kode_daftar, tbl_pembelian.seragam_putih_abu, tbl_pembelian.seragam_olahraga, tbl_pembelian.seragam_batik, tbl_pembelian.seragam_pramuka, tbl_pembelian.baju_muslim, tbl_pembelian.topi, tbl_pembelian.dasi, tbl_pembelian.ikat_pinggang FROM tbl_data_calon_murid, tbl_pembelian WHERE tbl_data_calon_murid.kode_daftar=tbl_pembelian.kode_daftar";
                     $no = $posisi + 1;
                   }
                 } else {
-                  $query = "SELECT * FROM tbl_pembelian LIMIT $posisi, $batas ";
-                  $queryJml = "SELECT * FROM tbl_pembelian";
+                  $query = "SELECT tbl_data_calon_murid.nama, tbl_data_calon_murid.kode_daftar, tbl_pembelian.kode_daftar, tbl_pembelian.seragam_putih_abu, tbl_pembelian.seragam_olahraga, tbl_pembelian.seragam_batik, tbl_pembelian.seragam_pramuka, tbl_pembelian.baju_muslim, tbl_pembelian.topi, tbl_pembelian.dasi, tbl_pembelian.ikat_pinggang FROM tbl_data_calon_murid, tbl_pembelian WHERE tbl_data_calon_murid.kode_daftar=tbl_pembelian.kode_daftar LIMIT $posisi, $batas ";
+                  $queryJml = "SELECT tbl_data_calon_murid.nama, tbl_data_calon_murid.kode_daftar, tbl_pembelian.kode_daftar, tbl_pembelian.seragam_putih_abu, tbl_pembelian.seragam_olahraga, tbl_pembelian.seragam_batik, tbl_pembelian.seragam_pramuka, tbl_pembelian.baju_muslim, tbl_pembelian.topi, tbl_pembelian.dasi, tbl_pembelian.ikat_pinggang FROM tbl_data_calon_murid, tbl_pembelian WHERE tbl_data_calon_murid.kode_daftar=tbl_pembelian.kode_daftar";
                   $no = $posisi + 1;
                 }
 
@@ -200,7 +198,6 @@
                             echo '<td>'.$no.'</td>';
                             echo '<td>'.$data['kode_daftar'].'</td>';
                             echo '<td>'.$data['nama'].'</td>';
-                            echo '<td>'.$data['nama'].'</td>';
                             echo '<td>'.$data['seragam_putih_abu'].'</td>';
                             echo '<td>'.$data['seragam_olahraga'].'</td>';
                             echo '<td>'.$data['seragam_batik'].'</td>';
@@ -209,7 +206,6 @@
                             echo '<td>'.$data['topi'].'</td>';
                             echo '<td>'.$data['dasi'].'</td>';
                             echo '<td>'.$data['ikat_pinggang'].'</td>';
-                            echo '<td  width="20"><a data-toggle="tooltip" data-placement="left" title="Edit Keterangan Pembelian" href=tu.php?content=edit-keterangan-pembelian&&kode_daftar='.$data['kode_daftar'].'><i class="fa fa-edit fa-fw"></i></a></td>';
                             echo '</tr>';
                             $no++;
                           }

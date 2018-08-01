@@ -154,7 +154,7 @@ function sum() {
                         echo '<td>'.$data['daftar_ulang1'].'</td>';
                         echo '<td>'.$data['daftar_ulang2'].'</td>';
                         echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Update" href=tu.php?content=edit-biaya&&id_biaya='.$data['id_biaya'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
-                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Delete" href="../config/delete-biaya.php?id_biaya='.$data['id_biaya'].'?"><i class="fa fa-trash fa-fw"></i></a></center></td>';
+                        echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Delete" href="../config/delete-biaya.php?id_biaya='.$data['id_biaya'].'"?><i class="fa fa-trash fa-fw"></i></a></center></td>';
                         echo '</tr>';
                         $no++;  
                       }

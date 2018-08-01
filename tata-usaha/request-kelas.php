@@ -56,7 +56,6 @@
             <th>No</th>
             <th>Tahun Pelajaran</th>
             <th>Nama Kelas</th>
-            <th>Jumlah Murid</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -109,7 +108,6 @@
                         $kalimat_new = ucwords($kalimat);
                         echo $kalimat_new;
                         ?></td>
-                        <td><?php echo $data['jumlah_murid'] ?></td>
                         <td><?php if ($data['status']==0) echo "Belum Dikonfirmasi"; else echo "Sudah Dikonfirmasi"; ?></td>
                       </tr>
                         <?php

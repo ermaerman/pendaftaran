@@ -52,7 +52,7 @@
             <th>No</th>
             <th>Nama Kelas</th>
             <th>Status</th>
-            <th><center>Action</center></th>
+            <th colspan="2"><center>Action</center></th>
           </tr>
         </thead>
         <tbody>
@@ -108,6 +108,7 @@
                         <td><?php if ($data['status']==0) echo "Belum Dikonfirmasi"; else echo "Sudah Dikonfirmasi"; ?></td>
                         <?php
                          echo '<td  width="20"><center><a data-toggle="tooltip" data-placement="left" title="Edit Status" href=kepsek.php?content=edit-status-request-kelas&&id_request_kelas='.$data['id_request_kelas'].'><i class="fa fa-edit fa-fw"></i></a></center></td>';
+                          echo '<td  width="20"><a data-toggle="tooltip" data-placement="left" title="Delete" href=../config/delete-request-kelas.php?id_request_kelas='.$data['id_request_kelas'].'><i class="fa fa-trash fa-fw"></i></a></td>';
                         echo '</tr>';
                         $no++;
                       }

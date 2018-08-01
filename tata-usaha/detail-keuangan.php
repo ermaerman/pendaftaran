@@ -217,7 +217,7 @@
                   </input>
               </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
               <label class=""></label>
               <label class="control-label col-sm-3"></label>
                <label class="control-label col-sm-2"><p align="left">Total Pangkal</p></label>
@@ -227,7 +227,7 @@
                   
                   </input>
               </div>
-            </div>
+            </div> -->
             <div class="form-group">
               <label class=""></label>
               <label class="control-label col-sm-3"></label>

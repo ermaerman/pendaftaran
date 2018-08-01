@@ -101,11 +101,11 @@
                     </select>
                   </div>
                 </div>
-                <input type="text" name="thn_pelajaran" value="<?php echo $thn_pelajaran ?>">
-                <input type="text" name="tahun" value="<?php echo $tahun ?>">
-                <input type="text" name="thn_pelajaran2" value="<?php echo $thn_pelajaran2 ?>">
-                <input type="text" name="thn_pelajaran3" value="<?php echo $thn_pelajaran3 ?>">
-                <input type="text" name="keterangan" value="<?php echo $keterangan ?>">
+                <input type="hidden" name="thn_pelajaran" value="<?php echo $thn_pelajaran ?>">
+                <input type="hidden" name="tahun" value="<?php echo $tahun ?>">
+                <input type="hidden" name="thn_pelajaran2" value="<?php echo $thn_pelajaran2 ?>">
+                <input type="hidden" name="thn_pelajaran3" value="<?php echo $thn_pelajaran3 ?>">
+                <input type="hidden" name="keterangan" value="<?php echo $keterangan ?>">
         <div class="form-group">
             <label class="control-label col-sm-4"></label>
             <div class="col-sm-6" align="right">

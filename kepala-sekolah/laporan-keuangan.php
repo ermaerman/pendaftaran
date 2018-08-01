@@ -34,7 +34,7 @@
 
                       $jumlah  = $data['jumlah'];
 
-                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $edit    = "SELECT * FROM tbl_biaya";
                       $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
                       $data    = mysqli_fetch_array($hasil);  
 
@@ -72,7 +72,7 @@
                       $jumlah  = $data['jumlah'];
                       // echo $jumlah;
 
-                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $edit    = "SELECT * FROM tbl_biaya";
                       $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
                       $data    = mysqli_fetch_array($hasil);  
 
@@ -118,7 +118,7 @@
                       $jumlah  = $data['jumlah'];
                       // echo $jumlah;
 
-                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $edit    = "SELECT * FROM tbl_biaya";
                       $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
                       $data    = mysqli_fetch_array($hasil);  
 
@@ -165,7 +165,7 @@
                       $jumlah  = $data['jumlah'];
                       // echo $jumlah;
 
-                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $edit    = "SELECT * FROM tbl_biaya";
                       $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
                       $data    = mysqli_fetch_array($hasil);  
 
@@ -209,7 +209,7 @@
 
                       $jumlah  = $data['jumlah'];
 
-                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $edit    = "SELECT * FROM tbl_biaya";
                       $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
                       $data    = mysqli_fetch_array($hasil);  
 
@@ -246,7 +246,7 @@
 
                       $jumlah  = $data['jumlah'];
 
-                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $edit    = "SELECT * FROM tbl_biaya";
                       $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
                       $data    = mysqli_fetch_array($hasil);  
 
@@ -283,7 +283,7 @@
 
                       $jumlah  = $data['jumlah'];
 
-                      $edit    = "SELECT * FROM tbl_biaya WHERE tahun_pelajaran='2018 / 2019'";
+                      $edit    = "SELECT * FROM tbl_biaya";
                       $hasil   = mysqli_query($konek, $edit)or die(mysqli_error($konek));
                       $data    = mysqli_fetch_array($hasil);  
 

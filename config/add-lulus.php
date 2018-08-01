@@ -15,7 +15,7 @@
 
 
    
-    	$insert         = "INSERT INTO tbl_kelas VALUES ('','$thn_pelajaran3','$kode_daftar','1211', '1','1','1','1')";
+    	$insert         = "INSERT INTO tbl_kelas VALUES ('','$thn_pelajaran3','$kode_daftar','3', '1','1','1','1')";
     	$simpan         = mysqli_query($konek, $insert)or die(mysqli_error($konek));
     	
     	$update 		= "UPDATE tbl_kelas SET lulus='1' WHERE kode_daftar='$kd_daftar'";

@@ -11,6 +11,14 @@
 
 
 <div class="container">
+    <ol class="breadcrumb"> <table class="table">
+                                        <tr>
+                                        <th><br><p align="center"></th>
+                                        <td><br><p align="center"><img src="gambar/manda.png" height="100"><br><font size="5px"><b>YAYASAN MANDALAHAYU</b></font><br>
+                                                <font size="6px"><b>SMK MANDALAHAYU II BEKASI</b></font><br>Jl. Pengasinan Tengah No.99, Pengasinan, Rawalumbu, Kota Bks, Jawa Barat 17115</p></td>
+                                        </tr>
+                                      </table>
+  </ol>
   <ol class="breadcrumb">
     <li class="active"><a data-toggle="tooltip" data-placement="top" title="Click me!" href="index.php">SMK Mandalahayu II Bekasi</a> / <a href="#">Lainnya</a> / Cek Proses</li>
   </ol>
@@ -58,7 +66,7 @@
       $kode_daftar = $_POST['kode_daftar'];
     }
 
-    $query = mysqli_query($konek,"SELECT tbl_pengumuman.kode_daftar, tbl_pengumuman.hasil, tbl_pembayaran.kode_daftar, tbl_pembayaran.b_daftar, tbl_pembayaran.validasi_daftar, tbl_pembayaran.b_pangkal_lunas, tbl_pembayaran.validasi_pangkal_lunas, tbl_pembayaran.b_pangkal_cicil1, tbl_pembayaran.validasi_pangkal_cicil1, tbl_pembayaran.b_pangkal_cicil2, tbl_pembayaran.validasi_pangkal_cicil2, tbl_pembayaran.b_pangkal_cicil3, tbl_pembayaran.validasi_pangkal_cicil3 FROM tbl_pembayaran, tbl_pengumuman WHERE tbl_pembayaran.kode_daftar = '$kode_daftar' AND tbl_pembayaran.kode_daftar = tbl_pengumuman.kode_daftar ")or die(mysqli_error($konek));
+    $query = mysqli_query($konek,"SELECT tbl_pengumuman.kode_daftar, tbl_pengumuman.bahasa_indonesia, tbl_pengumuman.matematika, tbl_pengumuman.bahasa_inggris, tbl_pengumuman.kejuruan, tbl_pengumuman.buta_warna, tbl_pengumuman.urine, tbl_pengumuman.fisik, tbl_pengumuman.hasil, tbl_pembayaran.kode_daftar, tbl_pembayaran.b_daftar, tbl_pembayaran.validasi_daftar, tbl_pembayaran.b_pangkal_lunas, tbl_pembayaran.validasi_pangkal_lunas, tbl_pembayaran.b_pangkal_cicil1, tbl_pembayaran.validasi_pangkal_cicil1, tbl_pembayaran.b_pangkal_cicil2, tbl_pembayaran.validasi_pangkal_cicil2, tbl_pembayaran.b_pangkal_cicil3, tbl_pembayaran.validasi_pangkal_cicil3 FROM tbl_pembayaran, tbl_pengumuman WHERE tbl_pembayaran.kode_daftar = '$kode_daftar' AND tbl_pembayaran.kode_daftar = tbl_pengumuman.kode_daftar ")or die(mysqli_error($konek));
       if(mysqli_num_rows($query) == 0){
 
       }
@@ -124,7 +132,7 @@
           }
           elseif ($data['b_daftar']==1 AND $data['validasi_daftar']==1 AND $data['hasil']==1 AND $data['b_pangkal_lunas']==0 AND $data['validasi_pangkal_lunas']==0 AND $data['b_pangkal_cicil1']==0 AND $data['validasi_pangkal_cicil1']==0 AND $data['b_pangkal_cicil2']==0 AND $data['validasi_pangkal_cicil2']==0 AND $data['b_pangkal_cicil3']==0 AND $data['validasi_pangkal_cicil3']==0) {
               echo "<h2>Cek Proses</h2><hr>";
-               echo '<div class="col-md-4"></div>';
+              echo '<div class="col-md-4"></div>';
               echo '<div class="col-md-4">';
               echo '<div class="thumbnail">';
               echo '<div class="caption" align="left">
@@ -137,11 +145,26 @@
                     <tr><td width="500">Uang Pangkal Cicilan 3</td><td><span class="glyphicon glyphicon-remove"><span class="glyphicon glyphicon-remove"></td></tr>
                     </table></div>';
               echo '</div>';
-              echo '</div>';
+              
+              echo '<div class="col-md-4"></div>';
               echo '<div class="col-md-4"></div>';
               echo "<br>";
               echo '<div class="col-md-12">';
               echo "<i>Selamat, anda telah lulus dalam mengikuti ujian tes masuk SMK Mandalahayu II Bekasi.</i><br>";
+              echo "<br>";
+              echo '<div class="thumbnail">';
+              echo '<div class="caption" align="left">
+                    <table>
+                    <tr><td width="300">Bahasa Indonesia</td><td>'.$data['bahasa_indonesia'].'</td></tr>
+                    <tr><td width="300">Matematika</td><td>'.$data['matematika'].'</td></tr>
+                    <tr><td width="300">Bahasa Inggris</td><td>'.$data['bahasa_inggris'].'</td></tr>
+                    <tr><td width="300">Kejuruan</td><td>'.$data['kejuruan'].'</td></tr>
+                    <tr><td width="300">Buta Warna</td><td>'.$data['buta_warna'].'</td></tr>
+                    <tr><td width="300">Urine</td><td>'.$data['urine'].'</td></tr>
+                    <tr><td width="300">Fisik</td><td>'.$data['fisik'].'</td></tr>
+                    </table></div>';
+              echo '</div>';
+
               echo "<i>Selanjutnya, silahkan bayar dan konfirmasi uang pangkal anda. Klik pada button dibawah ini untuk konfirmasi pembayaran.</i><br><br>";
                 echo "<button data-toggle='modal' data-target='#myModalpangkal' type='button' class='btn btn-danger'>Konfirmasi Pembayaran</button>";
               echo "</div>";

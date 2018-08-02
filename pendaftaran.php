@@ -14,10 +14,19 @@
       return true;
     }
 </script>
-
+  <ol class="breadcrumb"> <table class="table">
+                                        <tr>
+                                        <th><br><p align="center"></th>
+                                        <td><br><p align="center"><img src="gambar/manda.png" height="100"><br><font size="5px"><b>YAYASAN MANDALAHAYU</b></font><br>
+                                                <font size="6px"><b>SMK MANDALAHAYU II BEKASI</b></font><br>Jl. Pengasinan Tengah No.99, Pengasinan, Rawalumbu, Kota Bks, Jawa Barat 17115</p></td>
+                                        </tr>
+                                      </table>
+  </ol>
 <ol class="breadcrumb">
   <li class="active"><a data-toggle="tooltip" data-placement="top" title="Click me!" href="index.php">SMK Mandalahayu II Bekasi</a> / Pendaftaran</li>
 </ol>
+
+
 
 <h3><b>&nbsp;&nbsp;Pendaftaran</b> Murid Baru</h3>
       
@@ -26,6 +35,8 @@
 </div>
     
 <hr>
+
+
 
             <form class="form-horizontal" action="config/add-pendaftaran.php" method="POST" enctype="multipart/form-data">
                 <ol class="breadcrumb">
@@ -731,7 +742,6 @@
                      <i><font size="2px"><font color="red">*</font> Harus diisi.</font></i>
                   </div>
                 </div>
-
 
                 </div>                
                 <div class="form-group">

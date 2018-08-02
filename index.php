@@ -71,7 +71,58 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.php?content=alur-pendaftaran">Alur Pendaftaran</a></li>
-        <li><a href="index.php?content=pendaftaran"><span class="glyphicon glyphicon-log-in"></span> Pendaftaran</a></li>
+
+<?php
+
+    error_reporting(0);
+
+    include 'config/koneksi.php';
+
+    $edit    = "SELECT * FROM tbl_informasi_tanggal";
+    $hasil   = mysqli_query($konek, $edit)or die(mysql_error());
+    $data    = mysqli_fetch_array($hasil);
+
+function CekPendaftaran($todays_date,$start_date,$end_date)
+{
+   $start_date = strtotime($start_date); 
+   $end_date = strtotime($end_date);
+   $todays_date = strtotime($todays_date); 
+   if ($todays_date >= $start_date && $todays_date <= $end_date) 
+   { 
+      return 0;//BUKA
+   } 
+   else 
+   { 
+      if($todays_date < $start_date)
+      {
+         return 1; //BELUM
+      }
+      else
+      {
+         return 2; //LEWAT
+      }
+   }
+}
+//Cara memanggilnya
+$DATE_NOW=date("Y-m-d");
+$START_DATE=$data['tgl_awal_daftar'];
+$END_DATE=$data['tgl_akhir_daftar'];
+$CekStatus=CekPendaftaran($DATE_NOW,$START_DATE,$END_DATE);
+//Sekarang $CekStatus memiliki nilai array yang terdiri dari 3 (0 atau 1 atau 2)
+if($CekStatus==1) //1 BELUM BUKA
+{
+   
+} 
+elseif($CekStatus==2) //2 SUDAH TUTUP
+{
+   
+} 
+elseif($CekStatus==0) //0 SEDANG BUKA
+{
+   echo '<li><a href="index.php?content=pendaftaran"><span class="glyphicon glyphicon-log-in"></span> Pendaftaran</a></li>';
+}
+?>
+        
         <li class="dropdown">
           <a class="dropdown-toggle" href="" data-toggle="dropdown">Lainnya
           <span class="caret"></span></a>
@@ -79,6 +130,7 @@
             <li><a href="index.php?content=cek-proses">Cek Proses</a></li>
             <li><a href="index.php?content=konfirmasi-pembayaran">Konfirmasi Pembayaran</a></li>
             <li><a href="index.php?content=biaya">Informasi Biaya</a></li>
+            <li><a href="index.php?content=tanggal">Informasi Tanggal</a></li>
             <li><a href="index.php?content=upload-file">Upload Kekurangan File</a></li>
           </ul>
         </li>
@@ -151,6 +203,8 @@
                 include 'alur-sembilan.php';
               else if ($content=='alur-sepuluh')
                 include 'alur-sepuluh.php';
+              else if ($content=='tanggal')
+                include 'tanggal.php';
            ?>
         </div>
 </div>

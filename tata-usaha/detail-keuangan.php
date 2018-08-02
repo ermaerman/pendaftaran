@@ -32,13 +32,13 @@
 <div class="col-md-10" style="min-height:500px">
   <h3><b>Detail</b> Keuangan Proses Pendaftaran</h3>
     <hr>
-          <form class="form-horizontal" method="POST">
+          <form class="form-horizontal" action="../config/add-rekap.php" method="POST">
             <div class="form-group">
               <label class="control-label col-sm-3"></label>
               <label class="control-label col-sm-2"><p align="left">Tahun Pelajaran</p></label>
                <label class="control-label col-sm-1">:</label>
               <div class="col-sm-3">
-                  <select class="form-control" name="id_tahun" id="tahun">
+                  <select class="form-control" name="tahun_pelajaran" id="tahun">
                       <option>--Pilih Tahun Pelajaran--</option>
                       <?php
                       $tahun       = "SELECT * FROM tbl_tahun_pelajaran";
@@ -102,7 +102,7 @@
                <label class="control-label col-sm-2"><p align="left">Seragam Putih Abu</p></label>
                <label class="control-label col-sm-1">:</label>
               <div class="col-sm-3">
-                  <input class="form-control" name="" id="totalseragamputihabu" readonly>
+                  <input class="form-control" name="seragam_putih_abu" id="totalseragamputihabu" readonly>
                   
                   </input>
               </div>
@@ -250,6 +250,17 @@
                   </input>
               </div>
             </div>
+            <hr>
+            <div class="form-group">
+              <label class=""></label>
+              <label class="control-label col-sm-3"></label>
+               <label class="control-label col-sm-2"></label>
+               <label class="control-label col-sm-1"></label>
+              <div class="col-sm-3" style="float:right;">
+                  <button class="btn btn-primary">Tambah</button>
+              </div>
+            </div>
+            
           </form>
   </div>
   </div>

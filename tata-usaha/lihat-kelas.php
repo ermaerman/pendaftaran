@@ -50,7 +50,7 @@
         <thead>
           <tr>
             <th>No</th>
-            <th>Tahun Pelajaran</th>
+            <th>Tahun Ajaran</th>
             <th>Kelas</th>
             <th><center>Lihat Data Murid</center></th>
           </tr>

@@ -1,3 +1,4 @@
+
 <?php
 
   //error_reporting(0);
@@ -23,6 +24,56 @@
         <input type="hidden" name="id_pembayaran" value="<?php echo $id_pembayaran?>">
           <div class="panel-group">
           <div class="panel panel-primary">
+            <div class="panel-heading">Laporan Keuangan Pertahun</div>
+            <div class="panel-body">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Tahun Pelajaran</th>
+                    <th>Total Keuangan</th>
+                  </tr>
+                </thead>
+                <tbody>
+               <?php
+
+            include '../config/koneksi.php';
+
+            
+            $query = mysqli_query($konek, "SELECT DISTINCT * FROM tbl_rekap")or die(mysqli_error($konek));
+
+                    if(mysqli_num_rows($query) == 0){
+                      echo '<tr><td colspan="6" align="center">Tidak ada data!</td></tr>';
+                    }
+                      else
+                    {
+                      $no = 1;
+                      while($data = mysqli_fetch_array($query)){
+                        echo '<tr>';
+                        echo '<td width="50">'.$no.'</td>';
+                        echo '<td>'.$data['tahun_pelajaran'].'</td>';
+                        echo '<td>Rp.'.number_format($data['rekap']).'</td>';
+                        $no++;
+                      }
+                    }
+
+                ?>
+              </tbody>
+              </table>
+              <p align="right">
+                <button type="submit" formaction="tu.php?content=detail-keuangan" class="btn btn-primary">Detail Transaksi</button>
+                <a target ="_blank" role="button" href="print-rekap.php"><button type="button" class="btn btn-success"><i class="fa fa-print fa-fw"></i> Print</button></a>  
+              </p>
+            </div>
+          </div>
+      </form>
+
+      <br>
+
+        <form class="form-horizontal" method="POST">
+        <input type="hidden" name="id_pembayaran" value="<?php echo $id_pembayaran?>">
+          <div class="panel-group">
+          <div class="panel panel-primary">
             <div class="panel-heading">Laporan Keuangan Administrasi Pendaftaran</div>
             <div class="panel-body">
               <table class="table table-bordered">
@@ -44,7 +95,7 @@
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total1; ?> </font></i></td>
+                  <td width="800"><i><font size="2px"><?php echo 'Rp.'.number_format($total1).'';?></font></i></td>
                 </tr>
               </table>
               <p align="right">
@@ -88,7 +139,7 @@
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total2; ?></font></i></td>
+                  <td width="800"><i><font size="2px"><?php echo 'Rp.'.number_format($total2).'';?></font></i></td>
                 </tr>
               </table>
               <p align="right">
@@ -135,7 +186,7 @@
                   ?>
 
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total3; ?></font></i></td>
+                  <td width="800"><i><font size="2px"><?php echo 'Rp.'.number_format($total3).'';?></font></i></td>
                 </tr>
               </table>
               <p align="right">
@@ -182,7 +233,7 @@
                   ?>
 
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total4; ?></font></i></td>
+                  <td width="800"><i><font size="2px"><?php echo 'Rp.'.number_format($total4).'';?></font></i></td>
                 </tr>
               </table>
               <p align="right">
@@ -219,7 +270,7 @@
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total5; ?></font></i></td>
+                  <td width="800"><i><font size="2px"><?php echo 'Rp.'.number_format($total5).'';?></font></i></td>
                 </tr>
               </table>
               <p align="right">
@@ -256,7 +307,7 @@
                       
                   ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total6; ?></font></i></td>
+                  <td width="800"><i><font size="2px"><?php echo 'Rp.'.number_format($total6).'';?></font></i></td>
                 </tr>
               </table>
               <p align="right">
@@ -292,7 +343,7 @@
                       $total7   = ceil($jumlah * $du);
                       ?>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total7; ?></font></i></td>
+                  <td width="800"><i><font size="2px"><?php echo 'Rp.'.number_format($total7).'';?></font></i></td>
                 </tr>
               </table>
               <p align="right">
@@ -317,7 +368,7 @@
                 ?>
                 <tr>
                   <th><font size="2px">Total Keuangan</font></th>
-                  <td width="800"><i><font size="2px">Rp. <?php echo $total;?></font></i></td>
+                  <td width="800"><i><font size="2px"><?php echo 'Rp.'.number_format($total).'';?></font></i></td>
                 </tr>
               </table>
                <!-- <p align="right">
@@ -326,6 +377,7 @@
           </div>
       </form>
   </div>
+</div>
 </div>
 </div>
 </div>

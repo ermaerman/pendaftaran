@@ -19,6 +19,53 @@
 <div class="col-md-10" style="min-height:500px">
   <h3><b>Laporan</b> Keuangan </h3>
     <hr>
+     <form class="form-horizontal" method="POST">
+        <input type="hidden" name="id_pembayaran" value="<?php echo $id_pembayaran?>">
+          <div class="panel-group">
+          <div class="panel panel-primary">
+            <div class="panel-heading">Laporan Keuangan Pertahun</div>
+            <div class="panel-body">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Tahun Pelajaran</th>
+                    <th>Total Keuangan</th>
+                  </tr>
+                </thead>
+                <tbody>
+               <?php
+
+            include '../config/koneksi.php';
+
+            
+            $query = mysqli_query($konek, "SELECT DISTINCT * FROM tbl_rekap")or die(mysqli_error($konek));
+
+                    if(mysqli_num_rows($query) == 0){
+                      echo '<tr><td colspan="6" align="center">Tidak ada data!</td></tr>';
+                    }
+                      else
+                    {
+                      $no = 1;
+                      while($data = mysqli_fetch_array($query)){
+                        echo '<tr>';
+                        echo '<td width="50">'.$no.'</td>';
+                        echo '<td>'.$data['tahun_pelajaran'].'</td>';
+                        echo '<td>Rp.'.number_format($data['rekap']).'</td>';
+                        $no++;
+                      }
+                    }
+
+                ?>
+              </tbody>
+              </table>
+              <p align="right">
+                <a target ="_blank" role="button" href="print-rekap.php"><button type="button" class="btn btn-success"><i class="fa fa-print fa-fw"></i> Print</button></a>  
+              </p>
+            </div>
+          </div>
+      </form>
+    <br>
         <form class="form-horizontal" method="POST">
         <input type="hidden" name="id_pembayaran" value="<?php echo $id_pembayaran?>">
           <div class="panel-group">

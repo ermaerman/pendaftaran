@@ -24,6 +24,7 @@
             <li><a href='tu.php?content=update-tanggal'><span>Update Tanggal Ujian Masuk</span></a></li>
             <li><a href='tu.php?content=update-nilai'><span>Update Hasil Ujian Masuk</span></a></li>
             <li><a href='tu.php?content=update-biaya'><span>Update Informasi Biaya</span></a></li>
+            <li><a href='tu.php?content=update-tanggal-penting'><span>Update Tanggal Penting</span></a></li>
          </ul>
       </li>
       <li class='active has-sub'><a href='#'><i class="fa fa-copy fa-fw"></i>&nbsp; Kelas</a>

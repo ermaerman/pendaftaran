@@ -124,6 +124,10 @@
               include 'lulus.php';
             else if ($content=='edit-lulus')
               include 'edit-lulus.php';
+            else if ($content=='update-tanggal-penting')
+              include 'update-tanggal-penting.php';
+            else if ($content=='edit-tanggal-penting')
+              include 'edit-tanggal-penting.php';
            ?>
 
 <div class="col-md-12" style="background:black;padding:8px;color:#fff;">

@@ -17,9 +17,14 @@
     <li class="active"><a data-toggle="tooltip" data-placement="top" title="Click me!" href="index.php">SMK Mandalahayu II Bekasi</a> / Berita</li>
   </ol>
     <h3><b>&nbsp;&nbsp;Berita</b></h3>
+    <?php
+    $python = `python python.py`;
+    echo $python;
+    ?>
     <hr>
      <form class="form-horizontal" method="POST">
           <?php
+          
 
             include 'config/koneksi.php';
 

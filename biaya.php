@@ -21,8 +21,8 @@
     <ol class="breadcrumb"> <table class="table">
                                         <tr>
                                         <th><br><p align="center"></th>
-                                        <td><br><p align="center"><img src="gambar/manda.png" height="100"><br><font size="5px"><b>YAYASAN MANDALAHAYU</b></font><br>
-                                                <font size="6px"><b>SMK MANDALAHAYU II BEKASI</b></font><br>Jl. Pengasinan Tengah No.99, Pengasinan, Rawalumbu, Kota Bks, Jawa Barat 17115</p></td>
+                                        <td><br><p align="center"><img src="gambar/manda.png" height="100"></p></td><td><font size="5px"><br><b>YAYASAN MANDALAHAYU</b></font><br>
+                                                <font size="5px"><b>SMK MANDALAHAYU II BEKASI</b></font><br>Jl. Pengasinan Tengah No.99, Pengasinan, Rawalumbu, Kota Bks, Jawa Barat 17115</p></td>
                                         </tr>
                                       </table>
   </ol>
@@ -136,6 +136,7 @@
           <td width="800"><i><font size="2px">Rp. <?php echo $data['daftar_ulang2'];?></font></i></td>
         </tr>
       </table>
+      <p><i>NOTE: <br>1. Biaya daftar ulang dibayarkan saat naik kelas. <br> 2. Biaya daftar ulang tergantung kelas yang akan diambil.</i></p>
     </div></div></div>
 </div>
 
